@@ -195,7 +195,7 @@ export function Navbar() {
                 <Link
                   href="/contact/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="px-7 py-3 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
+                  className="px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote

@@ -52,7 +52,7 @@ export default function ProductsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-7 py-3 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-colors duration-200 ${
+                className={`px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-colors duration-200 ${
                   activeCategory === cat
                     ? "bg-[var(--gold)] text-[var(--bg-black)] border-[var(--gold)]"
                     : "text-[var(--text-muted)] border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
@@ -119,7 +119,7 @@ export default function ProductsPage() {
                 </div>
                 <Link
                   href="/contact/"
-                  className="shrink-0 inline-flex items-center gap-2 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
+                  className="shrink-0 inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote

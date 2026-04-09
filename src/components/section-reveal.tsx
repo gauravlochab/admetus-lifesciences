@@ -17,19 +17,16 @@ export function SectionReveal({
 }: SectionRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setPrefersReducedMotion(
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      );
-    }
+    setReducedMotion(
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
   }, []);
 
   useEffect(() => {
-    // If reduced motion, show immediately
-    if (prefersReducedMotion) {
+    if (reducedMotion) {
       setIsVisible(true);
       return;
     }
@@ -49,9 +46,8 @@ export function SectionReveal({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [prefersReducedMotion]);
+  }, [reducedMotion]);
 
-  /* Subtler movement: 6 = ~24px instead of 8 = 32px */
   const directions = {
     up: "translate-y-6",
     down: "-translate-y-6",
@@ -59,19 +55,10 @@ export function SectionReveal({
     right: "-translate-x-6",
   };
 
-  // If reduced motion, skip transition entirely
-  if (prefersReducedMotion) {
-    return (
-      <div ref={ref} className={className}>
-        {children}
-      </div>
-    );
-  }
-
   return (
     <div
       ref={ref}
-      className={`transition-[opacity,transform] duration-600 ease-out ${
+      className={`transition-[opacity,transform] duration-500 ease-out ${
         isVisible
           ? "opacity-100 translate-x-0 translate-y-0"
           : `opacity-0 ${directions[direction]}`

@@ -21,10 +21,10 @@ export default function ContactPage() {
 
   function validate(form: HTMLFormElement): FormErrors {
     const errs: FormErrors = {};
-    const name = (form.elements.namedItem("contact-name") as HTMLInputElement).value.trim();
-    const company = (form.elements.namedItem("contact-company") as HTMLInputElement).value.trim();
-    const country = (form.elements.namedItem("contact-country") as HTMLInputElement).value.trim();
-    const email = (form.elements.namedItem("contact-email") as HTMLInputElement).value.trim();
+    const name = (form.elements.namedItem("full_name") as HTMLInputElement).value.trim();
+    const company = (form.elements.namedItem("company_name") as HTMLInputElement).value.trim();
+    const country = (form.elements.namedItem("country") as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
 
     if (!name) errs.name = "Full name is required.";
     if (!company) errs.company = "Company name is required.";
@@ -40,6 +40,7 @@ export default function ContactPage() {
     setErrors(validate(form));
   }
 
+  // TODO: Replace YOUR_ACCESS_KEY_HERE with Web3Forms access key from https://web3forms.com
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -52,10 +53,20 @@ export default function ContactPage() {
     setSubmitting(true);
     setSubmitError(false);
 
+    const formData = new FormData(form);
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      setSubmitted(true);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
     } catch {
       setSubmitError(true);
     } finally {
@@ -64,9 +75,9 @@ export default function ContactPage() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text !text-[0.875rem] placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
   const inputErrorClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text !text-[0.875rem] placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
 
   function fieldError(field: keyof FormErrors) {
     if (!touched[field] || !errors[field]) return null;
@@ -129,6 +140,12 @@ export default function ContactPage() {
                     className="p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]"
                     noValidate
                   >
+                    {/* TODO: Replace YOUR_ACCESS_KEY_HERE with Web3Forms access key from https://web3forms.com */}
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                    <input type="hidden" name="from_name" value="Admetus Website" />
+                    <input type="hidden" name="subject" value="New Enquiry from Admetus Lifesciences Website" />
+                    <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
                     <span className="label-text text-[var(--gold)] block mb-6">ENQUIRY FORM</span>
 
                     {submitError && (
@@ -144,6 +161,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-name" className="block label-text text-[var(--text-muted)] mb-1.5">Full Name *</label>
                         <input
                           id="contact-name"
+                          name="full_name"
                           type="text"
                           required
                           className={touched.name && errors.name ? inputErrorClass : inputClass}
@@ -159,6 +177,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-company" className="block label-text text-[var(--text-muted)] mb-1.5">Company Name *</label>
                         <input
                           id="contact-company"
+                          name="company_name"
                           type="text"
                           required
                           className={touched.company && errors.company ? inputErrorClass : inputClass}
@@ -174,6 +193,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-country" className="block label-text text-[var(--text-muted)] mb-1.5">Country *</label>
                         <input
                           id="contact-country"
+                          name="country"
                           type="text"
                           required
                           className={touched.country && errors.country ? inputErrorClass : inputClass}
@@ -189,6 +209,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-email" className="block label-text text-[var(--text-muted)] mb-1.5">Email *</label>
                         <input
                           id="contact-email"
+                          name="email"
                           type="email"
                           required
                           className={touched.email && errors.email ? inputErrorClass : inputClass}
@@ -204,6 +225,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-phone" className="block label-text text-[var(--text-muted)] mb-1.5">Phone / WhatsApp</label>
                         <input
                           id="contact-phone"
+                          name="phone"
                           type="tel"
                           className={inputClass}
                           placeholder="+91 ..."
@@ -214,6 +236,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-product" className="block label-text text-[var(--text-muted)] mb-1.5">Product of Interest</label>
                         <select
                           id="contact-product"
+                          name="product_interest"
                           className={inputClass}
                         >
                           <option value="">Select a product</option>
@@ -229,6 +252,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-quantity" className="block label-text text-[var(--text-muted)] mb-1.5">Order Quantity / MOQ</label>
                         <input
                           id="contact-quantity"
+                          name="order_quantity"
                           type="text"
                           className={inputClass}
                           placeholder="e.g., 10,000 units"
@@ -238,6 +262,7 @@ export default function ContactPage() {
                         <label htmlFor="contact-packaging" className="block label-text text-[var(--text-muted)] mb-1.5">Packaging Preference</label>
                         <select
                           id="contact-packaging"
+                          name="packaging_preference"
                           className={inputClass}
                         >
                           <option value="">Select preference</option>
@@ -253,6 +278,7 @@ export default function ContactPage() {
                       <label htmlFor="contact-message" className="block label-text text-[var(--text-muted)] mb-1.5">Message</label>
                       <textarea
                         id="contact-message"
+                        name="message"
                         rows={4}
                         className={`${inputClass} resize-none`}
                         placeholder="Share your requirements, specifications, or questions..."
@@ -266,7 +292,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="cursor-pointer inline-flex items-center gap-2 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="cursor-pointer inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {submitting ? "Submitting..." : "Submit Enquiry"}
@@ -305,10 +331,10 @@ export default function ContactPage() {
                   <div className="p-6 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
                     <span className="label-text text-[var(--gold)] block mb-3">QUICK CONNECT</span>
                     <a
-                      href="https://wa.me/?text=Hello%2C%20I%20am%20interested%20in%20your%20softgel%20capsule%20products.%20Please%20share%20more%20details."
+                      href="https://wa.me/919729977795?text=Hello%2C%20I%20am%20interested%20in%20your%20softgel%20capsule%20products.%20Please%20share%20more%20details."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-5 py-3 bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-colors duration-200"
+                      className="flex items-center gap-3 px-5 py-3 active:scale-[0.98] active:opacity-90 bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-colors duration-200"
                     >
                       <span className="body-text text-[var(--foreground)] !text-[0.8125rem] font-medium">Chat on WhatsApp</span>
                     </a>

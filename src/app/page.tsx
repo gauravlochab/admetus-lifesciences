@@ -88,7 +88,7 @@ function Hero() {
           <div className="hero-cta mt-8">
             <Link
               href="/manufacturing/"
-              className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+              className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               Explore Our Facility
@@ -518,7 +518,7 @@ function ProductShowcase() {
             </Link>
             <a
               href="/catalogue.pdf"
-              className="inline-flex items-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 transition-colors duration-200 cursor-pointer"
+              className="inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 transition-colors duration-200 cursor-pointer"
             >
               Download Product Catalogue
               <ArrowRight size={13} />
@@ -555,7 +555,7 @@ function ProductShowcase() {
           </Link>
           <a
             href="/catalogue.pdf"
-            className="mt-3 inline-flex items-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 transition-colors duration-200 cursor-pointer"
+            className="mt-3 inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 transition-colors duration-200 cursor-pointer"
           >
             Download Product Catalogue
             <ArrowRight size={13} />
@@ -913,7 +913,7 @@ function Differentiators() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 bg-[var(--bg-charcoal)]">
+    <section ref={sectionRef} className="py-20 bg-[var(--bg-charcoal)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">06</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
@@ -1040,7 +1040,7 @@ function Partnership() {
           </ul>
           <Link
             href="/contract-manufacturing/"
-            className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+            className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Start a Project
@@ -1090,7 +1090,7 @@ function GlobalReach() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 bg-[var(--bg-black)]">
+    <section ref={sectionRef} className="py-20 bg-[var(--bg-black)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">08</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
@@ -1106,7 +1106,7 @@ function GlobalReach() {
             </p>
             <Link
               href="/export/"
-              className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+              className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Explore Export Capabilities
@@ -1227,7 +1227,7 @@ function ClosingCTA() {
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact/"
-            className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-300"
+            className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Start a Project
@@ -1235,7 +1235,7 @@ function ClosingCTA() {
           </Link>
           <Link
             href="/contact/"
-            className="cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)] transition-colors duration-300"
+            className="cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Request Product Samples

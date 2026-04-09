@@ -132,7 +132,7 @@ export default async function ProductDetailPage({
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact/"
-                  className="inline-flex items-center gap-2 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request Quote for {product.shortName}
@@ -140,7 +140,7 @@ export default async function ProductDetailPage({
                 </Link>
                 <Link
                   href="/contract-manufacturing/"
-                  className="inline-flex items-center gap-2 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Private Label Options
