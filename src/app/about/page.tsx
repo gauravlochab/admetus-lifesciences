@@ -27,13 +27,13 @@ export default function AboutPage() {
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[48ch] leading-[1.55]" style={{ fontSize: "0.9375rem" }}>
             Admetus Lifesciences is a specialized nutraceutical manufacturing
-            company based in Haryana, India -- focused on producing high-quality
+            company based in Haryana, India — focused on producing high-quality
             softgel capsules that meet international&nbsp;standards.
           </p>
         </div>
       </section>
 
-      {/* Company Story -- asymmetric two-column */}
+      {/* Company Story — asymmetric two-column */}
       <section className="py-20 bg-[var(--bg-black)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
@@ -45,27 +45,23 @@ export default function AboutPage() {
                   className="text-sm italic text-[var(--text-cream)]"
                   style={{ fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif" }}
                 >
-                  Admetus Lifesciences — built on precision, driven by science.
+                  Built on precision, driven by science.
                 </p>
-                <div className="space-y-5 max-w-[52ch] mt-8">
+                <div className="space-y-5 max-w-[48ch] mt-8">
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     Admetus Lifesciences has built a reputation for excellence in
                     the manufacturing and distribution of softgel capsules. Our
-                    production facility is purpose-built for precision&nbsp;nutraceuticals.
-                  </p>
-                  <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
-                    Our state-of-the-art encapsulation technology is designed to
-                    enhance the absorption and bioavailability of active ingredients,
-                    ensuring maximum therapeutic effectiveness in every&nbsp;capsule.
+                    production facility is purpose-built for precision nutraceuticals,
+                    equipped with state-of-the-art encapsulation technology designed to
+                    enhance the absorption and bioavailability of active&nbsp;ingredients.
                   </p>
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     We place great emphasis on quality assurance and regulatory
                     compliance. Our team follows stringent quality control processes
-                    at every stage of&nbsp;manufacturing.
-                  </p>
-                  <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
-                    Every batch meets international standards and customer
-                    expectations -- from raw material sourcing to final&nbsp;dispatch.
+                    at every stage of manufacturing, ensuring maximum therapeutic
+                    effectiveness in every capsule. Every batch meets international
+                    standards and customer expectations — from raw material sourcing
+                    to final&nbsp;dispatch.
                   </p>
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     Our supplements are supplied to hospitals, retailers, and
@@ -119,7 +115,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision -- stacked editorial, no icons */}
+      {/* Mission & Vision — stacked editorial, no icons */}
       <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -132,7 +128,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                   To manufacture world-class softgel capsules that enhance
-                  healthcare outcomes globally -- through precision formulation,
+                  healthcare outcomes globally — through precision formulation,
                   rigorous quality control, and reliable delivery to our B2B&nbsp;partners.
                 </p>
               </div>
@@ -147,7 +143,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                   To become a globally recognized softgel capsule manufacturing
-                  partner -- trusted by international brands, importers, and
+                  partner — trusted by international brands, importers, and
                   distributors for our commitment to quality, innovation, and&nbsp;reliability.
                 </p>
               </div>
@@ -156,7 +152,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values -- numbered list, not card grid with icons */}
+      {/* Values — numbered list, not card grid with icons */}
       <section className="py-20 bg-[var(--bg-black)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
@@ -170,7 +166,30 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
             {[
               { title: "Quality First", desc: "Every product meets international quality and safety standards." },
-              { title: "Certified Facility", desc: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified operations." },
+              {
+                title: "Certified Facility",
+                desc: (
+                  <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <span className="flex items-center gap-2">
+                      {/* Replace span with <img src="/images/certifications/fssai.svg" alt="FSSAI" className="h-5" /> when logos are available */}
+                      <span className="text-sm font-bold text-[var(--foreground)]">FSSAI</span>
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-[var(--foreground)]">GMP</span>
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-[var(--foreground)]">HACCP</span>
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-[var(--foreground)]">Halal</span>
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-[var(--foreground)]">WHO-GMP</span>
+                    </span>
+                    <span className="text-[var(--text-muted)]">certified operations.</span>
+                  </span>
+                ),
+              },
               { title: "B2B Focus", desc: "Built for brand owners, distributors, and international buyers." },
               { title: "Timely Delivery", desc: "Reliable production schedules with on-time dispatch commitment." },
             ].map((value, i) => (
@@ -190,7 +209,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA -- left-aligned */}
+      {/* CTA — left-aligned */}
       <section className="py-20 bg-[var(--bg-charcoal)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
@@ -199,8 +218,10 @@ export default function AboutPage() {
             </h2>
             <div className="h-px w-12 bg-[var(--gold)] mt-4 mb-6" />
             <p className="body-text text-[var(--text-muted)] max-w-[52ch] mt-4">
-              From custom formulation to private label packaging — discuss your
-              manufacturing requirements with our&nbsp;team.
+              Whether you are a brand owner developing a new product line, a
+              distributor seeking reliable supply, or an international buyer
+              exploring manufacturing partnerships — our team is ready to
+              discuss your&nbsp;requirements.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
