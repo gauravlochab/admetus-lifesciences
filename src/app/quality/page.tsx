@@ -44,9 +44,9 @@ export default function QualityPage() {
             UNCOMPROMISING<br />QUALITY STANDARDS
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
+          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Every softgel capsule manufactured at Admetus Lifesciences undergoes
-            rigorous quality control -- from raw material testing to final dispatch.
+            rigorous quality control -- from raw material testing to final&nbsp;dispatch.
           </p>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function QualityPage() {
                   </div>
                   <div>
                     <p className="body-text text-[var(--gold)] !text-[0.9375rem] mb-1.5">{cert.fullName}</p>
-                    <p className="body-text text-[var(--text-muted)] max-w-[65ch]">{cert.desc}</p>
+                    <p className="body-text text-[var(--text-muted)] max-w-[58ch]">{cert.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -78,7 +78,7 @@ export default function QualityPage() {
           <SectionReveal delay={0.2}>
             <div className="py-6 border-t border-dashed border-[var(--border-subtle)]">
               <p className="body-text text-[var(--text-muted)]">
-                Additional certifications and documentation available on request.
+                Additional certifications and documentation available on&nbsp;request.
               </p>
             </div>
           </SectionReveal>
@@ -93,18 +93,18 @@ export default function QualityPage() {
               <div>
                 <span className="label-text text-[var(--gold)]">Quality Control</span>
                 <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4.5vw, 4rem)" }}>
-                  MULTI-POINT QUALITY CHECKS
+                  MULTI-POINT QUALITY&nbsp;CHECKS
                 </h2>
                 <div className="gold-rule w-12 mb-6" />
-                <p className="body-text text-[var(--text-cream)] max-w-[65ch]">
+                <p className="body-text text-[var(--text-cream)] max-w-[58ch]">
                   Our in-house quality control laboratory is equipped for
                   comprehensive testing at every stage of production -- from
-                  incoming raw materials to finished product release.
+                  incoming raw materials to finished product&nbsp;release.
                 </p>
                 <ul className="mt-8 space-y-3">
                   {qcPoints.map((point, i) => (
                     <li key={point} className="flex items-start gap-3 body-text text-[var(--text-cream)]">
-                      <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 mt-1.5">
+                      <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 mt-1.5">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       {point}
@@ -129,8 +129,8 @@ export default function QualityPage() {
                 </div>
                 <p className="mt-3 heading-2 text-[var(--foreground)]">Batch Testing</p>
                 <div className="gold-rule w-8 mt-3 mb-3" />
-                <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
-                  Every single batch is tested and documented before release -- no exceptions.
+                <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
+                  Every single batch is tested and documented before release -- no&nbsp;exceptions.
                 </p>
               </div>
             </SectionReveal>
@@ -146,13 +146,13 @@ export default function QualityPage() {
               REQUEST QUALITY DOCUMENTATION
             </h2>
             <div className="gold-rule w-12 mt-4 mb-4" />
-            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
+            <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               Certificate copies, audit reports, and compliance documentation
-              are available for qualified business enquiries.
+              are available for qualified business&nbsp;enquiries.
             </p>
             <Link
               href="/contact/"
-              className="mt-8 inline-flex items-center gap-3 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+              className="mt-8 inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Request Documentation

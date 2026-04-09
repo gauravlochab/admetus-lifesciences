@@ -42,13 +42,12 @@ export default function ContractManufacturingPage() {
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
           <h1 className="mt-3 display-section text-[var(--text-white)]">
-            YOUR BRAND.<br />OUR MANUFACTURING.
+            YOUR BRAND.<br />OUR&nbsp;MANUFACTURING.
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
+          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             From custom formulation to private label packaging -- Admetus
-            Lifesciences is your end-to-end softgel capsule manufacturing
-            partner.
+            Lifesciences is your end-to-end softgel capsule manufacturing&nbsp;partner.
           </p>
         </div>
       </section>
@@ -59,7 +58,7 @@ export default function ContractManufacturingPage() {
           <SectionReveal>
             <span className="label-text text-[var(--gold)] mb-3 block">SERVICES</span>
             <h2 className="display-section text-[var(--foreground)] mb-4">
-              WHAT WE OFFER
+              WHAT WE&nbsp;OFFER
             </h2>
             <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
@@ -73,7 +72,7 @@ export default function ContractManufacturingPage() {
                   </span>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{service.title}</h3>
-                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[65ch]">{service.desc}</p>
+                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[58ch]">{service.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -90,7 +89,7 @@ export default function ContractManufacturingPage() {
               <div>
                 <span className="label-text text-[var(--gold)]">Partnership Advantage</span>
                 <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                  WHY MANUFACTURE WITH US
+                  WHY MANUFACTURE WITH&nbsp;US
                 </h2>
                 <div className="gold-rule w-12 mb-8" />
                 <ul className="space-y-3">
@@ -140,13 +139,13 @@ export default function ContractManufacturingPage() {
               START YOUR MANUFACTURING PARTNERSHIP
             </h2>
             <div className="gold-rule w-12 mt-4 mb-4" />
-            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
+            <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               Share your requirements and our team will respond with a detailed
-              proposal within 48 hours.
+              proposal within 48&nbsp;hours.
             </p>
             <Link
               href="/contact/"
-              className="mt-8 inline-flex items-center gap-3 px-10 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+              className="mt-8 inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get a Custom Quote

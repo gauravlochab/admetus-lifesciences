@@ -24,19 +24,19 @@ export function Footer() {
   return (
     <footer className="bg-[var(--bg-charcoal)] border-t border-[var(--gold)]/10" role="contentinfo">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           {/* Company Info */}
           <div>
             <span
-              className="text-[var(--foreground)] tracking-[0.18em] text-base font-bold"
-              style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
+              className="text-[var(--foreground)] tracking-[0.22em] text-base font-bold"
+              style={{ fontFamily: "var(--font-display), Archivo, sans-serif", letterSpacing: "0.22em" }}
               aria-hidden="true"
             >
               ADMETUS
             </span>
             <h3 className="sr-only">Admetus Lifesciences</h3>
-            <p className="mt-4 body-text text-[var(--text-cream)] max-w-xs !text-[0.875rem]">
-              Precision-engineered softgel capsules manufactured in India.
+            <p className="mt-4 body-text text-[var(--text-cream)] max-w-xs !text-[0.75rem]" style={{ lineHeight: 1.65 }}>
+              Precision-engineered softgel capsules manufactured in&nbsp;India.
               Contract manufacturing, private label, and export-ready
               nutraceuticals.
             </p>
@@ -44,7 +44,8 @@ export function Footer() {
               {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
                 <span
                   key={cert}
-                  className="label-text !text-[0.5625rem] text-[var(--gold-muted)]"
+                  className="text-[0.625rem] font-semibold tracking-[0.18em] uppercase text-[var(--gold)]"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   {cert}
                 </span>
@@ -60,7 +61,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.8125rem]"
+                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
                   >
                     {link.label}
                   </Link>
@@ -77,7 +78,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.8125rem]"
+                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
                   >
                     {link.label}
                   </Link>
@@ -92,7 +93,7 @@ export function Footer() {
             <address className="not-italic space-y-3">
               <div>
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Address</span>
-                <p className="body-text text-[var(--text-cream)] !text-[0.8125rem]">
+                <p className="body-text text-[var(--text-cream)] !text-[0.75rem]">
                   Village Anta, Tehsil Safidon,
                   <br />
                   Distt. Jind, Haryana - 126112, India
@@ -102,7 +103,7 @@ export function Footer() {
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
                 <a
                   href="mailto:admetuslifesciences@gmail.com"
-                  className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors !text-[0.8125rem]"
+                  className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
                 >
                   admetuslifesciences@gmail.com
                 </a>
@@ -121,12 +122,12 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-14 pt-5 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="body-text text-[var(--text-muted)] !text-[0.75rem]">
+        <div className="mt-16 pt-6 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="body-text text-[var(--text-muted)] !text-[0.625rem] opacity-60">
             &copy; {new Date().getFullYear()} Admetus Lifesciences. All rights
             reserved.
           </p>
-          <p className="label-text !text-[0.5625rem] text-[var(--text-muted)]">
+          <p className="text-[0.625rem] font-semibold tracking-[0.18em] uppercase text-[var(--gold)] opacity-60" style={{ fontFamily: "var(--font-display)" }}>
             Manufactured in India
           </p>
         </div>

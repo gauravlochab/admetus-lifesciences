@@ -50,7 +50,7 @@ export default async function ProductDetailPage({
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <Link
             href="/products/"
-            className="inline-flex items-center gap-2 label-text text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors mb-6"
+            className="inline-flex items-center gap-2 label-text text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors duration-200 mb-6"
           >
             <ArrowLeft size={13} />
             All Products
@@ -76,10 +76,10 @@ export default async function ProductDetailPage({
             >
               <div className="text-center">
                 <div
-                  className="opacity-[0.06]"
+                  className="opacity-[0.05]"
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "clamp(5rem, 10vw, 8rem)",
+                    fontSize: "clamp(4rem, 8vw, 6.5rem)",
                     fontWeight: 900,
                     lineHeight: 0.85,
                     color: product.color,
@@ -108,7 +108,7 @@ export default async function ProductDetailPage({
               {/* Composition */}
               <div className="mb-8">
                 <h2 className="label-text text-[var(--text-muted)] mb-3">Composition</h2>
-                <p className="body-text text-[var(--text-cream)] p-5 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] max-w-[65ch]">
+                <p className="body-text text-[var(--text-cream)] p-5 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] max-w-[58ch]">
                   {product.composition}
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default async function ProductDetailPage({
                 <ul className="space-y-3">
                   {product.benefits.map((benefit, i) => (
                     <li key={benefit} className="flex items-start gap-3 body-text text-[var(--text-cream)]">
-                      <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 mt-1.5">
+                      <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 mt-1.5">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       {benefit}
@@ -132,7 +132,7 @@ export default async function ProductDetailPage({
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact/"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+                  className="inline-flex items-center gap-2 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request Quote for {product.shortName}
@@ -140,7 +140,7 @@ export default async function ProductDetailPage({
                 </Link>
                 <Link
                   href="/contract-manufacturing/"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors"
+                  className="inline-flex items-center gap-2 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Private Label Options
@@ -177,12 +177,12 @@ export default async function ProductDetailPage({
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}/`}
-                className="group p-4 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-[border-color] duration-200"
+                className="group p-4 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-all duration-200 hover:-translate-y-px"
               >
-                <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-1.5">
+                <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-1.5">
                   {p.category}
                 </span>
-                <p className="text-[0.8125rem] font-semibold text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+                <p className="text-[0.8125rem] font-semibold text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200" style={{ fontFamily: "var(--font-display)" }}>
                   {p.shortName}
                 </p>
               </Link>

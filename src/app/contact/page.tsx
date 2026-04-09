@@ -64,9 +64,9 @@ export default function ContactPage() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text !text-[0.875rem] placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors";
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text !text-[0.875rem] placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
   const inputErrorClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text !text-[0.875rem] placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors";
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text !text-[0.875rem] placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
 
   function fieldError(field: keyof FormErrors) {
     if (!touched[field] || !errors[field]) return null;
@@ -97,10 +97,9 @@ export default function ContactPage() {
             REQUEST A<br />QUOTE
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
+          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             For bulk and export enquiries, contract manufacturing, or private
-            label requirements -- share your details and our team will respond
-            promptly.
+            label requirements -- share your details and our team will respond&nbsp;promptly.
           </p>
         </div>
       </section>
@@ -119,9 +118,9 @@ export default function ContactPage() {
                       Enquiry Received
                     </h3>
                     <div className="gold-rule w-10 mt-3 mb-3" />
-                    <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
+                    <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
                       Thank you for your interest. Our team will review your
-                      requirements and respond within 48 hours.
+                      requirements and respond within 48&nbsp;hours.
                     </p>
                   </div>
                 ) : (
@@ -267,7 +266,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="cursor-pointer inline-flex items-center gap-2 px-8 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="cursor-pointer inline-flex items-center gap-2 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {submitting ? "Submitting..." : "Submit Enquiry"}
@@ -288,7 +287,7 @@ export default function ContactPage() {
                     <div className="space-y-4">
                       <div>
                         <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
-                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-colors !text-[0.8125rem]">
+                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-colors duration-200 !text-[0.8125rem]">
                           admetuslifesciences@gmail.com
                         </a>
                       </div>
@@ -309,7 +308,7 @@ export default function ContactPage() {
                       href="https://wa.me/?text=Hello%2C%20I%20am%20interested%20in%20your%20softgel%20capsule%20products.%20Please%20share%20more%20details."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-5 py-3 bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-colors"
+                      className="flex items-center gap-3 px-5 py-3 bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-colors duration-200"
                     >
                       <span className="body-text text-[var(--foreground)] !text-[0.8125rem] font-medium">Chat on WhatsApp</span>
                     </a>

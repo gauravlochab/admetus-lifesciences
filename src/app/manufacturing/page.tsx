@@ -41,10 +41,10 @@ export default function ManufacturingPage() {
             STATE-OF-THE-ART<br />PRODUCTION FACILITY
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
+          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Our manufacturing unit in Haryana, India is equipped with modern
             encapsulation, drying, and packing technology -- purpose-built for
-            high-quality softgel capsule production.
+            high-quality softgel capsule&nbsp;production.
           </p>
         </div>
       </section>
@@ -60,11 +60,11 @@ export default function ManufacturingPage() {
             ].map((item, i) => (
               <SectionReveal key={item.title} delay={i * 0.06}>
                 <div className="py-8 pr-8 border-b lg:border-b-0 lg:border-r last:border-r-0 border-[var(--border-subtle)]">
-                  <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-3">
+                  <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{item.title}</h3>
-                  <p className="mt-2 body-text text-[var(--text-muted)] max-w-[65ch]">{item.desc}</p>
+                  <p className="mt-2 body-text text-[var(--text-muted)] max-w-[58ch]">{item.desc}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -78,7 +78,7 @@ export default function ManufacturingPage() {
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Production Process</span>
             <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
-              FROM RAW MATERIAL TO DISPATCH
+              FROM RAW MATERIAL TO&nbsp;DISPATCH
             </h2>
             <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
@@ -86,13 +86,13 @@ export default function ManufacturingPage() {
           <div className="space-y-0">
             {processSteps.map((step, i) => (
               <SectionReveal key={step.title} delay={i * 0.04}>
-                <div className="flex items-start gap-6 py-6 border-t border-[var(--border-subtle)] group hover:bg-[var(--bg-warm-dark)]/30 transition-colors px-4 -mx-4">
+                <div className="flex items-start gap-6 py-6 border-t border-[var(--border-subtle)] group hover:bg-[var(--bg-warm-dark)]/30 transition-colors duration-200 px-4 -mx-4">
                   <span className="mono-text text-[0.75rem] font-bold text-[var(--gold)] shrink-0 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{step.title}</h3>
-                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[65ch]">{step.desc}</p>
+                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[58ch]">{step.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -121,7 +121,7 @@ export default function ManufacturingPage() {
                   </div>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]">{eq.name}</h3>
-                    <p className="mt-2 body-text text-[var(--text-muted)] max-w-[65ch]">{eq.desc}</p>
+                    <p className="mt-2 body-text text-[var(--text-muted)] max-w-[58ch]">{eq.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -135,16 +135,16 @@ export default function ManufacturingPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
-              VISIT OUR FACILITY
+              VISIT OUR&nbsp;FACILITY
             </h2>
             <div className="gold-rule w-12 mt-4 mb-4" />
-            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
+            <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               We welcome facility audits and visits from potential partners.
-              Schedule a visit or request detailed facility documentation.
+              Schedule a visit or request detailed facility&nbsp;documentation.
             </p>
             <Link
               href="/contact/"
-              className="mt-8 inline-flex items-center gap-3 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+              className="mt-8 inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Schedule a Visit

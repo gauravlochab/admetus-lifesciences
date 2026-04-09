@@ -31,13 +31,13 @@ export default function ExportPage() {
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">International Markets</span>
           <h1 className="mt-3 display-section text-[var(--text-white)]">
-            FROM INDIA<br />TO THE WORLD
+            FROM INDIA<br />TO THE&nbsp;WORLD
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
+          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Admetus Lifesciences is positioned to serve international buyers,
             importers, and distributors seeking a reliable and quality-focused
-            softgel capsule manufacturing partner in India.
+            softgel capsule manufacturing partner in&nbsp;India.
           </p>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function ExportPage() {
                   </span>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{cap.title}</h3>
-                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[65ch]">{cap.desc}</p>
+                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[58ch]">{cap.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -79,13 +79,13 @@ export default function ExportPage() {
               <div>
                 <span className="label-text text-[var(--gold)]">For International Buyers</span>
                 <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
-                  WHAT WE OFFER EXPORT PARTNERS
+                  WHAT WE OFFER EXPORT&nbsp;PARTNERS
                 </h2>
                 <div className="gold-rule w-12 mb-6" />
-                <p className="body-text text-[var(--text-cream)] mb-8 max-w-[65ch]">
+                <p className="body-text text-[var(--text-cream)] mb-8 max-w-[58ch]">
                   As an export-oriented manufacturer, we understand the
                   requirements of international buyers. Our team provides
-                  dedicated support for export enquiries.
+                  dedicated support for export&nbsp;enquiries.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -109,16 +109,16 @@ export default function ExportPage() {
               <div className="p-8 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)]">
                 <span className="label-text text-[var(--gold)] block mb-4">GLOBAL REACH</span>
                 <h3 className="heading-2 text-[var(--foreground)] mb-3">
-                  Ready for Global Markets
+                  Ready for Global&nbsp;Markets
                 </h3>
                 <div className="gold-rule w-8 mb-3" />
-                <p className="body-text text-[var(--text-muted)] mb-6 max-w-[65ch]">
+                <p className="body-text text-[var(--text-muted)] mb-6 max-w-[58ch]">
                   Export documentation, international packaging, and regulatory
-                  support -- shared on request.
+                  support -- shared on&nbsp;request.
                 </p>
                 <Link
                   href="/contact/"
-                  className="block w-full px-6 py-3 text-[0.6875rem] font-bold text-center tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+                  className="block w-full px-7 py-3 text-[0.6875rem] font-bold text-center tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Enquire for Export
@@ -134,16 +134,16 @@ export default function ExportPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
-              START AN EXPORT ENQUIRY
+              START AN EXPORT&nbsp;ENQUIRY
             </h2>
             <div className="gold-rule w-12 mt-4 mb-4" />
-            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
+            <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               For bulk and export enquiries, share your requirements and our
-              team will respond with a detailed proposal.
+              team will respond with a detailed&nbsp;proposal.
             </p>
             <Link
               href="/contact/"
-              className="mt-8 inline-flex items-center gap-3 px-10 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+              className="mt-8 inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Enquire for Export

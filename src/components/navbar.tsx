@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -105,7 +105,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-[0.6875rem] font-semibold text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors duration-300 uppercase tracking-[0.1em] whitespace-nowrap"
+                className="px-3 py-2 text-[0.6875rem] font-semibold text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors duration-200 uppercase tracking-[0.1em] whitespace-nowrap"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {link.label}
@@ -117,7 +117,7 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/contact/"
-              className="px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+              className="px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-200"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get Quote
@@ -127,12 +127,19 @@ export function Navbar() {
           <button
             ref={menuButtonRef}
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="xl:hidden p-3 text-[var(--foreground)]"
+            className="xl:hidden p-3 text-[var(--foreground)] group"
             aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileOpen}
             aria-controls="mobile-nav-menu"
           >
-            {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {isMobileOpen ? (
+              <X size={22} />
+            ) : (
+              <div className="flex flex-col gap-[6px]">
+                <span className="block w-6 h-[1.5px] bg-[var(--foreground)] transition-all duration-200" />
+                <span className="block w-4 h-[1.5px] bg-[var(--foreground)] group-hover:w-6 transition-all duration-200" />
+              </div>
+            )}
           </button>
         </nav>
       </header>
@@ -188,7 +195,7 @@ export function Navbar() {
                 <Link
                   href="/contact/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="px-8 py-3 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
+                  className="px-7 py-3 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote
