@@ -20,12 +20,12 @@ export default function AboutPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.92), rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.25))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)]">About Us</span>
+          <span className="label-text text-[var(--gold)]">PRECISION SOFTGEL MANUFACTURING</span>
           <h1 className="mt-3 display-section text-[var(--text-white)]">
             A PASSION FOR<br />BETTER HEALTHCARE
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[52ch]">
+          <p className="body-large text-[var(--text-cream)] max-w-[48ch] leading-[1.55]" style={{ fontSize: "0.9375rem" }}>
             Admetus Lifesciences is a specialized nutraceutical manufacturing
             company based in Haryana, India -- focused on producing high-quality
             softgel capsules that meet international&nbsp;standards.
@@ -40,7 +40,7 @@ export default function AboutPage() {
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)] mb-3 block">OUR STORY</span>
-                <div className="gold-rule w-16 mt-4 mb-4" />
+                <div className="h-px w-12 bg-[var(--gold)] mt-4 mb-6" />
                 <p
                   className="text-sm italic text-[var(--text-cream)]"
                   style={{ fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif" }}
@@ -104,8 +104,8 @@ export default function AboutPage() {
               <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">International Certifications</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>10+</div>
-              <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">Years of Excellence</div>
+              <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>100%</div>
+              <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">Batch Testing Coverage</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>07</div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 transition-all duration-200">
                 <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">01</span>
                 <span className="label-text text-[var(--gold)] mb-3 block">MISSION</span>
-                <h3 className="heading-2 text-[var(--foreground)] uppercase mb-3">
+                <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
                   Our Mission
                 </h3>
                 <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
@@ -142,7 +142,7 @@ export default function AboutPage() {
               <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 transition-all duration-200">
                 <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">02</span>
                 <span className="label-text text-[var(--gold)] mb-3 block">VISION</span>
-                <h3 className="heading-2 text-[var(--foreground)] uppercase mb-3">
+                <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
                   Our Vision
                 </h3>
                 <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
@@ -164,7 +164,7 @@ export default function AboutPage() {
             <h2 className="mt-3 display-section text-[var(--foreground)]">
               WHAT SETS US APART
             </h2>
-            <div className="gold-rule w-16 mt-4 mb-8" />
+            <div className="h-px w-12 bg-[var(--gold)] mt-4 mb-6" />
           </SectionReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
@@ -195,12 +195,12 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
-              PARTNER WITH ADMETUS&nbsp;LIFESCIENCES
+              START YOUR SOFTGEL&nbsp;PROJECT
             </h2>
-            <div className="gold-rule w-12 mt-4 mb-4" />
-            <p className="body-text text-[var(--text-muted)] max-w-[52ch]">
-              For contract manufacturing, private label, or export enquiries — our
-              team responds within 48&nbsp;hours.
+            <div className="h-px w-12 bg-[var(--gold)] mt-4 mb-6" />
+            <p className="body-text text-[var(--text-muted)] max-w-[52ch] mt-4">
+              From custom formulation to private label packaging — discuss your
+              manufacturing requirements with our&nbsp;team.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -208,7 +208,7 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Request a Quote
+                Talk to Our Team
                 <ArrowRight size={14} />
               </Link>
               <Link
@@ -216,7 +216,7 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors duration-200"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Explore Manufacturing
+                View Our Facility
               </Link>
             </div>
           </SectionReveal>

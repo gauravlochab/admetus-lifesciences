@@ -44,6 +44,10 @@ export function Footer() {
               nutraceuticals.
             </p>
             <div className="mt-5 flex flex-wrap gap-3" aria-label="Certifications">
+              {/* Future: Replace text with certification logo images
+                  Place logo files in /public/images/certifications/
+                  <img src="/images/certifications/fssai.svg" alt="FSSAI" className="h-6 opacity-60" />
+              */}
               {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
                 <span
                   key={cert}
