@@ -913,7 +913,7 @@ function Differentiators() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[var(--bg-charcoal)]">
+    <section ref={sectionRef} className="relative py-20 bg-[var(--bg-charcoal)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">06</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
@@ -1090,7 +1090,7 @@ function GlobalReach() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[var(--bg-black)]">
+    <section ref={sectionRef} className="relative py-20 bg-[var(--bg-black)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">08</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">

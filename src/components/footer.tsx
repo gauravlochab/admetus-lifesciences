@@ -44,10 +44,6 @@ export function Footer() {
               nutraceuticals.
             </p>
             <div className="mt-5 flex flex-wrap gap-3" aria-label="Certifications">
-              {/* Future: Replace text with certification logo images
-                  Place logo files in /public/images/certifications/
-                  <img src="/images/certifications/fssai.svg" alt="FSSAI" className="h-6 opacity-60" />
-              */}
               {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
                 <span
                   key={cert}
@@ -128,9 +124,9 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* Bottom -- FIX: Removed double opacity reduction on copyright */}
         <div className="mt-16 pt-6 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="body-text text-[var(--text-muted)] !text-[0.625rem] opacity-60">
+          <p className="body-text text-[var(--text-muted)] !text-[0.625rem]">
             &copy; {new Date().getFullYear()} Admetus Lifesciences. All rights
             reserved.
           </p>

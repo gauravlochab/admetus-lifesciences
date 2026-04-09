@@ -5,8 +5,12 @@ import { useEffect } from "react";
 export function SmoothScroll() {
   useEffect(() => {
     let lenis: InstanceType<typeof import("lenis").default> | null = null;
+    let rafId: number | null = null;
 
     async function init() {
+      // Skip smooth scroll if user prefers reduced motion
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
       const Lenis = (await import("lenis")).default;
       lenis = new Lenis({
         duration: 1.2,
@@ -16,14 +20,15 @@ export function SmoothScroll() {
 
       function raf(time: number) {
         lenis?.raf(time);
-        requestAnimationFrame(raf);
+        rafId = requestAnimationFrame(raf);
       }
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
     init();
 
     return () => {
+      if (rafId !== null) cancelAnimationFrame(rafId);
       lenis?.destroy();
     };
   }, []);
