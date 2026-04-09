@@ -25,7 +25,7 @@ export default function AboutPage() {
             A PASSION FOR<br />BETTER HEALTHCARE
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="body-large text-[var(--text-cream)] max-w-[52ch]">
             Admetus Lifesciences is a specialized nutraceutical manufacturing
             company based in Haryana, India -- focused on producing high-quality
             softgel capsules that meet international&nbsp;standards.
@@ -39,20 +39,33 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
             <SectionReveal>
               <div>
-                <span className="label-text text-[var(--gold)] mb-4 block">OUR STORY</span>
-                <div className="space-y-4 max-w-[58ch]">
+                <span className="label-text text-[var(--gold)] mb-3 block">OUR STORY</span>
+                <div className="gold-rule w-16 mt-4 mb-4" />
+                <p
+                  className="text-sm italic text-[var(--text-cream)]"
+                  style={{ fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif" }}
+                >
+                  Admetus Lifesciences — built on precision, driven by science.
+                </p>
+                <div className="space-y-5 max-w-[52ch] mt-8">
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     Admetus Lifesciences has built a reputation for excellence in
                     the manufacturing and distribution of softgel capsules. Our
-                    state-of-the-art production facility is designed to enhance the
-                    absorption and bioavailability of active ingredients, ensuring
-                    maximum therapeutic effectiveness in every&nbsp;capsule.
+                    production facility is purpose-built for precision&nbsp;nutraceuticals.
+                  </p>
+                  <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                    Our state-of-the-art encapsulation technology is designed to
+                    enhance the absorption and bioavailability of active ingredients,
+                    ensuring maximum therapeutic effectiveness in every&nbsp;capsule.
                   </p>
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     We place great emphasis on quality assurance and regulatory
                     compliance. Our team follows stringent quality control processes
-                    at every stage of manufacturing to ensure that our softgel
-                    capsules meet international standards and customer&nbsp;expectations.
+                    at every stage of&nbsp;manufacturing.
+                  </p>
+                  <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                    Every batch meets international standards and customer
+                    expectations -- from raw material sourcing to final&nbsp;dispatch.
                   </p>
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     Our supplements are supplied to hospitals, retailers, and
@@ -82,6 +95,30 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Credibility Statistics */}
+      <section className="py-12 border-y border-[var(--border-subtle)]">
+        <div className="max-w-[1400px] mx-auto px-[var(--gutter)]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>05</div>
+              <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">International Certifications</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>10+</div>
+              <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">Years of Excellence</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>07</div>
+              <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">Precision Formulations</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>100%</div>
+              <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">Export Ready</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision -- stacked editorial, no icons */}
       <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
@@ -93,7 +130,7 @@ export default function AboutPage() {
                 <h3 className="heading-2 text-[var(--foreground)] uppercase mb-3">
                   Our Mission
                 </h3>
-                <p className="body-text text-[var(--text-cream)] max-w-[58ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                   To manufacture world-class softgel capsules that enhance
                   healthcare outcomes globally -- through precision formulation,
                   rigorous quality control, and reliable delivery to our B2B&nbsp;partners.
@@ -108,7 +145,7 @@ export default function AboutPage() {
                 <h3 className="heading-2 text-[var(--foreground)] uppercase mb-3">
                   Our Vision
                 </h3>
-                <p className="body-text text-[var(--text-cream)] max-w-[58ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                   To become a globally recognized softgel capsule manufacturing
                   partner -- trusted by international brands, importers, and
                   distributors for our commitment to quality, innovation, and&nbsp;reliability.
@@ -124,10 +161,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Our Values</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <h2 className="mt-3 display-section text-[var(--foreground)]">
               WHAT SETS US APART
             </h2>
-            <div className="gold-rule w-16 mb-10" />
+            <div className="gold-rule w-16 mt-4 mb-8" />
           </SectionReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
@@ -144,7 +181,7 @@ export default function AboutPage() {
                   </span>
                   <div className="flex flex-col gap-3">
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{value.title}</h3>
-                    <p className="body-text text-[var(--text-muted)] max-w-[58ch]">{value.desc}</p>
+                    <p className="body-text text-[var(--text-muted)] max-w-[52ch]">{value.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -158,21 +195,30 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
-              PARTNER WITH&nbsp;ADMETUS
+              PARTNER WITH ADMETUS&nbsp;LIFESCIENCES
             </h2>
             <div className="gold-rule w-12 mt-4 mb-4" />
-            <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
-              Whether you are a brand owner, distributor, or international buyer
-              -- we are ready to discuss your&nbsp;requirements.
+            <p className="body-text text-[var(--text-muted)] max-w-[52ch]">
+              For contract manufacturing, private label, or export enquiries — our
+              team responds within 48&nbsp;hours.
             </p>
-            <Link
-              href="/contact/"
-              className="mt-8 inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Get in Touch
-              <ArrowRight size={14} />
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact/"
+                className="inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Request a Quote
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                href="/manufacturing/"
+                className="inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors duration-200"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Explore Manufacturing
+              </Link>
+            </div>
           </SectionReveal>
         </div>
       </section>
