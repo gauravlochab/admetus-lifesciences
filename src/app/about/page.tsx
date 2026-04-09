@@ -20,7 +20,7 @@ export default function AboutPage() {
           <h1
             className="mt-4 text-[var(--text-white)] uppercase"
             style={{
-              fontFamily: "var(--font-literata), Georgia, serif",
+              fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",
@@ -88,7 +88,7 @@ export default function AboutPage() {
                 <Target size={28} className="text-[var(--gold)] mb-6" />
                 <h3
                   className="text-[var(--text-white)] uppercase text-xl"
-                  style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                 >
                   Our Mission
                 </h3>
@@ -106,7 +106,7 @@ export default function AboutPage() {
                 <Eye size={28} className="text-[var(--gold)] mb-6" />
                 <h3
                   className="text-[var(--text-white)] uppercase text-xl"
-                  style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                 >
                   Our Vision
                 </h3>
@@ -130,7 +130,7 @@ export default function AboutPage() {
             <h2
               className="mt-4 text-[var(--text-white)] uppercase mb-12"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}
@@ -165,7 +165,7 @@ export default function AboutPage() {
             <h2
               className="text-[var(--text-white)] uppercase"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}

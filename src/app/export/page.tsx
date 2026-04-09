@@ -24,7 +24,7 @@ export default function ExportPage() {
           <h1
             className="mt-4 text-[var(--text-white)] uppercase"
             style={{
-              fontFamily: "var(--font-literata), Georgia, serif",
+              fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",
@@ -69,7 +69,7 @@ export default function ExportPage() {
                 <h2
                   className="mt-4 text-[var(--text-white)] uppercase mb-6"
                   style={{
-                    fontFamily: "var(--font-literata), Georgia, serif",
+                    fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(2rem, 4vw, 3rem)",
                     lineHeight: 1.1,
                   }}
@@ -104,7 +104,7 @@ export default function ExportPage() {
                 <Globe size={48} className="text-[var(--gold)]/30 mx-auto" />
                 <h3
                   className="mt-4 text-xl text-[var(--text-white)] text-center"
-                  style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                 >
                   Ready for Global Markets
                 </h3>
@@ -131,7 +131,7 @@ export default function ExportPage() {
             <h2
               className="text-[var(--text-white)] uppercase"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}

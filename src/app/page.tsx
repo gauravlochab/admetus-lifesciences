@@ -76,7 +76,7 @@ function Hero() {
             <div
               key={word}
               className="hero-line display-hero text-[var(--text-white)] overflow-hidden"
-              style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               {word}
             </div>
@@ -204,19 +204,19 @@ function Manifesto() {
         <div>
           <div
             className="manifesto-line display-section text-[var(--text-white)]"
-            style={{ fontFamily: "var(--font-literata), Georgia, serif", opacity: 0.15 }}
+            style={{ fontFamily: "var(--font-display), Georgia, serif", opacity: 0.15 }}
           >
             WE DON&apos;T JUST MANUFACTURE.
           </div>
           <div
             className="manifesto-line display-section mt-2"
-            style={{ fontFamily: "var(--font-literata), Georgia, serif", opacity: 0.15 }}
+            style={{ fontFamily: "var(--font-display), Georgia, serif", opacity: 0.15 }}
           >
             WE <span className="text-[var(--gold)]">ENGINEER</span> WELLNESS
           </div>
           <div
             className="manifesto-line display-section mt-2"
-            style={{ fontFamily: "var(--font-literata), Georgia, serif", opacity: 0.15 }}
+            style={{ fontFamily: "var(--font-display), Georgia, serif", opacity: 0.15 }}
           >
             AT <span className="text-[var(--gold)]">MOLECULAR PRECISION</span>.
           </div>
@@ -292,7 +292,7 @@ function Stats() {
                   <div
                     className="text-[var(--text-white)]"
                     style={{
-                      fontFamily: "var(--font-literata), Georgia, serif",
+                      fontFamily: "var(--font-display), Georgia, serif",
                       fontSize: "clamp(3rem, 6vw, 5rem)",
                       lineHeight: 1,
                     }}
@@ -365,7 +365,7 @@ function ProductShowcase() {
           <span className="label-text text-[var(--gold)]">Our Products</span>
           <h2
             className="mt-4 display-section text-[var(--text-white)]"
-            style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+            style={{ fontFamily: "var(--font-display), Georgia, serif" }}
           >
             THE
             <br />
@@ -390,7 +390,7 @@ function ProductShowcase() {
             <h2
               className="mt-4 text-[var(--text-white)]"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(3rem, 8vw, 5rem)",
                 lineHeight: 0.95,
                 textTransform: "uppercase",
@@ -424,7 +424,7 @@ function ProductShowcase() {
                 <h3
                   className="text-[var(--text-white)] uppercase"
                   style={{
-                    fontFamily: "var(--font-literata), Georgia, serif",
+                    fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
                     lineHeight: 1.1,
                   }}
@@ -512,7 +512,7 @@ function ManufacturingProcess() {
           <div
             className="text-[var(--text-white)]/10"
             style={{
-              fontFamily: "var(--font-literata), Georgia, serif",
+              fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(10rem, 20vw, 18rem)",
               lineHeight: 0.85,
             }}
@@ -530,7 +530,7 @@ function ManufacturingProcess() {
         <div
           className="lg:hidden text-[var(--gold)]/15 mb-4"
           style={{
-            fontFamily: "var(--font-literata), Georgia, serif",
+            fontFamily: "var(--font-display), Georgia, serif",
             fontSize: "8rem",
             lineHeight: 0.85,
           }}
@@ -541,7 +541,7 @@ function ManufacturingProcess() {
         <h2
           className="text-[var(--text-white)] uppercase"
           style={{
-            fontFamily: "var(--font-literata), Georgia, serif",
+            fontFamily: "var(--font-display), Georgia, serif",
             fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
             lineHeight: 1.2,
           }}
@@ -656,7 +656,7 @@ function WhyChooseUs() {
         <span className="label-text text-[var(--gold)]">Why Choose Us</span>
         <h2
           className="mt-4 display-section text-[var(--text-white)] mb-16"
-          style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+          style={{ fontFamily: "var(--font-display), Georgia, serif" }}
         >
           THE ADVANTAGES
         </h2>
@@ -671,7 +671,7 @@ function WhyChooseUs() {
               <h3
                 className="text-[var(--text-white)] uppercase text-[1.25rem]"
                 style={{
-                  fontFamily: "var(--font-literata), Georgia, serif",
+                  fontFamily: "var(--font-display), Georgia, serif",
                   lineHeight: 1.2,
                 }}
               >
@@ -715,7 +715,7 @@ function ContractCTA() {
         <h2
           className="mt-6 text-[var(--text-white)]"
           style={{
-            fontFamily: "var(--font-literata), Georgia, serif",
+            fontFamily: "var(--font-display), Georgia, serif",
             fontSize: "clamp(3rem, 6vw, 5rem)",
             lineHeight: 0.95,
             textTransform: "uppercase",
@@ -770,7 +770,7 @@ function ExportSection() {
         <span className="label-text text-[var(--gold)]">International Markets</span>
         <h2
           className="mt-6 display-section text-[var(--text-white)]"
-          style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+          style={{ fontFamily: "var(--font-display), Georgia, serif" }}
         >
           FROM INDIA
           <br />
@@ -813,7 +813,7 @@ function Testimonial() {
         <p
           className="text-[var(--text-cream)] italic"
           style={{
-            fontFamily: "var(--font-literata), Georgia, serif",
+            fontFamily: "var(--font-display), Georgia, serif",
             fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
             lineHeight: 1.3,
           }}
@@ -864,7 +864,7 @@ function ClosingCTA() {
       <div className="relative z-10 text-center max-w-[800px] px-[clamp(1.5rem,4vw,4rem)]">
         <h2
           className="display-hero text-[var(--text-white)]"
-          style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+          style={{ fontFamily: "var(--font-display), Georgia, serif" }}
         >
           READY TO
           <br />

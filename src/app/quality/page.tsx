@@ -34,7 +34,7 @@ export default function QualityPage() {
           <h1
             className="mt-4 text-[var(--text-white)] uppercase"
             style={{
-              fontFamily: "var(--font-literata), Georgia, serif",
+              fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",
@@ -66,7 +66,7 @@ export default function QualityPage() {
                   </div>
                   <h3
                     className="text-[var(--text-white)] text-2xl"
-                    style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+                    style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                   >
                     {cert.name}
                   </h3>
@@ -98,7 +98,7 @@ export default function QualityPage() {
                 <h2
                   className="mt-4 text-[var(--text-white)] uppercase"
                   style={{
-                    fontFamily: "var(--font-literata), Georgia, serif",
+                    fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(2rem, 4vw, 3rem)",
                     lineHeight: 1.1,
                   }}
@@ -126,7 +126,7 @@ export default function QualityPage() {
                 <div
                   className="gradient-text mb-4"
                   style={{
-                    fontFamily: "var(--font-literata), Georgia, serif",
+                    fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(4rem, 8vw, 6rem)",
                     lineHeight: 1,
                   }}
@@ -150,7 +150,7 @@ export default function QualityPage() {
             <h2
               className="text-[var(--text-white)] uppercase"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}

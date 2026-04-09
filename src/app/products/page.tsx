@@ -16,7 +16,7 @@ export default function ProductsPage() {
           <h1
             className="mt-4 text-[var(--text-white)] uppercase"
             style={{
-              fontFamily: "var(--font-literata), Georgia, serif",
+              fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",
@@ -58,7 +58,7 @@ export default function ProductsPage() {
                     <h3
                       className="text-[var(--text-white)] uppercase group-hover:text-[var(--gold)] transition-colors"
                       style={{
-                        fontFamily: "var(--font-literata), Georgia, serif",
+                        fontFamily: "var(--font-display), Georgia, serif",
                         fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
                         lineHeight: 1.2,
                       }}
@@ -88,7 +88,7 @@ export default function ProductsPage() {
               <h3
                 className="text-[var(--text-white)] uppercase"
                 style={{
-                  fontFamily: "var(--font-literata), Georgia, serif",
+                  fontFamily: "var(--font-display), Georgia, serif",
                   fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
                 }}
               >

@@ -43,7 +43,7 @@ export default function ManufacturingPage() {
           <h1
             className="mt-4 text-[var(--text-white)] uppercase"
             style={{
-              fontFamily: "var(--font-literata), Georgia, serif",
+              fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",
@@ -90,7 +90,7 @@ export default function ManufacturingPage() {
             <h2
               className="mt-4 text-[var(--text-white)] uppercase mb-12"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}
@@ -131,7 +131,7 @@ export default function ManufacturingPage() {
             <h2
               className="mt-4 text-[var(--text-white)] uppercase mb-12"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}
@@ -147,7 +147,7 @@ export default function ManufacturingPage() {
                   <span className="label-text text-[var(--gold)]">{eq.type}</span>
                   <h3
                     className="mt-2 text-[var(--text-white)] text-xl"
-                    style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+                    style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                   >
                     {eq.name}
                   </h3>
@@ -166,7 +166,7 @@ export default function ManufacturingPage() {
             <h2
               className="text-[var(--text-white)] uppercase"
               style={{
-                fontFamily: "var(--font-literata), Georgia, serif",
+                fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}

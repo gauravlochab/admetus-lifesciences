@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Literata, DM_Mono } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Literata, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -9,6 +9,13 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -72,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${literata.variable} ${dmMono.variable} h-full`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${plusJakarta.variable} ${literata.variable} ${dmMono.variable} h-full`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `
           try { if(localStorage.getItem('admetus-theme')==='light') document.documentElement.classList.add('light'); } catch(e){}

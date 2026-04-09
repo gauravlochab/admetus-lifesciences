@@ -20,7 +20,7 @@ export function Footer() {
           <div>
             <span
               className="text-[var(--text-white)] tracking-[0.15em] text-xl"
-              style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               ADMETUS
             </span>

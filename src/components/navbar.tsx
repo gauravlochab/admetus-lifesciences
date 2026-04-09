@@ -50,7 +50,7 @@ export function Navbar() {
           <Link href="/" className="group">
             <span
               className="text-[var(--text-white)] tracking-[0.15em] text-xl"
-              style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+              style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               ADMETUS
             </span>
@@ -121,7 +121,7 @@ export function Navbar() {
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
                     className="text-2xl font-medium text-[var(--text-white)] uppercase tracking-[0.05em]"
-                    style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
+                    style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                   >
                     {link.label}
                   </Link>
