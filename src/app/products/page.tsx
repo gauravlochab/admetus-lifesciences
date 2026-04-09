@@ -69,7 +69,7 @@ export default function ProductsPage() {
                     style={{ background: `linear-gradient(135deg, ${product.color}08, var(--bg-charcoal))` }}
                   >
                     <span
-                      className="inline-block self-start px-3 py-1 text-[0.65rem] font-medium tracking-[0.15em] uppercase rounded-full border mb-4"
+                      className="inline-block self-start px-3 py-1 text-[0.65rem] font-medium tracking-[0.15em] uppercase border mb-4"
                       style={{
                         color: product.color,
                         borderColor: `${product.color}40`,

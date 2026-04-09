@@ -27,7 +27,6 @@ export function Navbar() {
       const currentY = window.scrollY;
       setIsScrolled(currentY > 100);
 
-      // Hide on rapid scroll down, show on scroll up
       if (currentY > lastScrollY.current && currentY > 300) {
         setIsHidden(true);
       } else {
@@ -55,13 +54,12 @@ export function Navbar() {
           isHidden ? "-translate-y-full" : "translate-y-0"
         } ${
           isScrolled
-            ? "bg-[rgba(10,10,10,0.9)] backdrop-blur-[20px] border-b border-[var(--border-subtle)]"
+            ? "nav-glass"
             : "bg-transparent"
         }`}
         style={{ height: "72px" }}
       >
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between">
-          {/* Wordmark — always white */}
           <Link href="/" className="group">
             <span
               className="text-[#FAFAFA] tracking-[0.15em] text-xl font-bold"
@@ -71,7 +69,6 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav — always white text */}
           <div className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
@@ -84,7 +81,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA + Theme */}
           <div className="hidden xl:flex items-center gap-3">
             <ThemeToggle />
             <Link
@@ -95,7 +91,6 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             className="xl:hidden p-2 text-[#FAFAFA]"
@@ -114,8 +109,8 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] glass flex flex-col items-center justify-center"
-            style={{ background: "rgba(10,10,10,0.95)", backdropFilter: "blur(20px)" }}
+            className="fixed inset-0 z-[60] flex flex-col items-center justify-center"
+            style={{ background: "rgba(10,10,10,0.97)" }}
           >
             <button
               onClick={() => setIsMobileOpen(false)}

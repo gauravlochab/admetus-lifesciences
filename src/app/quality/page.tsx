@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Shield, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
 
 const certifications = [
@@ -51,19 +51,17 @@ export default function QualityPage() {
         </div>
       </section>
 
-      {/* Certifications */}
+      {/* Certifications -- text-based, no decorative Shield icons */}
       <section className="py-[clamp(4rem,8vw,8rem)]">
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, i) => (
               <SectionReveal key={cert.name} delay={i * 0.1}>
                 <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06] h-full hover:border-[var(--gold)]/20 transition-all duration-500">
-                  <div
-                    className="w-12 h-12 flex items-center justify-center mb-5"
-                    style={{ backgroundColor: `${cert.color}15`, border: `1px solid ${cert.color}30` }}
-                  >
-                    <Shield size={24} style={{ color: cert.color }} />
-                  </div>
+                  <span
+                    className="inline-block w-2 h-2 mb-5"
+                    style={{ backgroundColor: cert.color }}
+                  />
                   <h3
                     className="text-[var(--foreground)] text-2xl"
                     style={{ fontFamily: "var(--font-display), Georgia, serif" }}
@@ -77,10 +75,9 @@ export default function QualityPage() {
             ))}
 
             <SectionReveal delay={0.5}>
-              <div className="p-6 border border-dashed border-white/10 h-full flex flex-col items-center justify-center text-center bg-[var(--bg-charcoal)]/50">
-                <Shield size={32} className="text-white/20 mb-3" />
+              <div className="p-6 border border-dashed border-white/10 h-full flex flex-col justify-center bg-[var(--bg-charcoal)]/50">
                 <p className="text-[0.875rem] text-[var(--text-muted)]">
-                  Additional certifications and documentation available on request
+                  Additional certifications and documentation available on request.
                 </p>
               </div>
             </SectionReveal>
@@ -113,7 +110,7 @@ export default function QualityPage() {
                 <ul className="mt-8 space-y-3">
                   {qcPoints.map((point) => (
                     <li key={point} className="flex items-start gap-3 text-[1rem] text-[var(--text-cream)]">
-                      <CheckCircle size={16} className="text-[var(--gold)] mt-0.5 shrink-0" />
+                      <span className="w-4 h-px bg-[var(--gold)] mt-3 shrink-0" />
                       {point}
                     </li>
                   ))}
@@ -122,9 +119,9 @@ export default function QualityPage() {
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
-              <div className="p-12 bg-[var(--bg-warm-dark)] border border-white/[0.06] text-center">
+              <div className="p-12 bg-[var(--bg-warm-dark)] border border-white/[0.06]">
                 <div
-                  className="gradient-text mb-4"
+                  className="text-[var(--gold)] mb-4"
                   style={{
                     fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(4rem, 8vw, 6rem)",
@@ -144,7 +141,7 @@ export default function QualityPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-[clamp(4rem,8vw,8rem)] text-center">
+      <section className="py-[clamp(4rem,8vw,8rem)]">
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <SectionReveal>
             <h2
@@ -157,7 +154,7 @@ export default function QualityPage() {
             >
               REQUEST <span className="text-[var(--gold)]">QUALITY DOCUMENTATION</span>
             </h2>
-            <p className="mt-4 text-[1rem] text-[var(--text-muted)] max-w-xl mx-auto">
+            <p className="mt-4 text-[1rem] text-[var(--text-muted)] max-w-xl">
               Certificate copies, audit reports, and compliance documentation
               are available for qualified business enquiries.
             </p>

@@ -53,13 +53,13 @@ export function AnimatedCounter({
   }, [end, duration, hasAnimated]);
 
   return (
-    <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold gradient-text tabular-nums">
+    <div ref={ref}>
+      <div className="text-4xl md:text-5xl font-bold text-[var(--gold)] tabular-nums">
         {prefix}
         {count}
         {suffix}
       </div>
-      <div className="mt-2 text-sm text-[#8892a8] uppercase tracking-wider">
+      <div className="mt-2 text-sm text-[var(--text-muted)] uppercase tracking-wider">
         {label}
       </div>
     </div>

@@ -63,7 +63,7 @@
   /* Text */
   --text-white: #FAFAFA;
   --text-cream: #E8E0D0;
-  --text-muted: #8A8274;
+  --text-muted: #9A9285;
   --text-dark: #1A1710;
 
   /* Accents */
@@ -118,7 +118,7 @@
   --secondary: #1A1710;
   --secondary-foreground: #E8E0D0;
   --muted: #1A1710;
-  --muted-foreground: #8A8274;
+  --muted-foreground: #9A9285;
   --accent: #0097A7;
   --accent-foreground: #FAFAFA;
   --destructive: #ef4444;
@@ -129,7 +129,7 @@
   --chart-2: #0097A7;
   --chart-3: #E2CC7A;
   --chart-4: #00E5FF;
-  --chart-5: #8A8274;
+  --chart-5: #9A9285;
   --radius: 0.75rem;
   --sidebar: #141414;
   --sidebar-foreground: #FAFAFA;
@@ -146,7 +146,7 @@
   --bg-warm-dark: #1A1710;
   --text-white: #FAFAFA;
   --text-cream: #E8E0D0;
-  --text-muted: #8A8274;
+  --text-muted: #9A9285;
   --gold: #C8A951;
   --gold-light: #E2CC7A;
   --gold-muted: #8A7B3E;
@@ -155,7 +155,7 @@
   --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
-/* ─── Light (off-white / cream) theme ─── */
+/* Light (off-white / cream) theme */
 .light {
   --background: #F5F0E8;
   --foreground: #1A1710;
@@ -193,7 +193,7 @@
   --bg-black: #F5F0E8;
   --bg-charcoal: #EDE7DB;
   --bg-warm-dark: #E4DDD0;
-  /* text-white stays #FAFAFA — it's used on image overlays that are always dark */
+  /* text-white stays #FAFAFA -- used on image overlays that are always dark */
   --text-cream: #2D2A22;
   --text-muted: #6B5F4B;
   --gold: #8A7B3E;
@@ -216,7 +216,7 @@
   }
 }
 
-/* Display typography — Plus Jakarta Sans (matches Halyard Display heavy) */
+/* Display typography */
 .display-hero {
   font-family: var(--font-display), "Plus Jakarta Sans", sans-serif;
   font-size: var(--display-hero);
@@ -258,43 +258,12 @@
   text-transform: uppercase;
 }
 
-/* Glassmorphism utility */
-.glass {
-  background: rgba(20, 20, 20, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.glass-light {
-  background: rgba(255, 255, 255, 0.05);
+/* Navbar glass only -- purposeful use of blur on fixed navigation */
+.nav-glass {
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, #C8A951, #E2CC7A);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-teal {
-  background: linear-gradient(135deg, #0097a7, #00e5ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow effects */
-.glow-teal {
-  box-shadow: 0 0 20px rgba(0, 151, 167, 0.3), 0 0 60px rgba(0, 151, 167, 0.1);
-}
-
-.glow-gold {
-  box-shadow: 0 0 20px rgba(200, 169, 81, 0.3), 0 0 60px rgba(200, 169, 81, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Gold line draw animation */
@@ -303,16 +272,23 @@
   to { transform: scaleX(1); }
 }
 
-/* Subtle gold particle dots for closing CTA */
+/* Subtle vertical drift for CTA dots */
 @keyframes float-dot {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-  50% { transform: translateY(-20px) scale(1.2); opacity: 0.6; }
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-12px); opacity: 0.5; }
 }
 
 /* Ken Burns */
 @keyframes ken-burns {
   0% { transform: scale(1); }
   100% { transform: scale(1.08); }
+}
+
+/* Custom scroll indicator pulse -- slower, subtler than animate-pulse */
+@keyframes scroll-drift {
+  0% { opacity: 0.6; transform: scaleY(1); }
+  50% { opacity: 0.2; transform: scaleY(0.7); }
+  100% { opacity: 0.6; transform: scaleY(1); }
 }
 
 /* Smooth scrollbar styling */
