@@ -1,13 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ArrowRight,
-  CheckCircle,
-  Pill,
-  Package,
-  Beaker,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { products } from "@/data/products";
 import type { Metadata } from "next";
 
@@ -44,79 +37,88 @@ export default async function ProductDetailPage({
     <>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/30" />
-        <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
+        <img
+          src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
+          alt={`${product.name} softgel capsules by Admetus Lifesciences`}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.92), rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.25))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
+        <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <Link
             href="/products/"
-            className="inline-flex items-center gap-2 text-[0.75rem] text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors uppercase tracking-[0.1em] mb-6"
+            className="inline-flex items-center gap-2 label-text text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors mb-8"
           >
-            <ArrowLeft size={14} />
+            <ArrowLeft size={13} />
             All Products
           </Link>
-          <span
-            className="block label-text mb-3"
-            style={{ color: product.color }}
-          >
+          <span className="block label-text mb-3 text-[var(--teal)]">
             {product.category}
           </span>
-          <h1
-            className="text-[#FAFAFA] uppercase"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(3rem, 6vw, 6rem)",
-              lineHeight: 0.95,
-              letterSpacing: "-0.02em",
-            }}
-          >
+          <h1 className="display-section text-[var(--text-white)]">
             {product.name}
           </h1>
-          <p className="mt-3 text-[1.25rem] text-[var(--gold)]">{product.tagline}</p>
+          <p className="mt-4 body-large text-[var(--gold)]">{product.tagline}</p>
         </div>
       </section>
 
       {/* Product Details */}
-      <section className="py-[clamp(3rem,6vw,6rem)]">
-        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left: Image placeholder */}
+      <section className="py-[var(--space-24)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-20">
+            {/* Left: Product visual */}
             <div
-              className="aspect-square border border-white/[0.06] flex items-center justify-center"
-              style={{ background: `linear-gradient(135deg, ${product.color}08, #141414)` }}
+              className="aspect-square border border-[var(--border-subtle)] flex items-center justify-center relative overflow-hidden"
+              style={{ background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))` }}
             >
               <div className="text-center">
-                <Pill size={64} style={{ color: product.color }} className="mx-auto opacity-30" />
-                <p className="mt-4 text-sm text-[var(--text-muted)]">{product.name}</p>
+                <div
+                  className="opacity-[0.06]"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(6rem, 12vw, 10rem)",
+                    fontWeight: 900,
+                    lineHeight: 0.85,
+                    color: product.color,
+                  }}
+                >
+                  {product.shortName}
+                </div>
+                <p className="mt-4 label-text text-[var(--text-muted)]">{product.name}</p>
               </div>
             </div>
 
             {/* Right: Info */}
             <div>
-              <div className="flex items-center gap-6 mb-8">
-                <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
-                  <Package size={16} className="text-[var(--gold)]" />
-                  {product.packSize}
+              <div className="flex items-center gap-8 mb-10">
+                <div>
+                  <span className="label-text text-[var(--text-muted)] block mb-1">Pack Size</span>
+                  <span className="mono-text text-[0.8125rem] text-[var(--foreground)]">{product.packSize}</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
-                  <Beaker size={16} className="text-[var(--gold)]" />
-                  {product.dosageForm}
+                <div className="w-px h-8 bg-[var(--border-subtle)]" />
+                <div>
+                  <span className="label-text text-[var(--text-muted)] block mb-1">Dosage Form</span>
+                  <span className="mono-text text-[0.8125rem] text-[var(--foreground)]">{product.dosageForm}</span>
                 </div>
               </div>
 
               {/* Composition */}
-              <div className="mb-8">
-                <h2 className="label-text text-[var(--text-muted)] mb-3">Composition</h2>
-                <p className="text-[1rem] text-[var(--text-cream)] leading-[1.7] p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
+              <div className="mb-10">
+                <h2 className="label-text text-[var(--text-muted)] mb-4">Composition</h2>
+                <p className="body-text text-[var(--text-cream)] p-6 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
                   {product.composition}
                 </p>
               </div>
 
               {/* Benefits */}
-              <div className="mb-8">
-                <h2 className="label-text text-[var(--text-muted)] mb-3">Key Benefits</h2>
-                <ul className="space-y-3">
-                  {product.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3 text-[1rem] text-[var(--text-cream)]">
-                      <CheckCircle size={16} className="mt-0.5 shrink-0" style={{ color: product.color }} />
+              <div className="mb-10">
+                <h2 className="label-text text-[var(--text-muted)] mb-4">Key Benefits</h2>
+                <ul className="space-y-4">
+                  {product.benefits.map((benefit, i) => (
+                    <li key={benefit} className="flex items-start gap-4 body-text text-[var(--text-cream)]">
+                      <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 mt-1.5">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
                       {benefit}
                     </li>
                   ))}
@@ -127,14 +129,16 @@ export default async function ProductDetailPage({
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact/"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request Quote for {product.shortName}
-                  <ArrowRight size={14} />
+                  <ArrowRight size={13} />
                 </Link>
                 <Link
                   href="/contract-manufacturing/"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/10 transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Private Label Options
                 </Link>
@@ -145,14 +149,14 @@ export default async function ProductDetailPage({
       </section>
 
       {/* Ingredients */}
-      <section className="py-[clamp(3rem,6vw,6rem)] bg-[var(--bg-charcoal)] border-y border-white/[0.06]">
-        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-          <h2 className="label-text text-[var(--text-muted)] mb-6">Ingredients</h2>
+      <section className="py-[var(--space-24)] bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <h2 className="label-text text-[var(--text-muted)] mb-8">Ingredients</h2>
           <div className="flex flex-wrap gap-2">
             {product.ingredients.map((ing) => (
               <span
                 key={ing}
-                className="px-4 py-2 text-[0.875rem] text-[var(--text-cream)] border border-white/[0.06] bg-[var(--bg-warm-dark)]"
+                className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] bg-[var(--bg-warm-dark)] !text-[0.875rem]"
               >
                 {ing}
               </span>
@@ -162,18 +166,20 @@ export default async function ProductDetailPage({
       </section>
 
       {/* Other Products */}
-      <section className="py-[clamp(3rem,6vw,6rem)]">
-        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-          <h2 className="label-text text-[var(--text-muted)] mb-6">Other Products</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <section className="py-[var(--space-24)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <h2 className="label-text text-[var(--text-muted)] mb-8">Other Products</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {otherProducts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}/`}
-                className="group p-4 text-center bg-[var(--bg-charcoal)] border border-white/[0.06] hover:border-[var(--gold)]/20 transition-all"
+                className="group p-5 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-all"
               >
-                <Pill size={24} style={{ color: p.color }} className="mx-auto mb-2" />
-                <p className="text-sm font-semibold text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors">
+                <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-2">
+                  {p.category}
+                </span>
+                <p className="text-[0.875rem] font-semibold text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
                   {p.shortName}
                 </p>
               </Link>

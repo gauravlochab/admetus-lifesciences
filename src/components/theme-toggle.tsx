@@ -29,13 +29,13 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="p-2 rounded-full transition-colors duration-300 hover:bg-[var(--border)]"
+      className="p-2 transition-colors duration-300 hover:bg-[var(--border-subtle)]"
       aria-label={isLight ? "Switch to dark theme" : "Switch to light theme"}
     >
       {isLight ? (
-        <Moon size={16} className="text-[var(--foreground)]" />
+        <Moon size={15} className="text-[var(--foreground)]" />
       ) : (
-        <Sun size={16} className="text-[var(--text-muted)]" />
+        <Sun size={15} className="text-[var(--text-muted)]" />
       )}
     </button>
   );

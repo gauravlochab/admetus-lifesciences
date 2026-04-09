@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { products } from "@/data/products";
 
-/* Section 1: HERO */
+/* ═══ Section 1: HERO ═══ */
 function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -19,11 +19,13 @@ function Hero() {
 
       ctx = gsap.context(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-        tl.from(".hero-label", { y: 30, opacity: 0, duration: 0.8 }, 0.3);
-        tl.from(".hero-line", { y: 80, opacity: 0, duration: 0.8, stagger: 0.12 }, 0.5);
-        tl.from(".hero-sub", { y: 30, opacity: 0, duration: 0.6 }, 0.9);
-        tl.from(".hero-cta", { y: 30, opacity: 0, duration: 0.6 }, 1.1);
-        tl.from(".hero-scroll", { opacity: 0, duration: 0.6 }, 2.0);
+        tl.from(".hero-label", { y: 30, opacity: 0, duration: 0.9 }, 0.4);
+        tl.from(".hero-line", { y: 100, opacity: 0, duration: 1.0, stagger: 0.14 }, 0.6);
+        tl.from(".hero-rule", { scaleX: 0, duration: 0.8 }, 1.0);
+        tl.from(".hero-sub", { y: 30, opacity: 0, duration: 0.7 }, 1.2);
+        tl.from(".hero-cta", { y: 30, opacity: 0, duration: 0.7 }, 1.4);
+        tl.from(".hero-scroll", { opacity: 0, duration: 0.8 }, 2.2);
+        tl.from(".hero-margin-label", { opacity: 0, duration: 0.6 }, 1.8);
       }, sectionRef);
     }
     init();
@@ -35,21 +37,27 @@ function Hero() {
       ref={sectionRef}
       className="relative h-screen flex items-center overflow-hidden"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
+      {/* Background image with warm overlay */}
+      <div className="absolute inset-0 img-warm-overlay">
         <img
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
-          alt="Pharmaceutical softgel capsule production line"
+          alt="Pharmaceutical softgel capsules arranged on a production line at Admetus Lifesciences facility"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ animation: "ken-burns 20s ease-in-out infinite alternate" }}
+          loading="eager"
+          style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
         />
-        <div className="absolute inset-0" style={{ background: "rgba(10,10,10,0.65)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(10,10,10,0.72), rgba(26,23,16,0.58))" }} />
       </div>
 
-      {/* Content -- left-aligned */}
-      <div className="relative z-10 mx-auto max-w-[1400px] w-full px-[var(--gutter)]">
+      {/* Margin label */}
+      <div className="hero-margin-label hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label">
+        SOFTGEL MANUFACTURING
+      </div>
+
+      {/* Content -- left-aligned, asymmetric */}
+      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <div className="max-w-[var(--content-narrow)]">
-          <div className="hero-label label-text text-[var(--gold)] mb-8">
+          <div className="hero-label label-text text-[var(--gold)] mb-10">
             ADMETUS LIFESCIENCES
           </div>
 
@@ -57,41 +65,48 @@ function Hero() {
             {["PRECISION", "ENCAPSULATED"].map((word) => (
               <div
                 key={word}
-                className="hero-line display-hero text-[#FAFAFA]"
+                className="hero-line display-hero text-[var(--text-white)]"
               >
                 {word}
               </div>
             ))}
           </div>
 
-          <p className="hero-sub mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[500px]">
-            India&apos;s advanced softgel manufacturing facility. Science-driven. Globally certified.
+          <div className="hero-rule gold-rule w-24 mt-10 origin-left" />
+
+          <p className="hero-sub mt-8 body-large text-[var(--text-cream)] max-w-[480px]">
+            India&apos;s advanced softgel manufacturing facility. Science-driven formulations, globally certified production.
           </p>
 
-          <div className="hero-cta mt-10">
+          <div className="hero-cta mt-12">
             <Link
               href="/manufacturing/"
-              className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
+              className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+              style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               Explore Our Facility
+              <ArrowRight size={13} />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator -- custom animation, not animate-pulse */}
-      <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-[0.65rem] tracking-[0.2em] uppercase text-[var(--text-muted)]">Scroll</span>
+      {/* Section number */}
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">01</span>
+
+      {/* Scroll indicator */}
+      <div className="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span className="label-text text-[var(--text-muted)] !text-[0.5625rem]">Scroll</span>
         <div
-          className="w-px h-12 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
-          style={{ animation: "scroll-drift 3s ease-in-out infinite" }}
+          className="w-px h-14 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
+          style={{ animation: "scroll-drift 3.5s ease-in-out infinite" }}
         />
       </div>
     </section>
   );
 }
 
-/* Section 2: CREDIBILITY STRIP -- no decorative icons, text-only editorial */
+/* ═══ Section 2: CREDIBILITY STRIP ═══ */
 function CredibilityStrip() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -105,15 +120,12 @@ function CredibilityStrip() {
 
       ctx = gsap.context(() => {
         gsap.from(".cert-badge", {
-          y: 30,
+          y: 20,
           opacity: 0,
-          duration: 0.6,
-          stagger: 0.1,
+          duration: 0.7,
+          stagger: 0.08,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-          },
+          scrollTrigger: { trigger: sectionRef.current, start: "top 88%" },
         });
       }, sectionRef);
     }
@@ -130,16 +142,21 @@ function CredibilityStrip() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+    <section ref={sectionRef} className="py-14 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <div className="flex flex-wrap items-start justify-between gap-8 md:gap-4">
-          {certs.map((cert) => (
-            <div
-              key={cert.name}
-              className="cert-badge flex flex-col gap-1"
-            >
-              <span className="text-[1.5rem] font-bold text-[#FAFAFA] tracking-tight">{cert.name}</span>
-              <span className="text-[0.65rem] tracking-[0.1em] uppercase text-[var(--text-muted)]">
+          {certs.map((cert, i) => (
+            <div key={cert.name} className="cert-badge flex flex-col gap-1.5">
+              <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span
+                className="text-[1.375rem] font-bold text-[var(--text-white)] tracking-tight"
+                style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
+              >
+                {cert.name}
+              </span>
+              <span className="text-[0.625rem] tracking-[0.1em] uppercase text-[var(--text-muted)]" style={{ fontFamily: "var(--font-display)" }}>
                 {cert.desc}
               </span>
             </div>
@@ -150,7 +167,7 @@ function CredibilityStrip() {
   );
 }
 
-/* Section 3: MANIFESTO */
+/* ═══ Section 3: MANIFESTO (pinned scroll reveal) ═══ */
 function Manifesto() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -177,11 +194,11 @@ function Manifesto() {
         });
 
         lines.forEach((line, i) => {
-          tl.to(line, { opacity: 1, y: 0, duration: 1 }, i * 1);
+          tl.to(line, { opacity: 1, y: 0, duration: 1 }, i * 1.2);
         });
 
         if (goldLine) {
-          tl.fromTo(goldLine, { scaleX: 0 }, { scaleX: 1, duration: 0.5 }, lines.length * 1);
+          tl.fromTo(goldLine, { scaleX: 0 }, { scaleX: 1, duration: 0.6 }, lines.length * 1.2);
         }
       }, sectionRef);
     }
@@ -200,22 +217,28 @@ function Manifesto() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center bg-[var(--bg-warm-dark)]"
     >
-      {/* Left-aligned for editorial feel */}
-      <div className="max-w-[900px] px-[var(--gutter)] mx-auto lg:mx-0 lg:ml-[var(--gutter)]">
-        <span className="label-text text-[var(--gold)] mb-12 block">OUR PHILOSOPHY</span>
-        <div className="space-y-4">
+      {/* Margin label */}
+      <div className="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label">
+        PHILOSOPHY
+      </div>
+
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">02</span>
+
+      <div className="max-w-[860px] px-[var(--gutter)] mx-auto lg:mx-0 lg:ml-[calc(var(--gutter)+2rem)]">
+        <span className="label-text text-[var(--gold)] mb-14 block">OUR PHILOSOPHY</span>
+        <div className="space-y-5">
           {lines.map((line) => (
             <p
               key={line}
-              className="manifesto-line heading-1 text-[#FAFAFA]"
-              style={{ opacity: 0.15, transform: "translateY(20px)" }}
+              className="manifesto-line heading-1 text-[var(--text-white)]"
+              style={{ opacity: 0.12, transform: "translateY(24px)" }}
             >
               {line}
             </p>
           ))}
         </div>
         <div
-          className="manifesto-gold-line h-px bg-[var(--gold)] mt-16 w-48 origin-left"
+          className="manifesto-gold-line gold-rule mt-20 w-48 origin-left"
           style={{ transform: "scaleX(0)" }}
         />
       </div>
@@ -223,7 +246,7 @@ function Manifesto() {
   );
 }
 
-/* Section 4: SCALE & METRICS -- editorial narrative, not counter grid */
+/* ═══ Section 4: SCALE & METRICS ═══ */
 function ScaleMetrics() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -239,13 +262,10 @@ function ScaleMetrics() {
         gsap.from(".scale-content > *", {
           y: 40,
           opacity: 0,
-          duration: 0.6,
-          stagger: 0.15,
+          duration: 0.7,
+          stagger: 0.12,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-          },
+          scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
         });
       }, sectionRef);
     }
@@ -254,52 +274,53 @@ function ScaleMetrics() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-[var(--space-24)] bg-[var(--bg-black)]">
-      {/* Background facility image at low opacity */}
-      <div className="absolute inset-0">
+    <section ref={sectionRef} className="relative py-[var(--space-32)] bg-[var(--bg-black)]">
+      <div className="absolute inset-0 img-vignette">
         <img
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
-          alt="Manufacturing facility"
-          className="w-full h-full object-cover opacity-15"
+          alt="Interior of the Admetus softgel manufacturing facility in Haryana"
+          className="w-full h-full object-cover opacity-12"
+          loading="lazy"
         />
       </div>
 
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-10">03</span>
+
       <div className="scale-content relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <span className="label-text text-[var(--gold)] mb-4 block">OUR FACILITY</span>
-        <h2 className="display-section text-[#FAFAFA]">
+        <h2 className="display-section text-[var(--text-white)]">
           BUILT FOR<br />SCALE
         </h2>
 
-        {/* Editorial narrative instead of big-number counter grid */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-12 lg:gap-16">
+        {/* Thin gold rule */}
+        <div className="gold-rule w-16 mt-10 mb-16" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-12 lg:gap-20">
           <div className="max-w-lg">
-            <p className="text-[1.25rem] leading-[1.7] text-[#E8E0D0]">
-              Our Haryana facility produces over <span className="text-[#FAFAFA] font-semibold">50 million capsules annually</span> across
+            <p className="body-large text-[var(--text-cream)]">
+              Our Haryana facility produces over <span className="text-[var(--text-white)] font-semibold">50 million capsules annually</span> across
               7 precision-formulated product lines, each backed by 5 international certifications.
             </p>
-            <p className="mt-6 text-[1rem] leading-[1.7] text-[var(--text-muted)]">
+            <p className="mt-6 body-text text-[var(--text-muted)]">
               State-of-the-art ARBES SGX-806P encapsulation line.
               Elmach EPI 2000 blister packaging.
               WHO-GMP certified facility in Haryana, India.
             </p>
           </div>
 
-          {/* Vertical divider */}
           <div className="hidden lg:block bg-[var(--border-subtle)]" />
 
-          <div className="flex flex-col gap-8">
-            <div>
-              <span className="label-text text-[var(--text-muted)]">Equipment</span>
-              <p className="mt-2 text-[1rem] text-[#E8E0D0]">ARBES SGX-806P rotary die encapsulation, Elmach EPI 2000 blister sealing</p>
-            </div>
-            <div>
-              <span className="label-text text-[var(--text-muted)]">Certifications</span>
-              <p className="mt-2 text-[1rem] text-[#E8E0D0]">FSSAI, GMP, HACCP, Halal, WHO-GMP</p>
-            </div>
-            <div>
-              <span className="label-text text-[var(--text-muted)]">Quality Control</span>
-              <p className="mt-2 text-[1rem] text-[#E8E0D0]">100% batch inspection with full traceability documentation</p>
-            </div>
+          <div className="flex flex-col gap-10">
+            {[
+              { label: "Equipment", value: "ARBES SGX-806P rotary die encapsulation, Elmach EPI 2000 blister sealing" },
+              { label: "Certifications", value: "FSSAI, GMP, HACCP, Halal, WHO-GMP" },
+              { label: "Quality Control", value: "100% batch inspection with full traceability documentation" },
+            ].map((item) => (
+              <div key={item.label}>
+                <span className="label-text text-[var(--text-muted)]">{item.label}</span>
+                <p className="mt-2 body-text text-[var(--text-cream)]">{item.value}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -307,7 +328,7 @@ function ScaleMetrics() {
   );
 }
 
-/* Section 5: PRODUCTS -- Horizontal Scroll Gallery */
+/* ═══ Section 5: PRODUCTS -- Horizontal Scroll Gallery ═══ */
 function ProductShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -353,36 +374,39 @@ function ProductShowcase() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen bg-[var(--bg-charcoal)] overflow-hidden">
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-20">04</span>
+
       <div className="flex h-screen">
         {/* Fixed left panel */}
-        <div className="hidden lg:flex flex-col justify-center w-[350px] shrink-0 p-[var(--gutter)] z-10">
+        <div className="hidden lg:flex flex-col justify-center w-[380px] shrink-0 p-[var(--gutter)] z-10">
           <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
-          <h2 className="mt-4 display-section text-[#FAFAFA]">
+          <h2 className="mt-6 display-section text-[var(--text-white)]">
             FORMULATED<br />FOR LIFE
           </h2>
-          <p className="mt-4 text-[1rem] text-[var(--text-cream)] leading-relaxed">
+          <div className="gold-rule w-12 mt-6 mb-6" />
+          <p className="body-text text-[var(--text-cream)]">
             7 precision-formulated softgel capsules.
           </p>
-          <p className="mt-8 font-mono text-[0.875rem] text-[var(--text-muted)]">
+          <p className="mt-8 mono-text text-[0.8125rem] text-[var(--text-muted)]">
             {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")}
           </p>
           <Link
             href="/products/"
             className="mt-6 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
           >
-            View All Products <ArrowRight size={14} />
+            View All Products <ArrowRight size={13} />
           </Link>
         </div>
 
-        {/* Scrolling cards -- sharp edges, asymmetric sizing */}
+        {/* Scrolling cards */}
         <div
           ref={cardsRef}
-          className="flex items-center gap-8 pl-8 lg:pl-0 pr-[var(--gutter)]"
+          className="flex items-center gap-6 pl-6 lg:pl-0 pr-[var(--gutter)]"
         >
           {/* Mobile title card */}
           <div className="lg:hidden shrink-0 w-[80vw] flex flex-col justify-center">
             <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
-            <h2 className="mt-4 display-section text-[#FAFAFA]">
+            <h2 className="mt-4 display-section text-[var(--text-white)]">
               FORMULATED FOR LIFE
             </h2>
           </div>
@@ -393,29 +417,32 @@ function ProductShowcase() {
               href={`/products/${product.slug}/`}
               className="shrink-0 overflow-hidden relative group block"
               style={{
-                /* Alternate card sizes for asymmetry */
-                width: i % 3 === 0 ? "440px" : i % 3 === 1 ? "380px" : "400px",
+                width: `clamp(300px, ${i % 3 === 0 ? "28vw" : i % 3 === 1 ? "24vw" : "26vw"}, ${i % 3 === 0 ? "440px" : i % 3 === 1 ? "380px" : "400px"})`,
                 height: i % 3 === 0 ? "520px" : i % 3 === 1 ? "480px" : "540px",
-                background: `linear-gradient(135deg, ${product.color}10, var(--bg-charcoal))`,
+                background: `linear-gradient(160deg, ${product.color}08, var(--bg-charcoal))`,
                 border: "1px solid var(--border-subtle)",
               }}
             >
+              {/* Warm overlay on hover */}
+              <div className="absolute inset-0 bg-[var(--gold)]/0 group-hover:bg-[var(--gold)]/[0.03] transition-colors duration-500" />
+
               <div className="absolute inset-0 flex flex-col justify-end p-[var(--space-6)]">
-                <span
-                  className="label-text mb-3"
-                  style={{ color: "var(--teal)" }}
-                >
+                <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50 mb-auto pt-4">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <span className="label-text mb-3 text-[var(--teal)]">
                   {product.category}
                 </span>
-                <h3 className="heading-2 text-[#FAFAFA] uppercase">
+                <h3 className="heading-2 text-[var(--text-white)] uppercase">
                   {product.name}
                 </h3>
-                <p className="mt-2 text-[1rem] text-[var(--text-cream)]">{product.tagline}</p>
-                <p className="mt-3 text-[0.875rem] text-[var(--text-muted)] line-clamp-2 max-w-md">
+                <p className="mt-2 body-text text-[var(--text-cream)]">{product.tagline}</p>
+                <p className="mt-3 text-[0.8125rem] text-[var(--text-muted)] line-clamp-2 max-w-md">
                   {product.ingredients.slice(0, 4).join(", ")}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
-                  View Details <ArrowRight size={12} />
+                <span className="mt-5 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
+                  View Details <ArrowRight size={11} />
                 </span>
               </div>
             </Link>
@@ -426,7 +453,7 @@ function ProductShowcase() {
   );
 }
 
-/* Section 6: MANUFACTURING PROCESS */
+/* ═══ Section 6: MANUFACTURING PROCESS ═══ */
 function ManufacturingProcess() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeStep, setActiveStep] = useState(0);
@@ -474,29 +501,32 @@ function ManufacturingProcess() {
 
   return (
     <section ref={sectionRef} className="relative h-screen bg-[var(--bg-warm-dark)] flex">
-      {/* Left 40%: content */}
-      <div className="w-full lg:w-[40%] flex flex-col justify-center p-[var(--gutter)] relative">
-        <span className="label-text text-[var(--gold)] mb-4">MANUFACTURING</span>
-        <h2 className="display-section text-[#FAFAFA] mb-12">THE PROCESS</h2>
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-20">05</span>
 
-        {/* Progress line -- dots only, no rounded-full on containers */}
+      {/* Left: content */}
+      <div className="w-full lg:w-[42%] flex flex-col justify-center p-[var(--gutter)] relative">
+        <span className="label-text text-[var(--gold)] mb-4">MANUFACTURING</span>
+        <h2 className="display-section text-[var(--text-white)] mb-6">THE PROCESS</h2>
+        <div className="gold-rule w-12 mb-10" />
+
+        {/* Progress line */}
         <div className="hidden lg:flex flex-col gap-0 mb-8">
           {steps.map((s, i) => (
-            <div key={s.num} className="flex items-center gap-3 py-2">
+            <div key={s.num} className="flex items-center gap-4 py-1.5">
               <div
-                className="w-1.5 h-1.5 transition-all duration-500"
+                className="w-1 h-1 transition-all duration-500"
                 style={{
-                  background: i === activeStep ? "var(--gold)" : i < activeStep ? "rgba(200,169,81,0.4)" : "rgba(154,146,133,0.2)",
-                  transform: i === activeStep ? "scale(1.8)" : "scale(1)",
+                  background: i === activeStep ? "var(--gold)" : i < activeStep ? "rgba(200,169,81,0.3)" : "rgba(142,134,120,0.15)",
+                  transform: i === activeStep ? "scale(2)" : "scale(1)",
                 }}
               />
-              <span className={`text-[0.75rem] font-mono transition-all duration-300 ${
-                i === activeStep ? "text-[var(--gold)]" : "text-[var(--text-muted)]/50"
+              <span className={`mono-text text-[0.6875rem] transition-all duration-300 ${
+                i === activeStep ? "text-[var(--gold)]" : "text-[var(--text-muted)] opacity-40"
               }`}>
                 {s.num}
               </span>
-              <span className={`text-[0.75rem] uppercase tracking-wider transition-all duration-300 ${
-                i === activeStep ? "text-[#FAFAFA]" : "text-[var(--text-muted)]/30"
+              <span className={`label-text !text-[0.5625rem] transition-all duration-300 ${
+                i === activeStep ? "text-[var(--text-white)]" : "text-[var(--text-muted)] opacity-25"
               }`}>
                 {s.title}
               </span>
@@ -504,41 +534,43 @@ function ManufacturingProcess() {
           ))}
         </div>
 
-        {/* Active step detail -- mobile */}
+        {/* Mobile active step */}
         <div className="lg:hidden">
-          <div className="text-[var(--gold)]/20 mb-2" style={{ fontFamily: "var(--font-display)", fontSize: "6rem", lineHeight: 0.85 }}>
+          <div className="text-[var(--gold)] opacity-15 mb-2" style={{ fontFamily: "var(--font-display)", fontSize: "5.5rem", lineHeight: 0.85, fontWeight: 900 }}>
             {step.num}
           </div>
-          <h3 className="heading-1 text-[#FAFAFA] uppercase">{step.title}</h3>
-          <p className="mt-4 text-[1.25rem] text-[var(--text-cream)] leading-[1.7]">{step.body}</p>
+          <h3 className="heading-1 text-[var(--text-white)] uppercase">{step.title}</h3>
+          <p className="mt-4 body-large text-[var(--text-cream)]">{step.body}</p>
         </div>
       </div>
 
-      {/* Right 60%: step image */}
-      <div className="hidden lg:flex w-[60%] relative overflow-hidden">
+      {/* Right: step image */}
+      <div className="hidden lg:flex w-[58%] relative overflow-hidden">
         {steps.map((s, i) => (
           <div
             key={s.num}
             className="absolute inset-0 transition-all duration-700"
             style={{
               opacity: i === activeStep ? 1 : 0,
-              transform: i === activeStep ? "scale(1)" : "scale(1.05)",
+              transform: i === activeStep ? "scale(1)" : "scale(1.04)",
             }}
           >
             <img
               src={s.image}
-              alt={s.title}
+              alt={`Manufacturing step ${s.num}: ${s.title}`}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-[var(--bg-black)]/40" />
+            {/* Warm vignette overlay */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), rgba(10,10,10,0.5))" }} />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-[#FAFAFA]/10" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(8rem, 15vw, 14rem)", lineHeight: 0.85 }}>
+              <div className="text-[var(--text-white)] opacity-[0.04]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(8rem, 16vw, 15rem)", lineHeight: 0.85, fontWeight: 900 }}>
                 {step.num}
               </div>
             </div>
             <div className="absolute bottom-[var(--gutter)] left-[var(--gutter)] right-[var(--gutter)]">
-              <h3 className="heading-1 text-[#FAFAFA] uppercase">{s.title}</h3>
-              <p className="mt-3 text-[1.25rem] text-[#E8E0D0] leading-[1.7] max-w-lg">{s.body}</p>
+              <h3 className="heading-1 text-[var(--text-white)] uppercase">{s.title}</h3>
+              <p className="mt-3 body-large text-[var(--text-cream)] max-w-lg">{s.body}</p>
             </div>
           </div>
         ))}
@@ -547,7 +579,7 @@ function ManufacturingProcess() {
   );
 }
 
-/* Section 7: VISUAL BREAK */
+/* ═══ Section 7: VISUAL BREAK (parallax) ═══ */
 function VisualBreak() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -580,25 +612,33 @@ function VisualBreak() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-[70vh] overflow-hidden">
-      <div className="parallax-bg absolute inset-0" style={{ height: "130%", top: "-15%" }}>
+    <section ref={sectionRef} className="relative h-[65vh] overflow-hidden">
+      <div className="parallax-bg absolute inset-0 img-vignette" style={{ height: "130%", top: "-15%" }}>
         <img
           src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&h=1080&fit=crop"
-          alt="Admetus Lifesciences manufacturing facility"
+          alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/30" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.55), transparent 50%, rgba(10,10,10,0.25))" }} />
+
+      {/* Warm gold overlay tint */}
+      <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.05), transparent 60%)" }} />
+
       <div className="absolute inset-0 flex items-end p-[var(--gutter)]">
-        <span className="label-text text-[#FAFAFA]" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
-          VILLAGE ANTA, HARYANA &mdash; EST. 2024
-        </span>
+        <div className="flex items-center gap-6">
+          <div className="gold-rule w-8" />
+          <span className="label-text text-[var(--text-white)]" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
+            VILLAGE ANTA, HARYANA &mdash; EST. 2024
+          </span>
+        </div>
       </div>
     </section>
   );
 }
 
-/* Section 8: DIFFERENTIATORS -- asymmetric layout, no icon decoration */
+/* ═══ Section 8: DIFFERENTIATORS ═══ */
 function Differentiators() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -612,15 +652,12 @@ function Differentiators() {
 
       ctx = gsap.context(() => {
         gsap.from(".diff-card", {
-          y: 40,
+          y: 50,
           opacity: 0,
-          duration: 0.6,
-          stagger: 0.15,
+          duration: 0.7,
+          stagger: 0.12,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-          },
+          scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
         });
       }, sectionRef);
     }
@@ -652,72 +689,55 @@ function Differentiators() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-[var(--space-24)] bg-[var(--bg-charcoal)]">
+    <section ref={sectionRef} className="py-[var(--space-32)] bg-[var(--bg-charcoal)]">
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">06</span>
+
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <span className="label-text text-[var(--gold)] mb-4 block">WHY ADMETUS</span>
-        <h2 className="display-section text-[#FAFAFA] mb-16">
+        <h2 className="display-section text-[var(--text-white)] mb-6">
           THE ADMETUS<br />DIFFERENCE
         </h2>
+        <div className="gold-rule w-16 mb-16" />
 
-        {/* Asymmetric grid: first card spans full width, rest in 3-col */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div
-            className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[400px] flex flex-col justify-end"
-          >
-            <img
-              src={cards[0].image}
-              alt={cards[0].title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.85)] via-[rgba(10,10,10,0.3)] to-transparent" />
-            <div className="relative p-[var(--space-8)]">
-              <h3 className="heading-1 text-[#FAFAFA]">{cards[0].title}</h3>
-              <p className="mt-2 text-[1.125rem] text-[#E8E0D0] max-w-lg">{cards[0].body}</p>
+        {/* Asymmetric grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[420px] flex flex-col justify-end img-warm-overlay">
+            <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
+            <div className="relative p-[var(--space-8)] z-10">
+              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">01</span>
+              <h3 className="heading-1 text-[var(--text-white)]">{cards[0].title}</h3>
+              <p className="mt-3 body-text text-[var(--text-cream)] max-w-lg">{cards[0].body}</p>
             </div>
           </div>
 
-          <div
-            className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[400px] flex flex-col justify-end"
-          >
-            <img
-              src={cards[1].image}
-              alt={cards[1].title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.85)] via-[rgba(10,10,10,0.3)] to-transparent" />
-            <div className="relative p-[var(--space-6)]">
-              <h3 className="heading-2 text-[#FAFAFA]">{cards[1].title}</h3>
-              <p className="mt-2 text-[1rem] text-[#E8E0D0]">{cards[1].body}</p>
+          <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[420px] flex flex-col justify-end img-warm-overlay">
+            <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
+            <div className="relative p-[var(--space-6)] z-10">
+              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">02</span>
+              <h3 className="heading-2 text-[var(--text-white)]">{cards[1].title}</h3>
+              <p className="mt-2 body-text text-[var(--text-cream)]">{cards[1].body}</p>
             </div>
           </div>
 
-          <div
-            className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[350px] flex flex-col justify-end"
-          >
-            <img
-              src={cards[2].image}
-              alt={cards[2].title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.85)] via-[rgba(10,10,10,0.3)] to-transparent" />
-            <div className="relative p-[var(--space-6)]">
-              <h3 className="heading-2 text-[#FAFAFA]">{cards[2].title}</h3>
-              <p className="mt-2 text-[1rem] text-[#E8E0D0]">{cards[2].body}</p>
+          <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+            <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
+            <div className="relative p-[var(--space-6)] z-10">
+              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">03</span>
+              <h3 className="heading-2 text-[var(--text-white)]">{cards[2].title}</h3>
+              <p className="mt-2 body-text text-[var(--text-cream)]">{cards[2].body}</p>
             </div>
           </div>
 
-          <div
-            className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[350px] flex flex-col justify-end"
-          >
-            <img
-              src={cards[3].image}
-              alt={cards[3].title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.85)] via-[rgba(10,10,10,0.3)] to-transparent" />
-            <div className="relative p-[var(--space-8)]">
-              <h3 className="heading-1 text-[#FAFAFA]">{cards[3].title}</h3>
-              <p className="mt-2 text-[1.125rem] text-[#E8E0D0] max-w-lg">{cards[3].body}</p>
+          <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+            <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
+            <div className="relative p-[var(--space-8)] z-10">
+              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">04</span>
+              <h3 className="heading-1 text-[var(--text-white)]">{cards[3].title}</h3>
+              <p className="mt-3 body-text text-[var(--text-cream)] max-w-lg">{cards[3].body}</p>
             </div>
           </div>
         </div>
@@ -726,7 +746,7 @@ function Differentiators() {
   );
 }
 
-/* Section 9: CONTRACT MANUFACTURING */
+/* ═══ Section 9: PARTNERSHIP ═══ */
 function Partnership() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -740,15 +760,12 @@ function Partnership() {
 
       ctx = gsap.context(() => {
         gsap.from(".partnership-content > *", {
-          x: 60,
+          x: 50,
           opacity: 0,
-          duration: 0.6,
-          stagger: 0.12,
+          duration: 0.7,
+          stagger: 0.1,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-          },
+          scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
         });
       }, sectionRef);
     }
@@ -758,39 +775,45 @@ function Partnership() {
 
   return (
     <section ref={sectionRef} className="min-h-screen flex bg-[var(--bg-warm-dark)]">
-      {/* Left: Image */}
-      <div className="hidden lg:flex w-1/2 relative overflow-hidden">
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-20">07</span>
+
+      {/* Left: Image with warm overlay */}
+      <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
         <img
           src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop"
-          alt="Pharmaceutical partnership"
+          alt="Pharmaceutical research and formulation process for softgel capsule manufacturing"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
-        <div className="absolute inset-0 bg-[var(--bg-black)]/30" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,23,16,0.3), rgba(10,10,10,0.15))" }} />
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[var(--gutter)]">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[var(--gutter)] lg:pl-[var(--space-16)]">
         <div className="partnership-content max-w-lg">
           <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
-          <h2 className="mt-6 display-section text-[#FAFAFA]">
+          <h2 className="mt-8 display-section text-[var(--text-white)]">
             YOUR BRAND.<br />OUR SCIENCE.
           </h2>
-          <p className="mt-6 text-[1.25rem] leading-[1.7] text-[#E8E0D0]">
+          <div className="gold-rule w-12 mt-8 mb-8" />
+          <p className="body-large text-[var(--text-cream)]">
             From concept to shelf &mdash; turnkey private label softgel manufacturing.
           </p>
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-10 space-y-4">
             {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
-              <li key={s} className="flex items-center gap-3 text-[1rem] text-[#E8E0D0]">
-                <span className="w-4 h-px bg-[var(--gold)]" />
+              <li key={s} className="flex items-center gap-4 body-text text-[var(--text-cream)]">
+                <span className="w-5 h-px bg-[var(--gold)]" />
                 {s}
               </li>
             ))}
           </ul>
           <Link
             href="/contract-manufacturing/"
-            className="mt-10 inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
+            className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Start a Project
+            <ArrowRight size={13} />
           </Link>
         </div>
       </div>
@@ -798,7 +821,7 @@ function Partnership() {
   );
 }
 
-/* Section 10: GLOBAL REACH -- left-aligned, not centered */
+/* ═══ Section 10: GLOBAL REACH ═══ */
 function GlobalReach() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -814,13 +837,10 @@ function GlobalReach() {
         gsap.from(".global-feature", {
           y: 30,
           opacity: 0,
-          duration: 0.6,
-          stagger: 0.12,
+          duration: 0.7,
+          stagger: 0.1,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-          },
+          scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
         });
       }, sectionRef);
     }
@@ -835,32 +855,38 @@ function GlobalReach() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-[var(--space-24)] bg-[var(--bg-black)]">
+    <section ref={sectionRef} className="py-[var(--space-32)] bg-[var(--bg-black)]">
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">08</span>
+
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16">
-          {/* Left: heading + description */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-20">
           <div>
             <span className="label-text text-[var(--gold)] mb-4 block">GLOBAL PRESENCE</span>
-            <h2 className="display-section text-[#FAFAFA]">
+            <h2 className="display-section text-[var(--text-white)]">
               BEYOND<br />BORDERS
             </h2>
-            <p className="mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[500px]">
+            <div className="gold-rule w-16 mt-8 mb-8" />
+            <p className="body-large text-[var(--text-cream)] max-w-[480px]">
               Regulatory-compliant export capabilities serving pharmaceutical markets worldwide.
             </p>
             <Link
               href="/export/"
-              className="mt-10 inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
+              className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+              style={{ fontFamily: "var(--font-display)" }}
             >
               Explore Export Capabilities
+              <ArrowRight size={13} />
             </Link>
           </div>
 
-          {/* Right: features stacked */}
-          <div className="flex flex-col justify-center gap-8">
-            {features.map((f) => (
-              <div key={f.title} className="global-feature py-6 border-t border-[var(--border-subtle)]">
-                <h3 className="text-[1.25rem] font-bold text-[#FAFAFA] mb-2">{f.title}</h3>
-                <p className="text-[0.875rem] text-[var(--text-muted)] max-w-md">{f.desc}</p>
+          <div className="flex flex-col justify-center gap-0">
+            {features.map((f, i) => (
+              <div key={f.title} className="global-feature py-8 border-t border-[var(--border-subtle)]">
+                <div className="flex items-baseline gap-4 mb-3">
+                  <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="heading-2 text-[var(--text-white)]" style={{ fontSize: "clamp(1.25rem, 2vw, 1.5rem)" }}>{f.title}</h3>
+                </div>
+                <p className="body-text text-[var(--text-muted)] max-w-md ml-[calc(0.625rem*3+1rem)]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -870,28 +896,40 @@ function GlobalReach() {
   );
 }
 
-/* Section 11: TRUST QUOTE -- left-aligned editorial */
+/* ═══ Section 11: TRUST QUOTE ═══ */
 function TrustQuote() {
   return (
-    <section className="py-[var(--space-24)] bg-[var(--bg-charcoal)] flex items-center min-h-[50vh]">
+    <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)] flex items-center min-h-[50vh]">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="max-w-[700px]">
-          <div className="h-px bg-[var(--gold)]/30 w-16 mb-12" />
+        <div className="max-w-[680px]">
+          <div className="gold-rule w-20 mb-14" />
 
-          <p className="heading-1 text-[#FAFAFA] italic leading-[1.3]">
-            Quality is not a department. It is an agreement between the manufacturer and the consumer &mdash; a promise kept in every capsule we produce.
-          </p>
+          <blockquote>
+            <p
+              className="text-[var(--text-white)] italic leading-[1.35]"
+              style={{
+                fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif",
+                fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                fontWeight: 400,
+              }}
+            >
+              Quality is not a department. It is an agreement between the manufacturer and the consumer &mdash; a promise kept in every capsule we produce.
+            </p>
+          </blockquote>
 
-          <p className="mt-8 label-text text-[var(--gold)]">
-            ADMETUS LIFESCIENCES
-          </p>
+          <div className="mt-10 flex items-center gap-4">
+            <div className="gold-rule w-6" />
+            <p className="label-text text-[var(--gold)]">
+              ADMETUS LIFESCIENCES
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-/* Section 12: CLOSING CTA */
+/* ═══ Section 12: CLOSING CTA ═══ */
 function ClosingCTA() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -907,13 +945,10 @@ function ClosingCTA() {
         gsap.from(".cta-content > *", {
           y: 30,
           opacity: 0,
-          duration: 0.6,
-          stagger: 0.12,
+          duration: 0.7,
+          stagger: 0.1,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-          },
+          scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
         });
       }, sectionRef);
     }
@@ -922,37 +957,44 @@ function ClosingCTA() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-[var(--space-32)] flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
-      <div className="cta-content relative z-10 text-center max-w-[800px] px-[var(--gutter)]">
-        <span className="label-text text-[var(--gold)] mb-8 block">LET&apos;S BUILD TOGETHER</span>
+    <section ref={sectionRef} className="py-[var(--space-48)] flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
+      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-10">10</span>
 
-        <h2 className="display-section text-[#FAFAFA]">
+      <div className="cta-content relative z-10 text-center max-w-[800px] px-[var(--gutter)]">
+        <span className="label-text text-[var(--gold)] mb-10 block">LET&apos;S BUILD TOGETHER</span>
+
+        <h2 className="display-section text-[var(--text-white)]">
           READY TO<br />MANUFACTURE?
         </h2>
 
-        <p className="mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[600px] mx-auto">
+        <div className="gold-rule w-12 mx-auto mt-8 mb-8" />
+
+        <p className="body-large text-[var(--text-cream)] max-w-[560px] mx-auto">
           Whether you need contract manufacturing, private labeling, or custom formulations &mdash; we are ready.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
+            className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Request a Quote
+            <ArrowRight size={13} />
           </Link>
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm tracking-[0.05em] uppercase text-[var(--text-muted)] hover:text-[#FAFAFA] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] tracking-[0.08em] uppercase text-[var(--text-muted)] hover:text-[var(--text-white)] transition-all duration-300"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Contact Us
           </Link>
         </div>
 
-        <p className="mt-16 text-[0.875rem] text-[var(--text-muted)] font-mono">
+        <p className="mt-20 mono-text text-[0.8125rem] text-[var(--text-muted)]">
           admetuslifesciences@gmail.com
         </p>
-        <p className="mt-2 text-[0.75rem] text-[var(--text-muted)]">
+        <p className="mt-2 body-text text-[var(--text-muted)] !text-[0.8125rem]">
           Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India
         </p>
       </div>
@@ -960,7 +1002,7 @@ function ClosingCTA() {
   );
 }
 
-/* PAGE */
+/* ═══ PAGE ═══ */
 export default function Home() {
   return (
     <>
