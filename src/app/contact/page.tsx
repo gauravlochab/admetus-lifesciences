@@ -19,9 +19,9 @@ export default function ContactPage() {
       <section className="relative min-h-[50vh] flex items-end pb-16 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/30" />
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
-          <span className="label-text text-[#C8A951]">Get in Touch</span>
+          <span className="label-text text-[var(--gold)]">Get in Touch</span>
           <h1
-            className="mt-4 text-[#FAFAFA] uppercase"
+            className="mt-4 text-[var(--text-white)] uppercase"
             style={{
               fontFamily: "var(--font-literata), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -31,9 +31,9 @@ export default function ContactPage() {
           >
             REQUEST A
             <br />
-            <span className="text-[#C8A951]">QUOTE</span>
+            <span className="text-[var(--gold)]">QUOTE</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
             For bulk and export enquiries, contract manufacturing, or private
             label requirements — share your details and our team will respond
             promptly.
@@ -49,15 +49,15 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <SectionReveal>
                 {submitted ? (
-                  <div className="p-12 text-center bg-[#141414] border border-white/[0.06]">
+                  <div className="p-12 text-center bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <CheckCircle size={48} className="text-[#22c55e] mx-auto mb-4" />
                     <h3
-                      className="text-[#FAFAFA] text-2xl"
+                      className="text-[var(--text-white)] text-2xl"
                       style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Enquiry Received
                     </h3>
-                    <p className="mt-3 text-[#8A8274]">
+                    <p className="mt-3 text-[var(--text-muted)]">
                       Thank you for your interest. Our team will review your
                       requirements and respond within 48 hours.
                     </p>
@@ -65,102 +65,102 @@ export default function ContactPage() {
                 ) : (
                   <form
                     onSubmit={handleSubmit}
-                    className="p-8 bg-[#141414]/80 backdrop-blur-[20px] border border-white/[0.06]"
+                    className="p-8 bg-[var(--bg-charcoal)]/80 backdrop-blur-[20px] border border-white/[0.06]"
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Full Name *</label>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Full Name *</label>
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm placeholder-[#8A8274]/50 focus:border-[#C8A951] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="Your full name"
                         />
                       </div>
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Company Name *</label>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Company Name *</label>
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm placeholder-[#8A8274]/50 focus:border-[#C8A951] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="Company name"
                         />
                       </div>
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Country *</label>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Country *</label>
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm placeholder-[#8A8274]/50 focus:border-[#C8A951] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="Your country"
                         />
                       </div>
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Email *</label>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Email *</label>
                         <input
                           type="email"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm placeholder-[#8A8274]/50 focus:border-[#C8A951] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="business@email.com"
                         />
                       </div>
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Phone / WhatsApp</label>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Phone / WhatsApp</label>
                         <input
                           type="tel"
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm placeholder-[#8A8274]/50 focus:border-[#C8A951] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="+91 ..."
                         />
                       </div>
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Product of Interest</label>
-                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm focus:border-[#C8A951] focus:outline-none transition-colors">
-                          <option value="" className="bg-[#141414]">Select a product</option>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Product of Interest</label>
+                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm focus:border-[var(--gold)] focus:outline-none transition-colors">
+                          <option value="" className="bg-[var(--bg-charcoal)]">Select a product</option>
                           {products.map((p) => (
-                            <option key={p.slug} value={p.slug} className="bg-[#141414]">{p.name}</option>
+                            <option key={p.slug} value={p.slug} className="bg-[var(--bg-charcoal)]">{p.name}</option>
                           ))}
-                          <option value="custom" className="bg-[#141414]">Custom Formulation</option>
-                          <option value="contract" className="bg-[#141414]">Contract Manufacturing</option>
-                          <option value="private-label" className="bg-[#141414]">Private Label</option>
+                          <option value="custom" className="bg-[var(--bg-charcoal)]">Custom Formulation</option>
+                          <option value="contract" className="bg-[var(--bg-charcoal)]">Contract Manufacturing</option>
+                          <option value="private-label" className="bg-[var(--bg-charcoal)]">Private Label</option>
                         </select>
                       </div>
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Order Quantity / MOQ</label>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Order Quantity / MOQ</label>
                         <input
                           type="text"
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm placeholder-[#8A8274]/50 focus:border-[#C8A951] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="e.g., 10,000 units"
                         />
                       </div>
                       <div>
-                        <label className="block label-text text-[#8A8274] mb-2">Packaging Preference</label>
-                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm focus:border-[#C8A951] focus:outline-none transition-colors">
-                          <option value="" className="bg-[#141414]">Select preference</option>
-                          <option value="blister" className="bg-[#141414]">Blister Pack</option>
-                          <option value="bottle" className="bg-[#141414]">Bottle</option>
-                          <option value="bulk" className="bg-[#141414]">Bulk</option>
-                          <option value="custom" className="bg-[#141414]">Custom</option>
+                        <label className="block label-text text-[var(--text-muted)] mb-2">Packaging Preference</label>
+                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm focus:border-[var(--gold)] focus:outline-none transition-colors">
+                          <option value="" className="bg-[var(--bg-charcoal)]">Select preference</option>
+                          <option value="blister" className="bg-[var(--bg-charcoal)]">Blister Pack</option>
+                          <option value="bottle" className="bg-[var(--bg-charcoal)]">Bottle</option>
+                          <option value="bulk" className="bg-[var(--bg-charcoal)]">Bulk</option>
+                          <option value="custom" className="bg-[var(--bg-charcoal)]">Custom</option>
                         </select>
                       </div>
                     </div>
 
                     <div className="mt-5">
-                      <label className="block label-text text-[#8A8274] mb-2">Message</label>
+                      <label className="block label-text text-[var(--text-muted)] mb-2">Message</label>
                       <textarea
                         rows={4}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[#FAFAFA] text-sm placeholder-[#8A8274]/50 focus:border-[#C8A951] focus:outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors resize-none"
                         placeholder="Share your requirements, specifications, or questions..."
                       />
                     </div>
 
                     <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
-                      <p className="text-[0.75rem] text-[#8A8274] flex items-center gap-1">
-                        <Shield size={12} className="text-[#C8A951]" />
+                      <p className="text-[0.75rem] text-[var(--text-muted)] flex items-center gap-1">
+                        <Shield size={12} className="text-[var(--gold)]" />
                         For bulk and export enquiries only
                       </p>
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[#C8A951] hover:bg-[#E2CC7A] transition-colors"
+                        className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors"
                       >
                         Submit Enquiry
                         <Send size={14} />
@@ -175,28 +175,28 @@ export default function ContactPage() {
             <div>
               <SectionReveal delay={0.2}>
                 <div className="space-y-6">
-                  <div className="p-6 bg-[#141414] border border-white/[0.06]">
+                  <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <h3
-                      className="text-[#FAFAFA] text-lg mb-4"
+                      className="text-[var(--text-white)] text-lg mb-4"
                       style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Contact Information
                     </h3>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
-                        <Mail size={14} className="text-[#C8A951] mt-1 shrink-0" />
+                        <Mail size={14} className="text-[var(--gold)] mt-1 shrink-0" />
                         <div>
-                          <p className="text-[0.75rem] text-[#8A8274] mb-1">Email</p>
-                          <a href="mailto:admetuslifesciences@gmail.com" className="text-sm text-[#FAFAFA] hover:text-[#C8A951] transition-colors">
+                          <p className="text-[0.75rem] text-[var(--text-muted)] mb-1">Email</p>
+                          <a href="mailto:admetuslifesciences@gmail.com" className="text-sm text-[var(--text-white)] hover:text-[var(--gold)] transition-colors">
                             admetuslifesciences@gmail.com
                           </a>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
-                        <MapPin size={14} className="text-[#C8A951] mt-1 shrink-0" />
+                        <MapPin size={14} className="text-[var(--gold)] mt-1 shrink-0" />
                         <div>
-                          <p className="text-[0.75rem] text-[#8A8274] mb-1">Manufacturing Unit</p>
-                          <p className="text-sm text-[#FAFAFA]">
+                          <p className="text-[0.75rem] text-[var(--text-muted)] mb-1">Manufacturing Unit</p>
+                          <p className="text-sm text-[var(--text-white)]">
                             Village Anta, Tehsil Safidon,<br />
                             Distt. Jind, Haryana - 126112<br />
                             India
@@ -206,9 +206,9 @@ export default function ContactPage() {
                     </ul>
                   </div>
 
-                  <div className="p-6 bg-[#141414] border border-white/[0.06]">
+                  <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <h3
-                      className="text-[#FAFAFA] text-lg mb-3"
+                      className="text-[var(--text-white)] text-lg mb-3"
                       style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Quick Connect
@@ -220,29 +220,29 @@ export default function ContactPage() {
                       className="flex items-center gap-3 px-4 py-3 bg-[#25D366]/10 border border-[#25D366]/20 hover:bg-[#25D366]/20 transition-colors"
                     >
                       <MessageCircle size={20} className="text-[#25D366]" fill="#25D366" />
-                      <span className="text-sm font-medium text-[#FAFAFA]">Chat on WhatsApp</span>
+                      <span className="text-sm font-medium text-[var(--text-white)]">Chat on WhatsApp</span>
                     </a>
                   </div>
 
-                  <div className="p-6 bg-[#141414] border border-white/[0.06]">
+                  <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <h3
-                      className="text-[#FAFAFA] text-lg mb-3"
+                      className="text-[var(--text-white)] text-lg mb-3"
                       style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Business Details
                     </h3>
                     <dl className="space-y-2 text-sm">
                       <div>
-                        <dt className="text-[#8A8274]">GSTIN</dt>
-                        <dd className="text-[#FAFAFA] font-mono text-xs">06ABRFA9749C1Z3</dd>
+                        <dt className="text-[var(--text-muted)]">GSTIN</dt>
+                        <dd className="text-[var(--text-white)] font-mono text-xs">06ABRFA9749C1Z3</dd>
                       </div>
                       <div>
-                        <dt className="text-[#8A8274]">License No.</dt>
-                        <dd className="text-[#FAFAFA] font-mono text-xs">10020064002545</dd>
+                        <dt className="text-[var(--text-muted)]">License No.</dt>
+                        <dd className="text-[var(--text-white)] font-mono text-xs">10020064002545</dd>
                       </div>
                       <div>
-                        <dt className="text-[#8A8274]">Website</dt>
-                        <dd className="text-[#FAFAFA] text-xs">admetuslifesciences.com</dd>
+                        <dt className="text-[var(--text-muted)]">Website</dt>
+                        <dd className="text-[var(--text-white)] text-xs">admetuslifesciences.com</dd>
                       </div>
                     </dl>
                   </div>

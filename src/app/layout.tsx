@@ -72,8 +72,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${literata.variable} ${dmMono.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-[#0A0A0A] text-[#FAFAFA]">
+    <html lang="en" className={`${inter.variable} ${literata.variable} ${dmMono.variable} h-full`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          try { if(localStorage.getItem('admetus-theme')==='light') document.documentElement.classList.add('light'); } catch(e){}
+        `}} />
+      </head>
+      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
         <SmoothScroll />
         <Navbar />
         <main className="flex-1">{children}</main>

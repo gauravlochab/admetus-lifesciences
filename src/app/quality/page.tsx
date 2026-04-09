@@ -30,9 +30,9 @@ export default function QualityPage() {
       <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&h=1080&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/30" />
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
-          <span className="label-text text-[#C8A951]">Quality & Certifications</span>
+          <span className="label-text text-[var(--gold)]">Quality & Certifications</span>
           <h1
-            className="mt-4 text-[#FAFAFA] uppercase"
+            className="mt-4 text-[var(--text-white)] uppercase"
             style={{
               fontFamily: "var(--font-literata), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -42,9 +42,9 @@ export default function QualityPage() {
           >
             UNCOMPROMISING
             <br />
-            <span className="text-[#C8A951]">QUALITY STANDARDS</span>
+            <span className="text-[var(--gold)]">QUALITY STANDARDS</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
             Every softgel capsule manufactured at Admetus Lifesciences undergoes
             rigorous quality control — from raw material testing to final dispatch.
           </p>
@@ -57,7 +57,7 @@ export default function QualityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, i) => (
               <SectionReveal key={cert.name} delay={i * 0.1}>
-                <div className="p-6 bg-[#141414] border border-white/[0.06] h-full hover:border-[#C8A951]/20 transition-all duration-500">
+                <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06] h-full hover:border-[var(--gold)]/20 transition-all duration-500">
                   <div
                     className="w-12 h-12 flex items-center justify-center mb-5"
                     style={{ backgroundColor: `${cert.color}15`, border: `1px solid ${cert.color}30` }}
@@ -65,21 +65,21 @@ export default function QualityPage() {
                     <Shield size={24} style={{ color: cert.color }} />
                   </div>
                   <h3
-                    className="text-[#FAFAFA] text-2xl"
+                    className="text-[var(--text-white)] text-2xl"
                     style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                   >
                     {cert.name}
                   </h3>
-                  <p className="mt-1 text-[0.875rem] text-[#C8A951]">{cert.fullName}</p>
-                  <p className="mt-4 text-[0.875rem] text-[#8A8274] leading-relaxed">{cert.desc}</p>
+                  <p className="mt-1 text-[0.875rem] text-[var(--gold)]">{cert.fullName}</p>
+                  <p className="mt-4 text-[0.875rem] text-[var(--text-muted)] leading-relaxed">{cert.desc}</p>
                 </div>
               </SectionReveal>
             ))}
 
             <SectionReveal delay={0.5}>
-              <div className="p-6 border border-dashed border-white/10 h-full flex flex-col items-center justify-center text-center bg-[#141414]/50">
+              <div className="p-6 border border-dashed border-white/10 h-full flex flex-col items-center justify-center text-center bg-[var(--bg-charcoal)]/50">
                 <Shield size={32} className="text-white/20 mb-3" />
-                <p className="text-[0.875rem] text-[#8A8274]">
+                <p className="text-[0.875rem] text-[var(--text-muted)]">
                   Additional certifications and documentation available on request
                 </p>
               </div>
@@ -89,31 +89,31 @@ export default function QualityPage() {
       </section>
 
       {/* QC Process */}
-      <section className="py-[clamp(4rem,8vw,8rem)] bg-[#141414] border-y border-white/[0.06]">
+      <section className="py-[clamp(4rem,8vw,8rem)] bg-[var(--bg-charcoal)] border-y border-white/[0.06]">
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <SectionReveal>
               <div>
-                <span className="label-text text-[#C8A951]">Quality Control</span>
+                <span className="label-text text-[var(--gold)]">Quality Control</span>
                 <h2
-                  className="mt-4 text-[#FAFAFA] uppercase"
+                  className="mt-4 text-[var(--text-white)] uppercase"
                   style={{
                     fontFamily: "var(--font-literata), Georgia, serif",
                     fontSize: "clamp(2rem, 4vw, 3rem)",
                     lineHeight: 1.1,
                   }}
                 >
-                  MULTI-POINT <span className="text-[#C8A951]">QUALITY CHECKS</span>
+                  MULTI-POINT <span className="text-[var(--gold)]">QUALITY CHECKS</span>
                 </h2>
-                <p className="mt-4 text-[1rem] text-[#E8E0D0] leading-[1.7]">
+                <p className="mt-4 text-[1rem] text-[var(--text-cream)] leading-[1.7]">
                   Our in-house quality control laboratory is equipped for
                   comprehensive testing at every stage of production — from
                   incoming raw materials to finished product release.
                 </p>
                 <ul className="mt-8 space-y-3">
                   {qcPoints.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-[1rem] text-[#E8E0D0]">
-                      <CheckCircle size={16} className="text-[#C8A951] mt-0.5 shrink-0" />
+                    <li key={point} className="flex items-start gap-3 text-[1rem] text-[var(--text-cream)]">
+                      <CheckCircle size={16} className="text-[var(--gold)] mt-0.5 shrink-0" />
                       {point}
                     </li>
                   ))}
@@ -122,7 +122,7 @@ export default function QualityPage() {
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
-              <div className="p-12 bg-[#1A1710] border border-white/[0.06] text-center">
+              <div className="p-12 bg-[var(--bg-warm-dark)] border border-white/[0.06] text-center">
                 <div
                   className="gradient-text mb-4"
                   style={{
@@ -133,8 +133,8 @@ export default function QualityPage() {
                 >
                   100%
                 </div>
-                <p className="text-xl font-semibold text-[#FAFAFA]">Batch Testing</p>
-                <p className="mt-3 text-[0.875rem] text-[#8A8274]">
+                <p className="text-xl font-semibold text-[var(--text-white)]">Batch Testing</p>
+                <p className="mt-3 text-[0.875rem] text-[var(--text-muted)]">
                   Every single batch is tested and documented before release — no exceptions.
                 </p>
               </div>
@@ -148,22 +148,22 @@ export default function QualityPage() {
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <SectionReveal>
             <h2
-              className="text-[#FAFAFA] uppercase"
+              className="text-[var(--text-white)] uppercase"
               style={{
                 fontFamily: "var(--font-literata), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}
             >
-              REQUEST <span className="text-[#C8A951]">QUALITY DOCUMENTATION</span>
+              REQUEST <span className="text-[var(--gold)]">QUALITY DOCUMENTATION</span>
             </h2>
-            <p className="mt-4 text-[1rem] text-[#8A8274] max-w-xl mx-auto">
+            <p className="mt-4 text-[1rem] text-[var(--text-muted)] max-w-xl mx-auto">
               Certificate copies, audit reports, and compliance documentation
               are available for qualified business enquiries.
             </p>
             <Link
               href="/contact/"
-              className="mt-8 inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[#C8A951] hover:bg-[#E2CC7A] transition-colors"
+              className="mt-8 inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors"
             >
               Request Documentation
               <ArrowRight size={16} />

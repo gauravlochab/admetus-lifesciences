@@ -61,7 +61,7 @@ function Hero() {
           <div className="flex items-center gap-3 flex-wrap">
             {["FSSAI", "GMP", "HACCP", "HALAL", "WHO-GMP"].map((cert, i) => (
               <span key={cert} className="flex items-center gap-3">
-                <span className="text-[0.75rem] font-medium tracking-[0.15em] text-[#C8A951]">
+                <span className="text-[0.75rem] font-medium tracking-[0.15em] text-[var(--gold)]">
                   {cert}
                 </span>
                 {i < 4 && <span className="text-[#8A7B3E]">|</span>}
@@ -75,7 +75,7 @@ function Hero() {
           {["PRECISION", "SOFTGEL", "CAPSULES"].map((word) => (
             <div
               key={word}
-              className="hero-line display-hero text-[#FAFAFA] overflow-hidden"
+              className="hero-line display-hero text-[var(--text-white)] overflow-hidden"
               style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
             >
               {word}
@@ -84,7 +84,7 @@ function Hero() {
         </div>
 
         {/* Subhead */}
-        <p className="hero-sub mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[500px]">
+        <p className="hero-sub mt-8 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-[500px]">
           Contract manufacturing & private label nutraceuticals from India.
         </p>
 
@@ -92,13 +92,13 @@ function Hero() {
         <div className="hero-cta mt-10 flex flex-wrap gap-4">
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[#C8A951] hover:bg-[#E2CC7A] transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors duration-300"
           >
             Request a Quote
           </Link>
           <Link
             href="/products/"
-            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#FAFAFA] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--text-white)] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
           >
             Explore Products
           </Link>
@@ -106,7 +106,7 @@ function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute top-8 right-8 hidden lg:flex flex-col items-center gap-2 text-[#8A8274]">
+      <div className="absolute top-8 right-8 hidden lg:flex flex-col items-center gap-2 text-[var(--text-muted)]">
         <span className="text-[0.65rem] tracking-[0.2em] uppercase">Scroll</span>
         <div className="w-px h-12 bg-gradient-to-b from-[#8A8274] to-transparent" />
       </div>
@@ -125,7 +125,7 @@ function TrustBar() {
   ];
 
   return (
-    <section className="py-10 bg-[#141414] border-y border-white/[0.06]">
+    <section className="py-10 bg-[var(--bg-charcoal)] border-y border-white/[0.06]">
       <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
           {certs.map((cert) => (
@@ -135,12 +135,12 @@ function TrustBar() {
             >
               <Shield
                 size={20}
-                className="text-[#8A8274] group-hover:text-[#0097A7] transition-colors duration-300"
+                className="text-[var(--text-muted)] group-hover:text-[var(--teal)] transition-colors duration-300"
               />
-              <span className="text-[0.875rem] font-semibold text-[#FAFAFA] tracking-wider">
+              <span className="text-[0.875rem] font-semibold text-[var(--text-white)] tracking-wider">
                 {cert.name}
               </span>
-              <span className="text-[0.65rem] tracking-[0.1em] uppercase text-[#8A8274]">
+              <span className="text-[0.65rem] tracking-[0.1em] uppercase text-[var(--text-muted)]">
                 {cert.desc}
               </span>
             </div>
@@ -198,12 +198,12 @@ function Manifesto() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center bg-[#0A0A0A]"
+      className="relative min-h-screen flex items-center justify-center bg-[var(--bg-black)]"
     >
       <div className="text-center max-w-[1000px] px-[clamp(1.5rem,4vw,4rem)]">
         <div>
           <div
-            className="manifesto-line display-section text-[#FAFAFA]"
+            className="manifesto-line display-section text-[var(--text-white)]"
             style={{ fontFamily: "var(--font-literata), Georgia, serif", opacity: 0.15 }}
           >
             WE DON&apos;T JUST MANUFACTURE.
@@ -212,17 +212,17 @@ function Manifesto() {
             className="manifesto-line display-section mt-2"
             style={{ fontFamily: "var(--font-literata), Georgia, serif", opacity: 0.15 }}
           >
-            WE <span className="text-[#C8A951]">ENGINEER</span> WELLNESS
+            WE <span className="text-[var(--gold)]">ENGINEER</span> WELLNESS
           </div>
           <div
             className="manifesto-line display-section mt-2"
             style={{ fontFamily: "var(--font-literata), Georgia, serif", opacity: 0.15 }}
           >
-            AT <span className="text-[#C8A951]">MOLECULAR PRECISION</span>.
+            AT <span className="text-[var(--gold)]">MOLECULAR PRECISION</span>.
           </div>
         </div>
 
-        <p className="manifesto-body mt-12 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[700px] mx-auto" style={{ opacity: 0 }}>
+        <p className="manifesto-body mt-12 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-[700px] mx-auto" style={{ opacity: 0 }}>
           Based in Haryana, India — Admetus Lifesciences is a specialized softgel
           capsule manufacturer built on advanced encapsulation technology and
           uncompromising quality control.
@@ -270,7 +270,7 @@ function Stats() {
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex items-center bg-[#1A1710]">
+    <section ref={sectionRef} className="min-h-screen flex items-center bg-[var(--bg-warm-dark)]">
       <div className="mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 min-h-[70vh]">
           {/* Left: Image */}
@@ -280,17 +280,17 @@ function Stats() {
               alt="Pharmaceutical manufacturing facility"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-[#0A0A0A]/20" />
+            <div className="absolute inset-0 bg-[var(--bg-black)]/20" />
           </div>
 
           {/* Right: Stats */}
-          <div className="lg:col-span-2 bg-[#141414] p-[clamp(2rem,4vw,4rem)] flex flex-col justify-center">
-            <span className="label-text text-[#C8A951] mb-8">By the Numbers</span>
+          <div className="lg:col-span-2 bg-[var(--bg-charcoal)] p-[clamp(2rem,4vw,4rem)] flex flex-col justify-center">
+            <span className="label-text text-[var(--gold)] mb-8">By the Numbers</span>
             <div className="space-y-8">
               {stats.map((stat, i) => (
                 <div key={stat.label}>
                   <div
-                    className="text-[#FAFAFA]"
+                    className="text-[var(--text-white)]"
                     style={{
                       fontFamily: "var(--font-literata), Georgia, serif",
                       fontSize: "clamp(3rem, 6vw, 5rem)",
@@ -299,9 +299,9 @@ function Stats() {
                   >
                     {counts[i]}{stat.suffix}
                   </div>
-                  <p className="text-[0.875rem] text-[#8A8274] mt-1">{stat.label}</p>
+                  <p className="text-[0.875rem] text-[var(--text-muted)] mt-1">{stat.label}</p>
                   {i < stats.length - 1 && (
-                    <div className="h-px bg-[#C8A951]/20 mt-6" />
+                    <div className="h-px bg-[var(--gold)]/20 mt-6" />
                   )}
                 </div>
               ))}
@@ -358,23 +358,23 @@ function ProductShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-[#0A0A0A] overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-[var(--bg-black)] overflow-hidden">
       <div className="flex h-screen">
         {/* Fixed left panel */}
         <div className="hidden lg:flex flex-col justify-center w-[350px] shrink-0 p-[clamp(2rem,4vw,4rem)] z-10">
-          <span className="label-text text-[#C8A951]">Our Products</span>
+          <span className="label-text text-[var(--gold)]">Our Products</span>
           <h2
-            className="mt-4 display-section text-[#FAFAFA]"
+            className="mt-4 display-section text-[var(--text-white)]"
             style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
           >
             THE
             <br />
             PORTFOLIO
           </h2>
-          <p className="mt-4 text-[1rem] text-[#E8E0D0] leading-relaxed">
+          <p className="mt-4 text-[1rem] text-[var(--text-cream)] leading-relaxed">
             7 precision-formulated softgel capsules.
           </p>
-          <p className="mt-8 font-mono text-[0.875rem] text-[#8A8274]">
+          <p className="mt-8 font-mono text-[0.875rem] text-[var(--text-muted)]">
             {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")}
           </p>
         </div>
@@ -386,9 +386,9 @@ function ProductShowcase() {
         >
           {/* Mobile title card */}
           <div className="lg:hidden shrink-0 w-[80vw] flex flex-col justify-center">
-            <span className="label-text text-[#C8A951]">Our Products</span>
+            <span className="label-text text-[var(--gold)]">Our Products</span>
             <h2
-              className="mt-4 text-[#FAFAFA]"
+              className="mt-4 text-[var(--text-white)]"
               style={{
                 fontFamily: "var(--font-literata), Georgia, serif",
                 fontSize: "clamp(3rem, 8vw, 5rem)",
@@ -422,7 +422,7 @@ function ProductShowcase() {
                 </span>
 
                 <h3
-                  className="text-[#FAFAFA] uppercase"
+                  className="text-[var(--text-white)] uppercase"
                   style={{
                     fontFamily: "var(--font-literata), Georgia, serif",
                     fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
@@ -431,14 +431,14 @@ function ProductShowcase() {
                 >
                   {product.name}
                 </h3>
-                <p className="mt-2 text-[#C8A951] text-[1rem]">{product.tagline}</p>
-                <p className="mt-3 text-[0.875rem] text-[#8A8274] line-clamp-2 max-w-md">
+                <p className="mt-2 text-[var(--gold)] text-[1rem]">{product.tagline}</p>
+                <p className="mt-3 text-[0.875rem] text-[var(--text-muted)] line-clamp-2 max-w-md">
                   {product.ingredients.slice(0, 3).join(", ")}
                 </p>
 
                 <Link
                   href={`/products/${product.slug}/`}
-                  className="mt-6 inline-flex items-center gap-2 text-[0.875rem] text-[#C8A951] hover:text-[#E2CC7A] transition-colors"
+                  className="mt-6 inline-flex items-center gap-2 text-[0.875rem] text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
                 >
                   View Details
                   <ArrowRight size={14} />
@@ -499,7 +499,7 @@ function ManufacturingProcess() {
   const step = steps[activeStep];
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-[#141414] flex">
+    <section ref={sectionRef} className="relative min-h-screen bg-[var(--bg-charcoal)] flex">
       {/* Left: Image area */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden">
         <img
@@ -507,10 +507,10 @@ function ManufacturingProcess() {
           alt="Pharmaceutical laboratory"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#0A0A0A]/50" />
+        <div className="absolute inset-0 bg-[var(--bg-black)]/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div
-            className="text-[#FAFAFA]/10"
+            className="text-[var(--text-white)]/10"
             style={{
               fontFamily: "var(--font-literata), Georgia, serif",
               fontSize: "clamp(10rem, 20vw, 18rem)",
@@ -523,12 +523,12 @@ function ManufacturingProcess() {
       </div>
 
       {/* Right: Step content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[clamp(2rem,4vw,4rem)] bg-[#1A1710]">
-        <span className="label-text text-[#C8A951] mb-8">Manufacturing Process</span>
+      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[clamp(2rem,4vw,4rem)] bg-[var(--bg-warm-dark)]">
+        <span className="label-text text-[var(--gold)] mb-8">Manufacturing Process</span>
 
         {/* Mobile step number */}
         <div
-          className="lg:hidden text-[#C8A951]/15 mb-4"
+          className="lg:hidden text-[var(--gold)]/15 mb-4"
           style={{
             fontFamily: "var(--font-literata), Georgia, serif",
             fontSize: "8rem",
@@ -539,7 +539,7 @@ function ManufacturingProcess() {
         </div>
 
         <h2
-          className="text-[#FAFAFA] uppercase"
+          className="text-[var(--text-white)] uppercase"
           style={{
             fontFamily: "var(--font-literata), Georgia, serif",
             fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
@@ -548,7 +548,7 @@ function ManufacturingProcess() {
         >
           {step.title}
         </h2>
-        <p className="mt-4 text-[1.25rem] text-[#E8E0D0] leading-[1.7] max-w-lg">
+        <p className="mt-4 text-[1.25rem] text-[var(--text-cream)] leading-[1.7] max-w-lg">
           {step.body}
         </p>
 
@@ -558,7 +558,7 @@ function ManufacturingProcess() {
             <div
               key={i}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === activeStep ? "bg-[#C8A951] scale-150" : "bg-[#8A8274]/40"
+                i === activeStep ? "bg-[var(--gold)] scale-150" : "bg-[#8A8274]/40"
               }`}
             />
           ))}
@@ -571,7 +571,7 @@ function ManufacturingProcess() {
           <div
             key={i}
             className={`text-[0.65rem] font-mono transition-all duration-300 ${
-              i === activeStep ? "text-[#C8A951]" : "text-[#8A8274]/40"
+              i === activeStep ? "text-[var(--gold)]" : "text-[var(--text-muted)]/40"
             }`}
           >
             {s.num}
@@ -630,8 +630,8 @@ function Facility() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent" />
 
       <div className="absolute bottom-[clamp(2rem,4vw,4rem)] left-[clamp(1.5rem,4vw,4rem)] z-10">
-        <span className="label-text text-[#C8A951]">Village Anta, Haryana, India</span>
-        <p className="mt-2 text-[0.875rem] text-[#E8E0D0]">
+        <span className="label-text text-[var(--gold)]">Village Anta, Haryana, India</span>
+        <p className="mt-2 text-[0.875rem] text-[var(--text-cream)]">
           State-of-the-art manufacturing facility
         </p>
       </div>
@@ -651,11 +651,11 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-[clamp(4rem,8vw,12rem)] bg-[#0A0A0A]">
+    <section className="py-[clamp(4rem,8vw,12rem)] bg-[var(--bg-black)]">
       <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-        <span className="label-text text-[#C8A951]">Why Choose Us</span>
+        <span className="label-text text-[var(--gold)]">Why Choose Us</span>
         <h2
-          className="mt-4 display-section text-[#FAFAFA] mb-16"
+          className="mt-4 display-section text-[var(--text-white)] mb-16"
           style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
         >
           THE ADVANTAGES
@@ -665,11 +665,11 @@ function WhyChooseUs() {
           {cards.map((card) => (
             <div
               key={card.title}
-              className="relative group overflow-hidden rounded-2xl bg-[#141414] border border-white/[0.06] p-8 min-h-[300px] flex flex-col justify-end hover:border-[#C8A951]/20 transition-all duration-500"
+              className="relative group overflow-hidden rounded-2xl bg-[var(--bg-charcoal)] border border-white/[0.06] p-8 min-h-[300px] flex flex-col justify-end hover:border-[var(--gold)]/20 transition-all duration-500"
             >
-              <card.icon size={24} className="text-[#C8A951] mb-4" />
+              <card.icon size={24} className="text-[var(--gold)] mb-4" />
               <h3
-                className="text-[#FAFAFA] uppercase text-[1.25rem]"
+                className="text-[var(--text-white)] uppercase text-[1.25rem]"
                 style={{
                   fontFamily: "var(--font-literata), Georgia, serif",
                   lineHeight: 1.2,
@@ -677,7 +677,7 @@ function WhyChooseUs() {
               >
                 {card.title}
               </h3>
-              <p className="mt-2 text-[0.875rem] text-[#E8E0D0]">{card.desc}</p>
+              <p className="mt-2 text-[0.875rem] text-[var(--text-cream)]">{card.desc}</p>
             </div>
           ))}
         </div>
@@ -697,7 +697,7 @@ function ContractCTA() {
   ];
 
   return (
-    <section className="min-h-screen flex bg-[#1A1710]">
+    <section className="min-h-screen flex bg-[var(--bg-warm-dark)]">
       {/* Left: Image */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden">
         <img
@@ -705,15 +705,15 @@ function ContractCTA() {
           alt="Pharmaceutical partnership"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#0A0A0A]/30" />
+        <div className="absolute inset-0 bg-[var(--bg-black)]/30" />
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[clamp(2rem,4vw,4rem)] bg-[#141414]">
-        <span className="label-text text-[#C8A951]">Contract Manufacturing</span>
+      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[clamp(2rem,4vw,4rem)] bg-[var(--bg-charcoal)]">
+        <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
 
         <h2
-          className="mt-6 text-[#FAFAFA]"
+          className="mt-6 text-[var(--text-white)]"
           style={{
             fontFamily: "var(--font-literata), Georgia, serif",
             fontSize: "clamp(3rem, 6vw, 5rem)",
@@ -726,15 +726,15 @@ function ContractCTA() {
           OUR SCIENCE.
         </h2>
 
-        <p className="mt-6 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-lg">
+        <p className="mt-6 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-lg">
           From custom formulation and private label packaging to bulk supply —
           we partner with brands, importers, and distributors worldwide.
         </p>
 
         <ul className="mt-8 space-y-3">
           {services.map((s) => (
-            <li key={s} className="flex items-center gap-3 text-[1rem] text-[#E8E0D0]">
-              <span className="w-4 h-px bg-[#C8A951]" />
+            <li key={s} className="flex items-center gap-3 text-[1rem] text-[var(--text-cream)]">
+              <span className="w-4 h-px bg-[var(--gold)]" />
               {s}
             </li>
           ))}
@@ -742,7 +742,7 @@ function ContractCTA() {
 
         <Link
           href="/contact/"
-          className="mt-10 inline-flex self-start items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[#C8A951] hover:bg-[#E2CC7A] transition-colors duration-300"
+          className="mt-10 inline-flex self-start items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors duration-300"
         >
           Discuss Your Project
         </Link>
@@ -765,11 +765,11 @@ function ExportSection() {
   ];
 
   return (
-    <section className="py-[clamp(4rem,8vw,12rem)] bg-[#0A0A0A]">
+    <section className="py-[clamp(4rem,8vw,12rem)] bg-[var(--bg-black)]">
       <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)] text-center">
-        <span className="label-text text-[#C8A951]">International Markets</span>
+        <span className="label-text text-[var(--gold)]">International Markets</span>
         <h2
-          className="mt-6 display-section text-[#FAFAFA]"
+          className="mt-6 display-section text-[var(--text-white)]"
           style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
         >
           FROM INDIA
@@ -777,18 +777,18 @@ function ExportSection() {
           TO THE WORLD
         </h2>
 
-        <div className="h-px bg-[#C8A951]/30 my-12 w-full" />
+        <div className="h-px bg-[var(--gold)]/30 my-12 w-full" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 max-w-3xl mx-auto text-left">
           {capLeft.map((cap) => (
-            <div key={cap} className="flex items-center gap-3 text-[1rem] text-[#E8E0D0]">
-              <CheckCircle size={16} className="text-[#C8A951] shrink-0" />
+            <div key={cap} className="flex items-center gap-3 text-[1rem] text-[var(--text-cream)]">
+              <CheckCircle size={16} className="text-[var(--gold)] shrink-0" />
               {cap}
             </div>
           ))}
           {capRight.map((cap) => (
-            <div key={cap} className="flex items-center gap-3 text-[1rem] text-[#E8E0D0]">
-              <CheckCircle size={16} className="text-[#C8A951] shrink-0" />
+            <div key={cap} className="flex items-center gap-3 text-[1rem] text-[var(--text-cream)]">
+              <CheckCircle size={16} className="text-[var(--gold)] shrink-0" />
               {cap}
             </div>
           ))}
@@ -796,7 +796,7 @@ function ExportSection() {
 
         <Link
           href="/export/"
-          className="mt-12 inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#C8A951] border border-[#C8A951]/30 hover:bg-[#C8A951]/10 transition-colors duration-300"
+          className="mt-12 inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/10 transition-colors duration-300"
         >
           Enquire for Export
         </Link>
@@ -808,10 +808,10 @@ function ExportSection() {
 /* ═══════════════ Section 11: TESTIMONIAL ═══════════════ */
 function Testimonial() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[#1A1710] py-[clamp(4rem,8vw,12rem)]">
+    <section className="min-h-screen flex items-center justify-center bg-[var(--bg-warm-dark)] py-[clamp(4rem,8vw,12rem)]">
       <div className="mx-auto max-w-[900px] px-[clamp(1.5rem,4vw,4rem)] text-center">
         <p
-          className="text-[#E8E0D0] italic"
+          className="text-[var(--text-cream)] italic"
           style={{
             fontFamily: "var(--font-literata), Georgia, serif",
             fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
@@ -823,13 +823,13 @@ function Testimonial() {
           partner.&rdquo;
         </p>
 
-        <p className="mt-8 text-[0.875rem] text-[#C8A951] tracking-[0.1em] uppercase">
+        <p className="mt-8 text-[0.875rem] text-[var(--gold)] tracking-[0.1em] uppercase">
           — Procurement Director, Nutraceutical Importer
         </p>
 
         <div className="mt-16 flex items-center justify-center gap-8 flex-wrap">
           {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
-            <span key={cert} className="text-[0.75rem] font-medium text-[#8A8274] tracking-[0.15em] uppercase">
+            <span key={cert} className="text-[0.75rem] font-medium text-[var(--text-muted)] tracking-[0.15em] uppercase">
               {cert}
             </span>
           ))}
@@ -842,7 +842,7 @@ function Testimonial() {
 /* ═══════════════ Section 12: GRAND CLOSING CTA ═══════════════ */
 function ClosingCTA() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[#0A0A0A] relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
       {/* Subtle radial gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,169,81,0.06),transparent_70%)]" />
 
@@ -851,7 +851,7 @@ function ClosingCTA() {
         {Array.from({ length: 12 }).map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-[#C8A951]/20"
+            className="absolute w-1 h-1 rounded-full bg-[var(--gold)]/20"
             style={{
               left: `${10 + (i * 7) % 80}%`,
               top: `${15 + (i * 13) % 70}%`,
@@ -863,7 +863,7 @@ function ClosingCTA() {
 
       <div className="relative z-10 text-center max-w-[800px] px-[clamp(1.5rem,4vw,4rem)]">
         <h2
-          className="display-hero text-[#FAFAFA]"
+          className="display-hero text-[var(--text-white)]"
           style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
         >
           READY TO
@@ -871,7 +871,7 @@ function ClosingCTA() {
           MANUFACTURE?
         </h2>
 
-        <p className="mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[600px] mx-auto">
+        <p className="mt-8 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-[600px] mx-auto">
           Whether you need contract manufacturing, private label solutions, or
           export-ready softgel capsules.
         </p>
@@ -879,19 +879,19 @@ function ClosingCTA() {
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[#C8A951] hover:bg-[#E2CC7A] transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors duration-300"
           >
             Request a Quote
           </Link>
           <a
             href="mailto:admetuslifesciences@gmail.com"
-            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#FAFAFA] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--text-white)] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
           >
             Email Us Directly
           </a>
         </div>
 
-        <p className="mt-8 text-[0.75rem] text-[#8A8274] font-mono">
+        <p className="mt-8 text-[0.75rem] text-[var(--text-muted)] font-mono">
           admetuslifesciences@gmail.com
         </p>
       </div>

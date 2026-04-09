@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { href: "/about/", label: "About" },
@@ -40,7 +41,7 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#0A0A0A]/85 backdrop-blur-[20px] border-b border-white/[0.06] py-3"
+            ? "bg-[var(--bg-black)]/85 backdrop-blur-[20px] border-b border-white/[0.06] py-3"
             : "bg-transparent py-5"
         }`}
       >
@@ -48,7 +49,7 @@ export function Navbar() {
           {/* Wordmark */}
           <Link href="/" className="group">
             <span
-              className="text-[#FAFAFA] tracking-[0.15em] text-xl"
+              className="text-[var(--text-white)] tracking-[0.15em] text-xl"
               style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
             >
               ADMETUS
@@ -61,18 +62,19 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-2.5 py-2 text-[0.7rem] font-medium text-[#8A8274] hover:text-[#FAFAFA] transition-colors duration-300 uppercase tracking-[0.08em] whitespace-nowrap"
+                className="px-2.5 py-2 text-[0.7rem] font-medium text-[var(--text-muted)] hover:text-[var(--text-white)] transition-colors duration-300 uppercase tracking-[0.08em] whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="hidden xl:block">
+          {/* CTA + Theme */}
+          <div className="hidden xl:flex items-center gap-3">
+            <ThemeToggle />
             <Link
               href="/contact/"
-              className="px-5 py-2 text-[0.75rem] font-medium uppercase tracking-[0.1em] text-[#C8A951] border border-[#C8A951]/30 rounded-full hover:bg-[#C8A951]/10 transition-all duration-300"
+              className="px-5 py-2 text-[0.75rem] font-medium uppercase tracking-[0.1em] text-[var(--gold)] border border-[var(--gold)]/30 rounded-full hover:bg-[var(--gold)]/10 transition-all duration-300"
             >
               Get Quote
             </Link>
@@ -81,7 +83,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="xl:hidden p-2 text-[#C8A951]"
+            className="xl:hidden p-2 text-[var(--gold)]"
             aria-label="Toggle menu"
           >
             {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -97,11 +99,11 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] bg-[#0A0A0A] flex flex-col items-center justify-center"
+            className="fixed inset-0 z-[60] bg-[var(--bg-black)] flex flex-col items-center justify-center"
           >
             <button
               onClick={() => setIsMobileOpen(false)}
-              className="absolute top-5 right-6 p-2 text-[#C8A951]"
+              className="absolute top-5 right-6 p-2 text-[var(--gold)]"
               aria-label="Close menu"
             >
               <X size={24} />
@@ -118,7 +120,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-2xl font-medium text-[#FAFAFA] uppercase tracking-[0.05em]"
+                    className="text-2xl font-medium text-[var(--text-white)] uppercase tracking-[0.05em]"
                     style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                   >
                     {link.label}
@@ -134,7 +136,7 @@ export function Navbar() {
                 <Link
                   href="/contact/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="px-8 py-3 text-sm font-semibold text-[#0A0A0A] bg-[#C8A951] rounded-full"
+                  className="px-8 py-3 text-sm font-semibold text-[#0A0A0A] bg-[var(--gold)] rounded-full"
                 >
                   REQUEST A QUOTE
                 </Link>

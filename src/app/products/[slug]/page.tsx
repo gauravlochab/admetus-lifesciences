@@ -48,7 +48,7 @@ export default async function ProductDetailPage({
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <Link
             href="/products/"
-            className="inline-flex items-center gap-2 text-[0.75rem] text-[#8A8274] hover:text-[#C8A951] transition-colors uppercase tracking-[0.1em] mb-6"
+            className="inline-flex items-center gap-2 text-[0.75rem] text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors uppercase tracking-[0.1em] mb-6"
           >
             <ArrowLeft size={14} />
             All Products
@@ -60,7 +60,7 @@ export default async function ProductDetailPage({
             {product.category}
           </span>
           <h1
-            className="text-[#FAFAFA] uppercase"
+            className="text-[var(--text-white)] uppercase"
             style={{
               fontFamily: "var(--font-literata), Georgia, serif",
               fontSize: "clamp(3rem, 6vw, 6rem)",
@@ -70,7 +70,7 @@ export default async function ProductDetailPage({
           >
             {product.name}
           </h1>
-          <p className="mt-3 text-[1.25rem] text-[#C8A951]">{product.tagline}</p>
+          <p className="mt-3 text-[1.25rem] text-[var(--gold)]">{product.tagline}</p>
         </div>
       </section>
 
@@ -85,37 +85,37 @@ export default async function ProductDetailPage({
             >
               <div className="text-center">
                 <Pill size={64} style={{ color: product.color }} className="mx-auto opacity-30" />
-                <p className="mt-4 text-sm text-[#8A8274]">{product.name}</p>
+                <p className="mt-4 text-sm text-[var(--text-muted)]">{product.name}</p>
               </div>
             </div>
 
             {/* Right: Info */}
             <div>
               <div className="flex items-center gap-6 mb-8">
-                <div className="flex items-center gap-2 text-sm text-[#8A8274]">
-                  <Package size={16} className="text-[#C8A951]" />
+                <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
+                  <Package size={16} className="text-[var(--gold)]" />
                   {product.packSize}
                 </div>
-                <div className="flex items-center gap-2 text-sm text-[#8A8274]">
-                  <Beaker size={16} className="text-[#C8A951]" />
+                <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
+                  <Beaker size={16} className="text-[var(--gold)]" />
                   {product.dosageForm}
                 </div>
               </div>
 
               {/* Composition */}
               <div className="mb-8">
-                <h2 className="label-text text-[#8A8274] mb-3">Composition</h2>
-                <p className="text-[1rem] text-[#E8E0D0] leading-[1.7] p-6 bg-[#141414] border border-white/[0.06]">
+                <h2 className="label-text text-[var(--text-muted)] mb-3">Composition</h2>
+                <p className="text-[1rem] text-[var(--text-cream)] leading-[1.7] p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
                   {product.composition}
                 </p>
               </div>
 
               {/* Benefits */}
               <div className="mb-8">
-                <h2 className="label-text text-[#8A8274] mb-3">Key Benefits</h2>
+                <h2 className="label-text text-[var(--text-muted)] mb-3">Key Benefits</h2>
                 <ul className="space-y-3">
                   {product.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3 text-[1rem] text-[#E8E0D0]">
+                    <li key={benefit} className="flex items-start gap-3 text-[1rem] text-[var(--text-cream)]">
                       <CheckCircle size={16} className="mt-0.5 shrink-0" style={{ color: product.color }} />
                       {benefit}
                     </li>
@@ -127,14 +127,14 @@ export default async function ProductDetailPage({
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact/"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[#C8A951] hover:bg-[#E2CC7A] transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors"
                 >
                   Request Quote for {product.shortName}
                   <ArrowRight size={14} />
                 </Link>
                 <Link
                   href="/contract-manufacturing/"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#C8A951] border border-[#C8A951]/30 hover:bg-[#C8A951]/10 transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/10 transition-colors"
                 >
                   Private Label Options
                 </Link>
@@ -145,14 +145,14 @@ export default async function ProductDetailPage({
       </section>
 
       {/* Ingredients */}
-      <section className="py-[clamp(3rem,6vw,6rem)] bg-[#141414] border-y border-white/[0.06]">
+      <section className="py-[clamp(3rem,6vw,6rem)] bg-[var(--bg-charcoal)] border-y border-white/[0.06]">
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-          <h2 className="label-text text-[#8A8274] mb-6">Ingredients</h2>
+          <h2 className="label-text text-[var(--text-muted)] mb-6">Ingredients</h2>
           <div className="flex flex-wrap gap-2">
             {product.ingredients.map((ing) => (
               <span
                 key={ing}
-                className="px-4 py-2 text-[0.875rem] text-[#E8E0D0] border border-white/[0.06] bg-[#1A1710]"
+                className="px-4 py-2 text-[0.875rem] text-[var(--text-cream)] border border-white/[0.06] bg-[var(--bg-warm-dark)]"
               >
                 {ing}
               </span>
@@ -164,16 +164,16 @@ export default async function ProductDetailPage({
       {/* Other Products */}
       <section className="py-[clamp(3rem,6vw,6rem)]">
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-          <h2 className="label-text text-[#8A8274] mb-6">Other Products</h2>
+          <h2 className="label-text text-[var(--text-muted)] mb-6">Other Products</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {otherProducts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}/`}
-                className="group p-4 text-center bg-[#141414] border border-white/[0.06] hover:border-[#C8A951]/20 transition-all"
+                className="group p-4 text-center bg-[var(--bg-charcoal)] border border-white/[0.06] hover:border-[var(--gold)]/20 transition-all"
               >
                 <Pill size={24} style={{ color: p.color }} className="mx-auto mb-2" />
-                <p className="text-sm font-semibold text-[#FAFAFA] group-hover:text-[#C8A951] transition-colors">
+                <p className="text-sm font-semibold text-[var(--text-white)] group-hover:text-[var(--gold)] transition-colors">
                   {p.shortName}
                 </p>
               </Link>
