@@ -27,7 +27,7 @@ export default function QualityPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&h=1080&fit=crop"
           alt="Quality control laboratory at Admetus Lifesciences testing pharmaceutical softgel capsules"

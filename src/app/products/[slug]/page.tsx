@@ -36,7 +36,7 @@ export default async function ProductDetailPage({
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[45vh] flex items-end pb-10 overflow-hidden">
+      <section className="relative min-h-[45vh] flex items-end pt-24 pb-10 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
           alt={`${product.name} softgel capsules by Admetus Lifesciences`}

@@ -24,7 +24,7 @@ export default function ManufacturingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&h=1080&fit=crop"
           alt="State-of-the-art pharmaceutical manufacturing equipment at Admetus Lifesciences"
