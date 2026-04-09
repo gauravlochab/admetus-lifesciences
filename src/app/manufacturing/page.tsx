@@ -1,0 +1,192 @@
+"use client";
+
+import Link from "next/link";
+import {
+  ArrowRight,
+  Beaker,
+  FlaskConical,
+  Pill,
+  Wind,
+  Eye,
+  Box,
+  Send,
+  Factory,
+  Settings,
+  Gauge,
+} from "lucide-react";
+import { SectionReveal } from "@/components/section-reveal";
+
+const processSteps = [
+  { icon: Beaker, title: "Raw Material Sourcing", desc: "All raw materials are sourced from certified suppliers and undergo rigorous quality testing before entering the production line." },
+  { icon: FlaskConical, title: "Formulation", desc: "Precision batch formulation following documented SOPs to ensure consistency and potency in every batch." },
+  { icon: Pill, title: "Encapsulation", desc: "State-of-the-art ARBES SGX-806P Soft Gelatin Encapsulation Line delivers uniform capsules with precise fill weights." },
+  { icon: Wind, title: "Drying", desc: "Controlled-environment drying section ensures optimal moisture content and capsule integrity." },
+  { icon: Eye, title: "Quality Inspection", desc: "Every batch undergoes multi-point quality control checks including visual, weight, and dissolution testing." },
+  { icon: Box, title: "Blister Packing", desc: "Elmach EPI 2000 blister packing machine ensures tamper-evident, professional-grade primary packaging." },
+  { icon: Send, title: "Final Packing & Dispatch", desc: "Secondary packaging, labeling, and dispatch with full batch documentation and traceability." },
+];
+
+const equipment = [
+  { name: "ARBES SGX-806P", type: "Soft Gelatin Encapsulation Line", desc: "Industry-leading encapsulation machine delivering precision softgel production with consistent fill accuracy." },
+  { name: "Elmach EPI 2000", type: "Blister Packing Machine", desc: "High-speed blister packing for professional, tamper-evident primary packaging of softgel capsules." },
+  { name: "Quality Control Lab", type: "Testing & Analysis", desc: "In-house QC laboratory equipped for raw material testing, in-process checks, and finished product analysis." },
+];
+
+export default function ManufacturingPage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&h=1080&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/30" />
+        <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
+          <span className="label-text text-[#C8A951]">Manufacturing & Infrastructure</span>
+          <h1
+            className="mt-4 text-[#FAFAFA] uppercase"
+            style={{
+              fontFamily: "var(--font-instrument), Georgia, serif",
+              fontSize: "clamp(3.5rem, 7vw, 7rem)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            STATE-OF-THE-ART
+            <br />
+            <span className="text-[#C8A951]">PRODUCTION FACILITY</span>
+          </h1>
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
+            Our manufacturing unit in Haryana, India is equipped with modern
+            encapsulation, drying, and packing technology — purpose-built for
+            high-quality softgel capsule production.
+          </p>
+        </div>
+      </section>
+
+      {/* Facility Overview */}
+      <section className="py-[clamp(3rem,6vw,6rem)]">
+        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: Factory, title: "Manufacturing Facility", desc: "Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112" },
+              { icon: Settings, title: "Advanced Equipment", desc: "ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packing" },
+              { icon: Gauge, title: "Quality Controlled", desc: "In-house QC lab for raw material, in-process, and finished product testing" },
+            ].map((item, i) => (
+              <SectionReveal key={item.title} delay={i * 0.1}>
+                <div className="p-6 bg-[#141414] border border-white/[0.06] h-full">
+                  <item.icon size={28} className="text-[#C8A951] mb-4" />
+                  <h3 className="text-[1rem] font-semibold text-[#FAFAFA]">{item.title}</h3>
+                  <p className="mt-2 text-[0.875rem] text-[#8A8274]">{item.desc}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Flow */}
+      <section className="py-[clamp(4rem,8vw,8rem)] bg-[#141414] border-y border-white/[0.06]">
+        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
+          <SectionReveal>
+            <span className="label-text text-[#C8A951]">Production Process</span>
+            <h2
+              className="mt-4 text-[#FAFAFA] uppercase mb-12"
+              style={{
+                fontFamily: "var(--font-instrument), Georgia, serif",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                lineHeight: 1.1,
+              }}
+            >
+              FROM RAW MATERIAL TO <span className="text-[#C8A951]">DISPATCH</span>
+            </h2>
+          </SectionReveal>
+
+          <div className="space-y-4">
+            {processSteps.map((step, i) => (
+              <SectionReveal key={step.title} delay={i * 0.08}>
+                <div className="flex items-start gap-6 p-6 bg-[#1A1710] border border-white/[0.06] group hover:border-[#C8A951]/20 transition-all">
+                  <div className="shrink-0 w-12 h-12 flex items-center justify-center bg-[#C8A951]/10 border border-[#C8A951]/20">
+                    <step.icon size={20} className="text-[#C8A951]" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-[0.75rem] font-mono font-bold text-[#C8A951]">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="h-px flex-1 bg-white/[0.06]" />
+                    </div>
+                    <h3 className="text-[1rem] font-semibold text-[#FAFAFA]">{step.title}</h3>
+                    <p className="mt-1 text-[0.875rem] text-[#8A8274]">{step.desc}</p>
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Equipment */}
+      <section className="py-[clamp(4rem,8vw,8rem)]">
+        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
+          <SectionReveal>
+            <span className="label-text text-[#C8A951]">Infrastructure</span>
+            <h2
+              className="mt-4 text-[#FAFAFA] uppercase mb-12"
+              style={{
+                fontFamily: "var(--font-instrument), Georgia, serif",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                lineHeight: 1.1,
+              }}
+            >
+              KEY <span className="text-[#C8A951]">EQUIPMENT</span>
+            </h2>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {equipment.map((eq, i) => (
+              <SectionReveal key={eq.name} delay={i * 0.1}>
+                <div className="p-6 bg-[#141414] border border-white/[0.06] h-full">
+                  <span className="label-text text-[#C8A951]">{eq.type}</span>
+                  <h3
+                    className="mt-2 text-[#FAFAFA] text-xl"
+                    style={{ fontFamily: "var(--font-instrument), Georgia, serif" }}
+                  >
+                    {eq.name}
+                  </h3>
+                  <p className="mt-3 text-[0.875rem] text-[#8A8274]">{eq.desc}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-[clamp(4rem,8vw,8rem)] bg-[#141414] border-t border-white/[0.06] text-center">
+        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
+          <SectionReveal>
+            <h2
+              className="text-[#FAFAFA] uppercase"
+              style={{
+                fontFamily: "var(--font-instrument), Georgia, serif",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                lineHeight: 1.1,
+              }}
+            >
+              VISIT OUR <span className="text-[#C8A951]">FACILITY</span>
+            </h2>
+            <p className="mt-4 text-[1rem] text-[#8A8274] max-w-xl mx-auto">
+              We welcome facility audits and visits from potential partners.
+              Schedule a visit or request detailed facility documentation.
+            </p>
+            <Link
+              href="/contact/"
+              className="mt-8 inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[#C8A951] hover:bg-[#E2CC7A] transition-colors"
+            >
+              Schedule a Visit
+              <ArrowRight size={16} />
+            </Link>
+          </SectionReveal>
+        </div>
+      </section>
+    </>
+  );
+}
