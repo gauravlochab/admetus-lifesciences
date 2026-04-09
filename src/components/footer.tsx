@@ -10,7 +10,10 @@ const productLinks = [
   { href: "/products/", label: "All Products" },
   { href: "/products/adlife-12g/", label: "ADLIFE 12G" },
   { href: "/products/adlife-q10/", label: "ADLIFE Q10" },
-  { href: "/products/adlife-gold/", label: "ADLIFE GOLD" },
+  { href: "/products/adlife-ct/", label: "ADLIFE CT" },
+  { href: "/products/adlife-iron/", label: "ADLIFE Iron" },
+  { href: "/products/adlife-lyco/", label: "ADLIFE Lyco" },
+  { href: "/products/adlife-gold/", label: "ADLIFE Gold" },
   { href: "/products/adlife-k2-7/", label: "ADLIFE K2-7" },
 ];
 

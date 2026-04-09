@@ -178,6 +178,39 @@ function CredibilityStrip() {
   );
 }
 
+
+/* ═══ Section 2b: METRICS ═══ */
+function Metrics() {
+  const metrics = [
+    { value: "50M+", label: "Capsules Annual Capacity" },
+    { value: "05", label: "International Certifications" },
+    { value: "07", label: "Precision Formulations" },
+    { value: "100%", label: "Batch Quality Inspection" },
+  ];
+
+  return (
+    <section className="py-12 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <div className="mx-auto max-w-[1400px] px-[var(--gutter)]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {metrics.map((m) => (
+            <div key={m.label}>
+              <div
+                className="text-3xl md:text-4xl font-bold text-[var(--gold)]"
+                style={{ fontFamily: "var(--font-display), sans-serif" }}
+              >
+                {m.value}
+              </div>
+              <div className="mt-1.5 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+                {m.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ═══ Section 3: MANIFESTO (pinned scroll reveal) ═══ */
 function Manifesto() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -436,10 +469,13 @@ function ProductShowcase() {
     return (
       <section className="relative py-12 bg-[var(--bg-charcoal)] overflow-hidden">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
+          <span className="label-text text-[var(--gold)]">FORMULATION PORTFOLIO</span>
           <h2 className="mt-3 display-section text-[var(--text-white)]">
-            FORMULATED<br />FOR LIFE
+            ENGINEERED<br />FOR EFFICACY
           </h2>
+          <p className="mt-3 body-text text-[var(--text-cream)] max-w-[52ch]">
+            Seven precision-formulated softgel capsules &mdash; each designed for optimal bioavailability and manufactured under strict quality controls.
+          </p>
           <div className="gold-rule w-12 mt-4 mb-8" />
 
           <div className="flex flex-col gap-5">
@@ -473,12 +509,21 @@ function ProductShowcase() {
             ))}
           </div>
 
-          <Link
-            href="/products/"
-            className="mt-8 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
-          >
-            View All Products <ArrowRight size={13} />
-          </Link>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              href="/products/"
+              className="inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
+            >
+              View All Products <ArrowRight size={13} />
+            </Link>
+            <a
+              href="/catalogue.pdf"
+              className="inline-flex items-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 transition-colors duration-200 cursor-pointer"
+            >
+              Download Product Catalogue
+              <ArrowRight size={13} />
+            </a>
+          </div>
         </div>
       </section>
     );
@@ -491,13 +536,13 @@ function ProductShowcase() {
       <div className="flex h-screen">
         {/* Fixed left panel */}
         <div className="hidden lg:flex flex-col justify-center w-[360px] shrink-0 p-[var(--gutter)] z-10">
-          <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
+          <span className="label-text text-[var(--gold)]">FORMULATION PORTFOLIO</span>
           <h2 className="mt-4 display-section text-[var(--text-white)]">
-            FORMULATED<br />FOR LIFE
+            ENGINEERED<br />FOR EFFICACY
           </h2>
           <div className="gold-rule w-12 mt-4 mb-4" />
-          <p className="body-text text-[var(--text-cream)]">
-            7 precision-formulated softgel capsules.
+          <p className="body-text text-[var(--text-cream)] max-w-[52ch]">
+            Seven precision-formulated softgel capsules &mdash; each designed for optimal bioavailability and manufactured under strict quality controls.
           </p>
           <p className="mt-6 mono-text text-[0.8125rem] text-[var(--text-muted)]">
             {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")}
@@ -508,6 +553,13 @@ function ProductShowcase() {
           >
             View All Products <ArrowRight size={13} />
           </Link>
+          <a
+            href="/catalogue.pdf"
+            className="mt-3 inline-flex items-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 transition-colors duration-200 cursor-pointer"
+          >
+            Download Product Catalogue
+            <ArrowRight size={13} />
+          </a>
         </div>
 
         {/* Scrolling cards */}
@@ -517,9 +569,9 @@ function ProductShowcase() {
         >
           {/* Mobile title card */}
           <div className="lg:hidden shrink-0 w-[80vw] flex flex-col justify-center">
-            <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
+            <span className="label-text text-[var(--gold)]">FORMULATION PORTFOLIO</span>
             <h2 className="mt-3 display-section text-[var(--text-white)]">
-              FORMULATED FOR LIFE
+              ENGINEERED FOR EFFICACY
             </h2>
           </div>
 
@@ -1074,6 +1126,15 @@ function GlobalReach() {
             ))}
           </div>
         </div>
+
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
+            <div key={region} className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-[var(--gold)]" />
+              <span className="text-sm text-[var(--text-cream)]">{region}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -1154,13 +1215,13 @@ function ClosingCTA() {
         <span className="label-text text-[var(--gold)] mb-5 block">LET&apos;S BUILD TOGETHER</span>
 
         <h2 className="display-section text-[var(--text-white)]">
-          LET&apos;S DISCUSS YOUR<br />REQUIREMENTS
+          YOUR NEXT<br />MANUFACTURING PARTNER
         </h2>
 
         <div className="gold-rule w-12 mx-auto mt-5 mb-5" />
 
-        <p className="body-large text-[var(--text-cream)] max-w-[520px] mx-auto">
-          Whether you need contract manufacturing, private labeling, or custom formulations &mdash; we are ready.
+        <p className="body-large text-[var(--text-cream)] max-w-[52ch] mx-auto">
+          Contract manufacturing, private label solutions, and export-ready softgel capsules &mdash; discuss your requirements with our team.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -1169,7 +1230,7 @@ function ClosingCTA() {
             className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Request a Quote
+            Start a Project
             <ArrowRight size={13} />
           </Link>
           <Link
@@ -1177,7 +1238,7 @@ function ClosingCTA() {
             className="cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Contact Us
+            Request Product Samples
           </Link>
         </div>
 
@@ -1198,6 +1259,7 @@ export default function Home() {
     <>
       <Hero />
       <CredibilityStrip />
+      <Metrics />
       <Manifesto />
       <ScaleMetrics />
       <ProductShowcase />

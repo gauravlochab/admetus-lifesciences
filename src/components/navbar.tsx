@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/products/", label: "Products" },
   { href: "/manufacturing/", label: "Facility" },
   { href: "/quality/", label: "Quality" },
-  { href: "/contract-manufacturing/", label: "Partner" },
+  { href: "/contract-manufacturing/", label: "Contract Mfg" },
   { href: "/export/", label: "Export" },
   { href: "/contact/", label: "Contact" },
 ];
