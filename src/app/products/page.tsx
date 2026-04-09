@@ -1,29 +1,34 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Pill } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
 import { products } from "@/data/products";
 
+const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
+
 export default function ProductsPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filtered = activeCategory === "All"
+    ? products
+    : products.filter((p) => p.category === activeCategory);
+
   return (
     <>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop" alt="" className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/30" />
-        <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
+        <img
+          src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
+          alt="Softgel capsules"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/30" />
+        <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Product Portfolio</span>
-          <h1
-            className="mt-4 text-[#FAFAFA] uppercase"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(3.5rem, 7vw, 7rem)",
-              lineHeight: 0.95,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            NUTRACEUTICAL
-            <br />
+          <h1 className="mt-4 display-section text-[#FAFAFA]">
+            NUTRACEUTICAL<br />
             <span className="text-[var(--gold)]">SOFTGEL CAPSULES</span>
           </h1>
           <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
@@ -34,16 +39,34 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="py-[clamp(4rem,8vw,8rem)]">
-        <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
+      {/* Category Filter + Grid */}
+      <section className="py-[var(--space-24)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          {/* Category tabs */}
+          <div className="flex flex-wrap gap-2 mb-12">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2 text-[0.75rem] font-medium uppercase tracking-[0.1em] border transition-all duration-300 ${
+                  activeCategory === cat
+                    ? "bg-[var(--gold)] text-[#0A0A0A] border-[var(--gold)]"
+                    : "text-[var(--text-muted)] border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {products.map((product, i) => (
+            {filtered.map((product, i) => (
               <SectionReveal key={product.slug} delay={i * 0.08}>
                 <Link href={`/products/${product.slug}/`} className="group block">
                   <div
-                    className="relative p-8 border border-white/[0.06] hover:border-[var(--gold)]/20 transition-all duration-500 min-h-[280px] flex flex-col justify-end"
-                    style={{ background: `linear-gradient(135deg, ${product.color}06, #141414)` }}
+                    className="relative p-8 border border-[var(--border-subtle)] hover:border-[var(--gold)]/20 transition-all duration-500 min-h-[280px] flex flex-col justify-end group-hover:-translate-y-1"
+                    style={{ background: `linear-gradient(135deg, ${product.color}08, var(--bg-charcoal))` }}
                   >
                     <span
                       className="inline-block self-start px-3 py-1 text-[0.65rem] font-medium tracking-[0.15em] uppercase rounded-full border mb-4"
@@ -56,12 +79,7 @@ export default function ProductsPage() {
                       {product.category}
                     </span>
                     <h3
-                      className="text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-colors"
-                      style={{
-                        fontFamily: "var(--font-display), Georgia, serif",
-                        fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                        lineHeight: 1.2,
-                      }}
+                      className="heading-2 text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-colors"
                     >
                       {product.name}
                     </h3>
@@ -69,9 +87,9 @@ export default function ProductsPage() {
                     <p className="mt-3 text-[0.875rem] text-[var(--text-muted)] line-clamp-2 max-w-lg">
                       {product.composition}
                     </p>
-                    <div className="mt-4 pt-4 border-t border-white/[0.06] flex items-center justify-between">
-                      <span className="text-[0.75rem] text-[var(--text-muted)]">{product.packSize}</span>
-                      <span className="flex items-center gap-1 text-[0.75rem] text-[var(--gold)] font-medium group-hover:text-[var(--gold-light)] transition-colors">
+                    <div className="mt-4 pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between">
+                      <span className="text-[0.75rem] text-[var(--text-muted)] font-mono">{product.packSize}</span>
+                      <span className="flex items-center gap-1 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
                         Details
                         <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                       </span>
@@ -84,14 +102,8 @@ export default function ProductsPage() {
 
           {/* CTA */}
           <SectionReveal>
-            <div className="mt-16 text-center p-12 bg-[var(--bg-charcoal)] border border-white/[0.06]">
-              <h3
-                className="text-[var(--foreground)] uppercase"
-                style={{
-                  fontFamily: "var(--font-display), Georgia, serif",
-                  fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-                }}
-              >
+            <div className="mt-16 text-center p-12 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
+              <h3 className="heading-2 text-[var(--foreground)] uppercase">
                 Need a Custom Formulation?
               </h3>
               <p className="mt-3 text-[var(--text-muted)] max-w-xl mx-auto">
@@ -100,7 +112,7 @@ export default function ProductsPage() {
               </p>
               <Link
                 href="/contact/"
-                className="mt-6 inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors"
+                className="mt-6 inline-flex items-center gap-2 px-8 py-3 text-sm font-bold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
               >
                 Request a Quote
                 <ArrowRight size={14} />

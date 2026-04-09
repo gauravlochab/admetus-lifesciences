@@ -11,6 +11,9 @@ import {
   Package,
   Truck,
   CheckCircle,
+  Cog,
+  FlaskConical,
+  Award,
 } from "lucide-react";
 import { products } from "@/data/products";
 
@@ -28,10 +31,11 @@ function Hero() {
 
       ctx = gsap.context(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-        tl.from(".hero-label", { y: 30, opacity: 0, duration: 0.6 }, 0);
-        tl.from(".hero-line", { y: 80, opacity: 0, duration: 0.8, stagger: 0.15 }, 0.2);
-        tl.from(".hero-sub", { y: 30, opacity: 0, duration: 0.6 }, 0.8);
-        tl.from(".hero-cta", { y: 30, opacity: 0, duration: 0.6 }, 1.0);
+        tl.from(".hero-label", { y: 30, opacity: 0, duration: 0.8 }, 0.3);
+        tl.from(".hero-line", { y: 80, opacity: 0, duration: 0.8, stagger: 0.12 }, 0.5);
+        tl.from(".hero-sub", { y: 30, opacity: 0, duration: 0.6 }, 0.9);
+        tl.from(".hero-cta", { y: 30, opacity: 0, duration: 0.6 }, 1.1);
+        tl.from(".hero-scroll", { opacity: 0, duration: 0.6 }, 2.0);
       }, sectionRef);
     }
     init();
@@ -41,81 +45,95 @@ function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-end pb-[clamp(4rem,10vh,8rem)] overflow-hidden"
+      className="relative h-screen flex items-center overflow-hidden"
     >
       {/* Background image */}
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
-          alt="Softgel capsules"
+          alt="Pharmaceutical softgel capsule production line"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ animation: "ken-burns 20s ease-in-out infinite alternate" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-[#0A0A0A]/30" />
+        <div className="absolute inset-0" style={{ background: "rgba(10,10,10,0.65)" }} />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
-        {/* Certification label */}
-        <div className="hero-label mb-8">
-          <div className="flex items-center gap-3 flex-wrap">
-            {["FSSAI", "GMP", "HACCP", "HALAL", "WHO-GMP"].map((cert, i) => (
-              <span key={cert} className="flex items-center gap-3">
-                <span className="text-[0.75rem] font-medium tracking-[0.15em] text-[var(--gold)]">
-                  {cert}
-                </span>
-                {i < 4 && <span className="text-[#8A7B3E]">|</span>}
-              </span>
+      <div className="relative z-10 mx-auto max-w-[1400px] w-full px-[var(--gutter)]">
+        <div className="max-w-[var(--content-narrow)]">
+          {/* Label */}
+          <div className="hero-label label-text text-[var(--gold)] mb-8">
+            ADMETUS LIFESCIENCES
+          </div>
+
+          {/* Headline */}
+          <div>
+            {["PRECISION", "ENCAPSULATED"].map((word) => (
+              <div
+                key={word}
+                className="hero-line display-hero text-[#FAFAFA]"
+              >
+                {word}
+              </div>
             ))}
           </div>
-        </div>
 
-        {/* Headline */}
-        <div>
-          {["PRECISION", "SOFTGEL", "CAPSULES"].map((word) => (
-            <div
-              key={word}
-              className="hero-line display-hero text-[#FAFAFA] overflow-hidden"
-              style={{ fontFamily: "var(--font-display), Georgia, serif" }}
+          {/* Subhead */}
+          <p className="hero-sub mt-8 text-[var(--body-large)] leading-[1.7] text-[#E8E0D0] max-w-[500px]" style={{ fontSize: "var(--body-large)" }}>
+            India&apos;s advanced softgel manufacturing facility. Science-driven. Globally certified.
+          </p>
+
+          {/* CTA */}
+          <div className="hero-cta mt-10">
+            <Link
+              href="/manufacturing/"
+              className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
             >
-              {word}
-            </div>
-          ))}
-        </div>
-
-        {/* Subhead */}
-        <p className="hero-sub mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[500px]">
-          Contract manufacturing & private label nutraceuticals from India.
-        </p>
-
-        {/* CTAs */}
-        <div className="hero-cta mt-10 flex flex-wrap gap-4">
-          <Link
-            href="/contact/"
-            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors duration-300"
-          >
-            Request a Quote
-          </Link>
-          <Link
-            href="/products/"
-            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#FAFAFA] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
-          >
-            Explore Products
-          </Link>
+              Explore Our Facility
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute top-8 right-8 hidden lg:flex flex-col items-center gap-2 text-[var(--text-muted)]">
-        <span className="text-[0.65rem] tracking-[0.2em] uppercase">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-[#8A8274] to-transparent" />
+      <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span className="text-[0.65rem] tracking-[0.2em] uppercase text-[var(--text-muted)]">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-[#8A8274] to-transparent animate-pulse" />
       </div>
     </section>
   );
 }
 
-/* ═══════════════ Section 2: TRUST BAR ═══════════════ */
-function TrustBar() {
+/* ═══════════════ Section 2: CREDIBILITY STRIP ═══════════════ */
+function CredibilityStrip() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let ctx: { revert: () => void } | null = null;
+    async function init() {
+      const gsapModule = await import("gsap");
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.from(".cert-badge", {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+          },
+        });
+      }, sectionRef);
+    }
+    init();
+    return () => { ctx?.revert(); };
+  }, []);
+
   const certs = [
     { name: "FSSAI", desc: "Food Safety Standards" },
     { name: "GMP", desc: "Good Manufacturing Practice" },
@@ -125,27 +143,30 @@ function TrustBar() {
   ];
 
   return (
-    <section className="py-10 bg-[var(--bg-charcoal)] border-y border-white/[0.06]">
-      <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+    <section ref={sectionRef} className="py-16 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] text-center">
+        <span className="label-text text-[var(--gold)] mb-8 block">GLOBALLY CERTIFIED</span>
+
+        <div className="flex flex-wrap items-start justify-center gap-10 md:gap-16 mt-8">
           {certs.map((cert) => (
             <div
               key={cert.name}
-              className="flex flex-col items-center gap-2 group cursor-default"
+              className="cert-badge flex flex-col items-center gap-3 group cursor-default"
             >
-              <Shield
-                size={20}
-                className="text-[var(--text-muted)] group-hover:text-[var(--teal)] transition-colors duration-300"
-              />
-              <span className="text-[0.875rem] font-semibold text-[var(--foreground)] tracking-wider">
-                {cert.name}
-              </span>
+              <div className="w-12 h-12 flex items-center justify-center border border-[var(--gold)]/20 rounded-full">
+                <Shield size={20} className="text-[var(--gold)]" />
+              </div>
+              <span className="label-text text-[#FAFAFA]">{cert.name}</span>
               <span className="text-[0.65rem] tracking-[0.1em] uppercase text-[var(--text-muted)]">
                 {cert.desc}
               </span>
             </div>
           ))}
         </div>
+
+        <p className="mt-10 text-[1rem] text-[var(--text-cream)]">
+          5 international certifications ensuring pharmaceutical-grade quality
+        </p>
       </div>
     </section>
   );
@@ -164,30 +185,25 @@ function Manifesto() {
       gsap.registerPlugin(ScrollTrigger);
 
       const lines = sectionRef.current?.querySelectorAll(".manifesto-line") ?? [];
-      const body = sectionRef.current?.querySelector(".manifesto-body");
+      const goldLine = sectionRef.current?.querySelector(".manifesto-gold-line");
 
       ctx = gsap.context(() => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
-            end: "+=300%",
+            end: "+=400%",
             pin: true,
             scrub: 1,
           },
         });
 
         lines.forEach((line, i) => {
-          tl.fromTo(
-            line,
-            { opacity: 0.15, y: 20 },
-            { opacity: 1, y: 0, duration: 1 },
-            i * 0.8
-          );
+          tl.to(line, { opacity: 1, y: 0, duration: 1 }, i * 1);
         });
 
-        if (body) {
-          tl.fromTo(body, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, lines.length * 0.8);
+        if (goldLine) {
+          tl.fromTo(goldLine, { scaleX: 0 }, { scaleX: 1, duration: 0.5 }, lines.length * 1);
         }
       }, sectionRef);
     }
@@ -195,54 +211,50 @@ function Manifesto() {
     return () => { ctx?.revert(); };
   }, []);
 
+  const lines = [
+    "We don\u2019t just manufacture softgel capsules.",
+    "We engineer precision at molecular scale.",
+    "Every capsule carries a commitment to human health.",
+  ];
+
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center bg-[var(--bg-black)]"
+      className="relative min-h-screen flex items-center justify-center bg-[var(--bg-warm-dark)]"
     >
-      <div className="text-center max-w-[1000px] px-[clamp(1.5rem,4vw,4rem)]">
-        <div>
-          <div
-            className="manifesto-line display-section text-[var(--foreground)]"
-            style={{ fontFamily: "var(--font-display), Georgia, serif", opacity: 0.15 }}
-          >
-            WE DON&apos;T JUST MANUFACTURE.
-          </div>
-          <div
-            className="manifesto-line display-section mt-2"
-            style={{ fontFamily: "var(--font-display), Georgia, serif", opacity: 0.15 }}
-          >
-            WE <span className="text-[var(--gold)]">ENGINEER</span> WELLNESS
-          </div>
-          <div
-            className="manifesto-line display-section mt-2"
-            style={{ fontFamily: "var(--font-display), Georgia, serif", opacity: 0.15 }}
-          >
-            AT <span className="text-[var(--gold)]">MOLECULAR PRECISION</span>.
-          </div>
+      <div className="text-center max-w-[900px] px-[var(--gutter)]">
+        <span className="label-text text-[var(--gold)] mb-12 block">OUR PHILOSOPHY</span>
+        <div className="space-y-4">
+          {lines.map((line) => (
+            <p
+              key={line}
+              className="manifesto-line heading-1 text-[#FAFAFA]"
+              style={{ opacity: 0.15, transform: "translateY(20px)" }}
+            >
+              {line}
+            </p>
+          ))}
         </div>
-
-        <p className="manifesto-body mt-12 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-[700px] mx-auto" style={{ opacity: 0 }}>
-          Based in Haryana, India — Admetus Lifesciences is a specialized softgel
-          capsule manufacturer built on advanced encapsulation technology and
-          uncompromising quality control.
-        </p>
+        <div
+          className="manifesto-gold-line h-px bg-[var(--gold)] mt-16 mx-auto w-48 origin-left"
+          style={{ transform: "scaleX(0)" }}
+        />
       </div>
     </section>
   );
 }
 
-/* ═══════════════ Section 4: STATS ═══════════════ */
-function Stats() {
+/* ═══════════════ Section 4: SCALE & METRICS ═══════════════ */
+function ScaleMetrics() {
   const sectionRef = useRef<HTMLElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [counts, setCounts] = useState([0, 0, 0, 0]);
 
   const stats = [
-    { value: 7, suffix: "+", label: "Product Lines" },
-    { value: 5, suffix: "", label: "International Certifications" },
-    { value: 100, suffix: "M+", label: "Capsules Annual Capacity" },
-    { value: 10, suffix: "+", label: "Years of Excellence" },
+    { value: 50, suffix: "M+", label: "Capsules Per Year" },
+    { value: 7, suffix: "", label: "Product Lines" },
+    { value: 5, suffix: "", label: "Certifications" },
+    { value: 100, suffix: "%", label: "Quality Control" },
   ];
 
   useEffect(() => {
@@ -270,50 +282,44 @@ function Stats() {
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex items-center bg-[var(--bg-warm-dark)]">
-      <div className="mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 min-h-[70vh]">
-          {/* Left: Image */}
-          <div className="lg:col-span-3 relative overflow-hidden min-h-[50vh] lg:min-h-0">
-            <img
-              src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1200&h=800&fit=crop"
-              alt="Pharmaceutical manufacturing facility"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-[var(--bg-black)]/20" />
-          </div>
+    <section ref={sectionRef} className="relative min-h-screen flex items-center bg-[var(--bg-black)]">
+      {/* Background facility image at low opacity */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
+          alt="Manufacturing facility"
+          className="w-full h-full object-cover opacity-15"
+        />
+      </div>
 
-          {/* Right: Stats */}
-          <div className="lg:col-span-2 bg-[var(--bg-charcoal)] p-[clamp(2rem,4vw,4rem)] flex flex-col justify-center">
-            <span className="label-text text-[var(--gold)] mb-8">By the Numbers</span>
-            <div className="space-y-8">
-              {stats.map((stat, i) => (
-                <div key={stat.label}>
-                  <div
-                    className="text-[var(--foreground)]"
-                    style={{
-                      fontFamily: "var(--font-display), Georgia, serif",
-                      fontSize: "clamp(3rem, 6vw, 5rem)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {counts[i]}{stat.suffix}
-                  </div>
-                  <p className="text-[0.875rem] text-[var(--text-muted)] mt-1">{stat.label}</p>
-                  {i < stats.length - 1 && (
-                    <div className="h-px bg-[var(--gold)]/20 mt-6" />
-                  )}
-                </div>
-              ))}
+      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
+        <span className="label-text text-[var(--gold)] mb-4 block">OUR FACILITY</span>
+        <h2 className="display-section text-[#FAFAFA]">
+          BUILT FOR<br />SCALE
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+          {stats.map((stat, i) => (
+            <div key={stat.label}>
+              <div className="display-section text-[#FAFAFA]" style={{ fontVariantNumeric: "tabular-nums" }}>
+                {counts[i]}<span className="text-[var(--gold)]">{stat.suffix}</span>
+              </div>
+              <p className="label-text text-[var(--text-muted)] mt-2">{stat.label}</p>
             </div>
-          </div>
+          ))}
         </div>
+
+        <p className="mt-16 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-2xl">
+          State-of-the-art ARBES SGX-806P encapsulation line.
+          Elmach EPI 2000 blister packaging.
+          WHO-GMP certified facility in Haryana, India.
+        </p>
       </div>
     </section>
   );
 }
 
-/* ═══════════════ Section 5: PRODUCT SHOWCASE ═══════════════ */
+/* ═══════════════ Section 5: PRODUCTS — Horizontal Scroll Gallery ═══════════════ */
 function ProductShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -358,18 +364,13 @@ function ProductShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-[var(--bg-black)] overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-[var(--bg-charcoal)] overflow-hidden">
       <div className="flex h-screen">
         {/* Fixed left panel */}
-        <div className="hidden lg:flex flex-col justify-center w-[350px] shrink-0 p-[clamp(2rem,4vw,4rem)] z-10">
-          <span className="label-text text-[var(--gold)]">Our Products</span>
-          <h2
-            className="mt-4 display-section text-[var(--foreground)]"
-            style={{ fontFamily: "var(--font-display), Georgia, serif" }}
-          >
-            THE
-            <br />
-            PORTFOLIO
+        <div className="hidden lg:flex flex-col justify-center w-[350px] shrink-0 p-[var(--gutter)] z-10">
+          <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
+          <h2 className="mt-4 display-section text-[#FAFAFA]">
+            FORMULATED<br />FOR LIFE
           </h2>
           <p className="mt-4 text-[1rem] text-[var(--text-cream)] leading-relaxed">
             7 precision-formulated softgel capsules.
@@ -377,74 +378,56 @@ function ProductShowcase() {
           <p className="mt-8 font-mono text-[0.875rem] text-[var(--text-muted)]">
             {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")}
           </p>
+          <Link
+            href="/products/"
+            className="mt-6 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
+          >
+            View All Products <ArrowRight size={14} />
+          </Link>
         </div>
 
         {/* Scrolling cards */}
         <div
           ref={cardsRef}
-          className="flex items-center gap-8 pl-8 lg:pl-0 pr-[clamp(2rem,4vw,4rem)]"
+          className="flex items-center gap-8 pl-8 lg:pl-0 pr-[var(--gutter)]"
         >
           {/* Mobile title card */}
           <div className="lg:hidden shrink-0 w-[80vw] flex flex-col justify-center">
-            <span className="label-text text-[var(--gold)]">Our Products</span>
-            <h2
-              className="mt-4 text-[var(--foreground)]"
-              style={{
-                fontFamily: "var(--font-display), Georgia, serif",
-                fontSize: "clamp(3rem, 8vw, 5rem)",
-                lineHeight: 0.95,
-                textTransform: "uppercase",
-              }}
-            >
-              THE PORTFOLIO
+            <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
+            <h2 className="mt-4 display-section text-[#FAFAFA]">
+              FORMULATED FOR LIFE
             </h2>
           </div>
 
           {products.map((product) => (
-            <div
+            <Link
               key={product.slug}
-              className="shrink-0 w-[60vw] lg:w-[50vw] h-[80vh] rounded-2xl overflow-hidden relative group"
+              href={`/products/${product.slug}/`}
+              className="shrink-0 w-[400px] h-[500px] lg:w-[400px] lg:h-[500px] rounded-xl overflow-hidden relative group block"
               style={{
-                background: `linear-gradient(135deg, ${product.color}10, #141414)`,
-                border: "1px solid rgba(255,255,255,0.06)",
+                background: `linear-gradient(135deg, ${product.color}10, var(--bg-charcoal))`,
+                border: "1px solid var(--border-subtle)",
               }}
             >
-              <div className="absolute inset-0 flex flex-col justify-end p-[clamp(1.5rem,3vw,3rem)]">
+              <div className="absolute inset-0 flex flex-col justify-end p-[var(--space-6)]">
                 <span
-                  className="inline-block self-start px-3 py-1 text-[0.65rem] font-medium tracking-[0.15em] uppercase rounded-full border mb-4"
-                  style={{
-                    color: product.color,
-                    borderColor: `${product.color}40`,
-                    backgroundColor: `${product.color}10`,
-                  }}
+                  className="label-text mb-3"
+                  style={{ color: "var(--teal)" }}
                 >
                   {product.category}
                 </span>
-
-                <h3
-                  className="text-[var(--foreground)] uppercase"
-                  style={{
-                    fontFamily: "var(--font-display), Georgia, serif",
-                    fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                    lineHeight: 1.1,
-                  }}
-                >
+                <h3 className="heading-2 text-[#FAFAFA] uppercase">
                   {product.name}
                 </h3>
-                <p className="mt-2 text-[var(--gold)] text-[1rem]">{product.tagline}</p>
+                <p className="mt-2 text-[1rem] text-[var(--text-cream)]">{product.tagline}</p>
                 <p className="mt-3 text-[0.875rem] text-[var(--text-muted)] line-clamp-2 max-w-md">
-                  {product.ingredients.slice(0, 3).join(", ")}
+                  {product.ingredients.slice(0, 4).join(", ")}
                 </p>
-
-                <Link
-                  href={`/products/${product.slug}/`}
-                  className="mt-6 inline-flex items-center gap-2 text-[0.875rem] text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
-                >
-                  View Details
-                  <ArrowRight size={14} />
-                </Link>
+                <span className="mt-4 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
+                  View Details <ArrowRight size={12} />
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -458,13 +441,13 @@ function ManufacturingProcess() {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
-    { num: "01", title: "RAW MATERIAL SOURCING", body: "Globally sourced ingredients, each tested for purity before entering our facility." },
-    { num: "02", title: "PRECISION FORMULATION", body: "Batch formulation following exact specifications for optimal bioavailability." },
-    { num: "03", title: "ENCAPSULATION", body: "ARBES SGX-806P encapsulation line producing precision-engineered softgel capsules." },
-    { num: "04", title: "CONTROLLED DRYING", body: "Temperature and humidity controlled drying for consistent capsule integrity." },
-    { num: "05", title: "QUALITY INSPECTION", body: "Multi-point quality control ensuring every capsule meets international standards." },
-    { num: "06", title: "BLISTER PACKING", body: "Elmach EPI 2000 blister machine for tamper-evident, export-ready packaging." },
-    { num: "07", title: "DISPATCH", body: "Export-ready packaging with full documentation for international markets." },
+    { num: "01", title: "RAW MATERIAL SOURCING", body: "Pharmaceutical-grade ingredients sourced from certified global suppliers.", image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=800&fit=crop" },
+    { num: "02", title: "QUALITY TESTING", body: "Every batch undergoes rigorous incoming material analysis.", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&h=800&fit=crop" },
+    { num: "03", title: "GELATIN PREPARATION", body: "Precision gelatin formulation for optimal capsule integrity.", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop" },
+    { num: "04", title: "ENCAPSULATION", body: "ARBES SGX-806P rotary die process at controlled temperature.", image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1200&h=800&fit=crop" },
+    { num: "05", title: "DRYING & TUMBLING", body: "Controlled-environment drying for consistent moisture content.", image: "https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1200&h=800&fit=crop" },
+    { num: "06", title: "INSPECTION & SORTING", body: "Visual and automated defect detection, 100% inspection.", image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&h=800&fit=crop" },
+    { num: "07", title: "BLISTER PACKAGING", body: "Elmach EPI 2000 blister sealing with tamper-evident packaging.", image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&h=800&fit=crop" },
   ];
 
   useEffect(() => {
@@ -499,82 +482,73 @@ function ManufacturingProcess() {
   const step = steps[activeStep];
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-[var(--bg-charcoal)] flex">
-      {/* Left: Image area */}
-      <div className="hidden lg:flex w-1/2 relative overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=800&fit=crop"
-          alt="Pharmaceutical laboratory"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[var(--bg-black)]/50" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="text-[var(--foreground)]/10"
-            style={{
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: "clamp(10rem, 20vw, 18rem)",
-              lineHeight: 0.85,
-            }}
-          >
-            {step.num}
-          </div>
-        </div>
-      </div>
+    <section ref={sectionRef} className="relative h-screen bg-[var(--bg-warm-dark)] flex">
+      {/* Left 40%: content */}
+      <div className="w-full lg:w-[40%] flex flex-col justify-center p-[var(--gutter)] relative">
+        <span className="label-text text-[var(--gold)] mb-4">MANUFACTURING</span>
+        <h2 className="display-section text-[#FAFAFA] mb-12">THE PROCESS</h2>
 
-      {/* Right: Step content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[clamp(2rem,4vw,4rem)] bg-[var(--bg-warm-dark)]">
-        <span className="label-text text-[var(--gold)] mb-8">Manufacturing Process</span>
-
-        {/* Mobile step number */}
-        <div
-          className="lg:hidden text-[var(--gold)]/15 mb-4"
-          style={{
-            fontFamily: "var(--font-display), Georgia, serif",
-            fontSize: "8rem",
-            lineHeight: 0.85,
-          }}
-        >
-          {step.num}
-        </div>
-
-        <h2
-          className="text-[var(--foreground)] uppercase"
-          style={{
-            fontFamily: "var(--font-display), Georgia, serif",
-            fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-            lineHeight: 1.2,
-          }}
-        >
-          {step.title}
-        </h2>
-        <p className="mt-4 text-[1.25rem] text-[var(--text-cream)] leading-[1.7] max-w-lg">
-          {step.body}
-        </p>
-
-        {/* Step dots */}
-        <div className="mt-12 flex items-center gap-3">
-          {steps.map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === activeStep ? "bg-[var(--gold)] scale-150" : "bg-[#8A8274]/40"
-              }`}
-            />
+        {/* Progress line */}
+        <div className="hidden lg:flex flex-col gap-0 mb-8">
+          {steps.map((s, i) => (
+            <div key={s.num} className="flex items-center gap-3 py-2">
+              <div
+                className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                  i === activeStep ? "bg-[var(--gold)] scale-150" : i < activeStep ? "bg-[var(--gold)]/50" : "bg-[var(--text-muted)]/30"
+                }`}
+              />
+              <span className={`text-[0.75rem] font-mono transition-all duration-300 ${
+                i === activeStep ? "text-[var(--gold)]" : "text-[var(--text-muted)]/50"
+              }`}>
+                {s.num}
+              </span>
+              <span className={`text-[0.75rem] uppercase tracking-wider transition-all duration-300 ${
+                i === activeStep ? "text-[#FAFAFA]" : "text-[var(--text-muted)]/30"
+              }`}>
+                {s.title}
+              </span>
+            </div>
           ))}
         </div>
+
+        {/* Active step detail */}
+        <div className="lg:hidden">
+          <div className="text-[var(--gold)]/20 mb-2" style={{ fontFamily: "var(--font-display)", fontSize: "6rem", lineHeight: 0.85 }}>
+            {step.num}
+          </div>
+          <h3 className="heading-1 text-[#FAFAFA] uppercase">{step.title}</h3>
+          <p className="mt-4 text-[1.25rem] text-[var(--text-cream)] leading-[1.7]">{step.body}</p>
+        </div>
       </div>
 
-      {/* Desktop step indicator */}
-      <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-4">
+      {/* Right 60%: step image */}
+      <div className="hidden lg:flex w-[60%] relative overflow-hidden">
         {steps.map((s, i) => (
           <div
-            key={i}
-            className={`text-[0.65rem] font-mono transition-all duration-300 ${
-              i === activeStep ? "text-[var(--gold)]" : "text-[var(--text-muted)]/40"
-            }`}
+            key={s.num}
+            className="absolute inset-0 transition-all duration-700"
+            style={{
+              opacity: i === activeStep ? 1 : 0,
+              transform: i === activeStep ? "scale(1)" : "scale(1.05)",
+            }}
           >
-            {s.num}
+            <img
+              src={s.image}
+              alt={s.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[var(--bg-black)]/40" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-[#FAFAFA]/10" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(8rem, 15vw, 14rem)", lineHeight: 0.85 }}>
+                  {step.num}
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-[var(--gutter)] left-[var(--gutter)] right-[var(--gutter)]">
+              <h3 className="heading-1 text-[#FAFAFA] uppercase">{s.title}</h3>
+              <p className="mt-3 text-[1.25rem] text-[#E8E0D0] leading-[1.7] max-w-lg">{s.body}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -582,8 +556,8 @@ function ManufacturingProcess() {
   );
 }
 
-/* ═══════════════ Section 7: FACILITY ═══════════════ */
-function Facility() {
+/* ═══════════════ Section 7: VISUAL BREAK ═══════════════ */
+function VisualBreak() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -594,7 +568,7 @@ function Facility() {
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
 
-      const bg = sectionRef.current?.querySelector(".facility-bg");
+      const bg = sectionRef.current?.querySelector(".parallax-bg");
       if (!bg) return;
 
       ctx = gsap.context(() => {
@@ -615,69 +589,106 @@ function Facility() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative h-screen overflow-hidden"
-    >
-      <div className="facility-bg absolute inset-0" style={{ height: "130%", top: "-15%" }}>
+    <section ref={sectionRef} className="relative h-[70vh] overflow-hidden">
+      <div className="parallax-bg absolute inset-0" style={{ height: "130%", top: "-15%" }}>
         <img
           src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&h=1080&fit=crop"
-          alt="Manufacturing facility"
+          alt="Admetus Lifesciences manufacturing facility"
           className="w-full h-full object-cover"
         />
       </div>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent" />
-
-      <div className="absolute bottom-[clamp(2rem,4vw,4rem)] left-[clamp(1.5rem,4vw,4rem)] z-10">
-        <span className="label-text text-[var(--gold)]">Village Anta, Haryana, India</span>
-        <p className="mt-2 text-[0.875rem] text-[var(--text-cream)]">
-          State-of-the-art manufacturing facility
-        </p>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/30" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="label-text text-[#FAFAFA] text-center" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}>
+          VILLAGE ANTA, HARYANA &mdash; EST. 2024
+        </span>
       </div>
     </section>
   );
 }
 
-/* ═══════════════ Section 8: WHY CHOOSE US ═══════════════ */
-function WhyChooseUs() {
+/* ═══════════════ Section 8: DIFFERENTIATORS ═══════════════ */
+function Differentiators() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let ctx: { revert: () => void } | null = null;
+    async function init() {
+      const gsapModule = await import("gsap");
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.from(".diff-card", {
+          y: 40,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+          },
+        });
+      }, sectionRef);
+    }
+    init();
+    return () => { ctx?.revert(); };
+  }, []);
+
   const cards = [
-    { icon: Shield, title: "QUALITY-DRIVEN", desc: "FSSAI, GMP, HACCP, Halal, WHO-GMP certified." },
-    { icon: Factory, title: "ADVANCED MACHINERY", desc: "ARBES SGX-806P & Elmach EPI 2000 lines." },
-    { icon: Pill, title: "SOFTGEL SPECIALISTS", desc: "Dedicated nutraceutical softgel expertise." },
-    { icon: Globe, title: "GLOBAL EXPORT", desc: "Export documentation & international packaging." },
-    { icon: Package, title: "PRIVATE LABEL", desc: "Custom branding & formulation support." },
-    { icon: Truck, title: "RELIABLE DELIVERY", desc: "Consistent schedules, committed timelines." },
+    {
+      icon: Cog,
+      title: "Advanced Equipment",
+      body: "ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packaging \u2014 precision-engineered for consistency.",
+      image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=800&fit=crop",
+    },
+    {
+      icon: Shield,
+      title: "End-to-End Quality",
+      body: "From raw material testing to final product release \u2014 100% inspection at every stage.",
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=800&fit=crop",
+    },
+    {
+      icon: Award,
+      title: "Globally Certified",
+      body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=800&fit=crop",
+    },
+    {
+      icon: FlaskConical,
+      title: "Custom Formulations",
+      body: "Private label and contract manufacturing with flexible MOQs and custom formulation capabilities.",
+      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=800&fit=crop",
+    },
   ];
 
   return (
-    <section className="py-[clamp(4rem,8vw,12rem)] bg-[var(--bg-black)]">
-      <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
-        <span className="label-text text-[var(--gold)]">Why Choose Us</span>
-        <h2
-          className="mt-4 display-section text-[var(--foreground)] mb-16"
-          style={{ fontFamily: "var(--font-display), Georgia, serif" }}
-        >
-          THE ADVANTAGES
+    <section ref={sectionRef} className="py-[var(--space-24)] bg-[var(--bg-charcoal)]">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+        <span className="label-text text-[var(--gold)] mb-4 block">WHY ADMETUS</span>
+        <h2 className="display-section text-[#FAFAFA] mb-16">
+          THE ADMETUS<br />DIFFERENCE
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.map((card) => (
             <div
               key={card.title}
-              className="relative group overflow-hidden rounded-2xl bg-[var(--bg-charcoal)] border border-white/[0.06] p-8 min-h-[300px] flex flex-col justify-end hover:border-[var(--gold)]/20 transition-all duration-500"
+              className="diff-card relative overflow-hidden rounded-[var(--radius)] border border-[var(--border-subtle)] group min-h-[400px] flex flex-col justify-end"
             >
-              <card.icon size={24} className="text-[var(--gold)] mb-4" />
-              <h3
-                className="text-[var(--foreground)] uppercase text-[1.25rem]"
-                style={{
-                  fontFamily: "var(--font-display), Georgia, serif",
-                  lineHeight: 1.2,
-                }}
-              >
-                {card.title}
-              </h3>
-              <p className="mt-2 text-[0.875rem] text-[var(--text-cream)]">{card.desc}</p>
+              <img
+                src={card.image}
+                alt={card.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.85)] via-[rgba(10,10,10,0.3)] to-transparent" />
+              <div className="relative p-[var(--space-6)]">
+                <card.icon size={32} className="text-[var(--gold)] mb-4" />
+                <h3 className="heading-2 text-[#FAFAFA]">{card.title}</h3>
+                <p className="mt-2 text-[1rem] text-[#E8E0D0]">{card.body}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -687,17 +698,37 @@ function WhyChooseUs() {
 }
 
 /* ═══════════════ Section 9: CONTRACT MANUFACTURING ═══════════════ */
-function ContractCTA() {
-  const services = [
-    "Custom Formulation",
-    "Private Label Packaging",
-    "Third-Party Manufacturing",
-    "Bulk Softgel Supply",
-    "Export Documentation",
-  ];
+function Partnership() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let ctx: { revert: () => void } | null = null;
+    async function init() {
+      const gsapModule = await import("gsap");
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.from(".partnership-content > *", {
+          x: 60,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+          },
+        });
+      }, sectionRef);
+    }
+    init();
+    return () => { ctx?.revert(); };
+  }, []);
 
   return (
-    <section className="min-h-screen flex bg-[var(--bg-warm-dark)]">
+    <section ref={sectionRef} className="min-h-screen flex bg-[var(--bg-warm-dark)]">
       {/* Left: Image */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden">
         <img
@@ -709,190 +740,208 @@ function ContractCTA() {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[clamp(2rem,4vw,4rem)] bg-[var(--bg-charcoal)]">
-        <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
-
-        <h2
-          className="mt-6 text-[var(--foreground)]"
-          style={{
-            fontFamily: "var(--font-display), Georgia, serif",
-            fontSize: "clamp(3rem, 6vw, 5rem)",
-            lineHeight: 0.95,
-            textTransform: "uppercase",
-          }}
-        >
-          YOUR BRAND.
-          <br />
-          OUR SCIENCE.
-        </h2>
-
-        <p className="mt-6 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-lg">
-          From custom formulation and private label packaging to bulk supply —
-          we partner with brands, importers, and distributors worldwide.
-        </p>
-
-        <ul className="mt-8 space-y-3">
-          {services.map((s) => (
-            <li key={s} className="flex items-center gap-3 text-[1rem] text-[var(--text-cream)]">
-              <span className="w-4 h-px bg-[var(--gold)]" />
-              {s}
-            </li>
-          ))}
-        </ul>
-
-        <Link
-          href="/contact/"
-          className="mt-10 inline-flex self-start items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors duration-300"
-        >
-          Discuss Your Project
-        </Link>
+      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[var(--gutter)]">
+        <div className="partnership-content max-w-lg">
+          <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
+          <h2 className="mt-6 display-section text-[#FAFAFA]">
+            YOUR BRAND.<br />OUR SCIENCE.
+          </h2>
+          <p className="mt-6 text-[1.25rem] leading-[1.7] text-[#E8E0D0]">
+            From concept to shelf &mdash; turnkey private label softgel manufacturing.
+          </p>
+          <ul className="mt-8 space-y-3">
+            {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
+              <li key={s} className="flex items-center gap-3 text-[1rem] text-[#E8E0D0]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
+                {s}
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/contract-manufacturing/"
+            className="mt-10 inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
+          >
+            Start a Project
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
-/* ═══════════════ Section 10: EXPORT ═══════════════ */
-function ExportSection() {
-  const capLeft = [
-    "Export-oriented facility",
-    "International packaging standards",
-    "Multi-market regulatory awareness",
-  ];
-  const capRight = [
-    "Documentation for customs",
-    "MOQ-based flexible pricing",
-    "Dedicated export support",
+/* ═══════════════ Section 10: GLOBAL REACH ═══════════════ */
+function GlobalReach() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let ctx: { revert: () => void } | null = null;
+    async function init() {
+      const gsapModule = await import("gsap");
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.from(".global-feature", {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+          },
+        });
+      }, sectionRef);
+    }
+    init();
+    return () => { ctx?.revert(); };
+  }, []);
+
+  const features = [
+    { title: "Export Markets", desc: "Serving pharmaceutical markets across multiple international regions." },
+    { title: "Regulatory Compliance", desc: "Documentation and certifications for seamless global market entry." },
+    { title: "Logistics Support", desc: "Export packaging, freight coordination, and customs documentation." },
   ];
 
   return (
-    <section className="py-[clamp(4rem,8vw,12rem)] bg-[var(--bg-black)]">
-      <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)] text-center">
-        <span className="label-text text-[var(--gold)]">International Markets</span>
-        <h2
-          className="mt-6 display-section text-[var(--foreground)]"
-          style={{ fontFamily: "var(--font-display), Georgia, serif" }}
-        >
-          FROM INDIA
-          <br />
-          TO THE WORLD
+    <section ref={sectionRef} className="py-[var(--space-24)] bg-[var(--bg-black)]">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] text-center">
+        <span className="label-text text-[var(--gold)] mb-4 block">GLOBAL PRESENCE</span>
+        <h2 className="display-section text-[#FAFAFA]">
+          BEYOND<br />BORDERS
         </h2>
+        <p className="mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[700px] mx-auto">
+          Regulatory-compliant export capabilities serving pharmaceutical markets worldwide.
+          Documentation, logistics, and quality assurance for seamless international supply.
+        </p>
 
-        <div className="h-px bg-[var(--gold)]/30 my-12 w-full" />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 max-w-3xl mx-auto text-left">
-          {capLeft.map((cap) => (
-            <div key={cap} className="flex items-center gap-3 text-[1rem] text-[var(--text-cream)]">
-              <CheckCircle size={16} className="text-[var(--gold)] shrink-0" />
-              {cap}
-            </div>
-          ))}
-          {capRight.map((cap) => (
-            <div key={cap} className="flex items-center gap-3 text-[1rem] text-[var(--text-cream)]">
-              <CheckCircle size={16} className="text-[var(--gold)] shrink-0" />
-              {cap}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          {features.map((f) => (
+            <div key={f.title} className="global-feature p-8 border border-[var(--border-subtle)] bg-[var(--bg-charcoal)]">
+              <h3 className="heading-2 text-[#FAFAFA] mb-3">{f.title}</h3>
+              <p className="text-[0.875rem] text-[var(--text-muted)]">{f.desc}</p>
             </div>
           ))}
         </div>
 
         <Link
           href="/export/"
-          className="mt-12 inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/10 transition-colors duration-300"
+          className="mt-12 inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
         >
-          Enquire for Export
+          Explore Export Capabilities
         </Link>
       </div>
     </section>
   );
 }
 
-/* ═══════════════ Section 11: TESTIMONIAL ═══════════════ */
-function Testimonial() {
+/* ═══════════════ Section 11: TRUST QUOTE ═══════════════ */
+function TrustQuote() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[var(--bg-warm-dark)] py-[clamp(4rem,8vw,12rem)]">
-      <div className="mx-auto max-w-[900px] px-[clamp(1.5rem,4vw,4rem)] text-center">
-        <p
-          className="text-[var(--text-cream)] italic"
-          style={{
-            fontFamily: "var(--font-display), Georgia, serif",
-            fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-            lineHeight: 1.3,
-          }}
-        >
-          &ldquo;Admetus Lifesciences delivers consistent quality and reliable
-          timelines — exactly what international buyers need from a manufacturing
-          partner.&rdquo;
-        </p>
-
-        <p className="mt-8 text-[0.875rem] text-[var(--gold)] tracking-[0.1em] uppercase">
-          — Procurement Director, Nutraceutical Importer
-        </p>
-
-        <div className="mt-16 flex items-center justify-center gap-8 flex-wrap">
-          {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
-            <span key={cert} className="text-[0.75rem] font-medium text-[var(--text-muted)] tracking-[0.15em] uppercase">
-              {cert}
-            </span>
-          ))}
+    <section className="py-[var(--space-24)] bg-[var(--bg-charcoal)] flex items-center justify-center min-h-[60vh]">
+      <div className="mx-auto max-w-[800px] px-[var(--gutter)] text-center">
+        {/* Large gold quotation mark */}
+        <div className="text-[var(--gold)] opacity-30 mb-8" style={{ fontSize: "120px", lineHeight: 0.5, fontFamily: "Georgia, serif" }}>
+          &ldquo;
         </div>
+
+        <p className="heading-1 text-[#FAFAFA] italic leading-[1.3]">
+          Quality is not a department. It is an agreement between the manufacturer and the consumer &mdash; a promise kept in every capsule we produce.
+        </p>
+
+        <p className="mt-8 label-text text-[var(--gold)]">
+          &mdash; ADMETUS LIFESCIENCES
+        </p>
+
+        <div className="h-px bg-[var(--gold)]/30 mt-12 mx-auto w-24" />
       </div>
     </section>
   );
 }
 
-/* ═══════════════ Section 12: GRAND CLOSING CTA ═══════════════ */
+/* ═══════════════ Section 12: CLOSING CTA ═══════════════ */
 function ClosingCTA() {
-  return (
-    <section className="min-h-screen flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
-      {/* Subtle radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,169,81,0.06),transparent_70%)]" />
+  const sectionRef = useRef<HTMLElement>(null);
 
-      {/* Dots decoration */}
+  useEffect(() => {
+    let ctx: { revert: () => void } | null = null;
+    async function init() {
+      const gsapModule = await import("gsap");
+      const gsap = gsapModule.default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        gsap.from(".cta-content > *", {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+          },
+        });
+      }, sectionRef);
+    }
+    init();
+    return () => { ctx?.revert(); };
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="min-h-screen flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
+      {/* Gold particle dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 12 }).map((_, i) => (
+        {Array.from({ length: 15 }).map((_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-[var(--gold)]/20"
             style={{
-              left: `${10 + (i * 7) % 80}%`,
-              top: `${15 + (i * 13) % 70}%`,
+              left: `${8 + (i * 7) % 84}%`,
+              top: `${12 + (i * 13) % 76}%`,
               animation: `float-dot ${3 + (i % 3)}s ease-in-out ${i * 0.3}s infinite`,
             }}
           />
         ))}
       </div>
 
-      <div className="relative z-10 text-center max-w-[800px] px-[clamp(1.5rem,4vw,4rem)]">
-        <h2
-          className="display-hero text-[var(--foreground)]"
-          style={{ fontFamily: "var(--font-display), Georgia, serif" }}
-        >
-          READY TO
-          <br />
-          MANUFACTURE?
+      {/* Gold line */}
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-24 h-px bg-[var(--gold)]/40" />
+
+      <div className="cta-content relative z-10 text-center max-w-[800px] px-[var(--gutter)]">
+        <span className="label-text text-[var(--gold)] mb-8 block">LET&apos;S BUILD TOGETHER</span>
+
+        <h2 className="display-section text-[#FAFAFA]">
+          READY TO<br />MANUFACTURE?
         </h2>
 
-        <p className="mt-8 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-[600px] mx-auto">
-          Whether you need contract manufacturing, private label solutions, or
-          export-ready softgel capsules.
+        <p className="mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[600px] mx-auto">
+          Whether you need contract manufacturing, private labeling, or custom formulations &mdash; we are ready.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#0A0A0A] bg-[var(--gold)] hover:bg-[#E2CC7A] transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm font-bold tracking-[0.1em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[#0A0A0A] transition-all duration-300"
           >
             Request a Quote
           </Link>
-          <a
-            href="mailto:admetuslifesciences@gmail.com"
-            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--foreground)] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
+          <Link
+            href="/contact/"
+            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-sm tracking-[0.05em] uppercase text-[var(--text-muted)] hover:text-[#FAFAFA] hover:underline transition-all duration-300"
           >
-            Email Us Directly
-          </a>
+            Contact Us
+          </Link>
         </div>
 
-        <p className="mt-8 text-[0.75rem] text-[var(--text-muted)] font-mono">
+        <p className="mt-12 text-[0.875rem] text-[var(--text-muted)] font-mono">
           admetuslifesciences@gmail.com
+        </p>
+        <p className="mt-2 text-[0.75rem] text-[var(--text-muted)]">
+          Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India
         </p>
       </div>
     </section>
@@ -904,16 +953,16 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustBar />
+      <CredibilityStrip />
       <Manifesto />
-      <Stats />
+      <ScaleMetrics />
       <ProductShowcase />
       <ManufacturingProcess />
-      <Facility />
-      <WhyChooseUs />
-      <ContractCTA />
-      <ExportSection />
-      <Testimonial />
+      <VisualBreak />
+      <Differentiators />
+      <Partnership />
+      <GlobalReach />
+      <TrustQuote />
       <ClosingCTA />
     </>
   );
