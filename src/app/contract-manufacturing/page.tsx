@@ -28,7 +28,7 @@ export default function ContractManufacturingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
           alt="Contract manufacturing and private label softgel capsule production at Admetus Lifesciences"
@@ -41,11 +41,11 @@ export default function ContractManufacturingPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
-          <h1 className="mt-4 display-section text-[var(--text-white)]">
+          <h1 className="mt-3 display-section text-[var(--text-white)]">
             YOUR BRAND.<br />OUR MANUFACTURING.
           </h1>
-          <div className="gold-rule w-16 mt-6 mb-6" />
-          <p className="body-large text-[var(--text-cream)] max-w-2xl">
+          <div className="gold-rule w-16 mt-4 mb-4" />
+          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
             From custom formulation to private label packaging -- Admetus
             Lifesciences is your end-to-end softgel capsule manufacturing
             partner.
@@ -53,27 +53,27 @@ export default function ContractManufacturingPage() {
         </div>
       </section>
 
-      {/* Services -- numbered editorial list, not icon card grid */}
-      <section className="py-[var(--space-32)]">
+      {/* Services */}
+      <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)] mb-4 block">SERVICES</span>
-            <h2 className="display-section text-[var(--foreground)] mb-6" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <span className="label-text text-[var(--gold)] mb-3 block">SERVICES</span>
+            <h2 className="display-section text-[var(--foreground)] mb-4">
               WHAT WE OFFER
             </h2>
-            <div className="gold-rule w-16 mb-16" />
+            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
             {services.map((service, i) => (
-              <SectionReveal key={service.title} delay={i * 0.06}>
-                <div className="py-8 border-t border-[var(--border-subtle)] flex items-start gap-6">
+              <SectionReveal key={service.title} delay={i * 0.04}>
+                <div className="py-6 border-t border-[var(--border-subtle)] flex items-start gap-5">
                   <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{service.title}</h3>
-                    <p className="mt-2 body-text text-[var(--text-muted)] max-w-md">{service.desc}</p>
+                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[65ch]">{service.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -83,18 +83,18 @@ export default function ContractManufacturingPage() {
       </section>
 
       {/* How It Works + Advantages */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)]">Partnership Advantage</span>
-                <h2 className="mt-4 display-section text-[var(--foreground)] mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                   WHY MANUFACTURE WITH US
                 </h2>
-                <div className="gold-rule w-12 mb-10" />
-                <ul className="space-y-4">
-                  {advantages.map((adv, i) => (
+                <div className="gold-rule w-12 mb-8" />
+                <ul className="space-y-3">
+                  {advantages.map((adv) => (
                     <li key={adv} className="flex items-start gap-4 body-text text-[var(--text-cream)]">
                       <span className="w-5 h-px bg-[var(--gold)] mt-3 shrink-0" />
                       {adv}
@@ -104,13 +104,13 @@ export default function ContractManufacturingPage() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={0.15}>
-              <div className="p-10 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)]">
-                <span className="label-text text-[var(--gold)] block mb-6">THE PROCESS</span>
-                <h3 className="heading-2 text-[var(--foreground)] mb-8">
+            <SectionReveal delay={0.1}>
+              <div className="p-8 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)]">
+                <span className="label-text text-[var(--gold)] block mb-4">THE PROCESS</span>
+                <h3 className="heading-2 text-[var(--foreground)] mb-6">
                   How It Works
                 </h3>
-                <ol className="space-y-5">
+                <ol className="space-y-4">
                   {[
                     "Share your product requirements and specifications",
                     "We provide a custom quote with MOQ and timeline",
@@ -133,20 +133,20 @@ export default function ContractManufacturingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-[var(--space-32)]">
+      <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
               START YOUR MANUFACTURING PARTNERSHIP
             </h2>
-            <div className="gold-rule w-12 mt-6 mb-6" />
-            <p className="body-text text-[var(--text-muted)] max-w-xl">
+            <div className="gold-rule w-12 mt-4 mb-4" />
+            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
               Share your requirements and our team will respond with a detailed
               proposal within 48 hours.
             </p>
             <Link
               href="/contact/"
-              className="mt-10 inline-flex items-center gap-3 px-10 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+              className="mt-8 inline-flex items-center gap-3 px-10 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get a Custom Quote

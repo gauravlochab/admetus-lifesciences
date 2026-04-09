@@ -17,7 +17,7 @@ export default function ExportPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
           alt="Export-ready softgel capsule packaging for international pharmaceutical markets"
@@ -30,11 +30,11 @@ export default function ExportPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">International Markets</span>
-          <h1 className="mt-4 display-section text-[var(--text-white)]">
+          <h1 className="mt-3 display-section text-[var(--text-white)]">
             FROM INDIA<br />TO THE WORLD
           </h1>
-          <div className="gold-rule w-16 mt-6 mb-6" />
-          <p className="body-large text-[var(--text-cream)] max-w-2xl">
+          <div className="gold-rule w-16 mt-4 mb-4" />
+          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
             Admetus Lifesciences is positioned to serve international buyers,
             importers, and distributors seeking a reliable and quality-focused
             softgel capsule manufacturing partner in India.
@@ -42,27 +42,27 @@ export default function ExportPage() {
         </div>
       </section>
 
-      {/* Capabilities -- numbered list, not icon cards */}
-      <section className="py-[var(--space-32)]">
+      {/* Capabilities */}
+      <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)] mb-4 block">CAPABILITIES</span>
-            <h2 className="display-section text-[var(--foreground)] mb-6" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <span className="label-text text-[var(--gold)] mb-3 block">CAPABILITIES</span>
+            <h2 className="display-section text-[var(--foreground)] mb-4">
               EXPORT CAPABILITIES
             </h2>
-            <div className="gold-rule w-16 mb-16" />
+            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
             {exportCapabilities.map((cap, i) => (
-              <SectionReveal key={cap.title} delay={i * 0.06}>
-                <div className="py-8 border-t border-[var(--border-subtle)] flex items-start gap-6">
+              <SectionReveal key={cap.title} delay={i * 0.04}>
+                <div className="py-6 border-t border-[var(--border-subtle)] flex items-start gap-5">
                   <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{cap.title}</h3>
-                    <p className="mt-2 body-text text-[var(--text-muted)] max-w-md">{cap.desc}</p>
+                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[65ch]">{cap.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -72,22 +72,22 @@ export default function ExportPage() {
       </section>
 
       {/* For International Buyers */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)]">For International Buyers</span>
-                <h2 className="mt-4 display-section text-[var(--foreground)] mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                   WHAT WE OFFER EXPORT PARTNERS
                 </h2>
-                <div className="gold-rule w-12 mb-8" />
-                <p className="body-text text-[var(--text-cream)] mb-10">
+                <div className="gold-rule w-12 mb-6" />
+                <p className="body-text text-[var(--text-cream)] mb-8 max-w-[65ch]">
                   As an export-oriented manufacturer, we understand the
                   requirements of international buyers. Our team provides
                   dedicated support for export enquiries.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {[
                     "Dedicated export enquiry handling",
                     "Custom quotation based on requirements",
@@ -95,7 +95,7 @@ export default function ExportPage() {
                     "Flexible MOQ for initial orders",
                     "Complete batch documentation",
                     "Quality certificates provided with each shipment",
-                  ].map((item, i) => (
+                  ].map((item) => (
                     <li key={item} className="flex items-start gap-4 body-text text-[var(--text-cream)]">
                       <span className="w-5 h-px bg-[var(--gold)] mt-3 shrink-0" />
                       {item}
@@ -105,14 +105,14 @@ export default function ExportPage() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={0.15}>
-              <div className="p-10 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)]">
-                <span className="label-text text-[var(--gold)] block mb-6">GLOBAL REACH</span>
-                <h3 className="heading-2 text-[var(--foreground)] mb-4">
+            <SectionReveal delay={0.1}>
+              <div className="p-8 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)]">
+                <span className="label-text text-[var(--gold)] block mb-4">GLOBAL REACH</span>
+                <h3 className="heading-2 text-[var(--foreground)] mb-3">
                   Ready for Global Markets
                 </h3>
-                <div className="gold-rule w-8 mb-4" />
-                <p className="body-text text-[var(--text-muted)] mb-8">
+                <div className="gold-rule w-8 mb-3" />
+                <p className="body-text text-[var(--text-muted)] mb-6 max-w-[65ch]">
                   Export documentation, international packaging, and regulatory
                   support -- shared on request.
                 </p>
@@ -130,20 +130,20 @@ export default function ExportPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-[var(--space-32)]">
+      <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
               START AN EXPORT ENQUIRY
             </h2>
-            <div className="gold-rule w-12 mt-6 mb-6" />
-            <p className="body-text text-[var(--text-muted)] max-w-xl">
+            <div className="gold-rule w-12 mt-4 mb-4" />
+            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
               For bulk and export enquiries, share your requirements and our
               team will respond with a detailed proposal.
             </p>
             <Link
               href="/contact/"
-              className="mt-10 inline-flex items-center gap-3 px-10 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+              className="mt-8 inline-flex items-center gap-3 px-10 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Enquire for Export

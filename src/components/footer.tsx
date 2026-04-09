@@ -22,28 +22,25 @@ const serviceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]" role="contentinfo">
-      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] py-[var(--space-24)]">
-        {/* Top gold rule */}
-        <div className="gold-rule w-16 mb-16" aria-hidden="true" />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-[var(--bg-charcoal)] border-t border-[var(--gold)]/10" role="contentinfo">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
           {/* Company Info */}
           <div>
             <span
-              className="text-[var(--foreground)] tracking-[0.18em] text-lg font-bold"
+              className="text-[var(--foreground)] tracking-[0.18em] text-base font-bold"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
               aria-hidden="true"
             >
               ADMETUS
             </span>
             <h3 className="sr-only">Admetus Lifesciences</h3>
-            <p className="mt-5 body-text text-[var(--text-cream)] max-w-xs !text-[0.9375rem]">
+            <p className="mt-4 body-text text-[var(--text-cream)] max-w-xs !text-[0.875rem]">
               Precision-engineered softgel capsules manufactured in India.
               Contract manufacturing, private label, and export-ready
               nutraceuticals.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3" aria-label="Certifications">
+            <div className="mt-5 flex flex-wrap gap-3" aria-label="Certifications">
               {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
                 <span
                   key={cert}
@@ -57,13 +54,13 @@ export function Footer() {
 
           {/* Products */}
           <nav aria-label="Products">
-            <h3 className="label-text text-[var(--gold)] mb-6">Products</h3>
-            <ul className="space-y-3" role="list">
+            <h3 className="label-text text-[var(--gold)] mb-5">Products</h3>
+            <ul className="space-y-2.5" role="list">
               {productLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.875rem]"
+                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.8125rem]"
                   >
                     {link.label}
                   </Link>
@@ -74,13 +71,13 @@ export function Footer() {
 
           {/* Services */}
           <nav aria-label="Services">
-            <h3 className="label-text text-[var(--gold)] mb-6">Services</h3>
-            <ul className="space-y-3" role="list">
+            <h3 className="label-text text-[var(--gold)] mb-5">Services</h3>
+            <ul className="space-y-2.5" role="list">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.875rem]"
+                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.8125rem]"
                   >
                     {link.label}
                   </Link>
@@ -91,32 +88,32 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="label-text text-[var(--gold)] mb-6">Contact</h3>
-            <address className="not-italic space-y-4">
+            <h3 className="label-text text-[var(--gold)] mb-5">Contact</h3>
+            <address className="not-italic space-y-3">
               <div>
-                <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-1">Address</span>
-                <p className="body-text text-[var(--text-cream)] !text-[0.875rem]">
+                <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Address</span>
+                <p className="body-text text-[var(--text-cream)] !text-[0.8125rem]">
                   Village Anta, Tehsil Safidon,
                   <br />
                   Distt. Jind, Haryana - 126112, India
                 </p>
               </div>
               <div>
-                <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-1">Email</span>
+                <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
                 <a
                   href="mailto:admetuslifesciences@gmail.com"
-                  className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors !text-[0.875rem]"
+                  className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors !text-[0.8125rem]"
                 >
                   admetuslifesciences@gmail.com
                 </a>
               </div>
             </address>
 
-            <div className="mt-6 pt-4 border-t border-[var(--border-subtle)]">
-              <p className="mono-text text-[0.6875rem] text-[var(--text-muted)]">
+            <div className="mt-4 pt-3 border-t border-[var(--border-subtle)]">
+              <p className="mono-text text-[0.625rem] text-[var(--text-muted)]">
                 GSTIN: 06ABRFA9749C1Z3
               </p>
-              <p className="mono-text text-[0.6875rem] text-[var(--text-muted)] mt-1">
+              <p className="mono-text text-[0.625rem] text-[var(--text-muted)] mt-0.5">
                 License: 10020064002545
               </p>
             </div>
@@ -124,8 +121,8 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-20 pt-6 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="body-text text-[var(--text-muted)] !text-[0.8125rem]">
+        <div className="mt-14 pt-5 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="body-text text-[var(--text-muted)] !text-[0.75rem]">
             &copy; {new Date().getFullYear()} Admetus Lifesciences. All rights
             reserved.
           </p>

@@ -97,15 +97,14 @@
   --content-narrow: 800px;
   --gutter: clamp(1.5rem, 4vw, 4rem);
 
-  /* Typography -- more dramatic scale */
-  /* Pass 2: smaller minimum for 320px screens */
-  --display-hero: clamp(3rem, 10vw, 11rem);
-  --display-section: clamp(3.5rem, 8vw, 8rem);
-  --heading-1: clamp(2.5rem, 4.5vw, 4.5rem);
-  --heading-2: clamp(1.75rem, 3vw, 2.75rem);
-  --body-large: 1.25rem;
-  --body: 1.0625rem;
-  --caption: 0.875rem;
+  /* Typography -- refined scale (tighter than v1) */
+  --display-hero: clamp(3rem, 8vw, 7.5rem);
+  --display-section: clamp(2.5rem, 5vw, 5rem);
+  --heading-1: clamp(2rem, 3.5vw, 3rem);
+  --heading-2: clamp(1.5rem, 2.5vw, 2rem);
+  --body-large: 1.125rem;
+  --body: 1rem;
+  --caption: 0.8125rem;
   --label: 0.6875rem;
 
   /* shadcn vars */
@@ -228,8 +227,8 @@
   font-family: var(--font-display), "Archivo", sans-serif;
   font-size: var(--display-hero);
   font-weight: 900;
-  line-height: 0.88;
-  letter-spacing: -0.04em;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
@@ -238,7 +237,7 @@
   font-size: var(--display-section);
   font-weight: 900;
   line-height: 0.92;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
@@ -247,7 +246,7 @@
   font-size: var(--heading-1);
   font-weight: 700;
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
 }
 
 .heading-2 {

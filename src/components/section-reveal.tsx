@@ -51,11 +51,12 @@ export function SectionReveal({
     return () => observer.disconnect();
   }, [prefersReducedMotion]);
 
+  /* Subtler movement: 6 = ~24px instead of 8 = 32px */
   const directions = {
-    up: "translate-y-8",
-    down: "-translate-y-8",
-    left: "translate-x-8",
-    right: "-translate-x-8",
+    up: "translate-y-6",
+    down: "-translate-y-6",
+    left: "translate-x-6",
+    right: "-translate-x-6",
   };
 
   // If reduced motion, skip transition entirely
@@ -70,7 +71,7 @@ export function SectionReveal({
   return (
     <div
       ref={ref}
-      className={`transition-[opacity,transform] duration-700 ease-out ${
+      className={`transition-[opacity,transform] duration-600 ease-out ${
         isVisible
           ? "opacity-100 translate-x-0 translate-y-0"
           : `opacity-0 ${directions[direction]}`

@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
           alt="Admetus Lifesciences pharmaceutical manufacturing facility in Haryana, India"
@@ -21,11 +21,11 @@ export default function AboutPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">About Us</span>
-          <h1 className="mt-4 display-section text-[var(--text-white)]">
+          <h1 className="mt-3 display-section text-[var(--text-white)]">
             A PASSION FOR<br />BETTER HEALTHCARE
           </h1>
-          <div className="gold-rule w-16 mt-6 mb-6" />
-          <p className="body-large text-[var(--text-cream)] max-w-2xl">
+          <div className="gold-rule w-16 mt-4 mb-4" />
+          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
             Admetus Lifesciences is a specialized nutraceutical manufacturing
             company based in Haryana, India -- focused on producing high-quality
             softgel capsules that meet international standards.
@@ -34,13 +34,13 @@ export default function AboutPage() {
       </section>
 
       {/* Company Story -- asymmetric two-column */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-black)]">
+      <section className="py-20 bg-[var(--bg-black)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
             <SectionReveal>
               <div>
-                <span className="label-text text-[var(--gold)] mb-6 block">OUR STORY</span>
-                <div className="space-y-6">
+                <span className="label-text text-[var(--gold)] mb-4 block">OUR STORY</span>
+                <div className="space-y-4 max-w-[65ch]">
                   <p className="body-text text-[var(--text-cream)]">
                     Admetus Lifesciences has built a reputation for excellence in
                     the manufacturing and distribution of softgel capsules. Our
@@ -64,7 +64,7 @@ export default function AboutPage() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={0.15}>
+            <SectionReveal delay={0.1}>
               <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
                 <img
                   src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=600&fit=crop"
@@ -81,16 +81,16 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision -- stacked editorial, no icons */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <SectionReveal>
-              <div className="py-10 border-t border-[var(--border-subtle)]">
-                <span className="label-text text-[var(--gold)] mb-6 block">01 &mdash; MISSION</span>
-                <h3 className="heading-2 text-[var(--foreground)] uppercase mb-4">
+              <div className="py-8 border-t border-[var(--border-subtle)]">
+                <span className="label-text text-[var(--gold)] mb-3 block">01 &mdash; MISSION</span>
+                <h3 className="heading-2 text-[var(--foreground)] uppercase mb-3">
                   Our Mission
                 </h3>
-                <p className="body-text text-[var(--text-cream)] max-w-lg">
+                <p className="body-text text-[var(--text-cream)] max-w-[65ch]">
                   To manufacture world-class softgel capsules that enhance
                   healthcare outcomes globally -- through precision formulation,
                   rigorous quality control, and reliable delivery to our B2B
@@ -99,13 +99,13 @@ export default function AboutPage() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={0.1}>
-              <div className="py-10 border-t border-[var(--border-subtle)]">
-                <span className="label-text text-[var(--gold)] mb-6 block">02 &mdash; VISION</span>
-                <h3 className="heading-2 text-[var(--foreground)] uppercase mb-4">
+            <SectionReveal delay={0.08}>
+              <div className="py-8 border-t border-[var(--border-subtle)]">
+                <span className="label-text text-[var(--gold)] mb-3 block">02 &mdash; VISION</span>
+                <h3 className="heading-2 text-[var(--foreground)] uppercase mb-3">
                   Our Vision
                 </h3>
-                <p className="body-text text-[var(--text-cream)] max-w-lg">
+                <p className="body-text text-[var(--text-cream)] max-w-[65ch]">
                   To become a globally recognized softgel capsule manufacturing
                   partner -- trusted by international brands, importers, and
                   distributors for our commitment to quality, innovation, and
@@ -118,31 +118,31 @@ export default function AboutPage() {
       </section>
 
       {/* Values -- numbered list, not card grid with icons */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-black)]">
+      <section className="py-20 bg-[var(--bg-black)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Our Values</span>
-            <h2 className="mt-4 display-section text-[var(--foreground)] mb-6">
+            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
               WHAT SETS US APART
             </h2>
-            <div className="gold-rule w-16 mb-16" />
+            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
             {[
               { title: "Quality First", desc: "Every product meets international quality and safety standards." },
               { title: "Certified Facility", desc: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified operations." },
               { title: "B2B Focus", desc: "Built for brand owners, distributors, and international buyers." },
               { title: "Timely Delivery", desc: "Reliable production schedules with on-time dispatch commitment." },
             ].map((value, i) => (
-              <SectionReveal key={value.title} delay={i * 0.08}>
-                <div className="py-8 border-t border-[var(--border-subtle)] flex items-start gap-6">
-                  <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 mt-1">
+              <SectionReveal key={value.title} delay={i * 0.06}>
+                <div className="py-6 border-t border-[var(--border-subtle)] flex items-start gap-5">
+                  <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{value.title}</h3>
-                    <p className="mt-2 body-text text-[var(--text-muted)] max-w-md">{value.desc}</p>
+                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[65ch]">{value.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -152,20 +152,20 @@ export default function AboutPage() {
       </section>
 
       {/* CTA -- left-aligned */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)]">
+      <section className="py-20 bg-[var(--bg-charcoal)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
               PARTNER WITH ADMETUS
             </h2>
-            <div className="gold-rule w-12 mt-6 mb-6" />
-            <p className="body-text text-[var(--text-muted)] max-w-xl">
+            <div className="gold-rule w-12 mt-4 mb-4" />
+            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
               Whether you are a brand owner, distributor, or international buyer
               -- we are ready to discuss your requirements.
             </p>
             <Link
               href="/contact/"
-              className="mt-10 inline-flex items-center gap-3 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-300"
+              className="mt-8 inline-flex items-center gap-3 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get in Touch

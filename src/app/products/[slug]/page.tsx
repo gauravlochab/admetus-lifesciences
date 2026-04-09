@@ -36,7 +36,7 @@ export default async function ProductDetailPage({
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
+      <section className="relative min-h-[45vh] flex items-end pb-10 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
           alt={`${product.name} softgel capsules by Admetus Lifesciences`}
@@ -50,25 +50,25 @@ export default async function ProductDetailPage({
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <Link
             href="/products/"
-            className="inline-flex items-center gap-2 label-text text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors mb-8"
+            className="inline-flex items-center gap-2 label-text text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors mb-6"
           >
             <ArrowLeft size={13} />
             All Products
           </Link>
-          <span className="block label-text mb-3 text-[var(--teal)]">
+          <span className="block label-text mb-2 text-[var(--teal)]">
             {product.category}
           </span>
           <h1 className="display-section text-[var(--text-white)]">
             {product.name}
           </h1>
-          <p className="mt-4 body-large text-[var(--gold)]">{product.tagline}</p>
+          <p className="mt-3 body-large text-[var(--gold)]">{product.tagline}</p>
         </div>
       </section>
 
       {/* Product Details */}
-      <section className="py-[var(--space-24)]">
+      <section className="py-16">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16">
             {/* Left: Product visual */}
             <div
               className="aspect-square border border-[var(--border-subtle)] flex items-center justify-center relative overflow-hidden"
@@ -79,7 +79,7 @@ export default async function ProductDetailPage({
                   className="opacity-[0.06]"
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "clamp(6rem, 12vw, 10rem)",
+                    fontSize: "clamp(5rem, 10vw, 8rem)",
                     fontWeight: 900,
                     lineHeight: 0.85,
                     color: product.color,
@@ -87,39 +87,39 @@ export default async function ProductDetailPage({
                 >
                   {product.shortName}
                 </div>
-                <p className="mt-4 label-text text-[var(--text-muted)]">{product.name}</p>
+                <p className="mt-3 label-text text-[var(--text-muted)]">{product.name}</p>
               </div>
             </div>
 
             {/* Right: Info */}
             <div>
-              <div className="flex items-center gap-8 mb-10">
+              <div className="flex items-center gap-6 mb-8">
                 <div>
-                  <span className="label-text text-[var(--text-muted)] block mb-1">Pack Size</span>
+                  <span className="label-text text-[var(--text-muted)] block mb-0.5">Pack Size</span>
                   <span className="mono-text text-[0.8125rem] text-[var(--foreground)]">{product.packSize}</span>
                 </div>
                 <div className="w-px h-8 bg-[var(--border-subtle)]" />
                 <div>
-                  <span className="label-text text-[var(--text-muted)] block mb-1">Dosage Form</span>
+                  <span className="label-text text-[var(--text-muted)] block mb-0.5">Dosage Form</span>
                   <span className="mono-text text-[0.8125rem] text-[var(--foreground)]">{product.dosageForm}</span>
                 </div>
               </div>
 
               {/* Composition */}
-              <div className="mb-10">
-                <h2 className="label-text text-[var(--text-muted)] mb-4">Composition</h2>
-                <p className="body-text text-[var(--text-cream)] p-6 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
+              <div className="mb-8">
+                <h2 className="label-text text-[var(--text-muted)] mb-3">Composition</h2>
+                <p className="body-text text-[var(--text-cream)] p-5 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] max-w-[65ch]">
                   {product.composition}
                 </p>
               </div>
 
               {/* Benefits */}
-              <div className="mb-10">
-                <h2 className="label-text text-[var(--text-muted)] mb-4">Key Benefits</h2>
-                <ul className="space-y-4">
+              <div className="mb-8">
+                <h2 className="label-text text-[var(--text-muted)] mb-3">Key Benefits</h2>
+                <ul className="space-y-3">
                   {product.benefits.map((benefit, i) => (
-                    <li key={benefit} className="flex items-start gap-4 body-text text-[var(--text-cream)]">
-                      <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 mt-1.5">
+                    <li key={benefit} className="flex items-start gap-3 body-text text-[var(--text-cream)]">
+                      <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 mt-1.5">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       {benefit}
@@ -129,7 +129,7 @@ export default async function ProductDetailPage({
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact/"
                   className="inline-flex items-center gap-2 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
@@ -152,14 +152,14 @@ export default async function ProductDetailPage({
       </section>
 
       {/* Ingredients */}
-      <section className="py-[var(--space-24)] bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <section className="py-16 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <h2 className="label-text text-[var(--text-muted)] mb-8">Ingredients</h2>
+          <h2 className="label-text text-[var(--text-muted)] mb-6">Ingredients</h2>
           <div className="flex flex-wrap gap-2">
             {product.ingredients.map((ing) => (
               <span
                 key={ing}
-                className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] bg-[var(--bg-warm-dark)] !text-[0.875rem]"
+                className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] bg-[var(--bg-warm-dark)] !text-[0.8125rem]"
               >
                 {ing}
               </span>
@@ -169,20 +169,20 @@ export default async function ProductDetailPage({
       </section>
 
       {/* Other Products */}
-      <section className="py-[var(--space-24)]">
+      <section className="py-16">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <h2 className="label-text text-[var(--text-muted)] mb-8">Other Products</h2>
+          <h2 className="label-text text-[var(--text-muted)] mb-6">Other Products</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {otherProducts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}/`}
-                className="group p-5 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-[border-color] duration-200"
+                className="group p-4 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-[border-color] duration-200"
               >
-                <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-2">
+                <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-1.5">
                   {p.category}
                 </span>
-                <p className="text-[0.875rem] font-semibold text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+                <p className="text-[0.8125rem] font-semibold text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
                   {p.shortName}
                 </p>
               </Link>

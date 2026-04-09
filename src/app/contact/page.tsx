@@ -80,7 +80,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-end pb-16 overflow-hidden">
+      <section className="relative min-h-[45vh] flex items-end pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
           alt="Admetus Lifesciences facility exterior, ready for business enquiries and partnerships"
@@ -93,11 +93,11 @@ export default function ContactPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Get in Touch</span>
-          <h1 className="mt-4 display-section text-[var(--text-white)]">
+          <h1 className="mt-3 display-section text-[var(--text-white)]">
             REQUEST A<br />QUOTE
           </h1>
-          <div className="gold-rule w-16 mt-6 mb-6" />
-          <p className="body-large text-[var(--text-cream)] max-w-2xl">
+          <div className="gold-rule w-16 mt-4 mb-4" />
+          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
             For bulk and export enquiries, contract manufacturing, or private
             label requirements -- share your details and our team will respond
             promptly.
@@ -106,20 +106,20 @@ export default function ContactPage() {
       </section>
 
       {/* Form & Info */}
-      <section className="py-[var(--space-32)]">
+      <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12">
             {/* Form */}
             <div>
               <SectionReveal>
                 {submitted ? (
-                  <div className="p-14 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]" role="alert">
-                    <span className="label-text text-[var(--gold)] block mb-6">CONFIRMED</span>
+                  <div className="p-10 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]" role="alert">
+                    <span className="label-text text-[var(--gold)] block mb-4">CONFIRMED</span>
                     <h3 className="heading-1 text-[var(--foreground)]">
                       Enquiry Received
                     </h3>
-                    <div className="gold-rule w-10 mt-4 mb-4" />
-                    <p className="body-text text-[var(--text-muted)]">
+                    <div className="gold-rule w-10 mt-3 mb-3" />
+                    <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
                       Thank you for your interest. Our team will review your
                       requirements and respond within 48 hours.
                     </p>
@@ -127,22 +127,22 @@ export default function ContactPage() {
                 ) : (
                   <form
                     onSubmit={handleSubmit}
-                    className="p-10 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]"
+                    className="p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]"
                     noValidate
                   >
-                    <span className="label-text text-[var(--gold)] block mb-8">ENQUIRY FORM</span>
+                    <span className="label-text text-[var(--gold)] block mb-6">ENQUIRY FORM</span>
 
                     {submitError && (
-                      <div className="mb-6 p-4 border border-[var(--destructive)] bg-[var(--destructive)]/5" role="alert">
+                      <div className="mb-5 p-4 border border-[var(--destructive)] bg-[var(--destructive)]/5" role="alert">
                         <p className="body-text text-[var(--destructive)] !text-[0.875rem]">
                           Something went wrong. Please try again.
                         </p>
                       </div>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="contact-name" className="block label-text text-[var(--text-muted)] mb-2">Full Name *</label>
+                        <label htmlFor="contact-name" className="block label-text text-[var(--text-muted)] mb-1.5">Full Name *</label>
                         <input
                           id="contact-name"
                           type="text"
@@ -157,7 +157,7 @@ export default function ContactPage() {
                         {fieldError("name")}
                       </div>
                       <div>
-                        <label htmlFor="contact-company" className="block label-text text-[var(--text-muted)] mb-2">Company Name *</label>
+                        <label htmlFor="contact-company" className="block label-text text-[var(--text-muted)] mb-1.5">Company Name *</label>
                         <input
                           id="contact-company"
                           type="text"
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         {fieldError("company")}
                       </div>
                       <div>
-                        <label htmlFor="contact-country" className="block label-text text-[var(--text-muted)] mb-2">Country *</label>
+                        <label htmlFor="contact-country" className="block label-text text-[var(--text-muted)] mb-1.5">Country *</label>
                         <input
                           id="contact-country"
                           type="text"
@@ -187,7 +187,7 @@ export default function ContactPage() {
                         {fieldError("country")}
                       </div>
                       <div>
-                        <label htmlFor="contact-email" className="block label-text text-[var(--text-muted)] mb-2">Email *</label>
+                        <label htmlFor="contact-email" className="block label-text text-[var(--text-muted)] mb-1.5">Email *</label>
                         <input
                           id="contact-email"
                           type="email"
@@ -202,7 +202,7 @@ export default function ContactPage() {
                         {fieldError("email")}
                       </div>
                       <div>
-                        <label htmlFor="contact-phone" className="block label-text text-[var(--text-muted)] mb-2">Phone / WhatsApp</label>
+                        <label htmlFor="contact-phone" className="block label-text text-[var(--text-muted)] mb-1.5">Phone / WhatsApp</label>
                         <input
                           id="contact-phone"
                           type="tel"
@@ -212,7 +212,7 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <label htmlFor="contact-product" className="block label-text text-[var(--text-muted)] mb-2">Product of Interest</label>
+                        <label htmlFor="contact-product" className="block label-text text-[var(--text-muted)] mb-1.5">Product of Interest</label>
                         <select
                           id="contact-product"
                           className={inputClass}
@@ -227,7 +227,7 @@ export default function ContactPage() {
                         </select>
                       </div>
                       <div>
-                        <label htmlFor="contact-quantity" className="block label-text text-[var(--text-muted)] mb-2">Order Quantity / MOQ</label>
+                        <label htmlFor="contact-quantity" className="block label-text text-[var(--text-muted)] mb-1.5">Order Quantity / MOQ</label>
                         <input
                           id="contact-quantity"
                           type="text"
@@ -236,7 +236,7 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <label htmlFor="contact-packaging" className="block label-text text-[var(--text-muted)] mb-2">Packaging Preference</label>
+                        <label htmlFor="contact-packaging" className="block label-text text-[var(--text-muted)] mb-1.5">Packaging Preference</label>
                         <select
                           id="contact-packaging"
                           className={inputClass}
@@ -250,8 +250,8 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="mt-5">
-                      <label htmlFor="contact-message" className="block label-text text-[var(--text-muted)] mb-2">Message</label>
+                    <div className="mt-4">
+                      <label htmlFor="contact-message" className="block label-text text-[var(--text-muted)] mb-1.5">Message</label>
                       <textarea
                         id="contact-message"
                         rows={4}
@@ -260,7 +260,7 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <div className="mt-8 flex items-center justify-between flex-wrap gap-4">
+                    <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
                       <p className="label-text !text-[0.5625rem] text-[var(--text-muted)]">
                         For bulk and export enquiries only
                       </p>
@@ -280,21 +280,21 @@ export default function ContactPage() {
 
             {/* Sidebar */}
             <div>
-              <SectionReveal delay={0.15}>
-                <div className="space-y-6">
-                  <div className="p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
-                    <span className="label-text text-[var(--gold)] block mb-6">CONTACT</span>
+              <SectionReveal delay={0.1}>
+                <div className="space-y-5">
+                  <div className="p-6 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
+                    <span className="label-text text-[var(--gold)] block mb-4">CONTACT</span>
 
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                       <div>
-                        <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-1">Email</span>
-                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-colors !text-[0.875rem]">
+                        <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
+                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-colors !text-[0.8125rem]">
                           admetuslifesciences@gmail.com
                         </a>
                       </div>
                       <div>
-                        <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-1">Manufacturing Unit</span>
-                        <p className="body-text text-[var(--foreground)] !text-[0.875rem]">
+                        <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Manufacturing Unit</span>
+                        <p className="body-text text-[var(--foreground)] !text-[0.8125rem]">
                           Village Anta, Tehsil Safidon,<br />
                           Distt. Jind, Haryana - 126112<br />
                           India
@@ -303,21 +303,21 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
-                    <span className="label-text text-[var(--gold)] block mb-4">QUICK CONNECT</span>
+                  <div className="p-6 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
+                    <span className="label-text text-[var(--gold)] block mb-3">QUICK CONNECT</span>
                     <a
                       href="https://wa.me/?text=Hello%2C%20I%20am%20interested%20in%20your%20softgel%20capsule%20products.%20Please%20share%20more%20details."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 px-5 py-3 bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-colors"
                     >
-                      <span className="body-text text-[var(--foreground)] !text-[0.875rem] font-medium">Chat on WhatsApp</span>
+                      <span className="body-text text-[var(--foreground)] !text-[0.8125rem] font-medium">Chat on WhatsApp</span>
                     </a>
                   </div>
 
-                  <div className="p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
-                    <span className="label-text text-[var(--gold)] block mb-4">BUSINESS DETAILS</span>
-                    <dl className="space-y-3">
+                  <div className="p-6 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]">
+                    <span className="label-text text-[var(--gold)] block mb-3">BUSINESS DETAILS</span>
+                    <dl className="space-y-2">
                       <div>
                         <dt className="label-text !text-[0.5625rem] text-[var(--text-muted)]">GSTIN</dt>
                         <dd className="mono-text text-[0.75rem] text-[var(--foreground)]">06ABRFA9749C1Z3</dd>

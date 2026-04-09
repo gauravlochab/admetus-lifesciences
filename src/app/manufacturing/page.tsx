@@ -24,7 +24,7 @@ export default function ManufacturingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&h=1080&fit=crop"
           alt="State-of-the-art pharmaceutical manufacturing equipment at Admetus Lifesciences"
@@ -37,11 +37,11 @@ export default function ManufacturingPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Manufacturing & Infrastructure</span>
-          <h1 className="mt-4 display-section text-[var(--text-white)]">
+          <h1 className="mt-3 display-section text-[var(--text-white)]">
             STATE-OF-THE-ART<br />PRODUCTION FACILITY
           </h1>
-          <div className="gold-rule w-16 mt-6 mb-6" />
-          <p className="body-large text-[var(--text-cream)] max-w-2xl">
+          <div className="gold-rule w-16 mt-4 mb-4" />
+          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
             Our manufacturing unit in Haryana, India is equipped with modern
             encapsulation, drying, and packing technology -- purpose-built for
             high-quality softgel capsule production.
@@ -49,8 +49,8 @@ export default function ManufacturingPage() {
         </div>
       </section>
 
-      {/* Facility Overview -- numbered editorial list, not icon cards */}
-      <section className="py-[var(--space-24)]">
+      {/* Facility Overview */}
+      <section className="py-16">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-t border-[var(--border-subtle)]">
             {[
@@ -58,13 +58,13 @@ export default function ManufacturingPage() {
               { title: "Advanced Equipment", desc: "ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packing" },
               { title: "Quality Controlled", desc: "In-house QC lab for raw material, in-process, and finished product testing" },
             ].map((item, i) => (
-              <SectionReveal key={item.title} delay={i * 0.08}>
-                <div className="py-10 pr-8 border-b lg:border-b-0 lg:border-r last:border-r-0 border-[var(--border-subtle)]">
-                  <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-4">
+              <SectionReveal key={item.title} delay={i * 0.06}>
+                <div className="py-8 pr-8 border-b lg:border-b-0 lg:border-r last:border-r-0 border-[var(--border-subtle)]">
+                  <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-3">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{item.title}</h3>
-                  <p className="mt-3 body-text text-[var(--text-muted)] max-w-sm">{item.desc}</p>
+                  <p className="mt-2 body-text text-[var(--text-muted)] max-w-[65ch]">{item.desc}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -72,27 +72,27 @@ export default function ManufacturingPage() {
         </div>
       </section>
 
-      {/* Process Flow -- numbered steps without icons */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      {/* Process Flow */}
+      <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Production Process</span>
-            <h2 className="mt-4 display-section text-[var(--foreground)] mb-6">
+            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
               FROM RAW MATERIAL TO DISPATCH
             </h2>
-            <div className="gold-rule w-16 mb-16" />
+            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
             {processSteps.map((step, i) => (
-              <SectionReveal key={step.title} delay={i * 0.06}>
-                <div className="flex items-start gap-8 py-8 border-t border-[var(--border-subtle)] group hover:bg-[var(--bg-warm-dark)]/30 transition-colors px-4 -mx-4">
+              <SectionReveal key={step.title} delay={i * 0.04}>
+                <div className="flex items-start gap-6 py-6 border-t border-[var(--border-subtle)] group hover:bg-[var(--bg-warm-dark)]/30 transition-colors px-4 -mx-4">
                   <span className="mono-text text-[0.75rem] font-bold text-[var(--gold)] shrink-0 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.375rem)" }}>{step.title}</h3>
-                    <p className="mt-2 body-text text-[var(--text-muted)] max-w-lg">{step.desc}</p>
+                    <p className="mt-1.5 body-text text-[var(--text-muted)] max-w-[65ch]">{step.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -101,27 +101,27 @@ export default function ManufacturingPage() {
         </div>
       </section>
 
-      {/* Equipment -- editorial split, not card grid */}
-      <section className="py-[var(--space-32)]">
+      {/* Equipment */}
+      <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Infrastructure</span>
-            <h2 className="mt-4 display-section text-[var(--foreground)] mb-6">
+            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
               KEY EQUIPMENT
             </h2>
-            <div className="gold-rule w-16 mb-16" />
+            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
             {equipment.map((eq, i) => (
-              <SectionReveal key={eq.name} delay={i * 0.08}>
-                <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-6 py-10 border-t border-[var(--border-subtle)]">
+              <SectionReveal key={eq.name} delay={i * 0.06}>
+                <div className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-4 py-8 border-t border-[var(--border-subtle)]">
                   <div>
                     <span className="label-text text-[var(--gold)]">{eq.type}</span>
                   </div>
                   <div>
                     <h3 className="heading-2 text-[var(--foreground)]">{eq.name}</h3>
-                    <p className="mt-3 body-text text-[var(--text-muted)] max-w-lg">{eq.desc}</p>
+                    <p className="mt-2 body-text text-[var(--text-muted)] max-w-[65ch]">{eq.desc}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -131,20 +131,20 @@ export default function ManufacturingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
+      <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
               VISIT OUR FACILITY
             </h2>
-            <div className="gold-rule w-12 mt-6 mb-6" />
-            <p className="body-text text-[var(--text-muted)] max-w-xl">
+            <div className="gold-rule w-12 mt-4 mb-4" />
+            <p className="body-text text-[var(--text-muted)] max-w-[65ch]">
               We welcome facility audits and visits from potential partners.
               Schedule a visit or request detailed facility documentation.
             </p>
             <Link
               href="/contact/"
-              className="mt-10 inline-flex items-center gap-3 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
+              className="mt-8 inline-flex items-center gap-3 px-8 py-4 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Schedule a Visit

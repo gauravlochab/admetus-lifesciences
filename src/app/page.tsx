@@ -23,13 +23,13 @@ function Hero() {
 
       ctx = gsap.context(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-        tl.from(".hero-label", { y: 30, opacity: 0, duration: 0.9 }, 0.4);
-        tl.from(".hero-line", { y: 100, opacity: 0, duration: 1.0, stagger: 0.14 }, 0.6);
-        tl.from(".hero-rule", { scaleX: 0, duration: 0.8 }, 1.0);
-        tl.from(".hero-sub", { y: 30, opacity: 0, duration: 0.7 }, 1.2);
-        tl.from(".hero-cta", { y: 30, opacity: 0, duration: 0.7 }, 1.4);
-        tl.from(".hero-scroll", { opacity: 0, duration: 0.8 }, 2.2);
-        tl.from(".hero-margin-label", { opacity: 0, duration: 0.6 }, 1.8);
+        tl.from(".hero-label", { y: 20, opacity: 0, duration: 0.5 }, 0.2);
+        tl.from(".hero-line", { y: 40, opacity: 0, duration: 0.6, stagger: 0.08 }, 0.3);
+        tl.from(".hero-rule", { scaleX: 0, duration: 0.5 }, 0.6);
+        tl.from(".hero-sub", { y: 20, opacity: 0, duration: 0.5 }, 0.7);
+        tl.from(".hero-cta", { y: 20, opacity: 0, duration: 0.5 }, 0.8);
+        tl.from(".hero-scroll", { opacity: 0, duration: 0.5 }, 1.4);
+        tl.from(".hero-margin-label", { opacity: 0, duration: 0.4 }, 1.0);
       }, sectionRef);
     }
     init();
@@ -39,7 +39,7 @@ function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen flex items-center overflow-hidden"
+      className="relative min-h-[85vh] flex items-center overflow-hidden"
     >
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
@@ -52,7 +52,7 @@ function Hero() {
           loading="eager" fetchPriority="high"
           style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, var(--overlay-black), rgba(26,23,16,0.58))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.3) 70%, transparent 100%)" }} />
       </div>
 
       {/* Margin label */}
@@ -63,7 +63,7 @@ function Hero() {
       {/* Content -- left-aligned, asymmetric */}
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <div className="max-w-[var(--content-narrow)]">
-          <div className="hero-label label-text text-[var(--gold)] mb-10">
+          <div className="hero-label label-text text-[var(--gold)] mb-5">
             ADMETUS LIFESCIENCES
           </div>
 
@@ -79,13 +79,13 @@ function Hero() {
             ))}
           </div>
 
-          <div className="hero-rule gold-rule w-24 mt-10 origin-left" />
+          <div className="hero-rule gold-rule w-24 mt-6 origin-left" />
 
-          <p className="hero-sub mt-8 body-large text-[var(--text-cream)] max-w-[480px]">
+          <p className="hero-sub mt-4 body-large text-[var(--text-cream)] max-w-[480px]">
             India&apos;s advanced softgel manufacturing facility. Science-driven formulations, globally certified production.
           </p>
 
-          <div className="hero-cta mt-12">
+          <div className="hero-cta mt-8">
             <Link
               href="/manufacturing/"
               className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
@@ -102,10 +102,10 @@ function Hero() {
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">01</span>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="label-text text-[var(--text-muted)] !text-[0.5625rem]">Scroll</span>
+      <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5">
+        <span className="label-text text-[var(--text-muted)] !text-[0.5rem]">Scroll</span>
         <div
-          className="w-px h-14 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
+          className="w-px h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
           style={{ animation: "scroll-drift 3.5s ease-in-out infinite" }}
         />
       </div>
@@ -131,10 +131,10 @@ function CredibilityStrip() {
 
       ctx = gsap.context(() => {
         gsap.from(".cert-badge", {
-          y: 20,
+          y: 15,
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.08,
+          duration: 0.5,
+          stagger: 0.06,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 88%" },
         });
@@ -153,16 +153,16 @@ function CredibilityStrip() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-14 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+    <section ref={sectionRef} className="py-6 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="flex flex-wrap items-start justify-between gap-8 md:gap-4">
+        <div className="flex flex-wrap items-start justify-between gap-6 md:gap-4">
           {certs.map((cert, i) => (
-            <div key={cert.name} className="cert-badge flex flex-col gap-1.5">
+            <div key={cert.name} className="cert-badge flex flex-col gap-1">
               <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span
-                className="text-[1.375rem] font-bold text-[var(--text-white)] tracking-tight"
+                className="text-[1.25rem] font-bold text-[var(--text-white)] tracking-tight"
                 style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
               >
                 {cert.name}
@@ -264,8 +264,8 @@ function Manifesto() {
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">02</span>
 
       <div className="max-w-[860px] px-[var(--gutter)] mx-auto lg:mx-0 lg:ml-[calc(var(--gutter)+2rem)]">
-        <span className="label-text text-[var(--gold)] mb-14 block">OUR PHILOSOPHY</span>
-        <div className="space-y-5">
+        <span className="label-text text-[var(--gold)] mb-8 block">OUR PHILOSOPHY</span>
+        <div className="space-y-4">
           {lines.map((line) => (
             <p
               key={line}
@@ -277,7 +277,7 @@ function Manifesto() {
           ))}
         </div>
         <div
-          className="manifesto-gold-line gold-rule mt-20 w-48 origin-left"
+          className="manifesto-gold-line gold-rule mt-12 w-48 origin-left"
           style={{ transform: "scaleX(0)" }}
         />
       </div>
@@ -303,10 +303,10 @@ function ScaleMetrics() {
 
       ctx = gsap.context(() => {
         gsap.from(".scale-content > *", {
-          y: 40,
+          y: 30,
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.12,
+          duration: 0.6,
+          stagger: 0.08,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
         });
@@ -317,7 +317,7 @@ function ScaleMetrics() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-[var(--space-32)] bg-[var(--bg-black)]">
+    <section ref={sectionRef} className="relative py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
@@ -332,21 +332,21 @@ function ScaleMetrics() {
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-10">03</span>
 
       <div className="scale-content relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-        <span className="label-text text-[var(--gold)] mb-4 block">OUR FACILITY</span>
+        <span className="label-text text-[var(--gold)] mb-3 block">OUR FACILITY</span>
         <h2 className="display-section text-[var(--text-white)]">
           BUILT FOR<br />SCALE
         </h2>
 
         {/* Thin gold rule */}
-        <div className="gold-rule w-16 mt-10 mb-16" />
+        <div className="gold-rule w-16 mt-6 mb-10" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-12 lg:gap-20">
-          <div className="max-w-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-10 lg:gap-16">
+          <div className="max-w-[65ch]">
             <p className="body-large text-[var(--text-cream)]">
               Our Haryana facility produces over <span className="text-[var(--text-white)] font-semibold">50 million capsules annually</span> across
               7 precision-formulated product lines, each backed by 5 international certifications.
             </p>
-            <p className="mt-6 body-text text-[var(--text-muted)]">
+            <p className="mt-4 body-text text-[var(--text-muted)]">
               State-of-the-art ARBES SGX-806P encapsulation line.
               Elmach EPI 2000 blister packaging.
               WHO-GMP certified facility in Haryana, India.
@@ -355,7 +355,7 @@ function ScaleMetrics() {
 
           <div className="hidden lg:block bg-[var(--border-subtle)]" />
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-8">
             {[
               { label: "Equipment", value: "ARBES SGX-806P rotary die encapsulation, Elmach EPI 2000 blister sealing" },
               { label: "Certifications", value: "FSSAI, GMP, HACCP, Halal, WHO-GMP" },
@@ -363,7 +363,7 @@ function ScaleMetrics() {
             ].map((item) => (
               <div key={item.label}>
                 <span className="label-text text-[var(--text-muted)]">{item.label}</span>
-                <p className="mt-2 body-text text-[var(--text-cream)]">{item.value}</p>
+                <p className="mt-1.5 body-text text-[var(--text-cream)]">{item.value}</p>
               </div>
             ))}
           </div>
@@ -434,38 +434,38 @@ function ProductShowcase() {
   // Mobile: vertical stack
   if (isMobile) {
     return (
-      <section className="relative py-[var(--space-32)] bg-[var(--bg-charcoal)] overflow-hidden">
+      <section className="relative py-12 bg-[var(--bg-charcoal)] overflow-hidden">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
-          <h2 className="mt-4 display-section text-[var(--text-white)]">
+          <h2 className="mt-3 display-section text-[var(--text-white)]">
             FORMULATED<br />FOR LIFE
           </h2>
-          <div className="gold-rule w-12 mt-6 mb-10" />
+          <div className="gold-rule w-12 mt-4 mb-8" />
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5">
             {products.map((product, i) => (
               <Link
                 key={product.slug}
                 href={`/products/${product.slug}/`}
-                className="relative overflow-hidden group block min-h-[320px] flex flex-col justify-end"
+                className="relative overflow-hidden group block min-h-[280px] flex flex-col justify-end"
                 style={{
                   background: `linear-gradient(160deg, ${product.color}08, var(--bg-charcoal))`,
                   border: "1px solid var(--border-subtle)",
                 }}
               >
                 <div className="absolute inset-0 bg-[var(--gold)]/0 group-hover:bg-[var(--gold)]/[0.03] transition-colors duration-500" />
-                <div className="relative p-[var(--space-6)] z-10">
-                  <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50 block mb-3">
+                <div className="relative p-5 z-10">
+                  <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50 block mb-2">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="label-text mb-3 text-[var(--teal)] block">
+                  <span className="label-text mb-2 text-[var(--teal)] block">
                     {product.category}
                   </span>
                   <h3 className="heading-2 text-[var(--text-white)] uppercase">
                     {product.name}
                   </h3>
-                  <p className="mt-2 body-text text-[var(--text-cream)]">{product.tagline}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
+                  <p className="mt-1.5 body-text text-[var(--text-cream)] text-base">{product.tagline}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
                     View Details <ArrowRight size={11} />
                   </span>
                 </div>
@@ -475,7 +475,7 @@ function ProductShowcase() {
 
           <Link
             href="/products/"
-            className="mt-10 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
+            className="mt-8 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
           >
             View All Products <ArrowRight size={13} />
           </Link>
@@ -490,21 +490,21 @@ function ProductShowcase() {
 
       <div className="flex h-screen">
         {/* Fixed left panel */}
-        <div className="hidden lg:flex flex-col justify-center w-[380px] shrink-0 p-[var(--gutter)] z-10">
+        <div className="hidden lg:flex flex-col justify-center w-[360px] shrink-0 p-[var(--gutter)] z-10">
           <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
-          <h2 className="mt-6 display-section text-[var(--text-white)]">
+          <h2 className="mt-4 display-section text-[var(--text-white)]">
             FORMULATED<br />FOR LIFE
           </h2>
-          <div className="gold-rule w-12 mt-6 mb-6" />
+          <div className="gold-rule w-12 mt-4 mb-4" />
           <p className="body-text text-[var(--text-cream)]">
             7 precision-formulated softgel capsules.
           </p>
-          <p className="mt-8 mono-text text-[0.8125rem] text-[var(--text-muted)]">
+          <p className="mt-6 mono-text text-[0.8125rem] text-[var(--text-muted)]">
             {String(activeIndex + 1).padStart(2, "0")} / {String(products.length).padStart(2, "0")}
           </p>
           <Link
             href="/products/"
-            className="mt-6 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
+            className="mt-4 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
           >
             View All Products <ArrowRight size={13} />
           </Link>
@@ -513,12 +513,12 @@ function ProductShowcase() {
         {/* Scrolling cards */}
         <div
           ref={cardsRef}
-          className="flex items-center gap-6 pl-6 lg:pl-0 pr-[var(--gutter)]"
+          className="flex items-center gap-5 pl-6 lg:pl-0 pr-[var(--gutter)]"
         >
           {/* Mobile title card */}
           <div className="lg:hidden shrink-0 w-[80vw] flex flex-col justify-center">
             <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
-            <h2 className="mt-4 display-section text-[var(--text-white)]">
+            <h2 className="mt-3 display-section text-[var(--text-white)]">
               FORMULATED FOR LIFE
             </h2>
           </div>
@@ -529,8 +529,8 @@ function ProductShowcase() {
               href={`/products/${product.slug}/`}
               className="shrink-0 overflow-hidden relative group block"
               style={{
-                width: `clamp(300px, ${i % 3 === 0 ? "28vw" : i % 3 === 1 ? "24vw" : "26vw"}, ${i % 3 === 0 ? "440px" : i % 3 === 1 ? "380px" : "400px"})`,
-                height: i % 3 === 0 ? "520px" : i % 3 === 1 ? "480px" : "540px",
+                width: "clamp(300px, 26vw, 400px)",
+                height: "480px",
                 background: `linear-gradient(160deg, ${product.color}08, var(--bg-charcoal))`,
                 border: "1px solid var(--border-subtle)",
               }}
@@ -538,22 +538,22 @@ function ProductShowcase() {
               {/* Warm overlay on hover */}
               <div className="absolute inset-0 bg-[var(--gold)]/0 group-hover:bg-[var(--gold)]/[0.03] transition-colors duration-500" />
 
-              <div className="absolute inset-0 flex flex-col justify-end p-[var(--space-6)]">
+              <div className="absolute inset-0 flex flex-col justify-end p-5">
                 <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50 mb-auto pt-4">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                <span className="label-text mb-3 text-[var(--teal)]">
+                <span className="label-text mb-2 text-[var(--teal)]">
                   {product.category}
                 </span>
                 <h3 className="heading-2 text-[var(--text-white)] uppercase">
                   {product.name}
                 </h3>
-                <p className="mt-2 body-text text-[var(--text-cream)]">{product.tagline}</p>
-                <p className="mt-3 text-[0.8125rem] text-[var(--text-muted)] line-clamp-2 max-w-md">
+                <p className="mt-1.5 body-text text-[var(--text-cream)]">{product.tagline}</p>
+                <p className="mt-2 text-[0.8125rem] text-[var(--text-muted)] line-clamp-2 max-w-md">
                   {product.ingredients.slice(0, 4).join(", ")}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
+                <span className="mt-4 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
                   View Details <ArrowRight size={11} />
                 </span>
               </div>
@@ -626,27 +626,27 @@ function ManufacturingProcess() {
   // Mobile: vertical stack of steps
   if (isMobile) {
     return (
-      <section className="relative py-[var(--space-32)] bg-[var(--bg-warm-dark)]">
+      <section className="relative py-12 bg-[var(--bg-warm-dark)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)] mb-4 block">MANUFACTURING</span>
-          <h2 className="display-section text-[var(--text-white)] mb-6">THE PROCESS</h2>
-          <div className="gold-rule w-12 mb-10" />
+          <span className="label-text text-[var(--gold)] mb-3 block">MANUFACTURING</span>
+          <h2 className="display-section text-[var(--text-white)] mb-4">THE PROCESS</h2>
+          <div className="gold-rule w-12 mb-8" />
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-5">
             {steps.map((s) => (
               <div key={s.num} className="relative overflow-hidden border border-[var(--border-subtle)]">
                 <img
                   src={s.image}
                   alt={`Manufacturing step ${s.num}: ${s.title}`}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-44 object-cover"
                   width={1200}
                   height={800}
                   loading="lazy"
                 />
-                <div className="p-[var(--space-6)]">
-                  <span className="mono-text text-[0.75rem] text-[var(--gold)] block mb-2">{s.num}</span>
+                <div className="p-5">
+                  <span className="mono-text text-[0.75rem] text-[var(--gold)] block mb-1.5">{s.num}</span>
                   <h3 className="heading-2 text-[var(--text-white)] uppercase">{s.title}</h3>
-                  <p className="mt-2 body-text text-[var(--text-cream)]">{s.body}</p>
+                  <p className="mt-1.5 body-text text-[var(--text-cream)] text-base">{s.body}</p>
                 </div>
               </div>
             ))}
@@ -664,12 +664,12 @@ function ManufacturingProcess() {
 
       {/* Left: content */}
       <div className="w-full lg:w-[42%] flex flex-col justify-center p-[var(--gutter)] relative">
-        <span className="label-text text-[var(--gold)] mb-4">MANUFACTURING</span>
-        <h2 className="display-section text-[var(--text-white)] mb-6">THE PROCESS</h2>
-        <div className="gold-rule w-12 mb-10" />
+        <span className="label-text text-[var(--gold)] mb-3">MANUFACTURING</span>
+        <h2 className="display-section text-[var(--text-white)] mb-4">THE PROCESS</h2>
+        <div className="gold-rule w-12 mb-8" />
 
         {/* Progress line */}
-        <div className="hidden lg:flex flex-col gap-0 mb-8">
+        <div className="hidden lg:flex flex-col gap-0 mb-6">
           {steps.map((s, i) => (
             <div key={s.num} className="flex items-center gap-4 py-1.5">
               <div
@@ -695,11 +695,11 @@ function ManufacturingProcess() {
 
         {/* Mobile active step */}
         <div className="lg:hidden">
-          <div className="text-[var(--gold)] opacity-15 mb-2" style={{ fontFamily: "var(--font-display)", fontSize: "5.5rem", lineHeight: 0.85, fontWeight: 900 }}>
+          <div className="text-[var(--gold)] opacity-15 mb-2" style={{ fontFamily: "var(--font-display)", fontSize: "4.5rem", lineHeight: 0.85, fontWeight: 900 }}>
             {step.num}
           </div>
           <h3 className="heading-1 text-[var(--text-white)] uppercase">{step.title}</h3>
-          <p className="mt-4 body-large text-[var(--text-cream)]">{step.body}</p>
+          <p className="mt-3 body-large text-[var(--text-cream)]">{step.body}</p>
         </div>
       </div>
 
@@ -725,13 +725,13 @@ function ManufacturingProcess() {
             {/* Warm vignette overlay -- hardcoded rgba on image overlay intentionally */}
             <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), rgba(10,10,10,0.5))" }} />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-white opacity-[0.04]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(8rem, 16vw, 15rem)", lineHeight: 0.85, fontWeight: 900 }}>
+              <div className="text-white opacity-[0.04]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(6rem, 14vw, 12rem)", lineHeight: 0.85, fontWeight: 900 }}>
                 {step.num}
               </div>
             </div>
             <div className="absolute bottom-[var(--gutter)] left-[var(--gutter)] right-[var(--gutter)]">
               <h3 className="heading-1 text-white uppercase">{s.title}</h3>
-              <p className="mt-3 body-large text-white/80 max-w-lg">{s.body}</p>
+              <p className="mt-2 body-large text-white/80 max-w-[65ch]">{s.body}</p>
             </div>
           </div>
         ))}
@@ -777,7 +777,7 @@ function VisualBreak() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-[65vh] overflow-hidden">
+    <section ref={sectionRef} className="relative h-[50vh] overflow-hidden">
       <div className="parallax-bg absolute inset-0 img-vignette" style={{ height: "130%", top: "-15%" }}>
         <img
           src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&h=1080&fit=crop"
@@ -824,10 +824,10 @@ function Differentiators() {
 
       ctx = gsap.context(() => {
         gsap.from(".diff-card", {
-          y: 50,
+          y: 30,
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.12,
+          duration: 0.6,
+          stagger: 0.08,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
         });
@@ -861,56 +861,56 @@ function Differentiators() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-[var(--space-32)] bg-[var(--bg-charcoal)]">
+    <section ref={sectionRef} className="py-20 bg-[var(--bg-charcoal)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">06</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <span className="label-text text-[var(--gold)] mb-4 block">WHY ADMETUS</span>
-        <h2 className="display-section text-[var(--text-white)] mb-6">
+        <span className="label-text text-[var(--gold)] mb-3 block">WHY ADMETUS</span>
+        <h2 className="display-section text-[var(--text-white)] mb-4">
           THE ADMETUS<br />DIFFERENCE
         </h2>
-        <div className="gold-rule w-16 mb-16" />
+        <div className="gold-rule w-16 mb-10" />
 
         {/* Asymmetric grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[420px] flex flex-col justify-end img-warm-overlay">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
             <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
             {/* Image overlay: hardcoded rgba intentional */}
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
-            <div className="relative p-[var(--space-8)] z-10">
-              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">01</span>
+            <div className="relative p-6 z-10">
+              <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">01</span>
               <h3 className="heading-1 text-white">{cards[0].title}</h3>
-              <p className="mt-3 body-text text-white/80 max-w-lg">{cards[0].body}</p>
+              <p className="mt-2 body-text text-white/80 max-w-[65ch]">{cards[0].body}</p>
             </div>
           </div>
 
-          <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[420px] flex flex-col justify-end img-warm-overlay">
+          <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
             <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
-            <div className="relative p-[var(--space-6)] z-10">
-              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">02</span>
+            <div className="relative p-5 z-10">
+              <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">02</span>
               <h3 className="heading-2 text-white">{cards[1].title}</h3>
-              <p className="mt-2 body-text text-white/80">{cards[1].body}</p>
+              <p className="mt-1.5 body-text text-white/80">{cards[1].body}</p>
             </div>
           </div>
 
-          <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+          <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
             <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
-            <div className="relative p-[var(--space-6)] z-10">
-              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">03</span>
+            <div className="relative p-5 z-10">
+              <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">03</span>
               <h3 className="heading-2 text-white">{cards[2].title}</h3>
-              <p className="mt-2 body-text text-white/80">{cards[2].body}</p>
+              <p className="mt-1.5 body-text text-white/80">{cards[2].body}</p>
             </div>
           </div>
 
-          <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+          <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
             <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
-            <div className="relative p-[var(--space-8)] z-10">
-              <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">04</span>
+            <div className="relative p-6 z-10">
+              <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">04</span>
               <h3 className="heading-1 text-white">{cards[3].title}</h3>
-              <p className="mt-3 body-text text-white/80 max-w-lg">{cards[3].body}</p>
+              <p className="mt-2 body-text text-white/80 max-w-[65ch]">{cards[3].body}</p>
             </div>
           </div>
         </div>
@@ -937,10 +937,10 @@ function Partnership() {
 
       ctx = gsap.context(() => {
         gsap.from(".partnership-content > *", {
-          x: 50,
+          x: 30,
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.1,
+          duration: 0.6,
+          stagger: 0.08,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
         });
@@ -951,7 +951,7 @@ function Partnership() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-screen flex bg-[var(--bg-warm-dark)]">
+    <section ref={sectionRef} className="min-h-[75vh] flex bg-[var(--bg-warm-dark)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">07</span>
 
       {/* Left: Image with warm overlay */}
@@ -971,14 +971,14 @@ function Partnership() {
       <div className="w-full lg:w-1/2 flex flex-col justify-center p-[var(--gutter)] lg:pl-[var(--space-16)]">
         <div className="partnership-content max-w-lg">
           <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
-          <h2 className="mt-8 display-section text-[var(--text-white)]">
+          <h2 className="mt-4 display-section text-[var(--text-white)]">
             YOUR BRAND.<br />OUR SCIENCE.
           </h2>
-          <div className="gold-rule w-12 mt-8 mb-8" />
+          <div className="gold-rule w-12 mt-5 mb-5" />
           <p className="body-large text-[var(--text-cream)]">
             From concept to shelf &mdash; turnkey private label softgel manufacturing.
           </p>
-          <ul className="mt-10 space-y-4">
+          <ul className="mt-8 space-y-3">
             {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
               <li key={s} className="flex items-center gap-4 body-text text-[var(--text-cream)]">
                 <span className="w-5 h-px bg-[var(--gold)]" />
@@ -988,7 +988,7 @@ function Partnership() {
           </ul>
           <Link
             href="/contract-manufacturing/"
-            className="cursor-pointer mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+            className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Start a Project
@@ -1018,10 +1018,10 @@ function GlobalReach() {
 
       ctx = gsap.context(() => {
         gsap.from(".global-feature", {
-          y: 30,
+          y: 25,
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.1,
+          duration: 0.6,
+          stagger: 0.08,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
         });
@@ -1038,23 +1038,23 @@ function GlobalReach() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-[var(--space-32)] bg-[var(--bg-black)]">
+    <section ref={sectionRef} className="py-20 bg-[var(--bg-black)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">08</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16">
           <div>
-            <span className="label-text text-[var(--gold)] mb-4 block">GLOBAL PRESENCE</span>
+            <span className="label-text text-[var(--gold)] mb-3 block">GLOBAL PRESENCE</span>
             <h2 className="display-section text-[var(--text-white)]">
               BEYOND<br />BORDERS
             </h2>
-            <div className="gold-rule w-16 mt-8 mb-8" />
+            <div className="gold-rule w-16 mt-5 mb-5" />
             <p className="body-large text-[var(--text-cream)] max-w-[480px]">
               Regulatory-compliant export capabilities serving pharmaceutical markets worldwide.
             </p>
             <Link
               href="/export/"
-              className="cursor-pointer mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+              className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Explore Export Capabilities
@@ -1064,12 +1064,12 @@ function GlobalReach() {
 
           <div className="flex flex-col justify-center gap-0">
             {features.map((f, i) => (
-              <div key={f.title} className="global-feature py-8 border-t border-[var(--border-subtle)]">
-                <div className="flex items-baseline gap-4 mb-3">
-                  <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40">{String(i + 1).padStart(2, "0")}</span>
+              <div key={f.title} className="global-feature py-6 border-t border-[var(--border-subtle)]">
+                <div className="flex items-baseline gap-4 mb-2">
+                  <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="heading-2 text-[var(--text-white)]" style={{ fontSize: "clamp(1.25rem, 2vw, 1.5rem)" }}>{f.title}</h3>
                 </div>
-                <p className="body-text text-[var(--text-muted)] max-w-md ml-[calc(0.625rem*3+1rem)]">{f.desc}</p>
+                <p className="body-text text-[var(--text-muted)] max-w-[65ch] ml-[calc(0.5625rem*3+1rem)]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -1082,17 +1082,17 @@ function GlobalReach() {
 /* ═══ Section 11: TRUST QUOTE ═══ */
 function TrustQuote() {
   return (
-    <section className="py-[var(--space-32)] bg-[var(--bg-charcoal)] flex items-center min-h-[50vh]">
+    <section className="py-20 bg-[var(--bg-charcoal)] flex items-center">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="max-w-[680px]">
-          <div className="gold-rule w-20 mb-14" />
+        <div className="max-w-[640px]">
+          <div className="gold-rule w-16 mb-10" />
 
           <blockquote>
             <p
               className="text-[var(--text-white)] italic leading-[1.35]"
               style={{
                 fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif",
-                fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
                 fontWeight: 400,
               }}
             >
@@ -1100,7 +1100,7 @@ function TrustQuote() {
             </p>
           </blockquote>
 
-          <div className="mt-10 flex items-center gap-4">
+          <div className="mt-8 flex items-center gap-4">
             <div className="gold-rule w-6" />
             <p className="label-text text-[var(--gold)]">
               ADMETUS LIFESCIENCES
@@ -1130,10 +1130,10 @@ function ClosingCTA() {
 
       ctx = gsap.context(() => {
         gsap.from(".cta-content > *", {
-          y: 30,
+          y: 25,
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.1,
+          duration: 0.6,
+          stagger: 0.08,
           ease: "power3.out",
           scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
         });
@@ -1144,26 +1144,29 @@ function ClosingCTA() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-[var(--space-48)] flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
+    <section ref={sectionRef} className="py-24 flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
+      {/* Gold rule above */}
+      <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
+
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-10">10</span>
 
-      <div className="cta-content relative z-10 text-center max-w-[800px] px-[var(--gutter)]">
-        <span className="label-text text-[var(--gold)] mb-10 block">LET&apos;S BUILD TOGETHER</span>
+      <div className="cta-content relative z-10 text-center max-w-[700px] px-[var(--gutter)]">
+        <span className="label-text text-[var(--gold)] mb-5 block">LET&apos;S BUILD TOGETHER</span>
 
         <h2 className="display-section text-[var(--text-white)]">
-          READY TO<br />MANUFACTURE?
+          LET&apos;S DISCUSS YOUR<br />REQUIREMENTS
         </h2>
 
-        <div className="gold-rule w-12 mx-auto mt-8 mb-8" />
+        <div className="gold-rule w-12 mx-auto mt-5 mb-5" />
 
-        <p className="body-large text-[var(--text-cream)] max-w-[560px] mx-auto">
+        <p className="body-large text-[var(--text-cream)] max-w-[520px] mx-auto">
           Whether you need contract manufacturing, private labeling, or custom formulations &mdash; we are ready.
         </p>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact/"
-            className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+            className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Request a Quote
@@ -1171,17 +1174,17 @@ function ClosingCTA() {
           </Link>
           <Link
             href="/contact/"
-            className="cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] tracking-[0.08em] uppercase text-[var(--text-muted)] hover:text-[var(--text-white)] transition-colors duration-300"
+            className="cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Contact Us
           </Link>
         </div>
 
-        <p className="mt-20 mono-text text-[0.8125rem] text-[var(--text-muted)]">
+        <p className="mt-12 mono-text text-[0.8125rem] text-[var(--text-muted)]">
           admetuslifesciences@gmail.com
         </p>
-        <p className="mt-2 body-text text-[var(--text-muted)] !text-[0.8125rem]">
+        <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">
           Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India
         </p>
       </div>

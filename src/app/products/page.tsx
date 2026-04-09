@@ -18,7 +18,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-16 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-end pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
           alt="Collection of precision-formulated softgel capsules manufactured by Admetus Lifesciences"
@@ -31,11 +31,11 @@ export default function ProductsPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Product Portfolio</span>
-          <h1 className="mt-4 display-section text-[var(--text-white)]">
+          <h1 className="mt-3 display-section text-[var(--text-white)]">
             NUTRACEUTICAL<br />SOFTGEL CAPSULES
           </h1>
-          <div className="gold-rule w-16 mt-6 mb-6" />
-          <p className="body-large text-[var(--text-cream)] max-w-2xl">
+          <div className="gold-rule w-16 mt-4 mb-4" />
+          <p className="body-large text-[var(--text-cream)] max-w-[65ch]">
             Each product in our portfolio is formulated for optimal bioavailability
             and manufactured under strict quality controls. Available for contract
             manufacturing and private label.
@@ -44,10 +44,10 @@ export default function ProductsPage() {
       </section>
 
       {/* Category Filter + Grid */}
-      <section className="py-[var(--space-24)]">
+      <section className="py-16">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           {/* Category tabs */}
-          <div className="flex flex-wrap gap-2 mb-14">
+          <div className="flex flex-wrap gap-2 mb-10">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -64,34 +64,34 @@ export default function ProductsPage() {
             ))}
           </div>
 
-          {/* Products Grid -- 2-col with varied heights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filtered.map((product, i) => (
-              <SectionReveal key={product.slug} delay={i * 0.06}>
+              <SectionReveal key={product.slug} delay={i * 0.04}>
                 <Link href={`/products/${product.slug}/`} className="group block">
                   <div
-                    className="relative p-8 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-[border-color,transform] duration-500 flex flex-col justify-end group-hover:-translate-y-1"
+                    className="relative p-6 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-[border-color,transform] duration-500 flex flex-col justify-end group-hover:-translate-y-0.5"
                     style={{
                       background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))`,
-                      minHeight: i % 3 === 0 ? "320px" : "280px",
+                      minHeight: "280px",
                     }}
                   >
                     {/* Number in corner */}
-                    <span className="absolute top-6 right-6 mono-text text-[0.625rem] text-[var(--text-muted)] opacity-30">
+                    <span className="absolute top-5 right-5 mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-30">
                       {String(i + 1).padStart(2, "0")}
                     </span>
 
-                    <span className="label-text mb-4 block text-[var(--teal)]">
+                    <span className="label-text mb-3 block text-[var(--teal)]">
                       {product.category}
                     </span>
                     <h3 className="heading-2 text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-colors">
                       {product.name}
                     </h3>
                     <p className="mt-1 body-text text-[var(--gold)] !text-[0.9375rem]">{product.tagline}</p>
-                    <p className="mt-3 body-text text-[var(--text-muted)] line-clamp-2 max-w-lg !text-[0.875rem]">
+                    <p className="mt-2 body-text text-[var(--text-muted)] line-clamp-2 max-w-[65ch] !text-[0.875rem]">
                       {product.composition}
                     </p>
-                    <div className="mt-5 pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between">
+                    <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between">
                       <span className="mono-text text-[0.6875rem] text-[var(--text-muted)]">{product.packSize}</span>
                       <span className="flex items-center gap-1.5 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
                         Details
@@ -106,13 +106,13 @@ export default function ProductsPage() {
 
           {/* CTA */}
           <SectionReveal>
-            <div className="mt-20 p-12 border border-[var(--border-subtle)] bg-[var(--bg-charcoal)]">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="mt-14 p-8 border border-[var(--border-subtle)] bg-[var(--bg-charcoal)]">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                 <div>
                   <h3 className="heading-2 text-[var(--foreground)] uppercase">
                     Need a Custom Formulation?
                   </h3>
-                  <p className="mt-3 body-text text-[var(--text-muted)] max-w-xl">
+                  <p className="mt-2 body-text text-[var(--text-muted)] max-w-[65ch]">
                     We offer contract manufacturing and private label services. Share
                     your requirements and we will provide a custom quote.
                   </p>
