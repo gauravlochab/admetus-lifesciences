@@ -8,10 +8,9 @@ import { motion, AnimatePresence } from "motion/react";
 const navLinks = [
   { href: "/about/", label: "About" },
   { href: "/products/", label: "Products" },
-  { href: "/manufacturing/", label: "Manufacturing" },
+  { href: "/manufacturing/", label: "Facility" },
   { href: "/quality/", label: "Quality" },
-  { href: "/contract-manufacturing/", label: "Contract" },
-  { href: "/export/", label: "Export" },
+  { href: "/contract-manufacturing/", label: "Partner" },
   { href: "/contact/", label: "Contact" },
 ];
 
@@ -57,12 +56,12 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-[0.75rem] font-medium text-[#8A8274] hover:text-[#FAFAFA] transition-colors duration-300 uppercase tracking-[0.1em]"
+                className="px-2.5 py-2 text-[0.7rem] font-medium text-[#8A8274] hover:text-[#FAFAFA] transition-colors duration-300 uppercase tracking-[0.08em] whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -70,7 +69,7 @@ export function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Link
               href="/contact/"
               className="px-5 py-2 text-[0.75rem] font-medium uppercase tracking-[0.1em] text-[#C8A951] border border-[#C8A951]/30 rounded-full hover:bg-[#C8A951]/10 transition-all duration-300"
@@ -82,7 +81,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="lg:hidden p-2 text-[#C8A951]"
+            className="xl:hidden p-2 text-[#C8A951]"
             aria-label="Toggle menu"
           >
             {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
