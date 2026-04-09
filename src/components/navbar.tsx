@@ -49,7 +49,7 @@ export function Navbar() {
           {/* Wordmark */}
           <Link href="/" className="group">
             <span
-              className="text-[var(--foreground)] tracking-[0.15em] text-xl"
+              className="text-[#FAFAFA] tracking-[0.15em] text-xl"
               style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               ADMETUS
@@ -62,7 +62,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-2.5 py-2 text-[0.7rem] font-medium text-[var(--text-muted)] hover:text-[var(--foreground)] transition-colors duration-300 uppercase tracking-[0.08em] whitespace-nowrap"
+                className="px-2.5 py-2 text-[0.7rem] font-medium text-[#8A8274] hover:text-[#FAFAFA] transition-colors duration-300 uppercase tracking-[0.08em] whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -120,7 +120,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-2xl font-medium text-[var(--foreground)] uppercase tracking-[0.05em]"
+                    className="text-2xl font-medium text-[#FAFAFA] uppercase tracking-[0.05em]"
                     style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                   >
                     {link.label}
