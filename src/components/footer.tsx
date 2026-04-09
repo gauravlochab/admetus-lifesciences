@@ -19,7 +19,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <span
-              className="text-[var(--text-white)] tracking-[0.15em] text-xl"
+              className="text-[var(--foreground)] tracking-[0.15em] text-xl"
               style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               ADMETUS

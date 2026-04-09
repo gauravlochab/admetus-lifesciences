@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <span className="label-text text-[var(--gold)]">About Us</span>
           <h1
-            className="mt-4 text-[var(--text-white)] uppercase"
+            className="mt-4 text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <br />
             <span className="text-[var(--gold)]">BETTER HEALTHCARE</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
             Admetus Lifesciences is a specialized nutraceutical manufacturing
             company based in Haryana, India — focused on producing high-quality
             softgel capsules that meet international standards.
@@ -87,7 +87,7 @@ export default function AboutPage() {
               <div className="p-8 bg-[var(--bg-warm-dark)] border border-white/[0.06] h-full">
                 <Target size={28} className="text-[var(--gold)] mb-6" />
                 <h3
-                  className="text-[var(--text-white)] uppercase text-xl"
+                  className="text-[var(--foreground)] uppercase text-xl"
                   style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                 >
                   Our Mission
@@ -105,7 +105,7 @@ export default function AboutPage() {
               <div className="p-8 bg-[var(--bg-warm-dark)] border border-white/[0.06] h-full">
                 <Eye size={28} className="text-[var(--gold)] mb-6" />
                 <h3
-                  className="text-[var(--text-white)] uppercase text-xl"
+                  className="text-[var(--foreground)] uppercase text-xl"
                   style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                 >
                   Our Vision
@@ -128,7 +128,7 @@ export default function AboutPage() {
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Our Values</span>
             <h2
-              className="mt-4 text-[var(--text-white)] uppercase mb-12"
+              className="mt-4 text-[var(--foreground)] uppercase mb-12"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
@@ -149,7 +149,7 @@ export default function AboutPage() {
               <SectionReveal key={value.title} delay={i * 0.1}>
                 <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06] h-full">
                   <value.icon size={24} className="text-[var(--gold)] mb-4" />
-                  <h3 className="text-[1rem] font-semibold text-[var(--text-white)]">{value.title}</h3>
+                  <h3 className="text-[1rem] font-semibold text-[var(--foreground)]">{value.title}</h3>
                   <p className="mt-2 text-[0.875rem] text-[var(--text-muted)]">{value.desc}</p>
                 </div>
               </SectionReveal>
@@ -163,7 +163,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <SectionReveal>
             <h2
-              className="text-[var(--text-white)] uppercase"
+              className="text-[var(--foreground)] uppercase"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",

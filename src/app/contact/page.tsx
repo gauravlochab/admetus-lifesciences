@@ -21,7 +21,7 @@ export default function ContactPage() {
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <span className="label-text text-[var(--gold)]">Get in Touch</span>
           <h1
-            className="mt-4 text-[var(--text-white)] uppercase"
+            className="mt-4 text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -33,7 +33,7 @@ export default function ContactPage() {
             <br />
             <span className="text-[var(--gold)]">QUOTE</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
             For bulk and export enquiries, contract manufacturing, or private
             label requirements — share your details and our team will respond
             promptly.
@@ -52,7 +52,7 @@ export default function ContactPage() {
                   <div className="p-12 text-center bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <CheckCircle size={48} className="text-[#22c55e] mx-auto mb-4" />
                     <h3
-                      className="text-[var(--text-white)] text-2xl"
+                      className="text-[var(--foreground)] text-2xl"
                       style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                     >
                       Enquiry Received
@@ -73,7 +73,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="Your full name"
                         />
                       </div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="Company name"
                         />
                       </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                         <input
                           type="text"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="Your country"
                         />
                       </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                         <input
                           type="email"
                           required
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="business@email.com"
                         />
                       </div>
@@ -108,13 +108,13 @@ export default function ContactPage() {
                         <label className="block label-text text-[var(--text-muted)] mb-2">Phone / WhatsApp</label>
                         <input
                           type="tel"
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="+91 ..."
                         />
                       </div>
                       <div>
                         <label className="block label-text text-[var(--text-muted)] mb-2">Product of Interest</label>
-                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm focus:border-[var(--gold)] focus:outline-none transition-colors">
+                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm focus:border-[var(--gold)] focus:outline-none transition-colors">
                           <option value="" className="bg-[var(--bg-charcoal)]">Select a product</option>
                           {products.map((p) => (
                             <option key={p.slug} value={p.slug} className="bg-[var(--bg-charcoal)]">{p.name}</option>
@@ -128,13 +128,13 @@ export default function ContactPage() {
                         <label className="block label-text text-[var(--text-muted)] mb-2">Order Quantity / MOQ</label>
                         <input
                           type="text"
-                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors"
                           placeholder="e.g., 10,000 units"
                         />
                       </div>
                       <div>
                         <label className="block label-text text-[var(--text-muted)] mb-2">Packaging Preference</label>
-                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm focus:border-[var(--gold)] focus:outline-none transition-colors">
+                        <select className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm focus:border-[var(--gold)] focus:outline-none transition-colors">
                           <option value="" className="bg-[var(--bg-charcoal)]">Select preference</option>
                           <option value="blister" className="bg-[var(--bg-charcoal)]">Blister Pack</option>
                           <option value="bottle" className="bg-[var(--bg-charcoal)]">Bottle</option>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                       <label className="block label-text text-[var(--text-muted)] mb-2">Message</label>
                       <textarea
                         rows={4}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--text-white)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/[0.06] text-[var(--foreground)] text-sm placeholder-[#8A8274]/50 focus:border-[var(--gold)] focus:outline-none transition-colors resize-none"
                         placeholder="Share your requirements, specifications, or questions..."
                       />
                     </div>
@@ -177,7 +177,7 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <h3
-                      className="text-[var(--text-white)] text-lg mb-4"
+                      className="text-[var(--foreground)] text-lg mb-4"
                       style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                     >
                       Contact Information
@@ -187,7 +187,7 @@ export default function ContactPage() {
                         <Mail size={14} className="text-[var(--gold)] mt-1 shrink-0" />
                         <div>
                           <p className="text-[0.75rem] text-[var(--text-muted)] mb-1">Email</p>
-                          <a href="mailto:admetuslifesciences@gmail.com" className="text-sm text-[var(--text-white)] hover:text-[var(--gold)] transition-colors">
+                          <a href="mailto:admetuslifesciences@gmail.com" className="text-sm text-[var(--foreground)] hover:text-[var(--gold)] transition-colors">
                             admetuslifesciences@gmail.com
                           </a>
                         </div>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                         <MapPin size={14} className="text-[var(--gold)] mt-1 shrink-0" />
                         <div>
                           <p className="text-[0.75rem] text-[var(--text-muted)] mb-1">Manufacturing Unit</p>
-                          <p className="text-sm text-[var(--text-white)]">
+                          <p className="text-sm text-[var(--foreground)]">
                             Village Anta, Tehsil Safidon,<br />
                             Distt. Jind, Haryana - 126112<br />
                             India
@@ -208,7 +208,7 @@ export default function ContactPage() {
 
                   <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <h3
-                      className="text-[var(--text-white)] text-lg mb-3"
+                      className="text-[var(--foreground)] text-lg mb-3"
                       style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                     >
                       Quick Connect
@@ -220,13 +220,13 @@ export default function ContactPage() {
                       className="flex items-center gap-3 px-4 py-3 bg-[#25D366]/10 border border-[#25D366]/20 hover:bg-[#25D366]/20 transition-colors"
                     >
                       <MessageCircle size={20} className="text-[#25D366]" fill="#25D366" />
-                      <span className="text-sm font-medium text-[var(--text-white)]">Chat on WhatsApp</span>
+                      <span className="text-sm font-medium text-[var(--foreground)]">Chat on WhatsApp</span>
                     </a>
                   </div>
 
                   <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06]">
                     <h3
-                      className="text-[var(--text-white)] text-lg mb-3"
+                      className="text-[var(--foreground)] text-lg mb-3"
                       style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                     >
                       Business Details
@@ -234,15 +234,15 @@ export default function ContactPage() {
                     <dl className="space-y-2 text-sm">
                       <div>
                         <dt className="text-[var(--text-muted)]">GSTIN</dt>
-                        <dd className="text-[var(--text-white)] font-mono text-xs">06ABRFA9749C1Z3</dd>
+                        <dd className="text-[var(--foreground)] font-mono text-xs">06ABRFA9749C1Z3</dd>
                       </div>
                       <div>
                         <dt className="text-[var(--text-muted)]">License No.</dt>
-                        <dd className="text-[var(--text-white)] font-mono text-xs">10020064002545</dd>
+                        <dd className="text-[var(--foreground)] font-mono text-xs">10020064002545</dd>
                       </div>
                       <div>
                         <dt className="text-[var(--text-muted)]">Website</dt>
-                        <dd className="text-[var(--text-white)] text-xs">admetuslifesciences.com</dd>
+                        <dd className="text-[var(--foreground)] text-xs">admetuslifesciences.com</dd>
                       </div>
                     </dl>
                   </div>

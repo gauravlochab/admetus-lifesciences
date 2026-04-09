@@ -32,7 +32,7 @@ export default function QualityPage() {
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <span className="label-text text-[var(--gold)]">Quality & Certifications</span>
           <h1
-            className="mt-4 text-[var(--text-white)] uppercase"
+            className="mt-4 text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -44,7 +44,7 @@ export default function QualityPage() {
             <br />
             <span className="text-[var(--gold)]">QUALITY STANDARDS</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
             Every softgel capsule manufactured at Admetus Lifesciences undergoes
             rigorous quality control — from raw material testing to final dispatch.
           </p>
@@ -65,7 +65,7 @@ export default function QualityPage() {
                     <Shield size={24} style={{ color: cert.color }} />
                   </div>
                   <h3
-                    className="text-[var(--text-white)] text-2xl"
+                    className="text-[var(--foreground)] text-2xl"
                     style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                   >
                     {cert.name}
@@ -96,7 +96,7 @@ export default function QualityPage() {
               <div>
                 <span className="label-text text-[var(--gold)]">Quality Control</span>
                 <h2
-                  className="mt-4 text-[var(--text-white)] uppercase"
+                  className="mt-4 text-[var(--foreground)] uppercase"
                   style={{
                     fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(2rem, 4vw, 3rem)",
@@ -133,7 +133,7 @@ export default function QualityPage() {
                 >
                   100%
                 </div>
-                <p className="text-xl font-semibold text-[var(--text-white)]">Batch Testing</p>
+                <p className="text-xl font-semibold text-[var(--foreground)]">Batch Testing</p>
                 <p className="mt-3 text-[0.875rem] text-[var(--text-muted)]">
                   Every single batch is tested and documented before release — no exceptions.
                 </p>
@@ -148,7 +148,7 @@ export default function QualityPage() {
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <SectionReveal>
             <h2
-              className="text-[var(--text-white)] uppercase"
+              className="text-[var(--foreground)] uppercase"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",

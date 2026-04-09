@@ -33,7 +33,7 @@ export default function ContractManufacturingPage() {
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
           <h1
-            className="mt-4 text-[var(--text-white)] uppercase"
+            className="mt-4 text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -45,7 +45,7 @@ export default function ContractManufacturingPage() {
             <br />
             <span className="text-[var(--gold)]">OUR MANUFACTURING.</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
             From custom formulation to private label packaging — Admetus
             Lifesciences is your end-to-end softgel capsule manufacturing
             partner. We work with brand owners, importers, and distributors
@@ -64,7 +64,7 @@ export default function ContractManufacturingPage() {
                   <div className="w-12 h-12 flex items-center justify-center bg-[var(--gold)]/10 border border-[var(--gold)]/20 mb-4">
                     <service.icon size={24} className="text-[var(--gold)]" />
                   </div>
-                  <h3 className="text-[1rem] font-semibold text-[var(--text-white)]">{service.title}</h3>
+                  <h3 className="text-[1rem] font-semibold text-[var(--foreground)]">{service.title}</h3>
                   <p className="mt-3 text-[0.875rem] text-[var(--text-muted)] leading-relaxed">{service.desc}</p>
                 </div>
               </SectionReveal>
@@ -81,7 +81,7 @@ export default function ContractManufacturingPage() {
               <div>
                 <span className="label-text text-[var(--gold)]">Partnership Advantage</span>
                 <h2
-                  className="mt-4 text-[var(--text-white)] uppercase mb-8"
+                  className="mt-4 text-[var(--foreground)] uppercase mb-8"
                   style={{
                     fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(2rem, 4vw, 3rem)",
@@ -104,7 +104,7 @@ export default function ContractManufacturingPage() {
             <SectionReveal delay={0.2}>
               <div className="p-8 bg-[var(--bg-warm-dark)] border border-white/[0.06]">
                 <h3
-                  className="text-[var(--text-white)] text-xl mb-6"
+                  className="text-[var(--foreground)] text-xl mb-6"
                   style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                 >
                   How It Works
@@ -136,7 +136,7 @@ export default function ContractManufacturingPage() {
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <SectionReveal>
             <h2
-              className="text-[var(--text-white)] uppercase"
+              className="text-[var(--foreground)] uppercase"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",

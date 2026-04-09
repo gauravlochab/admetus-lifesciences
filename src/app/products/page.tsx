@@ -14,7 +14,7 @@ export default function ProductsPage() {
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <span className="label-text text-[var(--gold)]">Product Portfolio</span>
           <h1
-            className="mt-4 text-[var(--text-white)] uppercase"
+            className="mt-4 text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -26,7 +26,7 @@ export default function ProductsPage() {
             <br />
             <span className="text-[var(--gold)]">SOFTGEL CAPSULES</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
             Each product in our portfolio is formulated for optimal bioavailability
             and manufactured under strict quality controls. Available for contract
             manufacturing and private label.
@@ -56,7 +56,7 @@ export default function ProductsPage() {
                       {product.category}
                     </span>
                     <h3
-                      className="text-[var(--text-white)] uppercase group-hover:text-[var(--gold)] transition-colors"
+                      className="text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-colors"
                       style={{
                         fontFamily: "var(--font-display), Georgia, serif",
                         fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
@@ -86,7 +86,7 @@ export default function ProductsPage() {
           <SectionReveal>
             <div className="mt-16 text-center p-12 bg-[var(--bg-charcoal)] border border-white/[0.06]">
               <h3
-                className="text-[var(--text-white)] uppercase"
+                className="text-[var(--foreground)] uppercase"
                 style={{
                   fontFamily: "var(--font-display), Georgia, serif",
                   fontSize: "clamp(1.75rem, 3vw, 2.5rem)",

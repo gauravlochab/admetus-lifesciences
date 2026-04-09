@@ -60,7 +60,7 @@ export default async function ProductDetailPage({
             {product.category}
           </span>
           <h1
-            className="text-[var(--text-white)] uppercase"
+            className="text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3rem, 6vw, 6rem)",
@@ -173,7 +173,7 @@ export default async function ProductDetailPage({
                 className="group p-4 text-center bg-[var(--bg-charcoal)] border border-white/[0.06] hover:border-[var(--gold)]/20 transition-all"
               >
                 <Pill size={24} style={{ color: p.color }} className="mx-auto mb-2" />
-                <p className="text-sm font-semibold text-[var(--text-white)] group-hover:text-[var(--gold)] transition-colors">
+                <p className="text-sm font-semibold text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors">
                   {p.shortName}
                 </p>
               </Link>

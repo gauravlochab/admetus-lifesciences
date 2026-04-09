@@ -75,7 +75,7 @@ function Hero() {
           {["PRECISION", "SOFTGEL", "CAPSULES"].map((word) => (
             <div
               key={word}
-              className="hero-line display-hero text-[var(--text-white)] overflow-hidden"
+              className="hero-line display-hero text-[#FAFAFA] overflow-hidden"
               style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               {word}
@@ -84,7 +84,7 @@ function Hero() {
         </div>
 
         {/* Subhead */}
-        <p className="hero-sub mt-8 text-[1.25rem] leading-[1.7] text-[var(--text-cream)] max-w-[500px]">
+        <p className="hero-sub mt-8 text-[1.25rem] leading-[1.7] text-[#E8E0D0] max-w-[500px]">
           Contract manufacturing & private label nutraceuticals from India.
         </p>
 
@@ -98,7 +98,7 @@ function Hero() {
           </Link>
           <Link
             href="/products/"
-            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--text-white)] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[#FAFAFA] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
           >
             Explore Products
           </Link>
@@ -137,7 +137,7 @@ function TrustBar() {
                 size={20}
                 className="text-[var(--text-muted)] group-hover:text-[var(--teal)] transition-colors duration-300"
               />
-              <span className="text-[0.875rem] font-semibold text-[var(--text-white)] tracking-wider">
+              <span className="text-[0.875rem] font-semibold text-[var(--foreground)] tracking-wider">
                 {cert.name}
               </span>
               <span className="text-[0.65rem] tracking-[0.1em] uppercase text-[var(--text-muted)]">
@@ -203,7 +203,7 @@ function Manifesto() {
       <div className="text-center max-w-[1000px] px-[clamp(1.5rem,4vw,4rem)]">
         <div>
           <div
-            className="manifesto-line display-section text-[var(--text-white)]"
+            className="manifesto-line display-section text-[var(--foreground)]"
             style={{ fontFamily: "var(--font-display), Georgia, serif", opacity: 0.15 }}
           >
             WE DON&apos;T JUST MANUFACTURE.
@@ -290,7 +290,7 @@ function Stats() {
               {stats.map((stat, i) => (
                 <div key={stat.label}>
                   <div
-                    className="text-[var(--text-white)]"
+                    className="text-[var(--foreground)]"
                     style={{
                       fontFamily: "var(--font-display), Georgia, serif",
                       fontSize: "clamp(3rem, 6vw, 5rem)",
@@ -364,7 +364,7 @@ function ProductShowcase() {
         <div className="hidden lg:flex flex-col justify-center w-[350px] shrink-0 p-[clamp(2rem,4vw,4rem)] z-10">
           <span className="label-text text-[var(--gold)]">Our Products</span>
           <h2
-            className="mt-4 display-section text-[var(--text-white)]"
+            className="mt-4 display-section text-[var(--foreground)]"
             style={{ fontFamily: "var(--font-display), Georgia, serif" }}
           >
             THE
@@ -388,7 +388,7 @@ function ProductShowcase() {
           <div className="lg:hidden shrink-0 w-[80vw] flex flex-col justify-center">
             <span className="label-text text-[var(--gold)]">Our Products</span>
             <h2
-              className="mt-4 text-[var(--text-white)]"
+              className="mt-4 text-[var(--foreground)]"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(3rem, 8vw, 5rem)",
@@ -422,7 +422,7 @@ function ProductShowcase() {
                 </span>
 
                 <h3
-                  className="text-[var(--text-white)] uppercase"
+                  className="text-[var(--foreground)] uppercase"
                   style={{
                     fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
@@ -510,7 +510,7 @@ function ManufacturingProcess() {
         <div className="absolute inset-0 bg-[var(--bg-black)]/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div
-            className="text-[var(--text-white)]/10"
+            className="text-[var(--foreground)]/10"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(10rem, 20vw, 18rem)",
@@ -539,7 +539,7 @@ function ManufacturingProcess() {
         </div>
 
         <h2
-          className="text-[var(--text-white)] uppercase"
+          className="text-[var(--foreground)] uppercase"
           style={{
             fontFamily: "var(--font-display), Georgia, serif",
             fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
@@ -655,7 +655,7 @@ function WhyChooseUs() {
       <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
         <span className="label-text text-[var(--gold)]">Why Choose Us</span>
         <h2
-          className="mt-4 display-section text-[var(--text-white)] mb-16"
+          className="mt-4 display-section text-[var(--foreground)] mb-16"
           style={{ fontFamily: "var(--font-display), Georgia, serif" }}
         >
           THE ADVANTAGES
@@ -669,7 +669,7 @@ function WhyChooseUs() {
             >
               <card.icon size={24} className="text-[var(--gold)] mb-4" />
               <h3
-                className="text-[var(--text-white)] uppercase text-[1.25rem]"
+                className="text-[var(--foreground)] uppercase text-[1.25rem]"
                 style={{
                   fontFamily: "var(--font-display), Georgia, serif",
                   lineHeight: 1.2,
@@ -713,7 +713,7 @@ function ContractCTA() {
         <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
 
         <h2
-          className="mt-6 text-[var(--text-white)]"
+          className="mt-6 text-[var(--foreground)]"
           style={{
             fontFamily: "var(--font-display), Georgia, serif",
             fontSize: "clamp(3rem, 6vw, 5rem)",
@@ -769,7 +769,7 @@ function ExportSection() {
       <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)] text-center">
         <span className="label-text text-[var(--gold)]">International Markets</span>
         <h2
-          className="mt-6 display-section text-[var(--text-white)]"
+          className="mt-6 display-section text-[var(--foreground)]"
           style={{ fontFamily: "var(--font-display), Georgia, serif" }}
         >
           FROM INDIA
@@ -863,7 +863,7 @@ function ClosingCTA() {
 
       <div className="relative z-10 text-center max-w-[800px] px-[clamp(1.5rem,4vw,4rem)]">
         <h2
-          className="display-hero text-[var(--text-white)]"
+          className="display-hero text-[var(--foreground)]"
           style={{ fontFamily: "var(--font-display), Georgia, serif" }}
         >
           READY TO
@@ -885,7 +885,7 @@ function ClosingCTA() {
           </Link>
           <a
             href="mailto:admetuslifesciences@gmail.com"
-            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--text-white)] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold tracking-[0.05em] uppercase text-[var(--foreground)] border border-[#FAFAFA]/30 hover:bg-[#FAFAFA]/5 transition-colors duration-300"
           >
             Email Us Directly
           </a>

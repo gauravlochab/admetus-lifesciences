@@ -41,7 +41,7 @@ export default function ManufacturingPage() {
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <span className="label-text text-[var(--gold)]">Manufacturing & Infrastructure</span>
           <h1
-            className="mt-4 text-[var(--text-white)] uppercase"
+            className="mt-4 text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -53,7 +53,7 @@ export default function ManufacturingPage() {
             <br />
             <span className="text-[var(--gold)]">PRODUCTION FACILITY</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
             Our manufacturing unit in Haryana, India is equipped with modern
             encapsulation, drying, and packing technology — purpose-built for
             high-quality softgel capsule production.
@@ -73,7 +73,7 @@ export default function ManufacturingPage() {
               <SectionReveal key={item.title} delay={i * 0.1}>
                 <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06] h-full">
                   <item.icon size={28} className="text-[var(--gold)] mb-4" />
-                  <h3 className="text-[1rem] font-semibold text-[var(--text-white)]">{item.title}</h3>
+                  <h3 className="text-[1rem] font-semibold text-[var(--foreground)]">{item.title}</h3>
                   <p className="mt-2 text-[0.875rem] text-[var(--text-muted)]">{item.desc}</p>
                 </div>
               </SectionReveal>
@@ -88,7 +88,7 @@ export default function ManufacturingPage() {
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Production Process</span>
             <h2
-              className="mt-4 text-[var(--text-white)] uppercase mb-12"
+              className="mt-4 text-[var(--foreground)] uppercase mb-12"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
@@ -113,7 +113,7 @@ export default function ManufacturingPage() {
                       </span>
                       <div className="h-px flex-1 bg-white/[0.06]" />
                     </div>
-                    <h3 className="text-[1rem] font-semibold text-[var(--text-white)]">{step.title}</h3>
+                    <h3 className="text-[1rem] font-semibold text-[var(--foreground)]">{step.title}</h3>
                     <p className="mt-1 text-[0.875rem] text-[var(--text-muted)]">{step.desc}</p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function ManufacturingPage() {
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Infrastructure</span>
             <h2
-              className="mt-4 text-[var(--text-white)] uppercase mb-12"
+              className="mt-4 text-[var(--foreground)] uppercase mb-12"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
@@ -146,7 +146,7 @@ export default function ManufacturingPage() {
                 <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06] h-full">
                   <span className="label-text text-[var(--gold)]">{eq.type}</span>
                   <h3
-                    className="mt-2 text-[var(--text-white)] text-xl"
+                    className="mt-2 text-[var(--foreground)] text-xl"
                     style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                   >
                     {eq.name}
@@ -164,7 +164,7 @@ export default function ManufacturingPage() {
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <SectionReveal>
             <h2
-              className="text-[var(--text-white)] uppercase"
+              className="text-[var(--foreground)] uppercase"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",

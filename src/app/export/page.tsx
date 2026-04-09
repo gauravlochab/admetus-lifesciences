@@ -22,7 +22,7 @@ export default function ExportPage() {
         <div className="relative mx-auto max-w-[1400px] w-full px-[clamp(1.5rem,4vw,4rem)]">
           <span className="label-text text-[var(--gold)]">International Markets</span>
           <h1
-            className="mt-4 text-[var(--text-white)] uppercase"
+            className="mt-4 text-[#FAFAFA] uppercase"
             style={{
               fontFamily: "var(--font-display), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
@@ -34,7 +34,7 @@ export default function ExportPage() {
             <br />
             <span className="text-[var(--gold)]">TO THE WORLD</span>
           </h1>
-          <p className="mt-6 text-[1.25rem] text-[var(--text-cream)] max-w-2xl leading-[1.7]">
+          <p className="mt-6 text-[1.25rem] text-[#E8E0D0] max-w-2xl leading-[1.7]">
             Admetus Lifesciences is positioned to serve international buyers,
             importers, and distributors seeking a reliable and quality-focused
             softgel capsule manufacturing partner in India.
@@ -50,7 +50,7 @@ export default function ExportPage() {
               <SectionReveal key={cap.title} delay={i * 0.08}>
                 <div className="p-6 bg-[var(--bg-charcoal)] border border-white/[0.06] h-full hover:border-[var(--gold)]/20 transition-all duration-500">
                   <cap.icon size={24} className="text-[var(--gold)] mb-4" />
-                  <h3 className="text-[1rem] font-semibold text-[var(--text-white)]">{cap.title}</h3>
+                  <h3 className="text-[1rem] font-semibold text-[var(--foreground)]">{cap.title}</h3>
                   <p className="mt-3 text-[0.875rem] text-[var(--text-muted)] leading-relaxed">{cap.desc}</p>
                 </div>
               </SectionReveal>
@@ -67,7 +67,7 @@ export default function ExportPage() {
               <div>
                 <span className="label-text text-[var(--gold)]">For International Buyers</span>
                 <h2
-                  className="mt-4 text-[var(--text-white)] uppercase mb-6"
+                  className="mt-4 text-[var(--foreground)] uppercase mb-6"
                   style={{
                     fontFamily: "var(--font-display), Georgia, serif",
                     fontSize: "clamp(2rem, 4vw, 3rem)",
@@ -103,7 +103,7 @@ export default function ExportPage() {
               <div className="p-8 bg-[var(--bg-warm-dark)] border border-white/[0.06]">
                 <Globe size={48} className="text-[var(--gold)]/30 mx-auto" />
                 <h3
-                  className="mt-4 text-xl text-[var(--text-white)] text-center"
+                  className="mt-4 text-xl text-[var(--foreground)] text-center"
                   style={{ fontFamily: "var(--font-display), Georgia, serif" }}
                 >
                   Ready for Global Markets
@@ -129,7 +129,7 @@ export default function ExportPage() {
         <div className="mx-auto max-w-[1400px] px-[clamp(1.5rem,4vw,4rem)]">
           <SectionReveal>
             <h2
-              className="text-[var(--text-white)] uppercase"
+              className="text-[var(--foreground)] uppercase"
               style={{
                 fontFamily: "var(--font-display), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",

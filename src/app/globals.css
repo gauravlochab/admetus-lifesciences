@@ -189,11 +189,11 @@
   --sidebar-border: rgba(26, 23, 16, 0.1);
   --sidebar-ring: #8A7B3E;
 
-  /* Override hardcoded colors for light theme */
+  /* Override theme-aware colors for light theme */
   --bg-black: #F5F0E8;
   --bg-charcoal: #EDE7DB;
   --bg-warm-dark: #E4DDD0;
-  --text-white: #1A1710;
+  /* text-white stays #FAFAFA — it's used on image overlays that are always dark */
   --text-cream: #2D2A22;
   --text-muted: #6B5F4B;
   --gold: #8A7B3E;
