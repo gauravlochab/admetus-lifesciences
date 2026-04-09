@@ -62,7 +62,7 @@ export default async function ProductDetailPage({
           <h1
             className="text-[#FAFAFA] uppercase"
             style={{
-              fontFamily: "var(--font-instrument), Georgia, serif",
+              fontFamily: "var(--font-literata), Georgia, serif",
               fontSize: "clamp(3rem, 6vw, 6rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",

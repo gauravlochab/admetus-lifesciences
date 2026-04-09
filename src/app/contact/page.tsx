@@ -23,7 +23,7 @@ export default function ContactPage() {
           <h1
             className="mt-4 text-[#FAFAFA] uppercase"
             style={{
-              fontFamily: "var(--font-instrument), Georgia, serif",
+              fontFamily: "var(--font-literata), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",
@@ -53,7 +53,7 @@ export default function ContactPage() {
                     <CheckCircle size={48} className="text-[#22c55e] mx-auto mb-4" />
                     <h3
                       className="text-[#FAFAFA] text-2xl"
-                      style={{ fontFamily: "var(--font-instrument), Georgia, serif" }}
+                      style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Enquiry Received
                     </h3>
@@ -178,7 +178,7 @@ export default function ContactPage() {
                   <div className="p-6 bg-[#141414] border border-white/[0.06]">
                     <h3
                       className="text-[#FAFAFA] text-lg mb-4"
-                      style={{ fontFamily: "var(--font-instrument), Georgia, serif" }}
+                      style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Contact Information
                     </h3>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                   <div className="p-6 bg-[#141414] border border-white/[0.06]">
                     <h3
                       className="text-[#FAFAFA] text-lg mb-3"
-                      style={{ fontFamily: "var(--font-instrument), Georgia, serif" }}
+                      style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Quick Connect
                     </h3>
@@ -227,7 +227,7 @@ export default function ContactPage() {
                   <div className="p-6 bg-[#141414] border border-white/[0.06]">
                     <h3
                       className="text-[#FAFAFA] text-lg mb-3"
-                      style={{ fontFamily: "var(--font-instrument), Georgia, serif" }}
+                      style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                     >
                       Business Details
                     </h3>

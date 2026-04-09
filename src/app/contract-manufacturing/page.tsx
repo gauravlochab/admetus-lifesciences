@@ -35,7 +35,7 @@ export default function ContractManufacturingPage() {
           <h1
             className="mt-4 text-[#FAFAFA] uppercase"
             style={{
-              fontFamily: "var(--font-instrument), Georgia, serif",
+              fontFamily: "var(--font-literata), Georgia, serif",
               fontSize: "clamp(3.5rem, 7vw, 7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.02em",
@@ -83,7 +83,7 @@ export default function ContractManufacturingPage() {
                 <h2
                   className="mt-4 text-[#FAFAFA] uppercase mb-8"
                   style={{
-                    fontFamily: "var(--font-instrument), Georgia, serif",
+                    fontFamily: "var(--font-literata), Georgia, serif",
                     fontSize: "clamp(2rem, 4vw, 3rem)",
                     lineHeight: 1.1,
                   }}
@@ -105,7 +105,7 @@ export default function ContractManufacturingPage() {
               <div className="p-8 bg-[#1A1710] border border-white/[0.06]">
                 <h3
                   className="text-[#FAFAFA] text-xl mb-6"
-                  style={{ fontFamily: "var(--font-instrument), Georgia, serif" }}
+                  style={{ fontFamily: "var(--font-literata), Georgia, serif" }}
                 >
                   How It Works
                 </h3>
@@ -138,7 +138,7 @@ export default function ContractManufacturingPage() {
             <h2
               className="text-[#FAFAFA] uppercase"
               style={{
-                fontFamily: "var(--font-instrument), Georgia, serif",
+                fontFamily: "var(--font-literata), Georgia, serif",
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}

@@ -8,8 +8,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-heading: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-heading: "Literata", Georgia, "Times New Roman", serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -155,7 +155,7 @@
 
 /* Display typography */
 .display-hero {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Literata", Georgia, serif;
   font-size: var(--display-hero);
   line-height: 0.9;
   letter-spacing: -0.02em;
@@ -163,7 +163,7 @@
 }
 
 .display-section {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Literata", Georgia, serif;
   font-size: var(--display-section);
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -171,14 +171,14 @@
 }
 
 .heading-1 {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Literata", Georgia, serif;
   font-size: var(--heading-1);
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
 
 .heading-2 {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Literata", Georgia, serif;
   font-size: var(--heading-2);
   line-height: 1.2;
 }
