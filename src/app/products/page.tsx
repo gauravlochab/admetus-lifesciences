@@ -49,7 +49,7 @@ export default function ProductsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-all duration-300 ${
+                className={`px-5 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-colors duration-300 ${
                   activeCategory === cat
                     ? "bg-[var(--gold)] text-[var(--bg-black)] border-[var(--gold)]"
                     : "text-[var(--text-muted)] border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
@@ -67,7 +67,7 @@ export default function ProductsPage() {
               <SectionReveal key={product.slug} delay={i * 0.06}>
                 <Link href={`/products/${product.slug}/`} className="group block">
                   <div
-                    className="relative p-8 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-all duration-500 flex flex-col justify-end group-hover:-translate-y-1"
+                    className="relative p-8 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-[border-color,transform] duration-500 flex flex-col justify-end group-hover:-translate-y-1"
                     style={{
                       background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))`,
                       minHeight: i % 3 === 0 ? "320px" : "280px",

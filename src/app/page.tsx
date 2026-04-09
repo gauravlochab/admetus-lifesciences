@@ -43,7 +43,7 @@ function Hero() {
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
           alt="Pharmaceutical softgel capsules arranged on a production line at Admetus Lifesciences facility"
           className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
+          loading="eager" fetchPriority="high"
           style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(10,10,10,0.72), rgba(26,23,16,0.58))" }} />
@@ -61,7 +61,8 @@ function Hero() {
             ADMETUS LIFESCIENCES
           </div>
 
-          <div>
+          <h1 className="sr-only">Admetus Lifesciences - Precision Encapsulated Softgel Capsules</h1>
+          <div aria-hidden="true">
             {["PRECISION", "ENCAPSULATED"].map((word) => (
               <div
                 key={word}
@@ -81,7 +82,7 @@ function Hero() {
           <div className="hero-cta mt-12">
             <Link
               href="/manufacturing/"
-              className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+              className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               Explore Our Facility
@@ -514,18 +515,18 @@ function ManufacturingProcess() {
           {steps.map((s, i) => (
             <div key={s.num} className="flex items-center gap-4 py-1.5">
               <div
-                className="w-1 h-1 transition-all duration-500"
+                className="w-1 h-1 transition-transform duration-500"
                 style={{
                   background: i === activeStep ? "var(--gold)" : i < activeStep ? "rgba(200,169,81,0.3)" : "rgba(142,134,120,0.15)",
                   transform: i === activeStep ? "scale(2)" : "scale(1)",
                 }}
               />
-              <span className={`mono-text text-[0.6875rem] transition-all duration-300 ${
+              <span className={`mono-text text-[0.6875rem] transition-[transform,opacity] duration-300 ${
                 i === activeStep ? "text-[var(--gold)]" : "text-[var(--text-muted)] opacity-40"
               }`}>
                 {s.num}
               </span>
-              <span className={`label-text !text-[0.5625rem] transition-all duration-300 ${
+              <span className={`label-text !text-[0.5625rem] transition-[transform,opacity] duration-300 ${
                 i === activeStep ? "text-[var(--text-white)]" : "text-[var(--text-muted)] opacity-25"
               }`}>
                 {s.title}
@@ -549,7 +550,7 @@ function ManufacturingProcess() {
         {steps.map((s, i) => (
           <div
             key={s.num}
-            className="absolute inset-0 transition-all duration-700"
+            className="absolute inset-0 transition-[opacity,transform] duration-700"
             style={{
               opacity: i === activeStep ? 1 : 0,
               transform: i === activeStep ? "scale(1)" : "scale(1.04)",
@@ -809,7 +810,7 @@ function Partnership() {
           </ul>
           <Link
             href="/contract-manufacturing/"
-            className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+            className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Start a Project
@@ -871,7 +872,7 @@ function GlobalReach() {
             </p>
             <Link
               href="/export/"
-              className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+              className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Explore Export Capabilities
@@ -976,7 +977,7 @@ function ClosingCTA() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+            className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Request a Quote
@@ -984,7 +985,7 @@ function ClosingCTA() {
           </Link>
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] tracking-[0.08em] uppercase text-[var(--text-muted)] hover:text-[var(--text-white)] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] tracking-[0.08em] uppercase text-[var(--text-muted)] hover:text-[var(--text-white)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Contact Us

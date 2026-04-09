@@ -82,9 +82,14 @@ export default function RootLayout({
         `}} />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+        {/* FIX: Skip to content link for keyboard navigation */}
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         <SmoothScroll />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        {/* FIX: Added id for skip-to-content target */}
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloat />
       </body>

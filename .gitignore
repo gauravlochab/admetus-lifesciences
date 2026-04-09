@@ -51,3 +51,5 @@ screenshots/
 docs/design-references/*.jpg
 docs/design-references/*.png
 docs/design-references/oryzo.ai/
+*.ttf
+*.woff2

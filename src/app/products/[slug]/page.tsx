@@ -174,7 +174,7 @@ export default async function ProductDetailPage({
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}/`}
-                className="group p-5 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-all"
+                className="group p-5 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-[border-color] duration-200"
               >
                 <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-2">
                   {p.category}

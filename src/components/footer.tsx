@@ -25,23 +25,26 @@ export function Footer() {
     <footer className="bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]" role="contentinfo">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] py-[var(--space-24)]">
         {/* Top gold rule */}
-        <div className="gold-rule w-16 mb-16" />
+        <div className="gold-rule w-16 mb-16" aria-hidden="true" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
             <span
-              className="text-[var(--text-white)] tracking-[0.18em] text-lg font-bold"
+              className="text-[var(--foreground)] tracking-[0.18em] text-lg font-bold"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
+              aria-hidden="true"
             >
               ADMETUS
             </span>
+            {/* FIX: Visually hidden heading for screen readers */}
+            <h3 className="sr-only">Admetus Lifesciences</h3>
             <p className="mt-5 body-text text-[var(--text-cream)] max-w-xs !text-[0.9375rem]">
               Precision-engineered softgel capsules manufactured in India.
               Contract manufacturing, private label, and export-ready
               nutraceuticals.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3" aria-label="Certifications">
               {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
                 <span
                   key={cert}
@@ -56,12 +59,12 @@ export function Footer() {
           {/* Products */}
           <div>
             <h3 className="label-text text-[var(--gold)] mb-6">Products</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3" role="list">
               {productLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--text-white)] transition-colors duration-300 !text-[0.875rem]"
+                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.875rem]"
                   >
                     {link.label}
                   </Link>
@@ -73,12 +76,12 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="label-text text-[var(--gold)] mb-6">Services</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3" role="list">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--text-white)] transition-colors duration-300 !text-[0.875rem]"
+                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-300 !text-[0.875rem]"
                   >
                     {link.label}
                   </Link>
@@ -103,7 +106,7 @@ export function Footer() {
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-1">Email</span>
                 <a
                   href="mailto:admetuslifesciences@gmail.com"
-                  className="body-text text-[var(--text-cream)] hover:text-[var(--text-white)] transition-colors !text-[0.875rem]"
+                  className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors !text-[0.875rem]"
                 >
                   admetuslifesciences@gmail.com
                 </a>

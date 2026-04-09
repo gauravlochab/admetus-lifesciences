@@ -46,7 +46,8 @@ export function SectionReveal({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      /* FIX: Replace transition-all with specific transform+opacity transitions */
+      className={`transition-[opacity,transform] duration-700 ease-out ${
         isVisible
           ? "opacity-100 translate-x-0 translate-y-0"
           : `opacity-0 ${directions[direction]}`

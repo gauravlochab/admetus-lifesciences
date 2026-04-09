@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -21,6 +21,8 @@ export function Navbar() {
   const [isHidden, setIsHidden] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const lastScrollY = useRef(0);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,10 +49,40 @@ export function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [isMobileOpen]);
 
+  /* FIX: Focus trap for mobile menu */
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (!isMobileOpen) return;
+    if (e.key === "Escape") {
+      setIsMobileOpen(false);
+      menuButtonRef.current?.focus();
+      return;
+    }
+    if (e.key === "Tab" && mobileMenuRef.current) {
+      const focusable = mobileMenuRef.current.querySelectorAll<HTMLElement>(
+        'a, button, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }, [isMobileOpen]);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-400 ${
           isHidden ? "-translate-y-full" : "translate-y-0"
         } ${
           isScrolled ? "nav-glass" : "bg-transparent"
@@ -61,7 +93,7 @@ export function Navbar() {
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between" aria-label="Main navigation">
           <Link href="/" className="group" aria-label="Admetus Lifesciences home">
             <span
-              className="text-[var(--text-white)] tracking-[0.18em] text-lg font-bold"
+              className="text-[var(--foreground)] tracking-[0.18em] text-lg font-bold"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               ADMETUS
@@ -73,7 +105,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-[0.65rem] font-semibold text-[var(--text-white)]/60 hover:text-[var(--text-white)] transition-colors duration-300 uppercase tracking-[0.1em] whitespace-nowrap"
+                className="px-3 py-2 text-[0.6875rem] font-semibold text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors duration-300 uppercase tracking-[0.1em] whitespace-nowrap"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {link.label}
@@ -85,7 +117,7 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/contact/"
-              className="px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+              className="px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get Quote
@@ -93,10 +125,12 @@ export function Navbar() {
           </div>
 
           <button
+            ref={menuButtonRef}
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="xl:hidden p-3 text-[var(--text-white)]"
+            className="xl:hidden p-3 text-[var(--foreground)]"
             aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileOpen}
+            aria-controls="mobile-nav-menu"
           >
             {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -107,6 +141,8 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
+            ref={mobileMenuRef}
+            id="mobile-nav-menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -114,10 +150,11 @@ export function Navbar() {
             className="fixed inset-0 z-[60] flex flex-col items-center justify-center"
             style={{ background: "rgba(10,10,10,0.97)" }}
             role="dialog"
+            aria-modal="true"
             aria-label="Navigation menu"
           >
             <button
-              onClick={() => setIsMobileOpen(false)}
+              onClick={() => { setIsMobileOpen(false); menuButtonRef.current?.focus(); }}
               className="absolute top-5 right-6 p-3 text-[var(--text-white)]"
               aria-label="Close navigation menu"
             >
