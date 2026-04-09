@@ -37,7 +37,6 @@ export function Footer() {
             >
               ADMETUS
             </span>
-            {/* FIX: Visually hidden heading for screen readers */}
             <h3 className="sr-only">Admetus Lifesciences</h3>
             <p className="mt-5 body-text text-[var(--text-cream)] max-w-xs !text-[0.9375rem]">
               Precision-engineered softgel capsules manufactured in India.
@@ -57,7 +56,7 @@ export function Footer() {
           </div>
 
           {/* Products */}
-          <div>
+          <nav aria-label="Products">
             <h3 className="label-text text-[var(--gold)] mb-6">Products</h3>
             <ul className="space-y-3" role="list">
               {productLinks.map((link) => (
@@ -71,10 +70,10 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Services */}
-          <div>
+          <nav aria-label="Services">
             <h3 className="label-text text-[var(--gold)] mb-6">Services</h3>
             <ul className="space-y-3" role="list">
               {serviceLinks.map((link) => (
@@ -88,7 +87,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
           <div>

@@ -98,7 +98,8 @@
   --gutter: clamp(1.5rem, 4vw, 4rem);
 
   /* Typography -- more dramatic scale */
-  --display-hero: clamp(5.5rem, 12vw, 11rem);
+  /* Pass 2: smaller minimum for 320px screens */
+  --display-hero: clamp(3rem, 10vw, 11rem);
   --display-section: clamp(3.5rem, 8vw, 8rem);
   --heading-1: clamp(2.5rem, 4.5vw, 4.5rem);
   --heading-2: clamp(1.75rem, 3vw, 2.75rem);
@@ -151,7 +152,8 @@
   --card-foreground: #1A1710;
   --popover: #EDE7DB;
   --popover-foreground: #1A1710;
-  --primary: #8A7B3E;
+  /* Pass 4: richer, warmer gold for light mode */
+  --primary: #9A8A3E;
   --primary-foreground: #F5F0E8;
   --secondary: #E8E0D0;
   --secondary-foreground: #1A1710;
@@ -163,20 +165,21 @@
   --destructive: #dc2626;
   --border: rgba(26, 23, 16, 0.1);
   --input: rgba(26, 23, 16, 0.08);
-  --ring: #8A7B3E;
-  --chart-1: #8A7B3E;
+  /* Pass 4: richer gold ring */
+  --ring: #9A8A3E;
+  --chart-1: #9A8A3E;
   --chart-2: #0097A7;
   --chart-3: #5C5140;
   --chart-4: #1A1710;
   --chart-5: #C8A951;
   --sidebar: #EDE7DB;
   --sidebar-foreground: #1A1710;
-  --sidebar-primary: #8A7B3E;
+  --sidebar-primary: #9A8A3E;
   --sidebar-primary-foreground: #F5F0E8;
   --sidebar-accent: #E8E0D0;
   --sidebar-accent-foreground: #1A1710;
   --sidebar-border: rgba(26, 23, 16, 0.1);
-  --sidebar-ring: #8A7B3E;
+  --sidebar-ring: #9A8A3E;
 
   --bg-black: #F5F0E8;
   --bg-charcoal: #EDE7DB;
@@ -185,11 +188,13 @@
   /* FIX: Darkened from #6B5F4B to #5C5140 for WCAG AA compliance */
   --text-muted: #5C5140;
   --text-white: #1A1710;
-  --gold: #8A7B3E;
+  /* Pass 4: richer, warmer gold */
+  --gold: #9A8A3E;
   --gold-light: #6B5F2E;
   --gold-muted: #A89550;
   --teal: #007A87;
-  --overlay-black: rgba(245, 240, 232, 0.7);
+  /* Pass 4: lighter, more transparent overlay for light mode hero */
+  --overlay-black: rgba(245, 240, 232, 0.5);
   --border-subtle: rgba(26, 23, 16, 0.08);
 }
 
@@ -209,6 +214,12 @@
   :focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 2px;
+  }
+
+  /* Pass 7: Ensure buttons get cursor-pointer */
+  button,
+  [role="button"] {
+    cursor: pointer;
   }
 }
 

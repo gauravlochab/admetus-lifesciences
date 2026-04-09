@@ -13,6 +13,9 @@ export default function AboutPage() {
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
           alt="Admetus Lifesciences pharmaceutical manufacturing facility in Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
+          width={1920}
+          height={1080}
+          loading="eager"
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.92), rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.25))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
@@ -65,6 +68,8 @@ export default function AboutPage() {
               <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
                 <img
                   src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=600&fit=crop"
+                  width={800}
+                  height={600}
                   alt="Interior of softgel capsule manufacturing facility showing encapsulation equipment"
                   className="w-full h-full object-cover"
                   loading="lazy"

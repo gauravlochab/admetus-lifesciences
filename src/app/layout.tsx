@@ -82,13 +82,17 @@ export default function RootLayout({
         `}} />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
-        {/* FIX: Skip to content link for keyboard navigation */}
+        {/* Skip to content link for keyboard navigation */}
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
+        <noscript>
+          <div style={{ padding: "2rem", textAlign: "center", background: "#F5F0E8", color: "#1A1710", fontFamily: "sans-serif" }}>
+            This site requires JavaScript for the best experience.
+          </div>
+        </noscript>
         <SmoothScroll />
         <Navbar />
-        {/* FIX: Added id for skip-to-content target */}
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloat />

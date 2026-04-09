@@ -12,6 +12,10 @@ function Hero() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -43,10 +47,12 @@ function Hero() {
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
           alt="Pharmaceutical softgel capsules arranged on a production line at Admetus Lifesciences facility"
           className="absolute inset-0 w-full h-full object-cover"
+          width={1920}
+          height={1080}
           loading="eager" fetchPriority="high"
           style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(10,10,10,0.72), rgba(26,23,16,0.58))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, var(--overlay-black), rgba(26,23,16,0.58))" }} />
       </div>
 
       {/* Margin label */}
@@ -82,7 +88,7 @@ function Hero() {
           <div className="hero-cta mt-12">
             <Link
               href="/manufacturing/"
-              className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+              className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               Explore Our Facility
@@ -93,7 +99,7 @@ function Hero() {
       </div>
 
       {/* Section number */}
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">01</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">01</span>
 
       {/* Scroll indicator */}
       <div className="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
@@ -114,6 +120,10 @@ function CredibilityStrip() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -175,6 +185,10 @@ function Manifesto() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -184,23 +198,47 @@ function Manifesto() {
       const goldLine = sectionRef.current?.querySelector(".manifesto-gold-line");
 
       ctx = gsap.context(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "+=400%",
-            pin: true,
-            scrub: 1,
-          },
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 768px)", () => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "+=400%",
+              pin: true,
+              scrub: 1,
+            },
+          });
+
+          lines.forEach((line, i) => {
+            tl.to(line, { opacity: 1, y: 0, duration: 1 }, i * 1.2);
+          });
+
+          if (goldLine) {
+            tl.fromTo(goldLine, { scaleX: 0 }, { scaleX: 1, duration: 0.6 }, lines.length * 1.2);
+          }
         });
 
-        lines.forEach((line, i) => {
-          tl.to(line, { opacity: 1, y: 0, duration: 1 }, i * 1.2);
+        mm.add("(max-width: 767px)", () => {
+          // On mobile, just reveal lines on scroll without pinning
+          lines.forEach((line) => {
+            gsap.to(line, {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              ease: "power3.out",
+              scrollTrigger: { trigger: line, start: "top 85%" },
+            });
+          });
+          if (goldLine) {
+            gsap.fromTo(goldLine, { scaleX: 0 }, {
+              scaleX: 1,
+              duration: 0.6,
+              scrollTrigger: { trigger: goldLine, start: "top 90%" },
+            });
+          }
         });
-
-        if (goldLine) {
-          tl.fromTo(goldLine, { scaleX: 0 }, { scaleX: 1, duration: 0.6 }, lines.length * 1.2);
-        }
       }, sectionRef);
     }
     init();
@@ -223,7 +261,7 @@ function Manifesto() {
         PHILOSOPHY
       </div>
 
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">02</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">02</span>
 
       <div className="max-w-[860px] px-[var(--gutter)] mx-auto lg:mx-0 lg:ml-[calc(var(--gutter)+2rem)]">
         <span className="label-text text-[var(--gold)] mb-14 block">OUR PHILOSOPHY</span>
@@ -254,6 +292,10 @@ function ScaleMetrics() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -281,11 +323,13 @@ function ScaleMetrics() {
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
           alt="Interior of the Admetus softgel manufacturing facility in Haryana"
           className="w-full h-full object-cover opacity-12"
+          width={1920}
+          height={1080}
           loading="lazy"
         />
       </div>
 
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-10">03</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-10">03</span>
 
       <div className="scale-content relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <span className="label-text text-[var(--gold)] mb-4 block">OUR FACILITY</span>
@@ -334,10 +378,24 @@ function ProductShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+      if (window.innerWidth < 768) return; // No pinning on mobile
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -371,11 +429,64 @@ function ProductShowcase() {
     }
     init();
     return () => { ctx?.revert(); };
-  }, []);
+  }, [isMobile]);
+
+  // Mobile: vertical stack
+  if (isMobile) {
+    return (
+      <section className="relative py-[var(--space-32)] bg-[var(--bg-charcoal)] overflow-hidden">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <span className="label-text text-[var(--gold)]">OUR PRODUCTS</span>
+          <h2 className="mt-4 display-section text-[var(--text-white)]">
+            FORMULATED<br />FOR LIFE
+          </h2>
+          <div className="gold-rule w-12 mt-6 mb-10" />
+
+          <div className="flex flex-col gap-6">
+            {products.map((product, i) => (
+              <Link
+                key={product.slug}
+                href={`/products/${product.slug}/`}
+                className="relative overflow-hidden group block min-h-[320px] flex flex-col justify-end"
+                style={{
+                  background: `linear-gradient(160deg, ${product.color}08, var(--bg-charcoal))`,
+                  border: "1px solid var(--border-subtle)",
+                }}
+              >
+                <div className="absolute inset-0 bg-[var(--gold)]/0 group-hover:bg-[var(--gold)]/[0.03] transition-colors duration-500" />
+                <div className="relative p-[var(--space-6)] z-10">
+                  <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50 block mb-3">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="label-text mb-3 text-[var(--teal)] block">
+                    {product.category}
+                  </span>
+                  <h3 className="heading-2 text-[var(--text-white)] uppercase">
+                    {product.name}
+                  </h3>
+                  <p className="mt-2 body-text text-[var(--text-cream)]">{product.tagline}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors">
+                    View Details <ArrowRight size={11} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <Link
+            href="/products/"
+            className="mt-10 inline-flex items-center gap-2 label-text text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
+          >
+            View All Products <ArrowRight size={13} />
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section ref={sectionRef} className="relative min-h-screen bg-[var(--bg-charcoal)] overflow-hidden">
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-20">04</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">04</span>
 
       <div className="flex h-screen">
         {/* Fixed left panel */}
@@ -458,6 +569,7 @@ function ProductShowcase() {
 function ManufacturingProcess() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeStep, setActiveStep] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const steps = [
     { num: "01", title: "RAW MATERIAL SOURCING", body: "Pharmaceutical-grade ingredients sourced from certified global suppliers.", image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=800&fit=crop" },
@@ -470,8 +582,21 @@ function ManufacturingProcess() {
   ];
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+      if (window.innerWidth < 768) return; // No pinning on mobile
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -496,13 +621,46 @@ function ManufacturingProcess() {
     }
     init();
     return () => { ctx?.revert(); };
-  }, [steps.length]);
+  }, [steps.length, isMobile]);
+
+  // Mobile: vertical stack of steps
+  if (isMobile) {
+    return (
+      <section className="relative py-[var(--space-32)] bg-[var(--bg-warm-dark)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <span className="label-text text-[var(--gold)] mb-4 block">MANUFACTURING</span>
+          <h2 className="display-section text-[var(--text-white)] mb-6">THE PROCESS</h2>
+          <div className="gold-rule w-12 mb-10" />
+
+          <div className="flex flex-col gap-8">
+            {steps.map((s) => (
+              <div key={s.num} className="relative overflow-hidden border border-[var(--border-subtle)]">
+                <img
+                  src={s.image}
+                  alt={`Manufacturing step ${s.num}: ${s.title}`}
+                  className="w-full h-48 object-cover"
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                />
+                <div className="p-[var(--space-6)]">
+                  <span className="mono-text text-[0.75rem] text-[var(--gold)] block mb-2">{s.num}</span>
+                  <h3 className="heading-2 text-[var(--text-white)] uppercase">{s.title}</h3>
+                  <p className="mt-2 body-text text-[var(--text-cream)]">{s.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const step = steps[activeStep];
 
   return (
     <section ref={sectionRef} className="relative h-screen bg-[var(--bg-warm-dark)] flex">
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-20">05</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">05</span>
 
       {/* Left: content */}
       <div className="w-full lg:w-[42%] flex flex-col justify-center p-[var(--gutter)] relative">
@@ -560,18 +718,20 @@ function ManufacturingProcess() {
               src={s.image}
               alt={`Manufacturing step ${s.num}: ${s.title}`}
               className="w-full h-full object-cover"
+              width={1200}
+              height={800}
               loading="lazy"
             />
-            {/* Warm vignette overlay */}
+            {/* Warm vignette overlay -- hardcoded rgba on image overlay intentionally */}
             <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), rgba(10,10,10,0.5))" }} />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-[var(--text-white)] opacity-[0.04]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(8rem, 16vw, 15rem)", lineHeight: 0.85, fontWeight: 900 }}>
+              <div className="text-white opacity-[0.04]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(8rem, 16vw, 15rem)", lineHeight: 0.85, fontWeight: 900 }}>
                 {step.num}
               </div>
             </div>
             <div className="absolute bottom-[var(--gutter)] left-[var(--gutter)] right-[var(--gutter)]">
-              <h3 className="heading-1 text-[var(--text-white)] uppercase">{s.title}</h3>
-              <p className="mt-3 body-large text-[var(--text-cream)] max-w-lg">{s.body}</p>
+              <h3 className="heading-1 text-white uppercase">{s.title}</h3>
+              <p className="mt-3 body-large text-white/80 max-w-lg">{s.body}</p>
             </div>
           </div>
         ))}
@@ -587,6 +747,10 @@ function VisualBreak() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -619,9 +783,12 @@ function VisualBreak() {
           src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&h=1080&fit=crop"
           alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
           className="w-full h-full object-cover"
+          width={1920}
+          height={1080}
           loading="lazy"
         />
       </div>
+      {/* Image overlay: hardcoded rgba intentional */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.55), transparent 50%, rgba(10,10,10,0.25))" }} />
 
       {/* Warm gold overlay tint */}
@@ -630,7 +797,7 @@ function VisualBreak() {
       <div className="absolute inset-0 flex items-end p-[var(--gutter)]">
         <div className="flex items-center gap-6">
           <div className="gold-rule w-8" />
-          <span className="label-text text-[var(--text-white)]" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
+          <span className="label-text text-white" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
             VILLAGE ANTA, HARYANA &mdash; EST. 2024
           </span>
         </div>
@@ -646,6 +813,10 @@ function Differentiators() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -691,7 +862,7 @@ function Differentiators() {
 
   return (
     <section ref={sectionRef} className="py-[var(--space-32)] bg-[var(--bg-charcoal)]">
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">06</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">06</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <span className="label-text text-[var(--gold)] mb-4 block">WHY ADMETUS</span>
@@ -703,42 +874,43 @@ function Differentiators() {
         {/* Asymmetric grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[420px] flex flex-col justify-end img-warm-overlay">
-            <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
+            {/* Image overlay: hardcoded rgba intentional */}
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
             <div className="relative p-[var(--space-8)] z-10">
               <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">01</span>
-              <h3 className="heading-1 text-[var(--text-white)]">{cards[0].title}</h3>
-              <p className="mt-3 body-text text-[var(--text-cream)] max-w-lg">{cards[0].body}</p>
+              <h3 className="heading-1 text-white">{cards[0].title}</h3>
+              <p className="mt-3 body-text text-white/80 max-w-lg">{cards[0].body}</p>
             </div>
           </div>
 
           <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[420px] flex flex-col justify-end img-warm-overlay">
-            <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
             <div className="relative p-[var(--space-6)] z-10">
               <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">02</span>
-              <h3 className="heading-2 text-[var(--text-white)]">{cards[1].title}</h3>
-              <p className="mt-2 body-text text-[var(--text-cream)]">{cards[1].body}</p>
+              <h3 className="heading-2 text-white">{cards[1].title}</h3>
+              <p className="mt-2 body-text text-white/80">{cards[1].body}</p>
             </div>
           </div>
 
           <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
-            <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
             <div className="relative p-[var(--space-6)] z-10">
               <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">03</span>
-              <h3 className="heading-2 text-[var(--text-white)]">{cards[2].title}</h3>
-              <p className="mt-2 body-text text-[var(--text-cream)]">{cards[2].body}</p>
+              <h3 className="heading-2 text-white">{cards[2].title}</h3>
+              <p className="mt-2 body-text text-white/80">{cards[2].body}</p>
             </div>
           </div>
 
           <div className="diff-card md:col-span-2 relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
-            <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+            <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
             <div className="relative p-[var(--space-8)] z-10">
               <span className="mono-text text-[0.625rem] text-[var(--text-muted)] opacity-40 block mb-3">04</span>
-              <h3 className="heading-1 text-[var(--text-white)]">{cards[3].title}</h3>
-              <p className="mt-3 body-text text-[var(--text-cream)] max-w-lg">{cards[3].body}</p>
+              <h3 className="heading-1 text-white">{cards[3].title}</h3>
+              <p className="mt-3 body-text text-white/80 max-w-lg">{cards[3].body}</p>
             </div>
           </div>
         </div>
@@ -754,6 +926,10 @@ function Partnership() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -776,7 +952,7 @@ function Partnership() {
 
   return (
     <section ref={sectionRef} className="min-h-screen flex bg-[var(--bg-warm-dark)]">
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-20">07</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">07</span>
 
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
@@ -784,6 +960,8 @@ function Partnership() {
           src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop"
           alt="Pharmaceutical research and formulation process for softgel capsule manufacturing"
           className="absolute inset-0 w-full h-full object-cover"
+          width={1200}
+          height={800}
           loading="lazy"
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,23,16,0.3), rgba(10,10,10,0.15))" }} />
@@ -810,7 +988,7 @@ function Partnership() {
           </ul>
           <Link
             href="/contract-manufacturing/"
-            className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+            className="cursor-pointer mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Start a Project
@@ -829,6 +1007,10 @@ function GlobalReach() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -857,7 +1039,7 @@ function GlobalReach() {
 
   return (
     <section ref={sectionRef} className="py-[var(--space-32)] bg-[var(--bg-black)]">
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number">08</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">08</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-20">
@@ -872,7 +1054,7 @@ function GlobalReach() {
             </p>
             <Link
               href="/export/"
-              className="mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+              className="cursor-pointer mt-12 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Explore Export Capabilities
@@ -937,6 +1119,10 @@ function ClosingCTA() {
   useEffect(() => {
     let ctx: { revert: () => void } | null = null;
     async function init() {
+      if (typeof window === "undefined") return;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) return;
+
       const gsapModule = await import("gsap");
       const gsap = gsapModule.default;
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
@@ -959,7 +1145,7 @@ function ClosingCTA() {
 
   return (
     <section ref={sectionRef} className="py-[var(--space-48)] flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
-      <span className="hidden xl:block absolute top-8 right-[var(--gutter)] section-number z-10">10</span>
+      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-10">10</span>
 
       <div className="cta-content relative z-10 text-center max-w-[800px] px-[var(--gutter)]">
         <span className="label-text text-[var(--gold)] mb-10 block">LET&apos;S BUILD TOGETHER</span>
@@ -977,7 +1163,7 @@ function ClosingCTA() {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
+            className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Request a Quote
@@ -985,7 +1171,7 @@ function ClosingCTA() {
           </Link>
           <Link
             href="/contact/"
-            className="inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] tracking-[0.08em] uppercase text-[var(--text-muted)] hover:text-[var(--text-white)] transition-colors duration-300"
+            className="cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] tracking-[0.08em] uppercase text-[var(--text-muted)] hover:text-[var(--text-white)] transition-colors duration-300"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Contact Us

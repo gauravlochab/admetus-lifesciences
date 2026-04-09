@@ -33,6 +33,9 @@ export default function ContractManufacturingPage() {
           src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
           alt="Contract manufacturing and private label softgel capsule production at Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
+          width={1920}
+          height={1080}
+          loading="eager"
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.92), rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.25))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
