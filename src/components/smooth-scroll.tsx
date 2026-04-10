@@ -1,32 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+// Lenis smooth scroll removed — native browser scrolling is faster
+// and doesn't cause "stuck" feeling on content-heavy sections.
+// Keeping this component as a no-op so layout.tsx doesn't break.
 
 export function SmoothScroll() {
-  useEffect(() => {
-    let lenis: InstanceType<typeof import("lenis").default> | null = null;
-
-    async function init() {
-      const Lenis = (await import("lenis")).default;
-      lenis = new Lenis({
-        duration: 1.2,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        touchMultiplier: 2,
-      });
-
-      function raf(time: number) {
-        lenis?.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    }
-
-    init();
-
-    return () => {
-      lenis?.destroy();
-    };
-  }, []);
-
   return null;
 }

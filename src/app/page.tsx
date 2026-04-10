@@ -217,7 +217,7 @@ function Manifesto() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-[var(--bg-warm-dark)] relative">
+    <section className="py-16 md:py-20 bg-[var(--bg-warm-dark)] relative">
       {/* Margin label */}
       <div className="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label">
         PHILOSOPHY
@@ -232,10 +232,15 @@ function Manifesto() {
             <div
               key={i}
               ref={(el) => { lineRefs.current[i] = el; }}
-              className={`heading-1 text-[var(--text-white)] ${
+              className={`text-[var(--text-white)] ${
                 visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
               }`}
               style={{
+                fontFamily: "var(--font-display), sans-serif",
+                fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+                fontWeight: 700,
+                lineHeight: 1.4,
+                letterSpacing: "-0.01em",
                 transition: `opacity 700ms cubic-bezier(0.23, 1, 0.32, 1) ${i * 150}ms, transform 700ms cubic-bezier(0.23, 1, 0.32, 1) ${i * 150}ms`,
               }}
             >
