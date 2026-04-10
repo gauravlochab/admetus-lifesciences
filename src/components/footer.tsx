@@ -56,7 +56,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Products — Delight #4: footer-link class for underline draw */}
+          {/* Products */}
           <nav aria-label="Products">
             <h3 className="label-text text-[var(--gold)] mb-5">Products</h3>
             <ul className="space-y-2.5" role="list">
@@ -64,7 +64,8 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="footer-link body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
+                    className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem]"
+                    style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
                   >
                     {link.label}
                   </Link>
@@ -81,7 +82,8 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="footer-link body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
+                    className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem]"
+                    style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
                   >
                     {link.label}
                   </Link>
@@ -106,7 +108,8 @@ export function Footer() {
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
                 <a
                   href="mailto:admetuslifesciences@gmail.com"
-                  className="footer-link body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
+                  className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem]"
+                  style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
                 >
                   admetuslifesciences@gmail.com
                 </a>

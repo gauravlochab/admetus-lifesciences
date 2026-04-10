@@ -32,14 +32,20 @@ function Hero() {
       </div>
 
       {/* Margin label */}
-      <div className={`hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label transition-opacity duration-500 delay-1000 ${loaded ? "opacity-100" : "opacity-0"}`}>
+      <div
+        className={`hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1000ms" }}
+      >
         SOFTGEL MANUFACTURING
       </div>
 
       {/* Content -- left-aligned, asymmetric */}
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <div className="max-w-[var(--content-narrow)]">
-          <div className={`label-text text-[var(--gold)] mb-5 transition-all duration-500 delay-200 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
+          <div
+            className={`label-text text-[var(--gold)] mb-5 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 200ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 200ms" }}
+          >
             ADMETUS LIFESCIENCES
           </div>
 
@@ -48,24 +54,33 @@ function Hero() {
             {["PRECISION", "ENCAPSULATED"].map((word, i) => (
               <div
                 key={word}
-                className={`display-hero text-[var(--text-white)] transition-all duration-600 ease-out ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-                style={{ transitionDelay: `${300 + i * 80}ms` }}
+                className={`display-hero text-[var(--text-white)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                style={{ transition: `opacity 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms, transform 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms` }}
               >
                 {word}
               </div>
             ))}
           </div>
 
-          <div className={`gold-rule w-24 mt-6 origin-left transition-transform duration-500 delay-600 ${loaded ? "scale-x-100" : "scale-x-0"}`} />
+          <div
+            className={`gold-rule w-24 mt-6 origin-left ${loaded ? "scale-x-100" : "scale-x-0"}`}
+            style={{ transition: `transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 600ms` }}
+          />
 
-          <p className={`mt-4 body-large text-[var(--text-cream)] max-w-[480px] transition-all duration-500 delay-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
+          <p
+            className={`mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
+          >
             India&apos;s advanced softgel manufacturing facility. Science-driven formulations, globally certified production.
           </p>
 
-          <div className={`mt-8 transition-all duration-500 delay-[800ms] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
+          <div
+            className={`mt-8 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 800ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 800ms" }}
+          >
             <Link
               href="/manufacturing/"
-              className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+              className="btn-editorial cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               Explore Our Facility
@@ -79,7 +94,10 @@ function Hero() {
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">01</span>
 
       {/* Scroll indicator */}
-      <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 transition-opacity duration-500 delay-[1400ms] ${loaded ? "opacity-100" : "opacity-0"}`}>
+      <div
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1400ms" }}
+      >
         <span className="label-text text-[var(--text-muted)] !text-[0.5rem]">Scroll</span>
         <div
           className="w-px h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
@@ -214,20 +232,22 @@ function Manifesto() {
             <div
               key={i}
               ref={(el) => { lineRefs.current[i] = el; }}
-              className={`heading-1 text-[var(--text-white)] transition-all duration-700 ease-out ${
-                visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-4"
+              className={`heading-1 text-[var(--text-white)] ${
+                visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
               }`}
-              style={{ transitionDelay: `${i * 150}ms` }}
+              style={{
+                transition: `opacity 700ms cubic-bezier(0.23, 1, 0.32, 1) ${i * 150}ms, transform 700ms cubic-bezier(0.23, 1, 0.32, 1) ${i * 150}ms`,
+              }}
             >
               {line}
             </div>
           ))}
         </div>
         <div
-          className={`gold-rule mt-12 w-48 origin-left transition-transform duration-700 ${
+          className={`gold-rule mt-12 w-48 origin-left ${
             visibleLines.has(2) ? "scale-x-100" : "scale-x-0"
           }`}
-          style={{ transitionDelay: "600ms" }}
+          style={{ transition: "transform 700ms cubic-bezier(0.23, 1, 0.32, 1) 600ms" }}
         />
       </div>
     </section>
@@ -299,7 +319,7 @@ function ScaleMetrics() {
   );
 }
 
-/* ═══ Section 5: PRODUCTS -- Horizontal Scroll Gallery ═══ */
+/* ═══ Section 5: PRODUCTS -- Grid ═══ */
 function ProductShowcase() {
   const featured = products.slice(0, 7);
 
@@ -321,13 +341,13 @@ function ProductShowcase() {
         </SectionReveal>
       </div>
 
-      {/* Product grid — clean vertical layout */}
+      {/* Product grid */}
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {featured.map((product, i) => (
             <SectionReveal key={product.slug} delay={i * 0.04}>
               <Link href={`/products/${product.slug}/`}>
-                <div className="border border-[var(--border-subtle)] p-5 h-full hover:-translate-y-px hover:border-[var(--gold)]/20 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200 cursor-pointer active:translate-y-[1px] active:shadow-none"
+                <div className="product-card border border-[var(--border-subtle)] p-5 h-full cursor-pointer"
                   style={{ background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))` }}
                 >
                   <div className="flex items-center justify-between">
@@ -355,14 +375,17 @@ function ProductShowcase() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-8 flex flex-wrap items-center gap-4">
         <Link
           href="/products/"
-          className="text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] hover:text-[var(--foreground)] transition-all duration-200 flex items-center gap-2 active:translate-y-[1px] active:shadow-none"
-          style={{ fontFamily: "var(--font-display)" }}
+          className="text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] flex items-center gap-2"
+          style={{
+            fontFamily: "var(--font-display)",
+            transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)",
+          }}
         >
           View All Products <ArrowRight size={13} />
         </Link>
         <a
           href="/catalogue.pdf"
-          className="inline-flex items-center gap-2 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 transition-all duration-200 cursor-pointer"
+          className="btn-editorial inline-flex items-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 cursor-pointer"
         >
           Download Product Catalogue
           <ArrowRight size={13} />
@@ -401,7 +424,12 @@ function ManufacturingProcess() {
               <div className="flex gap-4 group">
                 <span className="text-[0.5625rem] font-mono text-[var(--gold)] opacity-60 pt-1">{step.num}</span>
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--text-white)] group-hover:text-[var(--gold)] transition-all duration-200">{step.title}</h3>
+                  <h3
+                    className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--text-white)]"
+                    style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
+                  >
+                    {step.title}
+                  </h3>
                   <p className="mt-1.5 text-[0.8125rem] text-[var(--text-muted)] leading-relaxed max-w-[45ch]">{step.desc}</p>
                 </div>
               </div>
@@ -427,10 +455,7 @@ function VisualBreak() {
           loading="lazy"
         />
       </div>
-      {/* Image overlay: hardcoded rgba intentional */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.55), transparent 50%, rgba(10,10,10,0.25))" }} />
-
-      {/* Warm gold overlay tint */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.05), transparent 60%)" }} />
 
       <div className="absolute inset-0 flex items-end p-[var(--gutter)]">
@@ -486,8 +511,8 @@ function Differentiators() {
         {/* Asymmetric grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <SectionReveal delay={0.05} className="md:col-span-2">
-            <div className="relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
-              <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+              <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-6 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">01</span>
@@ -498,8 +523,8 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <div className="relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
-              <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+              <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">02</span>
@@ -510,8 +535,8 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.15}>
-            <div className="relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
-              <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay">
+              <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">03</span>
@@ -522,8 +547,8 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.2} className="md:col-span-2">
-            <div className="relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay hover:-translate-y-0.5 transition-transform duration-500">
-              <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" width={600} height={800} loading="lazy" />
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay">
+              <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-6 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">04</span>
@@ -581,7 +606,7 @@ function Partnership() {
             </ul>
             <Link
               href="/contract-manufacturing/"
-              className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+              className="btn-editorial cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Start a Project
@@ -620,7 +645,7 @@ function GlobalReach() {
               </p>
               <Link
                 href="/export/"
-                className="cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-all duration-300"
+                className="btn-editorial cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Explore Export Capabilities
@@ -720,7 +745,7 @@ function ClosingCTA() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact/"
-              className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-300"
+              className="btn-editorial cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Start a Project
@@ -728,7 +753,7 @@ function ClosingCTA() {
             </Link>
             <Link
               href="/contact/"
-              className="cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)] transition-all duration-300"
+              className="btn-editorial cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Request Product Samples

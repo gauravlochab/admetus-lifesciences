@@ -70,7 +70,7 @@ export default function AboutPage() {
                     partners count&nbsp;on.
                   </p>
                 </div>
-                {/* Gold rule separator before image on mobile / visual connector */}
+                {/* Gold rule separator before image on mobile */}
                 <div className="h-px w-16 bg-[var(--gold)]/30 mt-8 lg:hidden" />
               </div>
             </SectionReveal>
@@ -115,12 +115,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision — stacked editorial, no icons */}
+      {/* Mission & Vision */}
       <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <SectionReveal>
-              <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200">
+              <div className="value-row p-6 border border-[var(--border-subtle)]">
                 <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">01</span>
                 <span className="label-text text-[var(--gold)] mb-3 block">MISSION</span>
                 <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
@@ -135,7 +135,7 @@ export default function AboutPage() {
             </SectionReveal>
 
             <SectionReveal delay={0.08}>
-              <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200">
+              <div className="value-row p-6 border border-[var(--border-subtle)]">
                 <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">02</span>
                 <span className="label-text text-[var(--gold)] mb-3 block">VISION</span>
                 <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
@@ -152,7 +152,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values — numbered list, not card grid with icons */}
+      {/* Values */}
       <section className="py-20 bg-[var(--bg-black)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
@@ -171,7 +171,6 @@ export default function AboutPage() {
                 desc: (
                   <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
                     <span className="flex items-center gap-2">
-                      {/* Replace span with <img src="/images/certifications/fssai.svg" alt="FSSAI" className="h-5" /> when logos are available */}
                       <span className="text-sm font-bold text-[var(--foreground)]">FSSAI</span>
                     </span>
                     <span className="flex items-center gap-2">
@@ -194,7 +193,7 @@ export default function AboutPage() {
               { title: "Timely Delivery", desc: "Reliable production schedules with on-time dispatch commitment." },
             ].map((value, i) => (
               <SectionReveal key={value.title} delay={i * 0.06}>
-                <div className="py-6 border-t border-[var(--border-subtle)] flex items-start gap-5 hover:-translate-y-px hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200">
+                <div className="value-row py-6 border-t border-[var(--border-subtle)] flex items-start gap-5">
                   <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -209,7 +208,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA — left-aligned */}
+      {/* CTA */}
       <section className="py-20 bg-[var(--bg-charcoal)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
@@ -226,7 +225,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact/"
-                className="inline-flex items-center gap-3 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200"
+                className="btn-editorial inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Talk to Our Team
@@ -234,7 +233,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/manufacturing/"
-                className="inline-flex items-center gap-3 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-all duration-200"
+                className="btn-editorial inline-flex items-center gap-3 px-7 py-3 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 View Our Facility

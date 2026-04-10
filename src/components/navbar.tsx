@@ -49,7 +49,7 @@ export function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [isMobileOpen]);
 
-  /* FIX: Focus trap for mobile menu */
+  /* Focus trap for mobile menu */
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (!isMobileOpen) return;
     if (e.key === "Escape") {
@@ -82,20 +82,28 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 ${
           isHidden ? "-translate-y-full" : "translate-y-0"
         } ${
           isScrolled ? "nav-glass" : "bg-transparent"
         }`}
-        style={{ height: "72px" }}
+        style={{
+          height: "72px",
+          transition: "transform 400ms cubic-bezier(0.23, 1, 0.32, 1)",
+        }}
         role="banner"
       >
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between" aria-label="Main navigation">
-          {/* Delight #3: Wordmark letter-spacing expansion on hover */}
+          {/* Wordmark */}
           <Link href="/" className="group" aria-label="Admetus Lifesciences home">
             <span
-              className="text-[var(--foreground)] tracking-[0.18em] hover:tracking-[0.22em] text-lg font-bold transition-[letter-spacing] duration-300 ease-out"
-              style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
+              className="text-[var(--foreground)] tracking-[0.18em] text-lg font-bold"
+              style={{
+                fontFamily: "var(--font-display), Archivo, sans-serif",
+                transition: "letter-spacing 300ms cubic-bezier(0.23, 1, 0.32, 1)",
+              }}
+              onMouseEnter={(e) => { (e.target as HTMLElement).style.letterSpacing = "0.22em"; }}
+              onMouseLeave={(e) => { (e.target as HTMLElement).style.letterSpacing = "0.18em"; }}
             >
               ADMETUS
             </span>
@@ -106,7 +114,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-[0.6875rem] font-semibold text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors duration-200 uppercase tracking-[0.1em] whitespace-nowrap"
+                className="nav-link-hover px-3 py-2 text-[0.6875rem] font-semibold text-[var(--foreground)]/60 uppercase tracking-[0.1em] whitespace-nowrap"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {link.label}
@@ -116,10 +124,9 @@ export function Navbar() {
 
           <div className="hidden xl:flex items-center gap-3">
             <ThemeToggle />
-            {/* Delight #1: Button hover refinement */}
             <Link
               href="/contact/"
-              className="px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none transition-all duration-200"
+              className="btn-editorial px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get Quote
@@ -138,8 +145,8 @@ export function Navbar() {
               <X size={22} />
             ) : (
               <div className="flex flex-col gap-[6px]">
-                <span className="block w-6 h-[1.5px] bg-[var(--foreground)] transition-all duration-200" />
-                <span className="block w-4 h-[1.5px] bg-[var(--foreground)] group-hover:w-6 transition-all duration-200" />
+                <span className="block w-6 h-[1.5px] bg-[var(--foreground)]" style={{ transition: "width 200ms cubic-bezier(0.23, 1, 0.32, 1)" }} />
+                <span className="block w-4 h-[1.5px] bg-[var(--foreground)] group-hover:w-6" style={{ transition: "width 200ms cubic-bezier(0.23, 1, 0.32, 1)" }} />
               </div>
             )}
           </button>
@@ -155,7 +162,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
             className="fixed inset-0 z-[60] flex flex-col items-center justify-center"
             style={{ background: "rgba(10,10,10,0.97)" }}
             role="dialog"
@@ -176,7 +183,7 @@ export function Navbar() {
                   key={link.href}
                   initial={{ opacity: 0, x: 40 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06, duration: 0.4 }}
+                  transition={{ delay: i * 0.05, duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
                 >
                   <Link
                     href={link.href}
@@ -191,14 +198,13 @@ export function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.06 + 0.1, duration: 0.4 }}
+                transition={{ delay: navLinks.length * 0.05 + 0.1, duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
                 className="mt-6"
               >
-                {/* Delight #1: Button hover refinement */}
                 <Link
                   href="/contact/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em] transition-all duration-200"
+                  className="btn-editorial px-7 py-3 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote
