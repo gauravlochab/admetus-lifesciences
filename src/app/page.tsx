@@ -697,27 +697,27 @@ function TrustQuote() {
 /* ═══ Section 12: CLOSING CTA ═══ */
 function ClosingCTA() {
   return (
-    <section className="py-24 flex items-center justify-center bg-[var(--bg-black)] relative overflow-hidden">
+    <section className="py-24 bg-[var(--bg-black)] relative overflow-hidden">
       {/* Gold rule above */}
       <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
 
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-10">10</span>
 
       <SectionReveal>
-        <div className="relative z-10 text-center max-w-[700px] px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)] mb-5 block">LET&apos;S BUILD TOGETHER</span>
+        <div className="relative z-10 max-w-[var(--container-max)] w-full px-[var(--gutter)]">
+          <span className="label-text text-[var(--gold)] mb-4 block">LET&apos;S BUILD TOGETHER</span>
 
-          <h2 className="display-section text-[var(--text-white)]">
-            YOUR NEXT<br />MANUFACTURING PARTNER
+          <h2 className="heading-1 text-[var(--foreground)] uppercase">
+            YOUR NEXT MANUFACTURING&nbsp;PARTNER
           </h2>
 
-          <div className="gold-rule w-12 mx-auto mt-5 mb-5" />
+          <div className="h-px w-12 bg-[var(--gold)]/40 mt-4 mb-5" />
 
-          <p className="body-large text-[var(--text-cream)] max-w-[52ch] mx-auto">
-            Contract manufacturing, private label solutions, and export-ready softgel capsules &mdash; discuss your requirements with our team.
+          <p className="text-[var(--text-cream)] max-w-[48ch] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
+            Contract manufacturing, private label solutions, and export-ready softgel capsules — discuss your requirements with our&nbsp;team.
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/contact/"
               className="cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-300"
@@ -735,7 +735,7 @@ function ClosingCTA() {
             </Link>
           </div>
 
-          <p className="mt-12 mono-text text-[0.8125rem] text-[var(--text-muted)]">
+          <p className="mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
             admetuslifesciences@gmail.com
           </p>
           <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">
