@@ -204,6 +204,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body), "Source Serif 4", Georgia, serif;
+    /* Delight #10: Smooth page fade-in */
+    animation: page-fade 0.4s ease-out;
   }
   html {
     @apply antialiased;
@@ -306,9 +308,21 @@
 }
 
 /* ─── Editorial details ─── */
+/* Delight #2: Gold rule scroll animation */
 .gold-rule {
   height: 1px;
   background: linear-gradient(90deg, var(--gold), transparent);
+  animation: rule-draw 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-timeline: view();
+  animation-range: entry 0% entry 40%;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@supports not (animation-timeline: view()) {
+  .gold-rule {
+    transform: scaleX(1);
+  }
 }
 
 .section-number {
@@ -354,21 +368,64 @@
   z-index: 1;
 }
 
+/* ─── Delight #6: Subtle image zoom on hover (desktop only) ─── */
+@media (hover: hover) {
+  .img-hover-zoom img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .img-hover-zoom:hover img {
+    transform: scale(1.02);
+  }
+}
+
+/* ─── Delight #4: Footer link underline draw ─── */
+.footer-link {
+  position: relative;
+}
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.footer-link:hover::after {
+  transform: scaleX(1);
+}
+
 /* ─── Keyframes ─── */
 @keyframes ken-burns {
   0% { transform: scale(1) translate(0, 0); }
   100% { transform: scale(1.1) translate(-1%, -1%); }
 }
 
+/* Delight #7: Smoother scroll indicator drift */
 @keyframes scroll-drift {
-  0% { opacity: 0.6; transform: scaleY(1); }
-  50% { opacity: 0.15; transform: scaleY(0.6); }
-  100% { opacity: 0.6; transform: scaleY(1); }
+  0% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 0.6; }
 }
 
 @keyframes line-draw {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
+}
+
+/* Delight #2: rule-draw keyframe for gold-rule */
+@keyframes rule-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Delight #10: Page fade-in */
+@keyframes page-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ─── Scrollbar ─── */
@@ -414,6 +471,9 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  body {
+    animation: none !important;
   }
 }
 

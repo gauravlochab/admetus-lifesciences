@@ -52,7 +52,7 @@ export default function ProductsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-colors duration-200 ${
+                className={`px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-all duration-200 ${
                   activeCategory === cat
                     ? "bg-[var(--gold)] text-[var(--bg-black)] border-[var(--gold)]"
                     : "text-[var(--text-muted)] border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
@@ -70,7 +70,7 @@ export default function ProductsPage() {
               <SectionReveal key={product.slug} delay={i * 0.04}>
                 <Link href={`/products/${product.slug}/`} className="group block">
                   <div
-                    className="relative p-6 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 transition-all duration-200 flex flex-col justify-end group-hover:-translate-y-px"
+                    className="relative p-6 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200 flex flex-col justify-end group-hover:-translate-y-px"
                     style={{
                       background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))`,
                       minHeight: "280px",
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                     <span className="label-text mb-3 block text-[var(--teal)]">
                       {product.category}
                     </span>
-                    <h3 className="heading-2 text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-colors duration-200">
+                    <h3 className="heading-2 text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-all duration-200">
                       {product.name}
                     </h3>
                     <p className="mt-1 body-text text-[var(--gold)] !text-[0.9375rem]">{product.tagline}</p>
@@ -93,7 +93,7 @@ export default function ProductsPage() {
                     </p>
                     <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between">
                       <span className="mono-text text-[0.6875rem] text-[var(--text-muted)]">{product.packSize}</span>
-                      <span className="flex items-center gap-1.5 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-colors duration-200">
+                      <span className="flex items-center gap-1.5 label-text text-[var(--gold)] group-hover:text-[var(--gold-light)] transition-all duration-200">
                         Details
                         <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform duration-200" />
                       </span>
@@ -119,7 +119,7 @@ export default function ProductsPage() {
                 </div>
                 <Link
                   href="/contact/"
-                  className="shrink-0 inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
+                  className="shrink-0 inline-flex items-center gap-2 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote

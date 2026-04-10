@@ -120,7 +120,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <SectionReveal>
-              <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 transition-all duration-200">
+              <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200">
                 <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">01</span>
                 <span className="label-text text-[var(--gold)] mb-3 block">MISSION</span>
                 <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
@@ -135,7 +135,7 @@ export default function AboutPage() {
             </SectionReveal>
 
             <SectionReveal delay={0.08}>
-              <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 transition-all duration-200">
+              <div className="p-6 border border-[var(--border-subtle)] hover:-translate-y-px hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200">
                 <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">02</span>
                 <span className="label-text text-[var(--gold)] mb-3 block">VISION</span>
                 <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
@@ -194,7 +194,7 @@ export default function AboutPage() {
               { title: "Timely Delivery", desc: "Reliable production schedules with on-time dispatch commitment." },
             ].map((value, i) => (
               <SectionReveal key={value.title} delay={i * 0.06}>
-                <div className="py-6 border-t border-[var(--border-subtle)] flex items-start gap-5 hover:-translate-y-px hover:border-[var(--gold)]/15 transition-all duration-200">
+                <div className="py-6 border-t border-[var(--border-subtle)] flex items-start gap-5 hover:-translate-y-px hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200">
                   <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 mt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -226,7 +226,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact/"
-                className="inline-flex items-center gap-3 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
+                className="inline-flex items-center gap-3 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Talk to Our Team
@@ -234,7 +234,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/manufacturing/"
-                className="inline-flex items-center gap-3 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-colors duration-200"
+                className="inline-flex items-center gap-3 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border border-[var(--gold)]/30 hover:bg-[var(--gold)]/[0.06] transition-all duration-200"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 View Our Facility

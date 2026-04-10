@@ -44,10 +44,6 @@ export function Footer() {
               nutraceuticals.
             </p>
             <div className="mt-5 flex flex-wrap gap-3" aria-label="Certifications">
-              {/* Future: Replace text with certification logo images
-                  Place logo files in /public/images/certifications/
-                  <img src="/images/certifications/fssai.svg" alt="FSSAI" className="h-6 opacity-60" />
-              */}
               {["FSSAI", "GMP", "HACCP", "Halal", "WHO-GMP"].map((cert) => (
                 <span
                   key={cert}
@@ -60,7 +56,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Products */}
+          {/* Products — Delight #4: footer-link class for underline draw */}
           <nav aria-label="Products">
             <h3 className="label-text text-[var(--gold)] mb-5">Products</h3>
             <ul className="space-y-2.5" role="list">
@@ -68,7 +64,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
+                    className="footer-link body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
                   >
                     {link.label}
                   </Link>
@@ -85,7 +81,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
+                    className="footer-link body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
                   >
                     {link.label}
                   </Link>
@@ -110,7 +106,7 @@ export function Footer() {
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
                 <a
                   href="mailto:admetuslifesciences@gmail.com"
-                  className="body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
+                  className="footer-link body-text text-[var(--text-cream)] hover:text-[var(--foreground)] transition-colors duration-200 !text-[0.75rem]"
                 >
                   admetuslifesciences@gmail.com
                 </a>

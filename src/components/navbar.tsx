@@ -91,9 +91,10 @@ export function Navbar() {
         role="banner"
       >
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between" aria-label="Main navigation">
+          {/* Delight #3: Wordmark letter-spacing expansion on hover */}
           <Link href="/" className="group" aria-label="Admetus Lifesciences home">
             <span
-              className="text-[var(--foreground)] tracking-[0.18em] text-lg font-bold"
+              className="text-[var(--foreground)] tracking-[0.18em] hover:tracking-[0.22em] text-lg font-bold transition-[letter-spacing] duration-300 ease-out"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               ADMETUS
@@ -115,9 +116,10 @@ export function Navbar() {
 
           <div className="hidden xl:flex items-center gap-3">
             <ThemeToggle />
+            {/* Delight #1: Button hover refinement */}
             <Link
               href="/contact/"
-              className="px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)] transition-colors duration-200"
+              className="px-5 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-[var(--gold)] border border-[var(--gold)]/40 hover:bg-[var(--gold)] hover:text-[var(--bg-black)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none transition-all duration-200"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Get Quote
@@ -192,10 +194,11 @@ export function Navbar() {
                 transition={{ delay: navLinks.length * 0.06 + 0.1, duration: 0.4 }}
                 className="mt-6"
               >
+                {/* Delight #1: Button hover refinement */}
                 <Link
                   href="/contact/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
+                  className="px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em] transition-all duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote

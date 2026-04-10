@@ -80,6 +80,12 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `
           try { if(localStorage.getItem('admetus-theme')==='light') document.documentElement.classList.add('light'); } catch(e){}
         `}} />
+        {/* Delight #9: Console easter egg */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          console.log('%c\\u2726 Admetus Lifesciences', 'font-size: 14px; font-weight: bold; color: #C8A951;');
+          console.log('%cPrecision-engineered softgel capsules from India.', 'font-size: 11px; color: #8A8274;');
+          console.log('%cInterested in partnership? \\u2192 admetuslifesciences@gmail.com', 'font-size: 11px; color: #8A8274;');
+        `}} />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
         {/* Skip to content link for keyboard navigation */}

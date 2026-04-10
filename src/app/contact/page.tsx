@@ -75,9 +75,9 @@ export default function ContactPage() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
   const inputErrorClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)] focus:outline-none transition-colors duration-200";
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
 
   function fieldError(field: keyof FormErrors) {
     if (!touched[field] || !errors[field]) return null;
@@ -292,7 +292,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="cursor-pointer inline-flex items-center gap-2 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="cursor-pointer inline-flex items-center gap-2 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {submitting ? "Submitting..." : "Submit Enquiry"}
@@ -313,7 +313,7 @@ export default function ContactPage() {
                     <div className="space-y-4">
                       <div>
                         <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
-                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-colors duration-200 !text-[0.8125rem]">
+                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
                           admetuslifesciences@gmail.com
                         </a>
                       </div>
@@ -334,7 +334,7 @@ export default function ContactPage() {
                       href="https://wa.me/919729977795?text=Hello%2C%20I%20am%20interested%20in%20your%20softgel%20capsule%20products.%20Please%20share%20more%20details."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-5 py-3 active:scale-[0.98] active:opacity-90 bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-colors duration-200"
+                      className="flex items-center gap-3 px-5 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-all duration-200"
                     >
                       <span className="body-text text-[var(--foreground)] !text-[0.8125rem] font-medium">Chat on WhatsApp</span>
                     </a>
