@@ -53,3 +53,10 @@ docs/design-references/*.png
 docs/design-references/oryzo.ai/
 *.ttf
 *.woff2
+screenshots/
+docs/design-references/
+.playwright-mcp/
+*.png
+*.jpg
+*.jpeg
+admetus-lifesciences/
