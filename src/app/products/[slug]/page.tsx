@@ -45,7 +45,7 @@ export default async function ProductDetailPage({
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.92), rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.25))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <Link
@@ -58,7 +58,7 @@ export default async function ProductDetailPage({
           <span className="block label-text mb-2 text-[var(--teal)]">
             {product.category}
           </span>
-          <h1 className="display-section text-[var(--text-white)]">
+          <h1 className="display-section text-[var(--hero-text)]">
             {product.name}
           </h1>
           <p className="mt-3 body-large text-[var(--gold)]">{product.tagline}</p>

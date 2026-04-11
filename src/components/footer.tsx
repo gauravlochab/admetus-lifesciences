@@ -30,13 +30,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           {/* Company Info */}
           <div>
-            <span
-              className="text-[var(--foreground)] tracking-[0.22em] text-base font-bold"
-              style={{ fontFamily: "var(--font-display), Archivo, sans-serif", letterSpacing: "0.22em" }}
+            <img
+              src="/images/logo-horizontal.png"
+              alt="Admetus Lifesciences"
+              className="h-12 w-auto"
+              width={200}
+              height={48}
               aria-hidden="true"
-            >
-              ADMETUS
-            </span>
+            />
             <h3 className="sr-only">Admetus Lifesciences</h3>
             <p className="mt-4 body-text text-[var(--text-cream)] max-w-xs !text-[0.75rem]" style={{ lineHeight: 1.65 }}>
               Precision-engineered softgel capsules manufactured in&nbsp;India.

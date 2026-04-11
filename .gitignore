@@ -59,4 +59,8 @@ docs/design-references/
 *.png
 *.jpg
 *.jpeg
+
+# Allow logo files
+!public/images/logo-mark.png
+!public/images/logo-horizontal.png
 admetus-lifesciences/

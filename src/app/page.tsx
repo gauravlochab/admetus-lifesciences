@@ -28,7 +28,7 @@ function Hero() {
           loading="eager" fetchPriority="high"
           style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.3) 70%, transparent 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,10,10,0.88) 40%, rgba(10,10,10,0.55) 70%, rgba(10,10,10,0.4) 100%)" }} />
       </div>
 
       {/* Margin label */}
@@ -54,7 +54,7 @@ function Hero() {
             {["PRECISION", "ENCAPSULATED"].map((word, i) => (
               <div
                 key={word}
-                className={`display-hero text-[var(--text-white)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`display-hero text-[var(--hero-text)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transition: `opacity 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms, transform 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms` }}
               >
                 {word}

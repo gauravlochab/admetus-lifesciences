@@ -112,6 +112,12 @@
   --caption: 0.8125rem;
   --label: 0.6875rem;
 
+  /* Hero — flips with theme */
+  --hero-text: #F7F4EF;
+  --hero-overlay-top: rgba(10, 10, 10, 0.55);
+  --hero-overlay-mid: rgba(10, 10, 10, 0.6);
+  --hero-overlay-bottom: rgba(10, 10, 10, 0.92);
+
   /* shadcn vars */
   --background: #0A0A0A;
   --foreground: #F7F4EF;
@@ -150,6 +156,10 @@
 
 /* Light (off-white / cream) theme */
 .light {
+  --hero-text: #1A1710;
+  --hero-overlay-top: rgba(245, 240, 232, 0.6);
+  --hero-overlay-mid: rgba(245, 240, 232, 0.7);
+  --hero-overlay-bottom: rgba(245, 240, 232, 0.92);
   --background: #F5F0E8;
   --foreground: #1A1710;
   --card: #EDE7DB;
@@ -434,6 +444,7 @@
   }
   .nav-link-hover:hover {
     color: var(--foreground);
+    opacity: 1;
   }
 }
 
