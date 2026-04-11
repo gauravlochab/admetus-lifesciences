@@ -71,7 +71,7 @@ function Hero() {
             className={`mt-3 md:mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
           >
-            India&apos;s advanced softgel manufacturing facility. Science-driven formulations, globally certified production.
+            Improving the quality of your life through better health. One of India&apos;s advanced manufacturers, exporters and suppliers of Nutraceutical Soft Gelatin Capsules.
           </p>
 
           <div
@@ -150,9 +150,9 @@ function CredibilityStrip() {
 /* ═══ Section 2b: METRICS ═══ */
 function Metrics() {
   const metrics = [
-    { value: "50M+", label: "Capsules Annual Capacity" },
+    { value: "2020", label: "Established" },
     { value: "05", label: "International Certifications" },
-    { value: "07", label: "Precision Formulations" },
+    { value: "40+", label: "Product Range" },
     { value: "100%", label: "Batch Quality Inspection" },
   ];
 
@@ -291,8 +291,8 @@ function ScaleMetrics() {
           <SectionReveal delay={0.1}>
             <div className="max-w-[65ch]">
               <p className="body-large text-[var(--text-cream)]">
-                Our Haryana facility produces over <span className="text-[var(--foreground)] font-semibold">50 million capsules annually</span> across
-                7 precision-formulated product lines, each backed by 5 international certifications.
+                Our Haryana facility produces over <span className="text-[var(--foreground)] font-semibold">40+ product formulations</span> across
+                multiple precision-formulated product lines, each backed by 5 international certifications. Supplying hospitals and retailers worldwide.
               </p>
               <p className="mt-4 body-text text-[var(--text-muted)]">
                 State-of-the-art ARBES SGX-806P encapsulation line.
@@ -340,8 +340,8 @@ function ProductShowcase() {
           </h2>
           <div className="gold-rule w-12 mt-4 mb-4" />
           <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10" style={{ fontSize: "0.9375rem" }}>
-            Seven precision-formulated softgel capsules &mdash; each designed for optimal
-            bioavailability and manufactured under strict quality controls.
+            Precision-formulated softgel capsules &mdash; each designed for optimal
+            bioavailability and manufactured under strict quality controls. Supplied to hospitals and retailers worldwide.
           </p>
         </SectionReveal>
       </div>
@@ -467,7 +467,7 @@ function VisualBreak() {
         <div className="flex items-center gap-4 md:gap-6">
           <div className="gold-rule w-6 md:w-8" />
           <span className="label-text text-white text-[0.5625rem] md:text-[0.6875rem]" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
-            VILLAGE ANTA, HARYANA &mdash; EST. 2024
+            VILLAGE ANTA, HARYANA &mdash; EST. 2020
           </span>
         </div>
       </div>
@@ -766,7 +766,7 @@ function ClosingCTA() {
           </div>
 
           <p className="mt-6 md:mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
-            admetuslifesciences@gmail.com
+            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608
           </p>
           <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">
             Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India

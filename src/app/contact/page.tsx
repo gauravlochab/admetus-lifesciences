@@ -318,6 +318,21 @@ export default function ContactPage() {
                         </a>
                       </div>
                       <div>
+                        <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Phone</span>
+                        <a href="tel:+917497841608" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem] block">
+                          +91-7497841608
+                        </a>
+                        <a href="tel:+919729977795" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem] block">
+                          +91-9729977795
+                        </a>
+                      </div>
+                      <div>
+                        <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Business Hours</span>
+                        <p className="body-text text-[var(--foreground)] !text-[0.8125rem]">
+                          Mon - Sat, 9:00 AM - 6:00 PM
+                        </p>
+                      </div>
+                      <div>
                         <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Manufacturing Unit</span>
                         <p className="body-text text-[var(--foreground)] !text-[0.8125rem]">
                           Village Anta, Tehsil Safidon,<br />

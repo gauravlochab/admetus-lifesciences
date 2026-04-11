@@ -45,11 +45,11 @@ export default function AboutPage() {
                   className="text-sm italic text-[var(--text-cream)]"
                   style={{ fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif" }}
                 >
-                  Built on precision, driven by science.
+                  Founded in 2020 by Mr. Anudeep Deswal. Built on precision, driven by science.
                 </p>
                 <div className="space-y-5 max-w-[48ch] mt-8">
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
-                    Admetus Lifesciences has built a reputation for excellence in
+                    Founded in 2020, Admetus Lifesciences has built a reputation for excellence in
                     the manufacturing and distribution of softgel capsules. Our
                     production facility is purpose-built for precision nutraceuticals,
                     equipped with state-of-the-art encapsulation technology designed to

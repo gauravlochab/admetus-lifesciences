@@ -35,7 +35,7 @@ export default function ExportPage() {
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            Admetus Lifesciences is positioned to serve international buyers,
+            Admetus Lifesciences serves international buyers worldwide --
             importers, and distributors seeking a reliable and quality-focused
             softgel capsule manufacturing partner in&nbsp;India.
           </p>

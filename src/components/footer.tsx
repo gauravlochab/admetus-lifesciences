@@ -106,6 +106,29 @@ export function Footer() {
                 </p>
               </div>
               <div>
+                <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Phone</span>
+                <a
+                  href="tel:+917497841608"
+                  className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem] block"
+                  style={{ transition: 'color 200ms cubic-bezier(0.23, 1, 0.32, 1)' }}
+                >
+                  +91-7497841608
+                </a>
+                <a
+                  href="tel:+919729977795"
+                  className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem] block"
+                  style={{ transition: 'color 200ms cubic-bezier(0.23, 1, 0.32, 1)' }}
+                >
+                  +91-9729977795
+                </a>
+              </div>
+              <div>
+                <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Hours</span>
+                <p className="body-text text-[var(--text-cream)] !text-[0.75rem]">
+                  Mon - Sat, 9:00 AM - 6:00 PM
+                </p>
+              </div>
+              <div>
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
                 <a
                   href="mailto:admetuslifesciences@gmail.com"
