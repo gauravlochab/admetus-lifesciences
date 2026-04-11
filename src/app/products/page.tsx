@@ -84,7 +84,7 @@ export default function ProductsPage() {
                     <span className="label-text mb-3 block text-[var(--teal)]">
                       {product.category}
                     </span>
-                    <h3 className="heading-2 text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-all duration-200">
+                    <h3 className="heading-2 text-[var(--foreground)] uppercase group-hover:text-[var(--gold)] transition-all duration-200 break-words">
                       {product.name}
                     </h3>
                     <p className="mt-1 body-text text-[var(--gold)] !text-[0.9375rem]">{product.tagline}</p>

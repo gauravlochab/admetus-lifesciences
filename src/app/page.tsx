@@ -363,7 +363,7 @@ function ProductShowcase() {
                       {product.category}
                     </span>
                   </div>
-                  <h3 className="mt-3 heading-2 text-[var(--foreground)] uppercase">{product.name}</h3>
+                  <h3 className="mt-3 heading-2 text-[var(--foreground)] uppercase break-words">{product.name}</h3>
                   <p className="mt-1 text-[0.75rem] text-[var(--gold)]">{product.tagline}</p>
                   <p className="mt-2 text-[0.75rem] text-[var(--text-muted)] line-clamp-2 leading-relaxed">{product.composition}</p>
                   <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between">
