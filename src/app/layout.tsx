@@ -75,10 +75,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full`} suppressHydrationWarning>
+    <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full light`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `
-          try { if(localStorage.getItem('admetus-theme')==='light') document.documentElement.classList.add('light'); } catch(e){}
+          try { if(localStorage.getItem('admetus-theme')==='dark') document.documentElement.classList.remove('light'); } catch(e){}
         `}} />
         {/* Delight #9: Console easter egg */}
         <script dangerouslySetInnerHTML={{ __html: `

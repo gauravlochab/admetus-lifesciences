@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export function ThemeToggle() {
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem("admetus-theme");
-    if (saved === "light") {
-      setIsLight(true);
-      document.documentElement.classList.add("light");
+    if (saved === "dark") {
+      setIsLight(false);
+      document.documentElement.classList.remove("light");
     }
   }, []);
 
