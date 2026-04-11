@@ -64,4 +64,6 @@ docs/design-references/
 !public/images/logo-mark.png
 !public/images/logo-horizontal.png
 !public/images/cert-*.png
+!public/apple-touch-icon.png
+!src/app/icon.png
 admetus-lifesciences/
