@@ -16,7 +16,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
@@ -40,7 +40,7 @@ function Hero() {
       </div>
 
       {/* Content -- left-aligned, asymmetric */}
-      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-20 md:pt-0">
+      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-20 pb-20 md:pt-0 md:pb-0">
         <div className="max-w-[var(--content-narrow)]">
           <div
             className={`label-text text-[var(--gold)] mb-3 md:mb-5 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
@@ -95,7 +95,7 @@ function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className={`absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
         style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1400ms" }}
       >
         <span className="label-text text-[var(--text-muted)] !text-[0.5rem]">Scroll</span>
