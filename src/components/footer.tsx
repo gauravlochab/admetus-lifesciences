@@ -26,14 +26,14 @@ const serviceLinks = [
 export function Footer() {
   return (
     <footer className="bg-[var(--bg-charcoal)] border-t border-[var(--gold)]/10" role="contentinfo">
-      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] py-10 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16">
           {/* Company Info */}
           <div>
             <img
               src="/images/logo-horizontal.png"
               alt="Admetus Lifesciences"
-              className="h-12 w-auto"
+              className="h-10 sm:h-12 w-auto max-w-[200px]"
               width={200}
               height={48}
               aria-hidden="true"
@@ -109,7 +109,7 @@ export function Footer() {
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
                 <a
                   href="mailto:admetuslifesciences@gmail.com"
-                  className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem]"
+                  className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem] break-all"
                   style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
                 >
                   admetuslifesciences@gmail.com
@@ -129,7 +129,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-6 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="mt-10 md:mt-16 pt-6 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
           <p className="body-text text-[var(--text-muted)] !text-[0.625rem] opacity-60">
             &copy; {new Date().getFullYear()} Admetus Lifesciences. All rights
             reserved.

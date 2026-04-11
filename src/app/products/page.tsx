@@ -52,7 +52,7 @@ export default function ProductsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-all duration-200 ${
+                className={`px-4 sm:px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-all duration-200 ${
                   activeCategory === cat
                     ? "bg-[var(--gold)] text-[var(--bg-black)] border-[var(--gold)]"
                     : "text-[var(--text-muted)] border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
@@ -65,7 +65,7 @@ export default function ProductsPage() {
           </div>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filtered.map((product, i) => (
               <SectionReveal key={product.slug} delay={i * 0.04}>
                 <Link href={`/products/${product.slug}/`} className="group block">
@@ -106,7 +106,7 @@ export default function ProductsPage() {
 
           {/* CTA */}
           <SectionReveal>
-            <div className="mt-14 p-8 border border-[var(--border-subtle)] bg-[var(--bg-charcoal)]">
+            <div className="mt-14 p-6 sm:p-8 border border-[var(--border-subtle)] bg-[var(--bg-charcoal)]">
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                 <div>
                   <h3 className="heading-2 text-[var(--foreground)] uppercase">
@@ -119,7 +119,7 @@ export default function ProductsPage() {
                 </div>
                 <Link
                   href="/contact/"
-                  className="shrink-0 inline-flex items-center gap-2 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200"
+                  className="shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote

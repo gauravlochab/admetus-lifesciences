@@ -50,7 +50,7 @@ export default async function ProductDetailPage({
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <Link
             href="/products/"
-            className="inline-flex items-center gap-2 label-text text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors duration-200 mb-6"
+            className="inline-flex items-center gap-2 py-2 label-text text-[var(--text-muted)] hover:text-[var(--gold)] transition-colors duration-200 mb-4"
           >
             <ArrowLeft size={13} />
             All Products
@@ -68,7 +68,7 @@ export default async function ProductDetailPage({
       {/* Product Details */}
       <section className="py-16">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16">
             {/* Left: Product visual */}
             <div
               className="aspect-square border border-[var(--border-subtle)] flex items-center justify-center relative overflow-hidden"
@@ -172,7 +172,7 @@ export default async function ProductDetailPage({
       <section className="py-16">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <h2 className="label-text text-[var(--text-muted)] mb-6">Other Products</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {otherProducts.map((p) => (
               <Link
                 key={p.slug}

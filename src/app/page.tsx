@@ -16,7 +16,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
@@ -40,10 +40,10 @@ function Hero() {
       </div>
 
       {/* Content -- left-aligned, asymmetric */}
-      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
+      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-20 md:pt-0">
         <div className="max-w-[var(--content-narrow)]">
           <div
-            className={`label-text text-[var(--gold)] mb-5 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={`label-text text-[var(--gold)] mb-3 md:mb-5 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 200ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 200ms" }}
           >
             ADMETUS LIFESCIENCES
@@ -63,24 +63,24 @@ function Hero() {
           </div>
 
           <div
-            className={`gold-rule w-24 mt-6 origin-left ${loaded ? "scale-x-100" : "scale-x-0"}`}
+            className={`gold-rule w-16 md:w-24 mt-4 md:mt-6 origin-left ${loaded ? "scale-x-100" : "scale-x-0"}`}
             style={{ transition: `transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 600ms` }}
           />
 
           <p
-            className={`mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={`mt-3 md:mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
           >
             India&apos;s advanced softgel manufacturing facility. Science-driven formulations, globally certified production.
           </p>
 
           <div
-            className={`mt-8 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={`mt-6 md:mt-8 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 800ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 800ms" }}
           >
             <Link
               href="/manufacturing/"
-              className="btn-editorial cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
+              className="btn-editorial cursor-pointer inline-flex items-center justify-center gap-3 px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
               Explore Our Facility
@@ -95,12 +95,12 @@ function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
+        className={`absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
         style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1400ms" }}
       >
         <span className="label-text text-[var(--text-muted)] !text-[0.5rem]">Scroll</span>
         <div
-          className="w-px h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
+          className="w-px h-8 md:h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
           style={{ animation: "scroll-drift 2.5s ease-in-out infinite" }}
         />
       </div>
@@ -121,10 +121,10 @@ function CredibilityStrip() {
   return (
     <section className="py-6 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="flex flex-wrap items-start justify-between gap-6 md:gap-4">
+        <div className="flex overflow-x-auto scrollbar-hide gap-6 md:gap-4 md:flex-wrap md:justify-between md:overflow-visible">
           {certs.map((cert, i) => (
             <SectionReveal key={cert.name} delay={i * 0.06}>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 min-w-[120px] flex-shrink-0 md:min-w-0 md:flex-shrink">
                 <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -134,7 +134,7 @@ function CredibilityStrip() {
                 >
                   {cert.name}
                 </span>
-                <span className="text-[0.625rem] tracking-[0.1em] uppercase text-[var(--text-muted)]" style={{ fontFamily: "var(--font-display)" }}>
+                <span className="text-[0.625rem] tracking-[0.1em] uppercase text-[var(--text-muted)] whitespace-nowrap" style={{ fontFamily: "var(--font-display)" }}>
                   {cert.desc}
                 </span>
               </div>
@@ -157,19 +157,19 @@ function Metrics() {
   ];
 
   return (
-    <section className="py-12 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+    <section className="py-10 md:py-12 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
       <div className="mx-auto max-w-[1400px] px-[var(--gutter)]">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {metrics.map((m, i) => (
             <SectionReveal key={m.label} delay={i * 0.08}>
               <div>
                 <div
-                  className="text-3xl md:text-4xl font-bold text-[var(--gold)]"
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--gold)]"
                   style={{ fontFamily: "var(--font-display), sans-serif" }}
                 >
                   {m.value}
                 </div>
-                <div className="mt-1.5 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+                <div className="mt-1.5 text-[0.625rem] md:text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
                   {m.label}
                 </div>
               </div>
@@ -217,7 +217,7 @@ function Manifesto() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-[var(--bg-warm-dark)] relative">
+    <section className="py-12 md:py-16 lg:py-20 bg-[var(--bg-warm-dark)] relative">
       {/* Margin label */}
       <div className="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label">
         PHILOSOPHY
@@ -226,8 +226,8 @@ function Manifesto() {
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">02</span>
 
       <div className="max-w-[860px] px-[var(--gutter)] mx-auto lg:mx-0 lg:ml-[calc(var(--gutter)+2rem)]">
-        <span className="label-text text-[var(--gold)] mb-6 block">OUR PHILOSOPHY</span>
-        <div className="space-y-4">
+        <span className="label-text text-[var(--gold)] mb-4 md:mb-6 block">OUR PHILOSOPHY</span>
+        <div className="space-y-3 md:space-y-4">
           {lines.map((line, i) => (
             <div
               key={i}
@@ -237,7 +237,7 @@ function Manifesto() {
               }`}
               style={{
                 fontFamily: "var(--font-display), sans-serif",
-                fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+                fontSize: "clamp(1.125rem, 2.5vw, 1.75rem)",
                 fontWeight: 700,
                 lineHeight: 1.4,
                 letterSpacing: "-0.01em",
@@ -249,7 +249,7 @@ function Manifesto() {
           ))}
         </div>
         <div
-          className={`gold-rule mt-12 w-48 origin-left ${
+          className={`gold-rule mt-8 md:mt-12 w-32 md:w-48 origin-left ${
             visibleLines.has(2) ? "scale-x-100" : "scale-x-0"
           }`}
           style={{ transition: "transform 700ms cubic-bezier(0.23, 1, 0.32, 1) 600ms" }}
@@ -262,7 +262,7 @@ function Manifesto() {
 /* ═══ Section 4: SCALE & METRICS ═══ */
 function ScaleMetrics() {
   return (
-    <section className="relative py-20 bg-[var(--bg-black)]">
+    <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
@@ -285,9 +285,9 @@ function ScaleMetrics() {
         </SectionReveal>
 
         {/* Thin gold rule */}
-        <div className="gold-rule w-16 mt-6 mb-10" />
+        <div className="gold-rule w-16 mt-4 md:mt-6 mb-8 md:mb-10" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-8 lg:gap-16">
           <SectionReveal delay={0.1}>
             <div className="max-w-[65ch]">
               <p className="body-large text-[var(--text-cream)]">
@@ -304,7 +304,7 @@ function ScaleMetrics() {
 
           <div className="hidden lg:block bg-[var(--border-subtle)]" />
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 md:gap-8">
             {[
               { label: "Equipment", value: "ARBES SGX-806P rotary die encapsulation, Elmach EPI 2000 blister sealing" },
               { label: "Certifications", value: "FSSAI, GMP, HACCP, Halal, WHO-GMP" },
@@ -329,7 +329,7 @@ function ProductShowcase() {
   const featured = products.slice(0, 7);
 
   return (
-    <section className="py-20 bg-[var(--bg-charcoal)]">
+    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">04</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
@@ -339,7 +339,7 @@ function ProductShowcase() {
             ENGINEERED FOR EFFICACY
           </h2>
           <div className="gold-rule w-12 mt-4 mb-4" />
-          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-10" style={{ fontSize: "0.9375rem" }}>
+          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10" style={{ fontSize: "0.9375rem" }}>
             Seven precision-formulated softgel capsules &mdash; each designed for optimal
             bioavailability and manufactured under strict quality controls.
           </p>
@@ -348,11 +348,11 @@ function ProductShowcase() {
 
       {/* Product grid */}
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
           {featured.map((product, i) => (
             <SectionReveal key={product.slug} delay={i * 0.04}>
               <Link href={`/products/${product.slug}/`}>
-                <div className="product-card border border-[var(--border-subtle)] p-5 h-full cursor-pointer"
+                <div className="product-card border border-[var(--border-subtle)] p-4 md:p-5 h-full cursor-pointer min-h-[44px]"
                   style={{ background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))` }}
                 >
                   <div className="flex items-center justify-between">
@@ -377,10 +377,10 @@ function ProductShowcase() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-8 flex flex-wrap items-center gap-4">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 md:gap-4">
         <Link
           href="/products/"
-          className="text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] flex items-center gap-2"
+          className="min-h-[44px] inline-flex items-center justify-center sm:justify-start text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2"
           style={{
             fontFamily: "var(--font-display)",
             transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -390,7 +390,7 @@ function ProductShowcase() {
         </Link>
         <a
           href="/catalogue.pdf"
-          className="btn-editorial inline-flex items-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 cursor-pointer"
+          className="btn-editorial inline-flex items-center justify-center gap-2 px-7 min-h-[44px] py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 cursor-pointer"
         >
           Download Product Catalogue
           <ArrowRight size={13} />
@@ -413,17 +413,17 @@ function ManufacturingProcess() {
   ];
 
   return (
-    <section className="py-20 bg-[var(--bg-warm-dark)]">
+    <section className="py-14 md:py-20 bg-[var(--bg-warm-dark)]">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">05</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)] mb-3 block">MANUFACTURING</span>
           <h2 className="display-section text-[var(--foreground)]">THE PROCESS</h2>
-          <div className="gold-rule w-12 mt-4 mb-10" />
+          <div className="gold-rule w-12 mt-4 mb-8 md:mb-10" />
         </SectionReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-6 md:gap-y-8">
           {steps.map((step, i) => (
             <SectionReveal key={step.num} delay={i * 0.05}>
               <div className="flex gap-4 group">
@@ -449,7 +449,7 @@ function ManufacturingProcess() {
 /* ═══ Section 7: VISUAL BREAK (static) ═══ */
 function VisualBreak() {
   return (
-    <section className="relative h-[50vh] overflow-hidden">
+    <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
           src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&h=1080&fit=crop"
@@ -464,9 +464,9 @@ function VisualBreak() {
       <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.05), transparent 60%)" }} />
 
       <div className="absolute inset-0 flex items-end p-[var(--gutter)]">
-        <div className="flex items-center gap-6">
-          <div className="gold-rule w-8" />
-          <span className="label-text text-white" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
+        <div className="flex items-center gap-4 md:gap-6">
+          <div className="gold-rule w-6 md:w-8" />
+          <span className="label-text text-white text-[0.5625rem] md:text-[0.6875rem]" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
             VILLAGE ANTA, HARYANA &mdash; EST. 2024
           </span>
         </div>
@@ -501,7 +501,7 @@ function Differentiators() {
   ];
 
   return (
-    <section className="py-20 bg-[var(--bg-charcoal)] relative">
+    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)] relative">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">06</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
@@ -510,25 +510,25 @@ function Differentiators() {
           <h2 className="display-section text-[var(--foreground)] mb-4">
             THE ADMETUS<br />DIFFERENCE
           </h2>
-          <div className="gold-rule w-16 mb-10" />
+          <div className="gold-rule w-16 mb-8 md:mb-10" />
         </SectionReveal>
 
         {/* Asymmetric grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <SectionReveal delay={0.05} className="md:col-span-2">
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
-              <div className="relative p-6 z-10">
+              <div className="relative p-5 md:p-6 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">01</span>
-                <h3 className="heading-1 text-white">{cards[0].title}</h3>
+                <h3 className="heading-2 md:heading-1 text-white">{cards[0].title}</h3>
                 <p className="mt-2 body-text text-white/80 max-w-[65ch]">{cards[0].body}</p>
               </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[380px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
@@ -540,7 +540,7 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.15}>
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
@@ -552,12 +552,12 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.2} className="md:col-span-2">
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[340px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
-              <div className="relative p-6 z-10">
+              <div className="relative p-5 md:p-6 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">04</span>
-                <h3 className="heading-1 text-white">{cards[3].title}</h3>
+                <h3 className="heading-2 md:heading-1 text-white">{cards[3].title}</h3>
                 <p className="mt-2 body-text text-white/80 max-w-[65ch]">{cards[3].body}</p>
               </div>
             </div>
@@ -571,7 +571,7 @@ function Differentiators() {
 /* ═══ Section 9: PARTNERSHIP ═══ */
 function Partnership() {
   return (
-    <section className="min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative">
+    <section className="min-h-[auto] md:min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">07</span>
 
       {/* Left: Image with warm overlay */}
@@ -588,7 +588,7 @@ function Partnership() {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-[var(--gutter)] lg:pl-[var(--space-16)]">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center py-14 md:py-20 lg:py-0 px-[var(--gutter)] lg:pl-[var(--space-16)]">
         <div className="max-w-lg">
           <SectionReveal direction="right">
             <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
@@ -601,17 +601,17 @@ function Partnership() {
             </p>
           </SectionReveal>
           <SectionReveal direction="right" delay={0.15}>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-6 md:mt-8 space-y-3">
               {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
                 <li key={s} className="flex items-center gap-4 body-text text-[var(--text-cream)]">
-                  <span className="w-5 h-px bg-[var(--gold)]" />
+                  <span className="w-5 h-px bg-[var(--gold)] flex-shrink-0" />
                   {s}
                 </li>
               ))}
             </ul>
             <Link
               href="/contract-manufacturing/"
-              className="btn-editorial cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
+              className="btn-editorial cursor-pointer mt-8 md:mt-10 inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Start a Project
@@ -633,11 +633,11 @@ function GlobalReach() {
   ];
 
   return (
-    <section className="py-20 bg-[var(--bg-black)] relative">
+    <section className="py-14 md:py-20 bg-[var(--bg-black)] relative">
       <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">08</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
           <SectionReveal>
             <div>
               <span className="label-text text-[var(--gold)] mb-3 block">GLOBAL PRESENCE</span>
@@ -650,7 +650,7 @@ function GlobalReach() {
               </p>
               <Link
                 href="/export/"
-                className="btn-editorial cursor-pointer mt-10 inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
+                className="btn-editorial cursor-pointer mt-8 md:mt-10 inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Explore Export Capabilities
@@ -662,12 +662,12 @@ function GlobalReach() {
           <div className="flex flex-col justify-center gap-0">
             {features.map((f, i) => (
               <SectionReveal key={f.title} delay={i * 0.08}>
-                <div className="py-6 border-t border-[var(--border-subtle)]">
+                <div className="py-5 md:py-6 border-t border-[var(--border-subtle)]">
                   <div className="flex items-baseline gap-4 mb-2">
                     <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40">{String(i + 1).padStart(2, "0")}</span>
-                    <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.25rem, 2vw, 1.5rem)" }}>{f.title}</h3>
+                    <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)" }}>{f.title}</h3>
                   </div>
-                  <p className="body-text text-[var(--text-muted)] max-w-[65ch] ml-[calc(0.5625rem*3+1rem)]">{f.desc}</p>
+                  <p className="body-text text-[var(--text-muted)] max-w-[65ch] pl-[calc(0.5625rem*3+1rem)] md:ml-[calc(0.5625rem*3+1rem)] md:pl-0">{f.desc}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -675,10 +675,10 @@ function GlobalReach() {
         </div>
 
         <SectionReveal delay={0.2}>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
               <div key={region} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[var(--gold)]" />
+                <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0" />
                 <span className="text-sm text-[var(--text-cream)]">{region}</span>
               </div>
             ))}
@@ -692,18 +692,18 @@ function GlobalReach() {
 /* ═══ Section 11: TRUST QUOTE ═══ */
 function TrustQuote() {
   return (
-    <section className="py-20 bg-[var(--bg-charcoal)] flex items-center">
+    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)] flex items-center">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <div className="max-w-[640px]">
-            <div className="gold-rule w-16 mb-10" />
+            <div className="gold-rule w-12 md:w-16 mb-8 md:mb-10" />
 
             <blockquote>
               <p
                 className="text-[var(--foreground)] italic leading-[1.35]"
                 style={{
                   fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif",
-                  fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+                  fontSize: "clamp(1.25rem, 3vw, 2.25rem)",
                   fontWeight: 400,
                 }}
               >
@@ -711,7 +711,7 @@ function TrustQuote() {
               </p>
             </blockquote>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-6 md:mt-8 flex items-center gap-4">
               <div className="gold-rule w-6" />
               <p className="label-text text-[var(--gold)]">
                 ADMETUS LIFESCIENCES
@@ -727,7 +727,7 @@ function TrustQuote() {
 /* ═══ Section 12: CLOSING CTA ═══ */
 function ClosingCTA() {
   return (
-    <section className="py-24 bg-[var(--bg-black)] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[var(--bg-black)] relative overflow-hidden">
       {/* Gold rule above */}
       <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
 
@@ -747,10 +747,10 @@ function ClosingCTA() {
             Contract manufacturing, private label solutions, and export-ready softgel capsules — discuss your requirements with our&nbsp;team.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
             <Link
               href="/contact/"
-              className="btn-editorial cursor-pointer inline-flex items-center gap-3 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)]"
+              className="btn-editorial cursor-pointer inline-flex items-center justify-center gap-3 px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] w-full sm:w-auto"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Start a Project
@@ -758,14 +758,14 @@ function ClosingCTA() {
             </Link>
             <Link
               href="/contact/"
-              className="btn-editorial cursor-pointer inline-flex items-center gap-2 px-[var(--space-8)] py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)]"
+              className="btn-editorial cursor-pointer inline-flex items-center justify-center gap-2 px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)] w-full sm:w-auto"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Request Product Samples
             </Link>
           </div>
 
-          <p className="mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
+          <p className="mt-6 md:mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
             admetuslifesciences@gmail.com
           </p>
           <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">

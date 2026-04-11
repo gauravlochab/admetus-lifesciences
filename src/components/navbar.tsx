@@ -95,16 +95,16 @@ export function Navbar() {
       >
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between" aria-label="Main navigation">
           {/* Wordmark */}
-          <Link href="/" className="group flex items-center gap-2.5" aria-label="Admetus Lifesciences home">
+          <Link href="/" className="group flex items-center gap-2 sm:gap-2.5 min-w-0" aria-label="Admetus Lifesciences home">
             <img
               src="/images/logo-mark.png"
               alt=""
-              className="h-9 w-auto"
+              className="h-8 sm:h-9 w-auto shrink-0"
               width={40}
               height={40}
             />
             <span
-              className={`tracking-[0.18em] text-lg font-bold ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
+              className={`tracking-[0.18em] text-base sm:text-lg font-bold truncate ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
               style={{
                 fontFamily: "var(--font-display), Archivo, sans-serif",
                 transition: "letter-spacing 300ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -143,7 +143,7 @@ export function Navbar() {
           <button
             ref={menuButtonRef}
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className={`xl:hidden p-3 group ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
+            className={`xl:hidden flex items-center justify-center min-w-[48px] min-h-[48px] p-3 group ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
             aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileOpen}
             aria-controls="mobile-nav-menu"
@@ -152,8 +152,8 @@ export function Navbar() {
               <X size={22} />
             ) : (
               <div className="flex flex-col gap-[6px]">
-                <span className="block w-6 h-[1.5px] bg-[var(--foreground)]" style={{ transition: "width 200ms cubic-bezier(0.23, 1, 0.32, 1)" }} />
-                <span className="block w-4 h-[1.5px] bg-[var(--foreground)] group-hover:w-6" style={{ transition: "width 200ms cubic-bezier(0.23, 1, 0.32, 1)" }} />
+                <span className={`block w-6 h-[1.5px] ${isScrolled ? "bg-[var(--foreground)]" : "bg-[var(--hero-text)]"}`} style={{ transition: "width 200ms cubic-bezier(0.23, 1, 0.32, 1)" }} />
+                <span className={`block w-4 h-[1.5px] ${isScrolled ? "bg-[var(--foreground)]" : "bg-[var(--hero-text)]"} group-hover:w-6`} style={{ transition: "width 200ms cubic-bezier(0.23, 1, 0.32, 1)" }} />
               </div>
             )}
           </button>
@@ -178,7 +178,7 @@ export function Navbar() {
           >
             <button
               onClick={() => { setIsMobileOpen(false); menuButtonRef.current?.focus(); }}
-              className="absolute top-5 right-6 p-3 text-[var(--text-white)]"
+              className="absolute top-4 right-4 flex items-center justify-center min-w-[48px] min-h-[48px] p-3 text-[var(--text-white)]"
               aria-label="Close navigation menu"
             >
               <X size={22} />
@@ -195,7 +195,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-xl font-semibold text-[var(--text-white)] uppercase tracking-[0.06em]"
+                    className="text-xl font-semibold text-[var(--text-white)] uppercase tracking-[0.06em] py-1"
                     style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
                   >
                     {link.label}
@@ -211,7 +211,7 @@ export function Navbar() {
                 <Link
                   href="/contact/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="btn-editorial px-7 py-3 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
+                  className="btn-editorial px-7 py-3.5 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote

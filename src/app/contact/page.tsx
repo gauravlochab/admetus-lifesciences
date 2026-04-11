@@ -118,7 +118,7 @@ export default function ContactPage() {
       {/* Form & Info */}
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12">
             {/* Form */}
             <div>
               <SectionReveal>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                 ) : (
                   <form
                     onSubmit={handleSubmit}
-                    className="p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]"
+                    className="p-5 sm:p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]"
                     noValidate
                   >
                     {/* TODO: Replace YOUR_ACCESS_KEY_HERE with Web3Forms access key from https://web3forms.com */}
@@ -156,7 +156,7 @@ export default function ContactPage() {
                       </div>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="contact-name" className="block label-text text-[var(--text-muted)] mb-1.5">Full Name *</label>
                         <input
@@ -285,14 +285,14 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
+                    <div className="mt-6 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-4">
                       <p className="label-text !text-[0.5625rem] text-[var(--text-muted)]">
                         For bulk and export enquiries only
                       </p>
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="cursor-pointer inline-flex items-center gap-2 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="cursor-pointer w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-bold tracking-[0.12em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {submitting ? "Submitting..." : "Submit Enquiry"}
@@ -313,7 +313,7 @@ export default function ContactPage() {
                     <div className="space-y-4">
                       <div>
                         <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
-                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem] break-all">
                           admetuslifesciences@gmail.com
                         </a>
                       </div>
@@ -345,11 +345,11 @@ export default function ContactPage() {
                     <dl className="space-y-2">
                       <div>
                         <dt className="label-text !text-[0.5625rem] text-[var(--text-muted)]">GSTIN</dt>
-                        <dd className="mono-text text-[0.75rem] text-[var(--foreground)]">06ABRFA9749C1Z3</dd>
+                        <dd className="mono-text text-[0.75rem] text-[var(--foreground)] break-all">06ABRFA9749C1Z3</dd>
                       </div>
                       <div>
                         <dt className="label-text !text-[0.5625rem] text-[var(--text-muted)]">License No.</dt>
-                        <dd className="mono-text text-[0.75rem] text-[var(--foreground)]">10020064002545</dd>
+                        <dd className="mono-text text-[0.75rem] text-[var(--foreground)] break-all">10020064002545</dd>
                       </div>
                       <div>
                         <dt className="label-text !text-[0.5625rem] text-[var(--text-muted)]">Website</dt>
