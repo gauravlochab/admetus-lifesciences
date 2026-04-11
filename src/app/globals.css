@@ -191,7 +191,7 @@
   --text-cream: #2D2A22;
   /* FIX: Darkened from #6B5F4B to #5C5140 for WCAG AA compliance */
   --text-muted: #5C5140;
-  --text-white: #1A1710;
+  /* --text-white stays #F7F4EF in light mode — used on dark image overlays */
   /* Pass 4: richer, warmer gold */
   --gold: #9A8A3E;
   --gold-light: #6B5F2E;
