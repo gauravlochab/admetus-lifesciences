@@ -111,11 +111,11 @@ function Hero() {
 /* ═══ Section 2: CREDIBILITY STRIP ═══ */
 function CredibilityStrip() {
   const certs = [
-    { name: "FSSAI", desc: "Food Safety Standards" },
-    { name: "GMP", desc: "Good Manufacturing Practice" },
-    { name: "HACCP", desc: "Hazard Analysis & CCP" },
-    { name: "Halal", desc: "Halal Certified" },
-    { name: "WHO-GMP", desc: "WHO Standards" },
+    { name: "FSSAI", desc: "Food Safety Standards", img: "/images/cert-fssai.png" },
+    { name: "GMP", desc: "Good Manufacturing Practice", img: "/images/cert-gmp.png" },
+    { name: "HACCP", desc: "Hazard Analysis & CCP", img: "/images/cert-haccp.png" },
+    { name: "Halal", desc: "Halal Certified", img: "/images/cert-halal.png" },
+    { name: "WHO-GMP", desc: "WHO Standards", img: "/images/cert-who.png" },
   ];
 
   return (
@@ -124,19 +124,19 @@ function CredibilityStrip() {
         <div className="flex overflow-x-auto scrollbar-hide gap-6 md:gap-4 md:flex-wrap md:justify-between md:overflow-visible">
           {certs.map((cert, i) => (
             <SectionReveal key={cert.name} delay={i * 0.06}>
-              <div className="flex flex-col gap-1 min-w-[120px] flex-shrink-0 md:min-w-0 md:flex-shrink">
-                <span className="mono-text text-[0.625rem] tracking-[0.15em] text-[var(--text-muted)] opacity-50">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span
-                  className="text-[1.25rem] font-bold text-[var(--foreground)] tracking-tight"
-                  style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
-                >
-                  {cert.name}
-                </span>
-                <span className="text-[0.625rem] tracking-[0.1em] uppercase text-[var(--text-muted)] whitespace-nowrap" style={{ fontFamily: "var(--font-display)" }}>
-                  {cert.desc}
-                </span>
+              <div className="flex items-center gap-3 min-w-[150px] flex-shrink-0 md:min-w-0 md:flex-shrink">
+                <img src={cert.img} alt={cert.name} className="h-10 w-10 object-contain shrink-0" width={40} height={40} />
+                <div className="flex flex-col gap-0.5">
+                  <span
+                    className="text-[0.875rem] font-bold text-[var(--foreground)] tracking-tight leading-tight"
+                    style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
+                  >
+                    {cert.name}
+                  </span>
+                  <span className="text-[0.5625rem] tracking-[0.08em] uppercase text-[var(--text-muted)] whitespace-nowrap" style={{ fontFamily: "var(--font-display)" }}>
+                    {cert.desc}
+                  </span>
+                </div>
               </div>
             </SectionReveal>
           ))}
