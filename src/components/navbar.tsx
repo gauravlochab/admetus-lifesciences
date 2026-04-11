@@ -97,7 +97,7 @@ export function Navbar() {
           {/* Wordmark */}
           <Link href="/" className="group" aria-label="Admetus Lifesciences home">
             <span
-              className="text-[var(--foreground)] tracking-[0.18em] text-lg font-bold"
+              className={`tracking-[0.18em] text-lg font-bold ${isScrolled ? "text-[var(--foreground)]" : "text-[#F7F4EF]"}`}
               style={{
                 fontFamily: "var(--font-display), Archivo, sans-serif",
                 transition: "letter-spacing 300ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -114,7 +114,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-link-hover px-3 py-2 text-[0.6875rem] font-semibold text-[var(--foreground)]/60 uppercase tracking-[0.1em] whitespace-nowrap"
+                className={`nav-link-hover px-3 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] whitespace-nowrap ${isScrolled ? "text-[var(--foreground)]/60" : "text-[#F7F4EF]/60"}`}
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {link.label}
@@ -136,7 +136,7 @@ export function Navbar() {
           <button
             ref={menuButtonRef}
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="xl:hidden p-3 text-[var(--foreground)] group"
+            className={`xl:hidden p-3 group ${isScrolled ? "text-[var(--foreground)]" : "text-[#F7F4EF]"}`}
             aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileOpen}
             aria-controls="mobile-nav-menu"

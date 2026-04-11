@@ -185,21 +185,25 @@
   --sidebar-border: rgba(26, 23, 16, 0.1);
   --sidebar-ring: #9A8A3E;
 
+  /* Background tokens flip to light cream tones */
   --bg-black: #F5F0E8;
   --bg-charcoal: #EDE7DB;
   --bg-warm-dark: #E4DDD0;
+
+  /* Text tokens flip — dark text on light backgrounds */
   --text-cream: #2D2A22;
-  /* FIX: Darkened from #6B5F4B to #5C5140 for WCAG AA compliance */
   --text-muted: #5C5140;
-  /* --text-white stays #F7F4EF in light mode — used on dark image overlays */
-  /* Pass 4: richer, warmer gold */
+  /* --text-white NEVER flips — always warm white for image overlays */
+
+  /* Accent tokens */
   --gold: #9A8A3E;
   --gold-light: #6B5F2E;
   --gold-muted: #A89550;
   --teal: #007A87;
-  /* Pass 4: lighter, more transparent overlay for light mode hero */
-  --overlay-black: rgba(245, 240, 232, 0.5);
-  --border-subtle: rgba(26, 23, 16, 0.08);
+
+  /* Overlay stays DARK even in light mode — images always need dark overlay for text readability */
+  --overlay-black: rgba(10, 10, 10, 0.7);
+  --border-subtle: rgba(26, 23, 16, 0.1);
 }
 
 @layer base {

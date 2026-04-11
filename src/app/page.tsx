@@ -129,7 +129,7 @@ function CredibilityStrip() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span
-                  className="text-[1.25rem] font-bold text-[var(--text-white)] tracking-tight"
+                  className="text-[1.25rem] font-bold text-[var(--foreground)] tracking-tight"
                   style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
                 >
                   {cert.name}
@@ -232,7 +232,7 @@ function Manifesto() {
             <div
               key={i}
               ref={(el) => { lineRefs.current[i] = el; }}
-              className={`text-[var(--text-white)] ${
+              className={`text-[var(--foreground)] ${
                 visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
               }`}
               style={{
@@ -279,7 +279,7 @@ function ScaleMetrics() {
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)] mb-3 block">OUR FACILITY</span>
-          <h2 className="display-section text-[var(--text-white)]">
+          <h2 className="display-section text-[var(--foreground)]">
             BUILT FOR<br />SCALE
           </h2>
         </SectionReveal>
@@ -291,7 +291,7 @@ function ScaleMetrics() {
           <SectionReveal delay={0.1}>
             <div className="max-w-[65ch]">
               <p className="body-large text-[var(--text-cream)]">
-                Our Haryana facility produces over <span className="text-[var(--text-white)] font-semibold">50 million capsules annually</span> across
+                Our Haryana facility produces over <span className="text-[var(--foreground)] font-semibold">50 million capsules annually</span> across
                 7 precision-formulated product lines, each backed by 5 international certifications.
               </p>
               <p className="mt-4 body-text text-[var(--text-muted)]">
@@ -335,7 +335,7 @@ function ProductShowcase() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)]">FORMULATION PORTFOLIO</span>
-          <h2 className="mt-3 display-section text-[var(--text-white)]">
+          <h2 className="mt-3 display-section text-[var(--foreground)]">
             ENGINEERED FOR EFFICACY
           </h2>
           <div className="gold-rule w-12 mt-4 mb-4" />
@@ -419,7 +419,7 @@ function ManufacturingProcess() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)] mb-3 block">MANUFACTURING</span>
-          <h2 className="display-section text-[var(--text-white)]">THE PROCESS</h2>
+          <h2 className="display-section text-[var(--foreground)]">THE PROCESS</h2>
           <div className="gold-rule w-12 mt-4 mb-10" />
         </SectionReveal>
 
@@ -430,7 +430,7 @@ function ManufacturingProcess() {
                 <span className="text-[0.5625rem] font-mono text-[var(--gold)] opacity-60 pt-1">{step.num}</span>
                 <div>
                   <h3
-                    className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--text-white)]"
+                    className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--foreground)]"
                     style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
                   >
                     {step.title}
@@ -507,7 +507,7 @@ function Differentiators() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)] mb-3 block">WHY ADMETUS</span>
-          <h2 className="display-section text-[var(--text-white)] mb-4">
+          <h2 className="display-section text-[var(--foreground)] mb-4">
             THE ADMETUS<br />DIFFERENCE
           </h2>
           <div className="gold-rule w-16 mb-10" />
@@ -592,7 +592,7 @@ function Partnership() {
         <div className="max-w-lg">
           <SectionReveal direction="right">
             <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
-            <h2 className="mt-4 display-section text-[var(--text-white)]">
+            <h2 className="mt-4 display-section text-[var(--foreground)]">
               YOUR BRAND.<br />OUR SCIENCE.
             </h2>
             <div className="gold-rule w-12 mt-5 mb-5" />
@@ -641,7 +641,7 @@ function GlobalReach() {
           <SectionReveal>
             <div>
               <span className="label-text text-[var(--gold)] mb-3 block">GLOBAL PRESENCE</span>
-              <h2 className="display-section text-[var(--text-white)]">
+              <h2 className="display-section text-[var(--foreground)]">
                 BEYOND<br />BORDERS
               </h2>
               <div className="gold-rule w-16 mt-5 mb-5" />
@@ -665,7 +665,7 @@ function GlobalReach() {
                 <div className="py-6 border-t border-[var(--border-subtle)]">
                   <div className="flex items-baseline gap-4 mb-2">
                     <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40">{String(i + 1).padStart(2, "0")}</span>
-                    <h3 className="heading-2 text-[var(--text-white)]" style={{ fontSize: "clamp(1.25rem, 2vw, 1.5rem)" }}>{f.title}</h3>
+                    <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.25rem, 2vw, 1.5rem)" }}>{f.title}</h3>
                   </div>
                   <p className="body-text text-[var(--text-muted)] max-w-[65ch] ml-[calc(0.5625rem*3+1rem)]">{f.desc}</p>
                 </div>
@@ -700,7 +700,7 @@ function TrustQuote() {
 
             <blockquote>
               <p
-                className="text-[var(--text-white)] italic leading-[1.35]"
+                className="text-[var(--foreground)] italic leading-[1.35]"
                 style={{
                   fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif",
                   fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
