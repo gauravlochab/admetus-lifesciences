@@ -91,7 +91,7 @@ function Hero() {
       </div>
 
       {/* Section number */}
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">01</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">01</span>
 
       {/* Scroll indicator */}
       <div
@@ -223,7 +223,7 @@ function Manifesto() {
         PHILOSOPHY
       </div>
 
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">02</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">02</span>
 
       <div className="max-w-[860px] px-[var(--gutter)] mx-auto lg:mx-0 lg:ml-[calc(var(--gutter)+2rem)]">
         <span className="label-text text-[var(--gold)] mb-4 md:mb-6 block">OUR PHILOSOPHY</span>
@@ -274,7 +274,7 @@ function ScaleMetrics() {
         />
       </div>
 
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-10">03</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">03</span>
 
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <SectionReveal>
@@ -330,7 +330,7 @@ function ProductShowcase() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-charcoal)]">
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">04</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">04</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
@@ -414,7 +414,7 @@ function ManufacturingProcess() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-warm-dark)]">
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">05</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">05</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
@@ -502,7 +502,7 @@ function Differentiators() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-charcoal)] relative">
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">06</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">06</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
@@ -572,7 +572,7 @@ function Differentiators() {
 function Partnership() {
   return (
     <section className="min-h-[auto] md:min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative">
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-20">07</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">07</span>
 
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
@@ -611,7 +611,7 @@ function Partnership() {
             </ul>
             <Link
               href="/contract-manufacturing/"
-              className="btn-editorial cursor-pointer mt-8 md:mt-10 inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
+              className="btn-editorial cursor-pointer mt-8 md:mt-10 inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Start a Project
@@ -634,7 +634,7 @@ function GlobalReach() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-black)] relative">
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number">08</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">08</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
@@ -731,7 +731,7 @@ function ClosingCTA() {
       {/* Gold rule above */}
       <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
 
-      <span className="hidden lg:block absolute top-8 right-[var(--gutter)] section-number z-10">10</span>
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">10</span>
 
       <SectionReveal>
         <div className="relative z-10 max-w-[var(--container-max)] w-full px-[var(--gutter)]">
