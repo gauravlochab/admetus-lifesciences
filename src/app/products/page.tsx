@@ -27,18 +27,20 @@ export default function ProductsPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)]">Product Portfolio</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">Product Portfolio</span>
+          <h1 
+            className="display-section text-[var(--hero-text)] mt-6 md:mt-8 mb-8 md:mb-10 leading-snug"
+            style={{ wordSpacing: "0.2em", lineHeight: "1.15" }}
+          >
             NUTRACEUTICAL<br />SOFTGEL CAPSULES
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Each product in our portfolio is formulated for optimal bioavailability
-            and manufactured under strict quality controls. Available for contract
-            manufacturing and private&nbsp;label.
+            and manufactured under strict quality controls. Available for ready
+            brands, contract manufacturing, and private&nbsp;label.
           </p>
         </div>
       </section>
