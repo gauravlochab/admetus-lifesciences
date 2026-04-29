@@ -40,7 +40,7 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Calcium & Bone Health",
-    color: "#a855f7",
+    color: "var(--chart-1)",
   },
   {
     slug: "cholecalciferol-60000-iu",
@@ -63,7 +63,7 @@ export const products: Product[] = [
     packSize: "4 x 1 x 4 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Calcium & Bone Health",
-    color: "#eab308",
+    color: "var(--chart-2)",
   },
   {
     slug: "omega-3-vitamin-e-softgel",
@@ -89,7 +89,7 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Omega & Heart Health",
-    color: "#06b6d4",
+    color: "var(--chart-3)",
   },
   {
     slug: "ginseng-astaxanthin-multivitamin",
@@ -115,7 +115,7 @@ export const products: Product[] = [
     packSize: "20 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Antioxidant & Multivitamin",
-    color: "#22c55e",
+    color: "var(--chart-4)",
   },
   {
     slug: "glutathione-ala-grape-seed",
@@ -141,7 +141,7 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Antioxidant & Multivitamin",
-    color: "#ec4899",
+    color: "var(--chart-5)",
   },
   {
     slug: "lycopene-grape-seed-multivitamin",
@@ -169,7 +169,7 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Antioxidant & Multivitamin",
-    color: "#f97316",
+    color: "var(--chart-3)",
   },
   {
     slug: "isoflavones-calcium-vitamin-d3",
@@ -197,7 +197,7 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Women's Health",
-    color: "#f472b6",
+    color: "var(--chart-2)",
   },
   {
     slug: "ginkgo-tribulus-mens-vitality",
@@ -224,7 +224,7 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Men's Health",
-    color: "#3b82f6",
+    color: "var(--chart-3)",
   },
   {
     slug: "nigella-sativa-kalonji",
@@ -248,7 +248,7 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Herbal & Specialty",
-    color: "#78716c",
+    color: "var(--chart-1)",
   },
   {
     slug: "krill-oil-softgel",
@@ -275,6 +275,6 @@ export const products: Product[] = [
     packSize: "10 x 1 x 10 Softgel Capsules",
     dosageForm: "Softgel Capsule",
     category: "Omega & Heart Health",
-    color: "#ef4444",
+    color: "var(--chart-5)",
   },
 ];
