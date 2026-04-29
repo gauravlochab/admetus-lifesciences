@@ -20,8 +20,8 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
-          alt="Pharmaceutical softgel capsules arranged on a production line at Admetus Lifesciences facility"
+          src="https://images.unsplash.com/photo-1576073719676-aa95576db207?w=1920&h=1080&fit=crop"
+          alt="Nutraceutical softgel capsules arranged on a production line at Admetus Lifesciences facility"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -152,7 +152,7 @@ function Metrics() {
   const metrics = [
     { value: "2020", label: "Established" },
     { value: "05", label: "International Certifications" },
-    { value: "40+", label: "Product Range" },
+    { value: "80+", label: "Product Range" },
     { value: "100%", label: "Batch Quality Inspection" },
   ];
 
@@ -265,7 +265,7 @@ function ScaleMetrics() {
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
+          src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=1920&h=1080&fit=crop"
           alt="Interior of the Admetus softgel manufacturing facility in Haryana"
           className="w-full h-full object-cover opacity-12"
           width={1920}
@@ -291,7 +291,7 @@ function ScaleMetrics() {
           <SectionReveal delay={0.1}>
             <div className="max-w-[65ch]">
               <p className="body-large text-[var(--text-cream)]">
-                Our Haryana facility produces over <span className="text-[var(--foreground)] font-semibold">40+ product formulations</span> across
+                Our Haryana facility produces over <span className="text-[var(--foreground)] font-semibold">80+ product formulations</span> across
                 multiple precision-formulated product lines, each backed by 5 international certifications. Supplying hospitals and retailers worldwide.
               </p>
               <p className="mt-4 body-text text-[var(--text-muted)]">
@@ -400,10 +400,83 @@ function ProductShowcase() {
   );
 }
 
+/* ═══ Section 5b: CATALOGUE DOWNLOAD ═══ */
+function CatalogueDownload() {
+  return (
+    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-center">
+          <SectionReveal>
+            <div className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative max-w-md">
+              <img
+                src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1000&h=1250&fit=crop"
+                width={1000}
+                height={1250}
+                alt="Admetus Lifesciences product catalogue cover featuring nutraceutical softgel capsules"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.55), transparent 50%)" }} />
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+                <span className="label-text text-[var(--gold)]">2026 EDITION</span>
+                <h3 className="mt-2 heading-2 text-white uppercase" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)" }}>
+                  Product<br />Catalogue
+                </h3>
+              </div>
+            </div>
+          </SectionReveal>
+
+          <SectionReveal delay={0.1}>
+            <div>
+              <span className="label-text text-[var(--gold)] mb-3 block">DOWNLOAD CATALOGUE</span>
+              <h2 className="display-section text-[var(--foreground)] mt-3 mb-4">
+                EXPLORE OUR<br />FULL RANGE
+              </h2>
+              <div className="gold-rule w-16 mb-6" />
+              <p className="body-text text-[var(--text-cream)] max-w-[58ch] mb-6" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                Get the complete Admetus product catalogue with detailed
+                composition, pack sizes, and product photographs across 80+
+                softgel formulations. Built for brand owners, distributors,
+                and importers evaluating&nbsp;partnerships.
+              </p>
+
+              <ul className="space-y-2.5 mb-8 max-w-[52ch]">
+                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+                  Full product range with images, composition, and pack sizes
+                </li>
+                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+                  Manufacturing certifications and quality documentation
+                </li>
+                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+                  Contract manufacturing &amp; private label capabilities
+                </li>
+              </ul>
+
+              <a
+                href="/catalogue.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Download Catalogue (PDF)
+                <ArrowRight size={13} />
+              </a>
+            </div>
+          </SectionReveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ═══ Section 6: MANUFACTURING PROCESS ═══ */
 function ManufacturingProcess() {
   const steps = [
-    { num: "01", title: "RAW MATERIAL SOURCING", desc: "Pharmaceutical-grade ingredients sourced from certified global suppliers." },
+    { num: "01", title: "RAW MATERIAL SOURCING", desc: "Nutraceutical-grade ingredients sourced from certified global suppliers." },
     { num: "02", title: "QUALITY TESTING", desc: "Every batch undergoes rigorous incoming material analysis." },
     { num: "03", title: "GELATIN PREPARATION", desc: "Precision gelatin formulation for optimal capsule integrity." },
     { num: "04", title: "ENCAPSULATION", desc: "ARBES SGX-806P rotary die process at controlled temperature." },
@@ -452,7 +525,7 @@ function VisualBreak() {
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1920&h=1080&fit=crop"
+          src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=1920&h=1080&fit=crop"
           alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
           className="w-full h-full object-cover"
           width={1920}
@@ -481,22 +554,22 @@ function Differentiators() {
     {
       title: "Advanced Equipment",
       body: "ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packaging \u2014 precision-engineered for consistency.",
-      image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=600&h=800&fit=crop",
     },
     {
       title: "End-to-End Quality",
       body: "From raw material testing to final product release \u2014 100% inspection at every stage.",
-      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&h=800&fit=crop",
     },
     {
       title: "Globally Certified",
       body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&h=800&fit=crop",
     },
     {
       title: "Custom Formulations",
       body: "Private label and contract manufacturing with flexible MOQs and custom formulation capabilities.",
-      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=800&fit=crop",
     },
   ];
 
@@ -577,8 +650,8 @@ function Partnership() {
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
         <img
-          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop"
-          alt="Pharmaceutical research and formulation process for softgel capsule manufacturing"
+          src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1200&h=800&fit=crop"
+          alt="Nutraceutical research and formulation process for softgel capsule manufacturing"
           className="absolute inset-0 w-full h-full object-cover"
           width={1200}
           height={800}
@@ -627,7 +700,7 @@ function Partnership() {
 /* ═══ Section 10: GLOBAL REACH ═══ */
 function GlobalReach() {
   const features = [
-    { title: "Export Markets", desc: "Serving pharmaceutical markets across multiple international regions." },
+    { title: "Export Markets", desc: "Serving nutraceutical markets across multiple international regions." },
     { title: "Regulatory Compliance", desc: "Documentation and certifications for seamless global market entry." },
     { title: "Logistics Support", desc: "Export packaging, freight coordination, and customs documentation." },
   ];
@@ -646,7 +719,7 @@ function GlobalReach() {
               </h2>
               <div className="gold-rule w-16 mt-5 mb-5" />
               <p className="body-large text-[var(--text-cream)] max-w-[480px]">
-                Regulatory-compliant export capabilities serving pharmaceutical markets worldwide.
+                Regulatory-compliant export capabilities serving nutraceutical markets worldwide.
               </p>
               <Link
                 href="/export/"
@@ -787,6 +860,7 @@ export default function Home() {
       <Manifesto />
       <ScaleMetrics />
       <ProductShowcase />
+      <CatalogueDownload />
       <ManufacturingProcess />
       <VisualBreak />
       <Differentiators />

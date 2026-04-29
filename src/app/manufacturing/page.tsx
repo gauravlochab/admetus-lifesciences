@@ -26,8 +26,8 @@ export default function ManufacturingPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&h=1080&fit=crop"
-          alt="State-of-the-art pharmaceutical manufacturing equipment at Admetus Lifesciences"
+          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&h=1080&fit=crop"
+          alt="State-of-the-art nutraceutical manufacturing equipment at Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -36,15 +36,16 @@ export default function ManufacturingPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)]">Manufacturing & Infrastructure</span>
+          <span className="label-text text-[var(--gold)]">Contract Manufacturing & Private Label</span>
           <h1 className="mt-3 display-section text-[var(--hero-text)]">
-            STATE-OF-THE-ART<br />PRODUCTION FACILITY
+            AVAILABLE FOR<br />READY BRANDS
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            Our manufacturing unit in Haryana, India is equipped with modern
-            encapsulation, drying, and packing technology -- purpose-built for
-            high-quality softgel capsule&nbsp;production.
+            Available for ready brands, contract manufacturing, and private
+            label production. Our Haryana facility delivers turnkey softgel
+            capsule manufacturing &mdash; from formulation to dispatch &mdash;
+            with full quality documentation and batch&nbsp;traceability.
           </p>
         </div>
       </section>
@@ -111,6 +112,34 @@ export default function ManufacturingPage() {
             </h2>
             <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
+
+          {/* Equipment imagery */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+            <SectionReveal delay={0.05}>
+              <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
+                <img
+                  src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=1000&h=750&fit=crop"
+                  width={1000}
+                  height={750}
+                  alt="ARBES SGX-806P softgel encapsulation line at Admetus Lifesciences"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </SectionReveal>
+            <SectionReveal delay={0.12}>
+              <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
+                <img
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1000&h=750&fit=crop"
+                  width={1000}
+                  height={750}
+                  alt="Elmach EPI 2000 blister packaging machine at Admetus Lifesciences"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </SectionReveal>
+          </div>
 
           <div className="space-y-0">
             {equipment.map((eq, i) => (

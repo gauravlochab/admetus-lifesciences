@@ -10,8 +10,8 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
-          alt="Admetus Lifesciences pharmaceutical manufacturing facility in Haryana, India"
+          src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=1920&h=1080&fit=crop"
+          alt="Admetus Lifesciences nutraceutical manufacturing facility in Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <SectionReveal delay={0.1}>
               <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
                 <img
-                  src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=600&fit=crop"
+                  src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=800&h=600&fit=crop"
                   width={800}
                   height={600}
                   alt="Interior of softgel capsule manufacturing facility showing encapsulation equipment"
@@ -146,6 +146,66 @@ export default function AboutPage() {
                   partner — trusted by international brands, importers, and
                   distributors for our commitment to quality, innovation, and&nbsp;reliability.
                 </p>
+              </div>
+            </SectionReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Cause */}
+      <section className="py-20 bg-[var(--bg-black)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
+            <SectionReveal>
+              <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
+                <img
+                  src="https://images.unsplash.com/photo-1599658880436-c61792e70672?w=1000&h=750&fit=crop"
+                  width={1000}
+                  height={750}
+                  alt="Women from rural Haryana villages employed at the Admetus Lifesciences manufacturing facility"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </SectionReveal>
+
+            <SectionReveal delay={0.1}>
+              <div>
+                <span className="label-text text-[var(--gold)] mb-3 block">SOCIAL CAUSE</span>
+                <h2 className="display-section text-[var(--foreground)] mt-3 mb-4">
+                  EMPOWERING<br />RURAL WOMEN
+                </h2>
+                <div className="gold-rule w-16 mb-6" />
+                <div className="space-y-5 max-w-[58ch]">
+                  <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                    Our facility runs on a workforce that is almost entirely
+                    women from the surrounding villages of Haryana. Every
+                    softgel that leaves Admetus is the work of hands that have
+                    found dignity, livelihood, and independence on our&nbsp;floor.
+                  </p>
+                  <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                    We believe quality manufacturing and rural development are
+                    not separate goals. By creating skilled employment
+                    opportunities for rural women &mdash; in encapsulation,
+                    quality control, packing, and dispatch &mdash; we&rsquo;re building
+                    something more than a supply chain. We&rsquo;re building a&nbsp;community.
+                  </p>
+                </div>
+
+                <div className="mt-8 grid grid-cols-3 gap-4 max-w-md">
+                  <div>
+                    <div className="text-2xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>90%+</div>
+                    <div className="mt-1 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">Women Workforce</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>Local</div>
+                    <div className="mt-1 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">Hiring Priority</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>Skilled</div>
+                    <div className="mt-1 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">On-Site Training</div>
+                  </div>
+                </div>
               </div>
             </SectionReveal>
           </div>

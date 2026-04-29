@@ -20,7 +20,7 @@ export default function ProductsPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=1080&fit=crop"
+          src="https://images.unsplash.com/photo-1576073719676-aa95576db207?w=1920&h=1080&fit=crop"
           alt="Collection of precision-formulated softgel capsules manufactured by Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}

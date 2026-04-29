@@ -9,7 +9,7 @@ const certifications = [
   { name: "GMP", fullName: "Good Manufacturing Practice", desc: "Adherence to internationally recognized manufacturing standards ensuring product quality, consistency, and safety." },
   { name: "HACCP", fullName: "Hazard Analysis and Critical Control Points", desc: "Systematic approach to food safety that identifies, evaluates, and controls hazards throughout production." },
   { name: "Halal", fullName: "Halal Certification", desc: "Products manufactured in compliance with Islamic dietary requirements, expanding market accessibility globally." },
-  { name: "WHO-GMP", fullName: "World Health Organization GMP", desc: "Meeting WHO standards for pharmaceutical manufacturing, recognized by regulatory bodies worldwide." },
+  { name: "WHO-GMP", fullName: "World Health Organization GMP", desc: "Meeting WHO standards for nutraceutical manufacturing, recognized by regulatory bodies worldwide." },
 ];
 
 const qcPoints = [
@@ -29,8 +29,8 @@ export default function QualityPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&h=1080&fit=crop"
-          alt="Quality control laboratory at Admetus Lifesciences testing pharmaceutical softgel capsules"
+          src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1920&h=1080&fit=crop"
+          alt="Quality control laboratory at Admetus Lifesciences testing nutraceutical softgel capsules"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
