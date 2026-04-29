@@ -20,7 +20,7 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="https://images.unsplash.com/photo-1576073719676-aa95576db207?w=1920&h=1080&fit=crop"
+          src="https://images.unsplash.com/photo-1670850757263-6efc07d410f8?w=1920&h=1080&fit=crop"
           alt="Nutraceutical softgel capsules arranged on a production line at Admetus Lifesciences facility"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
@@ -265,7 +265,7 @@ function ScaleMetrics() {
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=1920&h=1080&fit=crop"
+          src="https://images.unsplash.com/photo-1745420052704-f70b1d30c8b7?w=1920&h=1080&fit=crop"
           alt="Interior of the Admetus softgel manufacturing facility in Haryana"
           className="w-full h-full object-cover opacity-12"
           width={1920}
@@ -409,7 +409,7 @@ function CatalogueDownload() {
           <SectionReveal>
             <div className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative max-w-md">
               <img
-                src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1000&h=1250&fit=crop"
+                src="https://images.unsplash.com/photo-1670850757896-e1b6c3e311ea?w=1000&h=1250&fit=crop"
                 width={1000}
                 height={1250}
                 alt="Admetus Lifesciences product catalogue cover featuring nutraceutical softgel capsules"
@@ -525,7 +525,7 @@ function VisualBreak() {
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=1920&h=1080&fit=crop"
+          src="https://images.unsplash.com/photo-1745420052704-f70b1d30c8b7?w=1920&h=1080&fit=crop"
           alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
           className="w-full h-full object-cover"
           width={1920}
@@ -554,22 +554,22 @@ function Differentiators() {
     {
       title: "Advanced Equipment",
       body: "ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packaging \u2014 precision-engineered for consistency.",
-      image: "https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1745420052704-f70b1d30c8b7?w=600&h=800&fit=crop",
     },
     {
       title: "End-to-End Quality",
       body: "From raw material testing to final product release \u2014 100% inspection at every stage.",
-      image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1670850757896-e1b6c3e311ea?w=600&h=800&fit=crop",
     },
     {
       title: "Globally Certified",
       body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
-      image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1670850757896-e1b6c3e311ea?w=600&h=800&fit=crop",
     },
     {
       title: "Custom Formulations",
       body: "Private label and contract manufacturing with flexible MOQs and custom formulation capabilities.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=800&fit=crop",
+      image: "https://images.unsplash.com/photo-1745420052527-a75fcc6aba58?w=600&h=800&fit=crop",
     },
   ];
 
@@ -650,7 +650,7 @@ function Partnership() {
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
         <img
-          src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=1200&h=800&fit=crop"
+          src="https://images.unsplash.com/photo-1670850757896-e1b6c3e311ea?w=1200&h=800&fit=crop"
           alt="Nutraceutical research and formulation process for softgel capsule manufacturing"
           className="absolute inset-0 w-full h-full object-cover"
           width={1200}
