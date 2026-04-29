@@ -10,7 +10,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=1920&h=1080&fit=crop"
+          src="https://images.unsplash.com/photo-1745420052704-f70b1d30c8b7?w=1920&h=1080&fit=crop"
           alt="Admetus Lifesciences nutraceutical manufacturing facility in Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <SectionReveal delay={0.1}>
               <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
                 <img
-                  src="https://images.unsplash.com/photo-1554734867-bf3c00a49371?w=800&h=600&fit=crop"
+                  src="https://images.unsplash.com/photo-1745420052704-f70b1d30c8b7?w=800&h=600&fit=crop"
                   width={800}
                   height={600}
                   alt="Interior of softgel capsule manufacturing facility showing encapsulation equipment"
@@ -159,7 +159,7 @@ export default function AboutPage() {
             <SectionReveal>
               <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
                 <img
-                  src="https://images.unsplash.com/photo-1599658880436-c61792e70672?w=1000&h=750&fit=crop"
+                  src="https://images.unsplash.com/photo-1577894947058-cfdae4276bef?w=1000&h=750&fit=crop"
                   width={1000}
                   height={750}
                   alt="Women from rural Haryana villages employed at the Admetus Lifesciences manufacturing facility"
