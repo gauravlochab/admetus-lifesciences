@@ -27,21 +27,20 @@ export default function ManufacturingPage() {
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&h=1080&fit=crop"
-          alt="State-of-the-art pharmaceutical manufacturing equipment at Admetus Lifesciences"
+          alt="State-of-the-art nutraceutical manufacturing equipment at Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Manufacturing & Infrastructure</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <h1 className="mt-8 display-section text-[var(--hero-text)]" style={{ wordSpacing: "0.15em" }}>
             STATE-OF-THE-ART<br />PRODUCTION FACILITY
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="mt-8 body-large text-[var(--text-cream)] max-w-[58ch]">
             Our manufacturing unit in Haryana, India is equipped with modern
             encapsulation, drying, and packing technology -- purpose-built for
             high-quality softgel capsule&nbsp;production.
@@ -77,10 +76,9 @@ export default function ManufacturingPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Production Process</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <h2 className="mt-8 display-section text-[var(--foreground)] mb-10">
               FROM RAW MATERIAL TO&nbsp;DISPATCH
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
@@ -106,10 +104,9 @@ export default function ManufacturingPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <span className="label-text text-[var(--gold)]">Infrastructure</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <h2 className="mt-8 display-section text-[var(--foreground)] mb-10">
               KEY EQUIPMENT
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
@@ -134,10 +131,9 @@ export default function ManufacturingPage() {
       <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-4">
               VISIT OUR&nbsp;FACILITY
             </h2>
-            <div className="gold-rule w-12 mt-4 mb-4" />
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               We welcome facility audits and visits from potential partners.
               Schedule a visit or request detailed facility&nbsp;documentation.

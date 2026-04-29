@@ -9,7 +9,7 @@ const certifications = [
   { name: "GMP", fullName: "Good Manufacturing Practice", desc: "Adherence to internationally recognized manufacturing standards ensuring product quality, consistency, and safety." },
   { name: "HACCP", fullName: "Hazard Analysis and Critical Control Points", desc: "Systematic approach to food safety that identifies, evaluates, and controls hazards throughout production." },
   { name: "Halal", fullName: "Halal Certification", desc: "Products manufactured in compliance with Islamic dietary requirements, expanding market accessibility globally." },
-  { name: "WHO-GMP", fullName: "World Health Organization GMP", desc: "Meeting WHO standards for pharmaceutical manufacturing, recognized by regulatory bodies worldwide." },
+  { name: "WHO-GMP", fullName: "World Health Organization GMP", desc: "Meeting WHO standards for nutraceutical manufacturing, recognized by regulatory bodies worldwide." },
 ];
 
 const qcPoints = [
@@ -30,21 +30,20 @@ export default function QualityPage() {
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&h=1080&fit=crop"
-          alt="Quality control laboratory at Admetus Lifesciences testing pharmaceutical softgel capsules"
+          alt="Quality control laboratory at Admetus Lifesciences testing nutraceutical softgel capsules"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start) 0%, var(--hero-grad-end) 40%)" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Quality & Certifications</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <h1 className="mt-8 display-section text-[var(--hero-text)]">
             UNCOMPROMISING<br />QUALITY STANDARDS
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="mt-8 body-large text-[var(--text-cream)] max-w-[58ch]">
             Every softgel capsule manufactured at Admetus Lifesciences undergoes
             rigorous quality control -- from raw material testing to final&nbsp;dispatch.
           </p>
@@ -92,13 +91,12 @@ export default function QualityPage() {
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)]">Quality Control</span>
-                <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4.5vw, 4rem)" }}>
+                <h2 className="mt-8 display-section text-[var(--foreground)] mb-10" style={{ fontSize: "clamp(2rem, 4.5vw, 4rem)" }}>
                   MULTI-POINT QUALITY&nbsp;CHECKS
                 </h2>
-                <div className="gold-rule w-12 mb-6" />
                 <p className="body-text text-[var(--text-cream)] max-w-[58ch]">
                   Our in-house quality control laboratory is equipped for
-                  comprehensive testing at every stage of production -- from
+                  comprehensive testing at every stage of production - from
                   incoming raw materials to finished product&nbsp;release.
                 </p>
                 <ul className="mt-8 space-y-3">
@@ -114,23 +112,22 @@ export default function QualityPage() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={0.1}>
-              <div className="p-10 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)]">
+            <SectionReveal delay={0.2} className="h-full flex items-end justify-center">
+              <div className="flex flex-col justify-end items-center text-center w-full p-10 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] rounded-[1.0rem]">
                 <div
                   className="text-[var(--gold)]"
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "clamp(4rem, 8vw, 6rem)",
-                    lineHeight: 0.9,
-                    fontWeight: 900,
+                    lineHeight: 0.8,
+                    fontWeight: 300,
                   }}
                 >
                   100%
                 </div>
                 <p className="mt-3 heading-2 text-[var(--foreground)]">Batch Testing</p>
-                <div className="gold-rule w-8 mt-3 mb-3" />
-                <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
-                  Every single batch is tested and documented before release -- no&nbsp;exceptions.
+                <p className="mt-4 body-text text-[var(--text-muted)] max-w-[58ch]">
+                  Every single batch is tested and documented before release - no&nbsp;exceptions.
                 </p>
               </div>
             </SectionReveal>
@@ -142,10 +139,9 @@ export default function QualityPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-6">
               REQUEST QUALITY DOCUMENTATION
             </h2>
-            <div className="gold-rule w-12 mt-4 mb-4" />
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               Certificate copies, audit reports, and compliance documentation
               are available for qualified business&nbsp;enquiries.

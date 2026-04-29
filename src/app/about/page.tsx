@@ -11,20 +11,22 @@ export default function AboutPage() {
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
-          alt="Admetus Lifesciences pharmaceutical manufacturing facility in Haryana, India"
+          alt="Admetus Lifesciences nutraceutical manufacturing facility in Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)]">PRECISION SOFTGEL MANUFACTURING</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">PRECISION SOFTGEL MANUFACTURING</span>
+          <h1
+            className="display-section text-[var(--hero-text)] mt-6 md:mt-8 mb-8 md:mb-10"
+            style={{ wordSpacing: "0.2em" }}
+          >
             A PASSION FOR<br />BETTER HEALTHCARE
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[48ch] leading-[1.55]" style={{ fontSize: "0.9375rem" }}>
             Admetus Lifesciences is a specialized nutraceutical manufacturing
             company based in Haryana, India — focused on producing high-quality
@@ -45,7 +47,8 @@ export default function AboutPage() {
                   className="text-sm italic text-[var(--text-cream)]"
                   style={{ fontFamily: "var(--font-body), 'Source Serif 4', Georgia, serif" }}
                 >
-                  Founded in 2020 by Mr. Anudeep Deswal. Built on precision, driven by science.
+                  Founded in 2020 by Mr. Anudeep Deswal.
+                  <br />Built on precision, driven by science.
                 </p>
                 <div className="space-y-5 max-w-[48ch] mt-8">
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
@@ -156,11 +159,10 @@ export default function AboutPage() {
       <section className="py-20 bg-[var(--bg-black)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)]">Our Values</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)]">
+            <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">Our Values</span>
+            <h2 className="display-section text-[var(--foreground)] mt-6 md:mt-8 mb-12 md:mb-16">
               WHAT SETS US APART
             </h2>
-            <div className="h-px w-12 bg-[var(--gold)] mt-4 mb-6" />
           </SectionReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
@@ -212,11 +214,13 @@ export default function AboutPage() {
       <section className="py-20 bg-[var(--bg-charcoal)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
-              START YOUR SOFTGEL&nbsp;PROJECT
+            <h2
+              className="display-section text-[var(--foreground)] mb-8 md:mb-10"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", wordSpacing: "0.25em" }}
+            >
+              START YOUR SOFTGEL PROJECT
             </h2>
-            <div className="h-px w-12 bg-[var(--gold)] mt-4 mb-6" />
-            <p className="body-text text-[var(--text-muted)] max-w-[52ch] mt-4">
+            <p className="body-text text-[var(--text-muted)] max-w-[52ch]">
               Whether you are a brand owner developing a new product line, a
               distributor seeking reliable supply, or an international buyer
               exploring manufacturing partnerships — our team is ready to

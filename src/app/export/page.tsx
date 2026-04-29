@@ -20,21 +20,20 @@ export default function ExportPage() {
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
-          alt="Export-ready softgel capsule packaging for international pharmaceutical markets"
+          alt="Export-ready softgel capsule packaging for international nutraceutical markets"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0 opacity-60" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">International Markets</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <h1 className="mt-8 display-section text-[var(--hero-text)]">
             FROM INDIA<br />TO THE&nbsp;WORLD
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="mt-8 body-large text-[var(--text-cream)] max-w-[58ch]">
             Admetus Lifesciences serves international buyers worldwide --
             importers, and distributors seeking a reliable and quality-focused
             softgel capsule manufacturing partner in&nbsp;India.
@@ -46,11 +45,10 @@ export default function ExportPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)] mb-3 block">CAPABILITIES</span>
-            <h2 className="display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-8 block">CAPABILITIES</span>
+            <h2 className="display-section text-[var(--foreground)] mb-10">
               EXPORT CAPABILITIES
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
@@ -78,10 +76,9 @@ export default function ExportPage() {
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)]">For International Buyers</span>
-                <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                <h2 className="mt-8 display-section text-[var(--foreground)] mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                   WHAT WE OFFER EXPORT&nbsp;PARTNERS
                 </h2>
-                <div className="gold-rule w-12 mb-6" />
                 <p className="body-text text-[var(--text-cream)] mb-8 max-w-[58ch]">
                   As an export-oriented manufacturer, we understand the
                   requirements of international buyers. Our team provides
@@ -111,7 +108,6 @@ export default function ExportPage() {
                 <h3 className="heading-2 text-[var(--foreground)] mb-3">
                   Ready for Global&nbsp;Markets
                 </h3>
-                <div className="gold-rule w-8 mb-3" />
                 <p className="body-text text-[var(--text-muted)] mb-6 max-w-[58ch]">
                   Export documentation, international packaging, and regulatory
                   support -- shared on&nbsp;request.
@@ -133,10 +129,9 @@ export default function ExportPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-6">
               START AN EXPORT&nbsp;ENQUIRY
             </h2>
-            <div className="gold-rule w-12 mt-4 mb-4" />
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               For bulk and export enquiries, share your requirements and our
               team will respond with a detailed&nbsp;proposal.
