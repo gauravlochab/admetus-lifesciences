@@ -114,9 +114,9 @@
 
   /* Hero — flips with theme */
   --hero-text: #F7F4EF;
-  --hero-overlay-top: rgba(10, 10, 10, 0.55);
-  --hero-overlay-mid: rgba(10, 10, 10, 0.6);
-  --hero-overlay-bottom: rgba(10, 10, 10, 0.92);
+  --hero-grad-start: rgba(10, 10, 10, 0.7);
+  --hero-grad-mid: rgba(10, 10, 10, 0.3);
+  --hero-grad-end: transparent;
 
   /* shadcn vars */
   --background: #0A0A0A;
@@ -143,6 +143,8 @@
   --chart-3: #E2CC7A;
   --chart-4: #00E5FF;
   --chart-5: #A89E8E;
+  --whatsapp-bg: #2ED971; /* Shifted lighter for dark mode legibility without glare */
+  --whatsapp-shadow: rgba(46, 217, 113, 0.15);
   --radius: 0rem;
   --sidebar: #131210;
   --sidebar-foreground: #F7F4EF;
@@ -157,9 +159,9 @@
 /* Light (off-white / cream) theme */
 .light {
   --hero-text: #1A1710;
-  --hero-overlay-top: rgba(245, 240, 232, 0.6);
-  --hero-overlay-mid: rgba(245, 240, 232, 0.7);
-  --hero-overlay-bottom: rgba(245, 240, 232, 0.92);
+  --hero-grad-start: rgba(245, 240, 232, 0.85);
+  --hero-grad-mid: rgba(245, 240, 232, 0.4);
+  --hero-grad-end: transparent;
   --background: #F5F0E8;
   --foreground: #1A1710;
   --card: #EDE7DB;
@@ -186,6 +188,8 @@
   --chart-3: #5C5140;
   --chart-4: #1A1710;
   --chart-5: #C8A951;
+  --whatsapp-bg: #25D366; /* Standard brand color for light mode */
+  --whatsapp-shadow: rgba(37, 211, 102, 0.35);
   --sidebar: #EDE7DB;
   --sidebar-foreground: #1A1710;
   --sidebar-primary: #9A8A3E;
@@ -217,8 +221,11 @@
 }
 
 @layer base {
-  * {
+  *, ::before, ::after {
     @apply border-border;
+    transition-property: color, background-color, border-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
   }
   body {
     @apply bg-background text-foreground;

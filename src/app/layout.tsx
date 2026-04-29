@@ -75,10 +75,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full light`} suppressHydrationWarning>
+    <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `
-          try { if(localStorage.getItem('admetus-theme')==='dark') document.documentElement.classList.remove('light'); } catch(e){}
+          try { 
+            let t = localStorage.getItem('admetus-theme');
+            if (t === 'light' || (!t && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+              document.documentElement.classList.add('light');
+            }
+          } catch(e){}
         `}} />
         {/* Delight #9: Console easter egg */}
         <script dangerouslySetInnerHTML={{ __html: `
@@ -87,7 +92,7 @@ export default function RootLayout({
           console.log('%cInterested in partnership? \\u2192 admetuslifesciences@gmail.com', 'font-size: 11px; color: #8A8274;');
         `}} />
       </head>
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300" suppressHydrationWarning>
         {/* Skip to content link for keyboard navigation */}
         <a href="#main-content" className="skip-to-content">
           Skip to main content
