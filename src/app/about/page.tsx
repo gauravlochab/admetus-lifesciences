@@ -5,8 +5,31 @@ import { ArrowRight } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
 
 export default function AboutPage() {
+  const founderJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Anudeep Deswal",
+    jobTitle: "Founder",
+    worksFor: {
+      "@id": "https://www.admetuslifesciences.com/#organization",
+    },
+    description:
+      "Founder of Admetus Lifesciences (2020), leading precision softgel capsule manufacturing in Haryana, India.",
+    knowsAbout: [
+      "Softgel capsule manufacturing",
+      "Nutraceutical formulation",
+      "Contract manufacturing operations",
+      "GMP-compliant production",
+      "Rural workforce development",
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
@@ -85,6 +108,86 @@ export default function AboutPage() {
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
+              </div>
+            </SectionReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
+            <SectionReveal>
+              <div>
+                <span className="label-text text-[var(--gold)] mb-3 block">FOUNDER</span>
+                <h2
+                  className="display-section text-[var(--foreground)] mt-3 mb-4"
+                  style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+                >
+                  ANUDEEP<br />DESWAL
+                </h2>
+                <div className="gold-rule w-12 mb-6" />
+                <p
+                  className="body-text text-[var(--gold)] !text-[0.9375rem] mb-2"
+                  style={{ fontFamily: "var(--font-body), serif", fontStyle: "italic" }}
+                >
+                  Founder &amp; Managing Director
+                </p>
+                <p className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.12em]">
+                  Admetus Lifesciences  ·  Founded 2020
+                </p>
+              </div>
+            </SectionReveal>
+
+            <SectionReveal delay={0.1}>
+              <div className="space-y-5 max-w-[58ch]">
+                <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                  Anudeep Deswal founded Admetus Lifesciences in 2020 with a focused
+                  vision: build a precision softgel capsule manufacturing facility in
+                  Haryana that meets international quality standards while creating
+                  meaningful employment for women in surrounding rural villages. Both
+                  goals run through every operational decision at the&nbsp;facility.
+                </p>
+                <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                  Under his leadership, Admetus has built a portfolio of 10+
+                  nutraceutical softgel formulations, achieved FSSAI, GMP, HACCP,
+                  Halal, and WHO-GMP certifications, and established the facility as
+                  a contract manufacturing partner for brand owners, distributors,
+                  and importers across India and international&nbsp;markets.
+                </p>
+                <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
+                  His direct involvement in formulation review, supplier qualification,
+                  and quality protocol design ensures that every softgel leaving the
+                  facility meets the standard he set when starting the&nbsp;company.
+                </p>
+
+                <div className="pt-4 grid grid-cols-3 gap-6 max-w-md">
+                  <div>
+                    <div className="text-2xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>
+                      2020
+                    </div>
+                    <div className="mt-1 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+                      Company Founded
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>
+                      10+
+                    </div>
+                    <div className="mt-1 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+                      Formulations
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>
+                      05
+                    </div>
+                    <div className="mt-1 text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+                      Certifications
+                    </div>
+                  </div>
+                </div>
               </div>
             </SectionReveal>
           </div>

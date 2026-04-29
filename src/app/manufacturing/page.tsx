@@ -20,9 +20,54 @@ const equipment = [
   { name: "Quality Control Lab", type: "Testing & Analysis", desc: "In-house QC laboratory equipped for raw material testing, in-process checks, and finished product analysis." },
 ];
 
+const faqs = [
+  {
+    q: "Where is the Admetus Lifesciences manufacturing facility located?",
+    a: "Our facility is at Village Anta, Tehsil Safidon, District Jind, Haryana 126112, India. Haryana is one of India's leading pharmaceutical and nutraceutical manufacturing clusters, with strong logistics connectivity to Delhi NCR, Mumbai port (JNPT), and Mundra port for export shipments.",
+  },
+  {
+    q: "What equipment do you use for softgel encapsulation?",
+    a: "Our primary encapsulation line is the ARBES SGX-806P soft gelatin encapsulation machine — an industry-recognized system delivering precision softgel production with consistent fill accuracy across batch sizes. For blister packing we run the Elmach EPI 2000, a high-speed blister packing machine for tamper-evident primary packaging.",
+  },
+  {
+    q: "What is your softgel manufacturing process from raw material to dispatch?",
+    a: "Our 7-stage process: (1) raw material sourcing from certified suppliers with incoming QC, (2) precision batch formulation per documented SOPs, (3) encapsulation on the ARBES SGX-806P line, (4) controlled-environment drying, (5) multi-point quality inspection (visual, weight, dissolution), (6) blister packing on Elmach EPI 2000, (7) secondary packaging, labeling, and dispatch with full batch documentation.",
+  },
+  {
+    q: "What is your monthly production capacity?",
+    a: "Production capacity scales with formulation complexity and packaging format. We support both small pilot runs for new brands and large-volume orders for established distributors. Specific capacity for your formulation is confirmed during quotation.",
+  },
+  {
+    q: "Can I visit and audit the facility before placing an order?",
+    a: "Yes — facility audits are welcomed for prospective partners and certification bodies. Visits are typically arranged within 1–2 weeks of an audit request. Contact us at admetuslifesciences@gmail.com to schedule. We can also provide GMP, WHO-GMP, and HACCP audit reports remotely if a visit isn't feasible.",
+  },
+  {
+    q: "Is the facility GMP certified?",
+    a: "Yes. Our facility holds FSSAI, GMP, HACCP, Halal, and WHO-GMP certifications. Certificate copies are available on request. Quality protocols are maintained at every production stage with documented SOPs and 100% batch testing coverage.",
+  },
+  {
+    q: "Who works at the facility?",
+    a: "Our workforce is 90%+ women from the surrounding villages of Haryana — trained on-site in encapsulation, quality control, packing, and dispatch. We see rural employment and quality manufacturing as complementary goals, not separate ones.",
+  },
+];
+
 export default function ManufacturingPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
@@ -153,6 +198,42 @@ export default function ManufacturingPage() {
                     <p className="mt-2 body-text text-[var(--text-muted)] max-w-[58ch]">{eq.desc}</p>
                   </div>
                 </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <SectionReveal>
+            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
+            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+              MANUFACTURING Q&amp;A
+            </h2>
+            <div className="gold-rule w-16 mb-10" />
+          </SectionReveal>
+
+          <div className="space-y-0">
+            {faqs.map((faq, i) => (
+              <SectionReveal key={faq.q} delay={i * 0.03}>
+                <details className="group py-6 border-t border-[var(--border-subtle)] last:border-b">
+                  <summary className="flex items-start gap-5 cursor-pointer list-none">
+                    <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3
+                      className="heading-2 text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200"
+                      style={{ fontSize: "clamp(1rem, 1.6vw, 1.25rem)" }}
+                    >
+                      {faq.q}
+                    </h3>
+                  </summary>
+                  <p className="mt-4 ml-12 body-text text-[var(--text-muted)] max-w-[68ch]">
+                    {faq.a}
+                  </p>
+                </details>
               </SectionReveal>
             ))}
           </div>

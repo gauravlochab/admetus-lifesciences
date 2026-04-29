@@ -95,6 +95,51 @@ export default async function ProductDetailPage({
     ],
   };
 
+  const productFaqs = [
+    {
+      q: `Can ${product.name} be private-label manufactured under our brand?`,
+      a: `Yes. Admetus Lifesciences manufactures ${product.name} (${product.tagline}) on a contract manufacturing and private label basis for brand owners, distributors, and importers. We supply under your brand name with custom packaging and full batch documentation.`,
+    },
+    {
+      q: `What is the minimum order quantity (MOQ) for ${product.shortName}?`,
+      a: `MOQs are flexible based on packaging format and order configuration. We support both pilot orders for new brands and large-volume orders for established distributors. The current standard pack size is ${product.packSize}. Specific MOQ for your order is confirmed within 48 hours of inquiry.`,
+    },
+    {
+      q: `What is the composition of ${product.name}?`,
+      a: `${product.composition}. Active ingredients: ${product.ingredients.join(", ")}.`,
+    },
+    {
+      q: `Is the formulation customizable?`,
+      a: `Yes. While the standard formulation listed here covers most buyer requirements, we develop custom variants — different dosages, ingredient combinations, or removed ingredients — based on your target market regulatory requirements. Custom formulations require additional time for stability validation.`,
+    },
+    {
+      q: `What packaging options are available for ${product.shortName}?`,
+      a: `Standard packaging is ${product.packSize} blister format. We also offer HDPE bottles in various sizes and custom carton designs. Packaging includes barcode integration, batch coding, and tamper-evident sealing per international standards.`,
+    },
+    {
+      q: `What documentation is provided with ${product.name}?`,
+      a: `Each batch ships with a Certificate of Analysis (COA), batch records, and full ingredient declaration. For export shipments we additionally provide Free Sale Certificate, manufacturing license copy, GMP certificate, and country-specific documentation (Halal, kosher, etc.) on request.`,
+    },
+    {
+      q: `What certifications back the manufacturing of ${product.shortName}?`,
+      a: `${product.name} is manufactured at our FSSAI, GMP, HACCP, Halal, and WHO-GMP certified facility in Haryana, India, on the ARBES SGX-806P soft gelatin encapsulation line. Every batch undergoes multi-point quality control including dissolution testing, microbial limits, and finished product inspection before release.`,
+    },
+    {
+      q: `What is the typical lead time from order to dispatch?`,
+      a: `Standard lead time for ${product.name} is 30–45 days from confirmed order, including raw material sourcing, encapsulation, drying, quality testing, and packaging. Custom variants may require additional time for stability validation. Specific lead time is committed in your proforma invoice.`,
+    },
+  ];
+
+  const productFaqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: productFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
       <script
@@ -104,6 +149,10 @@ export default async function ProductDetailPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }}
       />
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-10 overflow-hidden">
@@ -233,6 +282,95 @@ export default async function ProductDetailPage({
               >
                 {ing}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Manufacturing Specs */}
+      <section className="py-16">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <h2 className="label-text text-[var(--text-muted)] mb-8">Manufacturing Specifications</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-[var(--border-subtle)] border border-[var(--border-subtle)]">
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                Standard Pack
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">{product.packSize}</p>
+            </div>
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                Dosage Form
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">{product.dosageForm}</p>
+            </div>
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                Encapsulation Line
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">ARBES SGX-806P</p>
+            </div>
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                Blister Packing
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">Elmach EPI 2000</p>
+            </div>
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                Lead Time
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">30–45 days</p>
+            </div>
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                MOQ
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">Flexible · per quote</p>
+            </div>
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                Documentation
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">COA, batch records</p>
+            </div>
+            <div className="p-5 bg-[var(--bg-charcoal)]">
+              <span className="mono-text text-[0.6875rem] text-[var(--text-muted)] uppercase tracking-[0.1em] block mb-2">
+                Certifications
+              </span>
+              <p className="body-text text-[var(--foreground)] !text-[0.875rem]">FSSAI, GMP, HACCP, Halal, WHO-GMP</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <span className="label-text text-[var(--gold)]">Frequently Asked</span>
+          <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>
+            ABOUT {product.shortName}
+          </h2>
+          <div className="gold-rule w-16 mb-10" />
+
+          <div className="space-y-0">
+            {productFaqs.map((faq, i) => (
+              <details key={faq.q} className="group py-6 border-t border-[var(--border-subtle)] last:border-b">
+                <summary className="flex items-start gap-5 cursor-pointer list-none">
+                  <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3
+                    className="heading-2 text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200"
+                    style={{ fontSize: "clamp(1rem, 1.6vw, 1.25rem)" }}
+                  >
+                    {faq.q}
+                  </h3>
+                </summary>
+                <p className="mt-4 ml-12 body-text text-[var(--text-muted)] max-w-[68ch]">
+                  {faq.a}
+                </p>
+              </details>
             ))}
           </div>
         </div>

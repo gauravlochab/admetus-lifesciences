@@ -23,9 +23,50 @@ const qcPoints = [
   "Packaging integrity verification",
 ];
 
+const faqs = [
+  {
+    q: "What testing does each batch undergo?",
+    a: "Every batch is subjected to a multi-point quality control protocol: raw material identity and purity testing, in-process weight and fill volume checks, dissolution and disintegration testing, microbial limit testing, finished product visual inspection, packaging integrity verification, and full batch documentation. No batch leaves our facility without passing all checks.",
+  },
+  {
+    q: "Will I receive a Certificate of Analysis (COA) with my order?",
+    a: "Yes. A Certificate of Analysis is provided with every batch, documenting test results for active ingredients, microbial limits, dissolution profile, and physical specifications. Additional regulatory paperwork (Free Sale Certificate, ingredient declarations, etc.) is available on request for export shipments.",
+  },
+  {
+    q: "Can I audit your manufacturing facility?",
+    a: "Yes — we welcome scheduled facility audits from prospective partners, distributors, and certification bodies. Visits are typically arranged within 1–2 weeks of an audit request. Contact us at admetuslifesciences@gmail.com to schedule.",
+  },
+  {
+    q: "What certifications does Admetus Lifesciences hold?",
+    a: "Our facility is FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Certificate copies and audit reports are available for qualified business inquiries to support partner due diligence and export documentation.",
+  },
+  {
+    q: "How long are products stable, and is stability testing performed?",
+    a: "Stability testing is performed under controlled temperature and humidity conditions to validate shelf life claims. Specific shelf life depends on the formulation and packaging — typical shelf life for our softgel capsules ranges from 24 to 36 months. Stability data is available for each formulation on request.",
+  },
+  {
+    q: "Do you provide third-party lab testing or only in-house QC?",
+    a: "Our in-house QC laboratory handles routine batch testing. For specialized assays, regulatory submissions, or validation studies, we coordinate with NABL-accredited third-party laboratories. Results from third-party testing are shared with the relevant batch documentation.",
+  },
+];
+
 export default function QualityPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
@@ -138,8 +179,44 @@ export default function QualityPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FAQ */}
       <section className="py-20">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <SectionReveal>
+            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
+            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+              QUALITY &amp; CERTIFICATIONS Q&amp;A
+            </h2>
+            <div className="gold-rule w-16 mb-10" />
+          </SectionReveal>
+
+          <div className="space-y-0">
+            {faqs.map((faq, i) => (
+              <SectionReveal key={faq.q} delay={i * 0.03}>
+                <details className="group py-6 border-t border-[var(--border-subtle)] last:border-b">
+                  <summary className="flex items-start gap-5 cursor-pointer list-none">
+                    <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3
+                      className="heading-2 text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200"
+                      style={{ fontSize: "clamp(1rem, 1.6vw, 1.25rem)" }}
+                    >
+                      {faq.q}
+                    </h3>
+                  </summary>
+                  <p className="mt-4 ml-12 body-text text-[var(--text-muted)] max-w-[68ch]">
+                    {faq.a}
+                  </p>
+                </details>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
             <h2 className="display-section text-[var(--foreground)]">
