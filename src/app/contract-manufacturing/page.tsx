@@ -37,15 +37,14 @@ export default function ContractManufacturingPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0 opacity-60" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <h1 className="mt-8 display-section text-[var(--hero-text)]">
             YOUR BRAND.<br />OUR&nbsp;MANUFACTURING.
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="mt-8 body-large text-[var(--text-cream)] max-w-[58ch]">
             From custom formulation to private label packaging -- Admetus
             Lifesciences is your end-to-end softgel capsule manufacturing&nbsp;partner.
           </p>
@@ -56,11 +55,10 @@ export default function ContractManufacturingPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)] mb-3 block">SERVICES</span>
-            <h2 className="display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-8 block">SERVICES</span>
+            <h2 className="display-section text-[var(--foreground)] mb-10">
               WHAT WE&nbsp;OFFER
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
@@ -88,10 +86,9 @@ export default function ContractManufacturingPage() {
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)]">Partnership Advantage</span>
-                <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                <h2 className="mt-8 display-section text-[var(--foreground)] mb-8" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                   WHY MANUFACTURE WITH&nbsp;US
                 </h2>
-                <div className="gold-rule w-12 mb-8" />
                 <ul className="space-y-3">
                   {advantages.map((adv) => (
                     <li key={adv} className="flex items-start gap-4 body-text text-[var(--text-cream)]">
@@ -135,10 +132,9 @@ export default function ContractManufacturingPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-6">
               START YOUR MANUFACTURING PARTNERSHIP
             </h2>
-            <div className="gold-rule w-12 mt-4 mb-4" />
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               Share your requirements and our team will respond with a detailed
               proposal within 48&nbsp;hours.
