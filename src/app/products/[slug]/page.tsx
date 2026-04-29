@@ -33,8 +33,78 @@ export default async function ProductDetailPage({
 
   const otherProducts = products.filter((p) => p.slug !== product.slug);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: `${product.name} — ${product.tagline}. ${product.composition}.`,
+    category: product.category,
+    url: `https://www.admetuslifesciences.com/products/${product.slug}/`,
+    brand: {
+      "@type": "Brand",
+      name: "Admetus Lifesciences",
+    },
+    manufacturer: {
+      "@id": "https://www.admetuslifesciences.com/#organization",
+      "@type": "Organization",
+      name: "Admetus Lifesciences",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Jind",
+        addressRegion: "Haryana",
+        addressCountry: "IN",
+      },
+    },
+    additionalProperty: [
+      { "@type": "PropertyValue", name: "Pack Size", value: product.packSize },
+      { "@type": "PropertyValue", name: "Dosage Form", value: product.dosageForm },
+      {
+        "@type": "PropertyValue",
+        name: "Composition",
+        value: product.composition,
+      },
+    ],
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Brand owners, distributors, importers — contract manufacturing and private label",
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.admetuslifesciences.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: "https://www.admetuslifesciences.com/products/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: `https://www.admetuslifesciences.com/products/${product.slug}/`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-10 overflow-hidden">
         <img
