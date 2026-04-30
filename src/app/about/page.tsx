@@ -73,8 +73,9 @@ export default function AboutPage() {
                 <div className="space-y-5 max-w-[48ch] mt-8">
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     Founded in 2020, Admetus Lifesciences has built a reputation for excellence in
-                    the manufacturing and distribution of softgel capsules. Our
-                    production facility is purpose-built for precision nutraceuticals,
+                    the manufacturing and distribution of softgel capsules. Our{" "}
+                    <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">production facility in Haryana</Link>{" "}
+                    is purpose-built for precision nutraceuticals,
                     equipped with state-of-the-art encapsulation technology designed to
                     enhance the absorption and bioavailability of active&nbsp;ingredients.
                   </p>

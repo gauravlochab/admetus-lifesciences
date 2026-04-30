@@ -291,7 +291,7 @@ function ScaleMetrics() {
           <SectionReveal delay={0.1}>
             <div className="max-w-[65ch]">
               <p className="body-large text-[var(--text-cream)]">
-                Our Haryana facility produces over <span className="text-[var(--foreground)] font-semibold">80+ product formulations</span> across
+                Our <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">Haryana facility</Link> produces over <span className="text-[var(--foreground)] font-semibold">80+ product formulations</span> across
                 multiple precision-formulated product lines, each backed by 5 international certifications. Supplying hospitals and retailers worldwide.
               </p>
               <p className="mt-4 body-text text-[var(--text-muted)]">
@@ -817,7 +817,10 @@ function ClosingCTA() {
           <div className="h-px w-12 bg-[var(--gold)]/40 mt-4 mb-5" />
 
           <p className="text-[var(--text-cream)] max-w-[48ch] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
-            Contract manufacturing, private label solutions, and export-ready softgel capsules — discuss your requirements with our&nbsp;team.
+            <Link href="/contract-manufacturing/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">Contract manufacturing</Link>,{" "}
+            <Link href="/private-label-softgel-manufacturer-india/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">private label solutions</Link>, and{" "}
+            <Link href="/export/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">export-ready softgel capsules</Link>{" "}
+            — discuss your requirements with our&nbsp;team.
           </p>
 
           <div className="mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">

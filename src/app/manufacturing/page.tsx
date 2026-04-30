@@ -88,8 +88,8 @@ export default function ManufacturingPage() {
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Available for ready brands, contract manufacturing, and private
-            label production. Our Haryana facility delivers turnkey softgel
-            capsule manufacturing &mdash; from formulation to dispatch &mdash;
+            label production. Our <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">Haryana facility</Link> delivers
+            turnkey softgel capsule manufacturing &mdash; from formulation to dispatch &mdash;
             with full quality documentation and batch&nbsp;traceability.
           </p>
         </div>

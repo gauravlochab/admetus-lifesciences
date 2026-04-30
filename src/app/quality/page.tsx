@@ -86,8 +86,10 @@ export default function QualityPage() {
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            Every softgel capsule manufactured at Admetus Lifesciences undergoes
-            rigorous quality control -- from raw material testing to final&nbsp;dispatch.
+            Every softgel capsule manufactured at our{" "}
+            <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">WHO-GMP certified Haryana facility</Link>{" "}
+            undergoes rigorous quality control -- from raw material testing to
+            final&nbsp;dispatch.
           </p>
         </div>
       </section>

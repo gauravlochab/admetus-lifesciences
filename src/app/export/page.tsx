@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Do you support private label exports?",
-    a: "Yes. We manufacture under your brand name with custom packaging design — blister packs, HDPE bottles, or custom cartons aligned to your brand identity and the regulatory labeling requirements of your destination market. Brand approval and proof signoff happens before production begins.",
+    a: "Yes. We manufacture under your brand name with custom packaging design — blister packs, HDPE bottles, or custom cartons aligned to your brand identity and the regulatory labeling requirements of your destination market. See our private label softgel manufacturer page for the full process. Brand approval and proof signoff happens before production begins.",
   },
   {
     q: "What is the minimum order quantity for export shipments?",
@@ -85,8 +85,9 @@ export default function ExportPage() {
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Admetus Lifesciences serves international buyers worldwide --
-            importers, and distributors seeking a reliable and quality-focused
-            softgel capsule manufacturing partner in&nbsp;India.
+            importers and distributors seeking a reliable, quality-focused{" "}
+            <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">softgel manufacturer in Haryana, India</Link>{" "}
+            with full export documentation and Halal&nbsp;certification.
           </p>
         </div>
       </section>

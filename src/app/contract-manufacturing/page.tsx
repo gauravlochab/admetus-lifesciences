@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "What softgel formulations can you manufacture?",
-    a: "We currently produce 10+ standard formulations including Vitamin D3 (Cholecalciferol 60,000 IU), Omega-3 + Vitamin E, Calcitriol + Calcium + K2-7, Glutathione + ALA, Lycopene + Grape Seed, Ginseng + Astaxanthin, Krill Oil, Isoflavones for women's health, Ginkgo + Tribulus for men's health, and Nigella Sativa (Kalonji). Beyond these, we develop custom formulations on request.",
+    a: "We currently produce 10+ standard formulations including Vitamin D3 (Cholecalciferol 60,000 IU — see our dedicated Vitamin D3 contract manufacturing page), Omega-3 + Vitamin E, Calcitriol + Calcium + K2-7, Glutathione + ALA, Lycopene + Grape Seed, Ginseng + Astaxanthin, Krill Oil, Isoflavones for women's health, Ginkgo + Tribulus for men's health, and Nigella Sativa (Kalonji). Beyond these, we develop custom formulations on request.",
   },
   {
     q: "What packaging options are available?",
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "Where is your manufacturing facility located?",
-    a: "Our facility is at Village Anta, Tehsil Safidon, District Jind, Haryana 126112, India. We welcome scheduled visits and audits — contact us to arrange a facility tour.",
+    a: "Our facility is at Village Anta, Tehsil Safidon, District Jind, Haryana 126112, India. Haryana sits within India's pharmaceutical manufacturing cluster — see our Haryana facility page for full geographic and logistics context. We welcome scheduled visits and audits — contact us to arrange a facility tour.",
   },
 ];
 
@@ -95,8 +95,9 @@ export default function ContractManufacturingPage() {
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            From custom formulation to private label packaging -- Admetus
-            Lifesciences is your end-to-end softgel capsule manufacturing&nbsp;partner.
+            From custom formulation to <Link href="/private-label-softgel-manufacturer-india/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">private label packaging</Link>{" "}
+            -- Admetus Lifesciences is your end-to-end softgel capsule
+            manufacturing&nbsp;partner.
           </p>
         </div>
       </section>
