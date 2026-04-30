@@ -17,8 +17,11 @@ export async function generateMetadata({
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
   return {
-    title: `${product.name} — ${product.tagline}`,
-    description: `${product.name}: ${product.composition}. Manufactured by Admetus Lifesciences, India.`,
+    title: `${product.name} Softgel Manufacturer & Private Label India`,
+    description: `${product.name} (${product.tagline}) softgel capsule contract manufacturer & private label supplier in India. WHO-GMP certified facility, MOQ flexibility, full export documentation. ${product.composition}.`,
+    alternates: {
+      canonical: `https://www.admetuslifesciences.com/products/${slug}/`,
+    },
   };
 }
 

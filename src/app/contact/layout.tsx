@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Request a Quote",
-  description: "Contact Admetus Lifesciences for bulk enquiries, contract manufacturing, private label, and export requirements.",
+  title: "Contact Admetus Lifesciences — Softgel Manufacturer Quote",
+  description:
+    "Request a quote for softgel contract manufacturing, private label, or export. Quotation within 48 hours. Email: admetuslifesciences@gmail.com. Facility: Jind, Haryana 126112.",
+  alternates: {
+    canonical: "https://www.admetuslifesciences.com/contact/",
+  },
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
