@@ -266,7 +266,7 @@ export default function AboutPage() {
                   src="/images/facility/capsule-drying-women.jpg"
                   width={1000}
                   height={750}
-                  alt="Women from Village Anta and surrounding villages of Tehsil Safidon, Jind employed at the Admetus Lifesciences manufacturing facility"
+                  alt="Women from Village Anta and surrounding villages of Safidon employed at the Admetus Lifesciences manufacturing facility"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -284,7 +284,7 @@ export default function AboutPage() {
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     Our facility runs on a workforce that is almost entirely
                     women from <strong className="text-[var(--foreground)]">Village Anta</strong> and the
-                    neighbouring villages of <strong className="text-[var(--foreground)]">Tehsil Safidon, District Jind</strong>.
+                    neighbouring villages of <strong className="text-[var(--foreground)]">Safidon</strong>.
                     Every softgel that leaves Admetus is the work of hands that
                     have found dignity, livelihood, and independence on our&nbsp;floor.
                   </p>
