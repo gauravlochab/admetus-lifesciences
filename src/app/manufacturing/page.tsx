@@ -71,7 +71,7 @@ export default function ManufacturingPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1745420052527-a75fcc6aba58?w=1920&h=1080&fit=crop"
+          src="/images/facility/building-overview.jpg"
           alt="State-of-the-art nutraceutical manufacturing equipment at Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
@@ -163,7 +163,7 @@ export default function ManufacturingPage() {
             <SectionReveal delay={0.05}>
               <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
                 <img
-                  src="https://images.unsplash.com/photo-1745420052704-f70b1d30c8b7?w=1000&h=750&fit=crop"
+                  src="/images/facility/encapsulation-arbes.jpg"
                   width={1000}
                   height={750}
                   alt="ARBES SGX-806P softgel encapsulation line at Admetus Lifesciences"
@@ -175,7 +175,7 @@ export default function ManufacturingPage() {
             <SectionReveal delay={0.12}>
               <div className="aspect-[4/3] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative">
                 <img
-                  src="https://images.unsplash.com/photo-1745420052527-a75fcc6aba58?w=1000&h=750&fit=crop"
+                  src="/images/facility/elmach-blister-machine.jpg"
                   width={1000}
                   height={750}
                   alt="Elmach EPI 2000 blister packaging machine at Admetus Lifesciences"

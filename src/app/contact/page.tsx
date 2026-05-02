@@ -93,7 +93,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1745420052704-f70b1d30c8b7?w=1920&h=1080&fit=crop"
+          src="/images/facility/building-entry.jpg"
           alt="Admetus Lifesciences facility exterior, ready for business enquiries and partnerships"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}

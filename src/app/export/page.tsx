@@ -68,7 +68,7 @@ export default function ExportPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1670850757896-e1b6c3e311ea?w=1920&h=1080&fit=crop"
+          src="/images/facility/dispatch-area.jpg"
           alt="Export-ready softgel capsule packaging for international nutraceutical markets"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}

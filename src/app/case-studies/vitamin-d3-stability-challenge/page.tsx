@@ -54,7 +54,7 @@ export default function VitaminD3StabilityCase() {
 
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1670850757263-6efc07d410f8?w=1920&h=1080&fit=crop"
+          src="/images/facility/encapsulation-arbes.jpg"
           alt="Vitamin D3 softgel stability case study — Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
