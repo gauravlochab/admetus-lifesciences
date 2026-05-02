@@ -21,7 +21,7 @@ function Hero() {
       <div className="absolute inset-0 img-warm-overlay">
         <img
           src="/images/facility/building-overview.jpg"
-          alt="Admetus Lifesciences WHO-GMP softgel capsule manufacturing facility in Jind, Haryana, India"
+          alt="Admetus Lifesciences WHO-GMP softgel capsule manufacturing facility in Village Anta, Safidon, District Jind, Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
