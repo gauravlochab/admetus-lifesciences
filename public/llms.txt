@@ -21,6 +21,7 @@
 - [Manufacturing](https://www.admetuslifesciences.com/manufacturing/): Facility overview, equipment, production process from raw material to dispatch
 - [Contract Manufacturing & Private Label](https://www.admetuslifesciences.com/contract-manufacturing/): Services for brand owners — third-party manufacturing, private label, custom formulation, bulk supply, export partnerships
 - [Products](https://www.admetuslifesciences.com/products/): Catalog of 10 nutraceutical softgel formulations
+- [Catalog](https://www.admetuslifesciences.com/catalog/): Downloadable catalogs — private-label menu (10 SKUs), contract-manufacturing capabilities (115+ formulations under FSSAI Central License #10020064002545), and the FSSAI license itself
 - [Quality](https://www.admetuslifesciences.com/quality/): Quality control processes, certifications, batch testing
 - [Export](https://www.admetuslifesciences.com/export/): International export capabilities and documentation
 - [Contact](https://www.admetuslifesciences.com/contact/): Inquiries, demo requests, facility audits

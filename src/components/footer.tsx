@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const productLinks = [
+  { href: "/catalog/", label: "Catalog (PDFs)" },
   { href: "/products/", label: "All Products" },
   { href: "/products/cholecalciferol-60000-iu/", label: "Vitamin D3 60K IU" },
   { href: "/products/calcitriol-calcium-k27-softgel/", label: "Calcitriol + K2-7" },

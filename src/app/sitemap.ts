@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/manufacturing/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/contract-manufacturing/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/products/`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/catalog/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/quality/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/export/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/contact/`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
