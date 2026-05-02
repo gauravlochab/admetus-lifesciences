@@ -91,7 +91,7 @@ const localBusinessJsonLd = {
   "@id": "https://www.admetuslifesciences.com/softgel-capsule-manufacturer-haryana/#localbusiness",
   name: "Admetus Lifesciences — Softgel Capsule Manufacturing Facility, Haryana",
   description:
-    "WHO-GMP certified softgel capsule manufacturer in Village Anta, Safidon, District Jind, Haryana, India. Contract manufacturing, private label, and export-ready production for nutraceutical brand owners and distributors.",
+    "WHO-GMP certified softgel capsule manufacturer in Village Anta, Tehsil Safidon, District Jind, Haryana, India. Contract manufacturing, private label, and export-ready production for nutraceutical brand owners and distributors.",
   url: "https://www.admetuslifesciences.com/softgel-capsule-manufacturer-haryana/",
   image: "https://www.admetuslifesciences.com/images/logo-horizontal.png",
   parentOrganization: {
