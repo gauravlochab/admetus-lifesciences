@@ -79,8 +79,8 @@ export default function ContractManufacturingPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/softgels-bulk.jpg"
-          alt="Contract manufacturing and private label softgel capsule production at Admetus Lifesciences"
+          src="/images/facility/softgels-production-line.jpg"
+          alt="Softgel encapsulation production line at Admetus Lifesciences — contract manufacturing and private label facility"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
