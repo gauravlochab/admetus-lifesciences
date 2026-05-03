@@ -20,8 +20,8 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="/images/facility/building-overview.jpg"
-          alt="Admetus Lifesciences WHO-GMP softgel capsule manufacturing facility in Village Anta, Tehsil Safidon, District Jind, Haryana, India"
+          src="/images/facility/softgels-bulk.jpg"
+          alt="Premium amber softgel capsules manufactured by Admetus Lifesciences — WHO-GMP certified contract manufacturer in Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
