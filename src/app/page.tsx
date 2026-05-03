@@ -265,8 +265,8 @@ function ScaleMetrics() {
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/softgels-tray-closeup.jpg"
-          alt="Close-up of nutraceutical softgel capsules manufactured at Admetus Lifesciences, Village Anta, Haryana"
+          src="/images/facility/softgels-production-line.jpg"
+          alt="Softgel production line at Admetus Lifesciences' Haryana facility, built for scale manufacturing"
           className="w-full h-full object-cover opacity-12"
           width={1920}
           height={1080}
@@ -650,8 +650,8 @@ function Partnership() {
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
         <img
-          src="/images/facility/softgels-pexels-dark-scattered.jpg"
-          alt="Premium golden softgel capsules — private label and contract manufacturing by Admetus Lifesciences"
+          src="/images/facility/softgels-pexels-topview-jar.jpg"
+          alt="Top-view of premium softgel capsules in jar — private label and contract manufacturing by Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1200}
           height={800}
