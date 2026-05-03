@@ -650,8 +650,8 @@ function Partnership() {
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
         <img
-          src="/images/facility/capsule-drying-women.jpg"
-          alt="Nutraceutical research and formulation process for softgel capsule manufacturing"
+          src="/images/facility/softgels-pexels-dark-scattered.jpg"
+          alt="Premium golden softgel capsules — private label and contract manufacturing by Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1200}
           height={800}

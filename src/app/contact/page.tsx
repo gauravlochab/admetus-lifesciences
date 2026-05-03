@@ -93,8 +93,8 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/softgels-encapsulation.jpg"
-          alt="Admetus Lifesciences softgel capsules from the encapsulation line, ready for business enquiries and partnerships"
+          src="/images/facility/softgels-pexels-spilled.jpg"
+          alt="Premium amber softgel capsules — Admetus Lifesciences ready for bulk, export, and contract manufacturing enquiries"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
