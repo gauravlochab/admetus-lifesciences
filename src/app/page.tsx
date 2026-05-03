@@ -265,8 +265,8 @@ function ScaleMetrics() {
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/building-entry.jpg"
-          alt="Interior of the Admetus softgel manufacturing facility in Haryana"
+          src="/images/facility/softgels-tray-closeup.jpg"
+          alt="Close-up of nutraceutical softgel capsules manufactured at Admetus Lifesciences, Village Anta, Haryana"
           className="w-full h-full object-cover opacity-12"
           width={1920}
           height={1080}
@@ -525,8 +525,8 @@ function VisualBreak() {
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/capsule-drying-line.jpg"
-          alt="Admetus Lifesciences softgel capsules on the drying line, Village Anta, Haryana"
+          src="/images/facility/softgels-production-line.jpg"
+          alt="Admetus Lifesciences softgel capsules on the production line, Village Anta, Haryana"
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
