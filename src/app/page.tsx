@@ -28,7 +28,7 @@ function Hero() {
 
 
       {/* Content -- left-aligned, asymmetric */}
-      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-20 pb-20 md:pt-0 md:pb-0">
+      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-[90px] pb-20 md:pt-[100px] md:pb-10">
         <div className="max-w-[var(--content-narrow)]">
           <div
             className={`label-text text-[var(--gold)] mb-3 md:mb-5 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
