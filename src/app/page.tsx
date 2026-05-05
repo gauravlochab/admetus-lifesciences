@@ -19,15 +19,7 @@ function Hero() {
     <section className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image with warm overlay */}
       <div className="absolute inset-0">
-        <img
-          src="/images/facility/softgels-bulk.jpg"
-          alt="Premium amber softgel capsules manufactured by Admetus Lifesciences — WHO-GMP certified contract manufacturer in Haryana, India"
-          className="absolute inset-0 w-full h-full object-cover"
-          width={1920}
-          height={1080}
-          loading="eager" fetchPriority="high"
-          style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
-        />
+
         {/* Warm gold tint */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(200, 169, 81, 0.06), transparent 10%)" }} />
         {/* Dark directional overlay */}
