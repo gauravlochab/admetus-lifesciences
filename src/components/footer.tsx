@@ -1,25 +1,24 @@
 import Link from "next/link";
 
-const companyLinks = [
-  { href: "/about/", label: "About Us" },
-  { href: "/manufacturing/", label: "Manufacturing" },
-  { href: "/quality/", label: "Quality" },
-];
-
 const productLinks = [
+  { href: "/catalog/", label: "Catalog (PDFs)" },
   { href: "/products/", label: "All Products" },
-  { href: "/products/adlife-12g/", label: "ADLIFE 12G" },
-  { href: "/products/adlife-q10/", label: "ADLIFE Q10" },
-  { href: "/products/adlife-ct/", label: "ADLIFE CT" },
-  { href: "/products/adlife-iron/", label: "ADLIFE Iron" },
-  { href: "/products/adlife-lyco/", label: "ADLIFE Lyco" },
-  { href: "/products/adlife-gold/", label: "ADLIFE Gold" },
-  { href: "/products/adlife-k2-7/", label: "ADLIFE K2-7" },
+  { href: "/products/cholecalciferol-60000-iu/", label: "Vitamin D3 60K IU" },
+  { href: "/products/calcitriol-calcium-k27-softgel/", label: "Calcitriol + K2-7" },
+  { href: "/products/omega-3-vitamin-e-softgel/", label: "Omega-3 + Vit E" },
+  { href: "/products/krill-oil-softgel/", label: "Krill Oil" },
+  { href: "/products/glutathione-ala-grape-seed/", label: "Glutathione + ALA" },
+  { href: "/products/ginseng-astaxanthin-multivitamin/", label: "Ginseng + Astaxanthin" },
+  { href: "/products/nigella-sativa-kalonji/", label: "Nigella Sativa" },
 ];
 
 const serviceLinks = [
   { href: "/contract-manufacturing/", label: "Contract Manufacturing" },
+  { href: "/private-label-softgel-manufacturer-india/", label: "Private Label India" },
+  { href: "/contract-manufacturing-vitamin-d3-softgel/", label: "Vitamin D3 Manufacturing" },
+  { href: "/softgel-capsule-manufacturer-haryana/", label: "Haryana Facility" },
   { href: "/export/", label: "Export" },
+  { href: "/case-studies/", label: "Case Studies" },
   { href: "/contact/", label: "Request a Quote" },
 ];
 

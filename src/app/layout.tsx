@@ -47,18 +47,27 @@ export const metadata: Metadata = {
   authors: [{ name: "Admetus Lifesciences" }],
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "https://www.admetuslifesciences.com",
     siteName: "Admetus Lifesciences",
     title: "Admetus Lifesciences | Precision Softgel Capsule Manufacturer",
     description:
       "Precision-engineered softgel capsules from India. Contract manufacturing, private label solutions, and export-ready nutraceuticals.",
+    images: [
+      {
+        url: "/seo/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Admetus Lifesciences — Precision Softgel Capsule Manufacturer in Haryana, India",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Admetus Lifesciences | Precision Softgel Capsule Manufacturer",
     description:
       "Precision-engineered softgel capsules from India. Contract manufacturing, private label solutions, and export-ready nutraceuticals.",
+    images: ["/seo/og-image.png"],
   },
   robots: {
     index: true,
@@ -77,6 +86,86 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full`} suppressHydrationWarning>
       <head>
+        {/* Structured data: Organization + LocalBusiness — sitewide entity definition for AI/search */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.admetuslifesciences.com/#organization",
+                  name: "Admetus Lifesciences",
+                  url: "https://www.admetuslifesciences.com/",
+                  logo: "https://www.admetuslifesciences.com/images/logo-horizontal.png",
+                  description:
+                    "Precision softgel capsule manufacturer in Haryana, India. Contract manufacturing, private label, and export-ready nutraceutical softgel capsules. FSSAI, GMP, HACCP, Halal, WHO-GMP certified.",
+                  foundingDate: "2020",
+                  founder: { "@type": "Person", name: "Anudeep Deswal" },
+                  email: "admetuslifesciences@gmail.com",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Village Anta, Tehsil Safidon",
+                    addressLocality: "Jind",
+                    addressRegion: "Haryana",
+                    postalCode: "126112",
+                    addressCountry: "IN",
+                  },
+                  hasCredential: [
+                    "FSSAI Certified",
+                    "GMP Certified",
+                    "HACCP Certified",
+                    "Halal Certified",
+                    "WHO-GMP Certified",
+                  ],
+                  knowsAbout: [
+                    "Softgel capsule manufacturing",
+                    "Nutraceutical contract manufacturing",
+                    "Private label softgel",
+                    "Soft gelatin encapsulation",
+                    "Custom formulation development",
+                    "Export of nutraceuticals from India",
+                  ],
+                  sameAs: [],
+                },
+                {
+                  "@type": ["LocalBusiness", "Manufacturer"],
+                  "@id": "https://www.admetuslifesciences.com/#localbusiness",
+                  name: "Admetus Lifesciences Manufacturing Facility",
+                  url: "https://www.admetuslifesciences.com/manufacturing/",
+                  image:
+                    "https://www.admetuslifesciences.com/images/logo-horizontal.png",
+                  parentOrganization: {
+                    "@id": "https://www.admetuslifesciences.com/#organization",
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Village Anta, Tehsil Safidon",
+                    addressLocality: "Jind",
+                    addressRegion: "Haryana",
+                    postalCode: "126112",
+                    addressCountry: "IN",
+                  },
+                  areaServed: [
+                    { "@type": "Country", name: "India" },
+                    { "@type": "AdministrativeArea", name: "Worldwide (export)" },
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.admetuslifesciences.com/#website",
+                  url: "https://www.admetuslifesciences.com/",
+                  name: "Admetus Lifesciences",
+                  publisher: {
+                    "@id": "https://www.admetuslifesciences.com/#organization",
+                  },
+                  inLanguage: "en-IN",
+                },
+              ],
+            }),
+          }}
+        />
         <script dangerouslySetInnerHTML={{ __html: `
           try { 
             let t = localStorage.getItem('admetus-theme');

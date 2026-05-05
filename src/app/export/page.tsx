@@ -13,13 +13,62 @@ const exportCapabilities = [
   { title: "Multi-Market Awareness", desc: "Understanding of regulatory requirements across markets to support your compliance needs." },
 ];
 
+const faqs = [
+  {
+    q: "Which countries do you currently export softgel capsules to?",
+    a: "We supply nutraceutical softgel capsules to importers and distributors across multiple international markets. Specific country support is confirmed during quotation based on your target regulatory framework (FDA, EFSA, GCC, ASEAN, etc.). Contact us with your destination market and we will confirm documentation and labeling capabilities.",
+  },
+  {
+    q: "What export documentation do you provide?",
+    a: "Standard export documentation includes Certificate of Analysis (COA), Free Sale Certificate, ingredient declaration / composition statement, manufacturing license copy, GMP certificate, and packing list. Country-specific certificates (Halal certification for GCC markets, kosher attestation, organic certification for applicable products) are arranged on request.",
+  },
+  {
+    q: "Do you support private label exports?",
+    a: "Yes. We manufacture under your brand name with custom packaging design — blister packs, HDPE bottles, or custom cartons aligned to your brand identity and the regulatory labeling requirements of your destination market. See our private label softgel manufacturer page for the full process. Brand approval and proof signoff happens before production begins.",
+  },
+  {
+    q: "What is the minimum order quantity for export shipments?",
+    a: "MOQs are flexible based on the formulation, packaging format, and target market. We support both pilot orders for new international brands and full-container loads for established distributors. Specific MOQ is confirmed within 48 hours of inquiry.",
+  },
+  {
+    q: "How is shipping arranged?",
+    a: "We coordinate with the buyer's preferred freight forwarder or recommend trusted partners for sea freight, air freight, and door-to-door logistics. Products are packed for international transit with desiccants and tamper-evident sealing. We handle export clearance from India; the buyer is responsible for import clearance at the destination.",
+  },
+  {
+    q: "What payment terms do you offer for international buyers?",
+    a: "Standard terms are 30% advance with the order and 70% against shipping documents. We work via T/T (telegraphic transfer) and Letter of Credit (LC) for established orders. Specific terms are confirmed in the proforma invoice.",
+  },
+  {
+    q: "Can you support regulatory submissions in my country?",
+    a: "We provide the technical documentation typically required for regulatory submissions (full composition, manufacturing process flow, stability data, COA samples, GMP and WHO-GMP certificates). The buyer or their regulatory consultant handles the submission to the destination authority. We respond promptly to follow-up data requests from regulators.",
+  },
+  {
+    q: "How long from order to dispatch for an export shipment?",
+    a: "Standard formulations typically ship 30–45 days from order confirmation, including production, quality testing, packaging, and export documentation. Custom formulations require additional time for stability validation. The exact timeline is committed in your proforma invoice.",
+  },
+];
+
 export default function ExportPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
+          src="/images/facility/dispatch-area.jpg"
           alt="Export-ready softgel capsule packaging for international nutraceutical markets"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
@@ -35,8 +84,9 @@ export default function ExportPage() {
           </h1>
           <p className="mt-8 body-large text-[var(--text-cream)] max-w-[58ch]">
             Admetus Lifesciences serves international buyers worldwide --
-            importers, and distributors seeking a reliable and quality-focused
-            softgel capsule manufacturing partner in&nbsp;India.
+            importers and distributors seeking a reliable, quality-focused{" "}
+            <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">softgel manufacturer in Haryana, India</Link>{" "}
+            with full export documentation and Halal&nbsp;certification.
           </p>
         </div>
       </section>
@@ -125,11 +175,47 @@ export default function ExportPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FAQ */}
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)] mb-6">
+            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
+            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+              EXPORT &amp; INTERNATIONAL Q&amp;A
+            </h2>
+            <div className="gold-rule w-16 mb-10" />
+          </SectionReveal>
+
+          <div className="space-y-0">
+            {faqs.map((faq, i) => (
+              <SectionReveal key={faq.q} delay={i * 0.03}>
+                <details className="group py-6 border-t border-[var(--border-subtle)] last:border-b">
+                  <summary className="flex items-start gap-5 cursor-pointer list-none">
+                    <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3
+                      className="heading-2 text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200"
+                      style={{ fontSize: "clamp(1rem, 1.6vw, 1.25rem)" }}
+                    >
+                      {faq.q}
+                    </h3>
+                  </summary>
+                  <p className="mt-4 ml-12 body-text text-[var(--text-muted)] max-w-[68ch]">
+                    {faq.a}
+                  </p>
+                </details>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <SectionReveal>
+            <h2 className="display-section text-[var(--foreground)]">
               START AN EXPORT&nbsp;ENQUIRY
             </h2>
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">

@@ -66,4 +66,6 @@ docs/design-references/
 !public/images/cert-*.png
 !public/apple-touch-icon.png
 !src/app/icon.png
+!public/seo/*.png
+!public/images/facility/*.jpg
 admetus-lifesciences/

@@ -94,8 +94,8 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&h=1080&fit=crop"
-          alt="Admetus Lifesciences facility exterior, ready for business enquiries and partnerships"
+          src="/images/facility/softgels-pexels-spilled.jpg"
+          alt="Premium amber softgel capsules — Admetus Lifesciences ready for bulk, export, and contract manufacturing enquiries"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -295,10 +295,7 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <div className="mt-6 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <p className="label-text !text-[0.5625rem] text-[var(--text-muted)]">
-                        For bulk and export enquiries only
-                      </p>
+                    <div className="mt-6 flex justify-end">
                       <button
                         type="submit"
                         disabled={submitting}
@@ -329,9 +326,6 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Phone</span>
-                        <a href="tel:+917497841608" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem] block">
-                          +91-7497841608
-                        </a>
                         <a href="tel:+919729977795" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem] block">
                           +91-9729977795
                         </a>
@@ -373,12 +367,8 @@ export default function ContactPage() {
                         <dd className="mono-text text-[0.75rem] text-[var(--foreground)] break-all">06ABRFA9749C1Z3</dd>
                       </div>
                       <div>
-                        <dt className="label-text !text-[0.5625rem] text-[var(--text-muted)]">License No.</dt>
+                        <dt className="label-text !text-[0.5625rem] text-[var(--text-muted)]">FSSAI License</dt>
                         <dd className="mono-text text-[0.75rem] text-[var(--foreground)] break-all">10020064002545</dd>
-                      </div>
-                      <div>
-                        <dt className="label-text !text-[0.5625rem] text-[var(--text-muted)]">Website</dt>
-                        <dd className="body-text text-[var(--foreground)] !text-[0.75rem]">admetuslifesciences.com</dd>
                       </div>
                     </dl>
                   </div>
