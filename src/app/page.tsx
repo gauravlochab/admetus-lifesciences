@@ -620,7 +620,7 @@ function Differentiators() {
 function Partnership() {
   return (
     <section className="min-h-[auto] md:min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative">
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">07</span>
+
 
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
@@ -682,7 +682,7 @@ function GlobalReach() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-black)] relative">
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">08</span>
+
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
@@ -777,7 +777,7 @@ function ClosingCTA() {
       {/* Gold rule above */}
       <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
 
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">10</span>
+
 
       <SectionReveal>
         <div className="relative z-10 max-w-[var(--container-max)] w-full px-[var(--gutter)]">
