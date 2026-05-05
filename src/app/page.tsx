@@ -215,11 +215,7 @@ function Manifesto() {
             </div>
           ))}
         </div>
-        <div
-          className={`gold-rule mt-8 md:mt-12 w-32 md:w-48 origin-left ${visibleLines.has(2) ? "scale-x-100" : "scale-x-0"
-            }`}
-          style={{ transition: "transform 700ms cubic-bezier(0.23, 1, 0.32, 1) 600ms" }}
-        />
+
       </div>
     </section>
   );
@@ -250,8 +246,7 @@ function ScaleMetrics() {
           </h2>
         </SectionReveal>
 
-        {/* Thin gold rule */}
-        <div className="gold-rule w-16 mt-4 md:mt-6 mb-8 md:mb-10" />
+
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-8 lg:gap-16">
           <SectionReveal delay={0.1}>
@@ -408,7 +403,7 @@ function CatalogueDownload() {
               <h2 className="display-section text-[var(--foreground)] mt-3 mb-4">
                 EXPLORE OUR<br />FULL RANGE
               </h2>
-              <div className="gold-rule w-16 mb-6" />
+
               <p className="body-text text-[var(--text-cream)] max-w-[58ch] mb-6" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                 Get the complete Admetus product catalogue with detailed
                 composition, pack sizes, and product photographs across 80+
@@ -513,7 +508,7 @@ function VisualBreak() {
 
       <div className="absolute inset-0 flex items-end p-[var(--gutter)]">
         <div className="flex items-center gap-4 md:gap-6">
-          <div className="gold-rule w-6 md:w-8" />
+
           <span className="label-text text-white text-[0.5625rem] md:text-[0.6875rem]" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
             VILLAGE ANTA, HARYANA &mdash; EST. 2020
           </span>
@@ -558,7 +553,7 @@ function Differentiators() {
           <h2 className="display-section text-[var(--foreground)] mb-4">
             THE ADMETUS<br />DIFFERENCE
           </h2>
-          <div className="gold-rule w-16 mb-8 md:mb-10" />
+
         </SectionReveal>
 
         {/* Asymmetric grid */}
@@ -643,7 +638,7 @@ function Partnership() {
             <h2 className="mt-4 display-section text-[var(--foreground)]">
               YOUR BRAND.<br />OUR SCIENCE.
             </h2>
-            <div className="gold-rule w-12 mt-5 mb-5" />
+
             <p className="body-large text-[var(--text-cream)]">
               From concept to shelf &mdash; turnkey private label softgel manufacturing.
             </p>
@@ -692,7 +687,7 @@ function GlobalReach() {
               <h2 className="display-section text-[var(--foreground)]">
                 BEYOND<br />BORDERS
               </h2>
-              <div className="gold-rule w-16 mt-5 mb-5" />
+
               <p className="body-large text-[var(--text-cream)] max-w-[480px]">
                 Regulatory-compliant export capabilities serving nutraceutical markets worldwide.
               </p>
@@ -742,7 +737,7 @@ function TrustQuote() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <div className="max-w-[640px]">
-            <div className="gold-rule w-12 md:w-16 mb-8 md:mb-10" />
+
 
             <blockquote>
               <p
@@ -758,7 +753,7 @@ function TrustQuote() {
             </blockquote>
 
             <div className="mt-6 md:mt-8 flex items-center gap-4">
-              <div className="gold-rule w-6" />
+
               <p className="label-text text-[var(--gold)]">
                 ADMETUS LIFESCIENCES
               </p>
@@ -787,7 +782,7 @@ function ClosingCTA() {
             YOUR NEXT MANUFACTURING&nbsp;PARTNER
           </h2>
 
-          <div className="h-px w-12 bg-[var(--gold)]/40 mt-4 mb-5" />
+
 
           <p className="text-[var(--text-cream)] max-w-[48ch] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
             <Link href="/contract-manufacturing/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">Contract manufacturing</Link>,{" "}
