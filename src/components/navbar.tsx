@@ -94,7 +94,7 @@ export function Navbar() {
       >
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between" aria-label="Main navigation">
           {/* Wordmark */}
-          <Link href="/" className="group flex items-center gap-4 sm:gap-5 min-w-0" aria-label="Admetus Lifesciences home">
+          <Link href="/" className="group flex items-center gap-4 sm:gap-5 shrink-0" aria-label="Admetus Lifesciences home">
             <img
               src="/images/logo-mark.png"
               alt=""
@@ -103,7 +103,7 @@ export function Navbar() {
               height={40}
             />
             <span
-              className={`tracking-[0.18em] text-base sm:text-lg font-bold truncate ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
+              className={`tracking-[0.18em] text-base sm:text-lg font-bold ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
               style={{
                 fontFamily: "var(--font-display), Archivo, sans-serif",
                 transition: "letter-spacing 300ms cubic-bezier(0.23, 1, 0.32, 1)",
