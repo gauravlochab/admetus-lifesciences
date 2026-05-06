@@ -115,7 +115,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden xl:flex items-center gap-0.5">
+          <div className="hidden xl:flex items-center gap-0.5 ml-16">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
