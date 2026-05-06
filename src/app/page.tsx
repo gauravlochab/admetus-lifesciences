@@ -16,16 +16,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden">
-      {/* Background image with warm overlay */}
-      <div className="absolute inset-0">
-
-        {/* Warm gold tint */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(200, 169, 81, 0.06), transparent 10%)" }} />
-        {/* Dark directional overlay */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)" }} />
-      </div>
-
+    <section className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden bg-[var(--bg-warm)]">
 
       {/* Content -- left-aligned, asymmetric */}
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-[90px] pb-20 md:pt-[100px] md:pb-10">
@@ -42,7 +33,7 @@ function Hero() {
             {["PRECISION", "ENCAPSULATED"].map((word, i) => (
               <div
                 key={word}
-                className={`display-hero text-[var(--text-white)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`display-hero text-[var(--foreground)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transition: `opacity 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms, transform 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms` }}
               >
                 {word}
@@ -52,7 +43,7 @@ function Hero() {
 
 
           <p
-            className={`mt-3 md:mt-4 body-large text-[var(--text-white)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={`mt-3 md:mt-4 body-large text-[var(--text-muted)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
           >
             Improving the quality of your life through better health. One of India&apos;s advanced manufacturers, exporters and suppliers of Nutraceutical Soft Gelatin Capsules.
@@ -240,13 +231,11 @@ function ScaleMetrics() {
 
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">OUR FACILITY</span>
-          <h2 className="display-section text-[var(--foreground)]">
+          <span className="label-text text-[var(--gold)] mb-6 md:mb-8 block">OUR FACILITY</span>
+          <h2 className="display-section text-[var(--foreground)] mt-4 md:mt-6 mb-8 md:mb-12">
             BUILT FOR<br />SCALE
           </h2>
         </SectionReveal>
-
-
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-8 lg:gap-16">
           <SectionReveal delay={0.1}>
@@ -281,16 +270,7 @@ function ScaleMetrics() {
           </div>
         </div>
 
-        <SectionReveal delay={0.2}>
-          <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
-              <div key={region} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0" />
-                <span className="text-[var(--text-muted)] text-[0.9375rem]">{region}</span>
-              </div>
-            ))}
-          </div>
-        </SectionReveal>
+
       </div>
     </section>
   );
@@ -399,8 +379,8 @@ function CatalogueDownload() {
 
           <SectionReveal delay={0.1}>
             <div>
-              <span className="label-text text-[var(--gold)] mb-3 block">DOWNLOAD CATALOGUE</span>
-              <h2 className="display-section text-[var(--foreground)] mt-3 mb-4">
+              <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">DOWNLOAD CATALOGUE</span>
+              <h2 className="display-section text-[var(--foreground)] mt-0 mb-8 md:mb-10">
                 EXPLORE OUR<br />FULL RANGE
               </h2>
 
@@ -411,17 +391,17 @@ function CatalogueDownload() {
                 and importers evaluating&nbsp;partnerships.
               </p>
 
-              <ul className="space-y-2.5 mb-8 max-w-[52ch]">
-                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
-                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+              <ul className="space-y-3 mb-8 max-w-[52ch]">
+                <li className="flex items-center gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="w-[5px] h-[5px] rounded-full bg-[var(--gold)] flex-shrink-0" />
                   Full product range with images, composition, and pack sizes
                 </li>
-                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
-                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+                <li className="flex items-center gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="w-[5px] h-[5px] rounded-full bg-[var(--gold)] flex-shrink-0" />
                   Manufacturing certifications and quality documentation
                 </li>
-                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
-                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+                <li className="flex items-center gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="w-[5px] h-[5px] rounded-full bg-[var(--gold)] flex-shrink-0" />
                   Contract manufacturing &amp; private label capabilities
                 </li>
               </ul>
