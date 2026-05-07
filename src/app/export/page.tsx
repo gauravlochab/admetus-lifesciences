@@ -179,11 +179,10 @@ export default function ExportPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-6 block">Frequently Asked</span>
+            <h2 className="mt-4 display-section text-[var(--foreground)] mb-12">
               EXPORT &amp; INTERNATIONAL Q&amp;A
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
@@ -215,7 +214,7 @@ export default function ExportPage() {
       <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-8" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>
               START AN EXPORT&nbsp;ENQUIRY
             </h2>
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
