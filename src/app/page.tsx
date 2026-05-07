@@ -20,8 +20,8 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="/images/facility/facility-production-hall.jpg"
-          alt="Admetus Lifesciences softgel manufacturing production hall — WHO-GMP certified facility in Village Anta, Haryana, India"
+          src="/images/facility/encapsulation-arbes.jpg"
+          alt="ARBES SGX-806P encapsulation machinery at Admetus Lifesciences — precision softgel manufacturing, WHO-GMP certified, Village Anta, Haryana"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

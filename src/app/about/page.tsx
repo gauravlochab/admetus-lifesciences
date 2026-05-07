@@ -33,8 +33,8 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/facility-workers-line.jpg"
-          alt="Admetus Lifesciences workers on the softgel production line — a passion for better healthcare, Village Anta, Haryana"
+          src="/images/facility/capsule-drying-women.jpg"
+          alt="Admetus Lifesciences workers at the capsule drying stations — a passion for better healthcare, Village Anta, Haryana"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
