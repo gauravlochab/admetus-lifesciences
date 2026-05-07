@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { products } from "@/data/products";
 import { SectionReveal } from "@/components/section-reveal";
 
@@ -18,22 +18,26 @@ function Hero() {
   return (
     <section className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background image with warm overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="/images/facility/building-overview.jpg"
-          alt="Admetus Lifesciences WHO-GMP softgel capsule manufacturing facility in Village Anta, Tehsil Safidon, District Jind, Haryana, India"
+          src="/images/facility/softgels-bulk.jpg"
+          alt="Premium amber softgel capsules manufactured by Admetus Lifesciences — WHO-GMP certified contract manufacturer in Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager" fetchPriority="high"
           style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
         />
-        {/* Warm gold tint */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(200, 169, 81, 0.06), transparent 10%)" }} />
-        {/* Dark directional overlay */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,10,10,0.88) 40%, rgba(10,10,10,0.55) 70%, rgba(10,10,10,0.4) 100%)" }} />
       </div>
 
+      {/* Margin label */}
+      <div
+        className={`hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1000ms" }}
+      >
+        SOFTGEL MANUFACTURING
+      </div>
 
       {/* Content -- left-aligned, asymmetric */}
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-20 pb-20 md:pt-0 md:pb-0">
@@ -50,7 +54,7 @@ function Hero() {
             {["PRECISION", "ENCAPSULATED"].map((word, i) => (
               <div
                 key={word}
-                className={`display-hero text-[var(--text-white)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`display-hero text-[var(--hero-text)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transition: `opacity 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms, transform 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms` }}
               >
                 {word}
@@ -58,9 +62,13 @@ function Hero() {
             ))}
           </div>
 
+          <div
+            className={`gold-rule w-16 md:w-24 mt-4 md:mt-6 origin-left ${loaded ? "scale-x-100" : "scale-x-0"}`}
+            style={{ transition: `transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 600ms` }}
+          />
 
           <p
-            className={`mt-3 md:mt-4 body-large text-[var(--text-white)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+            className={`mt-3 md:mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
           >
             Improving the quality of your life through better health. One of India&apos;s advanced manufacturers, exporters and suppliers of Nutraceutical Soft Gelatin Capsules.
@@ -82,7 +90,20 @@ function Hero() {
         </div>
       </div>
 
+      {/* Section number */}
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">01</span>
 
+      {/* Scroll indicator */}
+      <div
+        className={`absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
+        style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1400ms" }}
+      >
+        <span className="label-text text-[var(--text-muted)] !text-[0.5rem]">Scroll</span>
+        <div
+          className="w-px h-8 md:h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
+          style={{ animation: "scroll-drift 2.5s ease-in-out infinite" }}
+        />
+      </div>
     </section>
   );
 }
@@ -197,9 +218,12 @@ function Manifesto() {
 
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-[var(--bg-warm-dark)] relative">
+      {/* Margin label */}
+      <div className="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 margin-label">
+        PHILOSOPHY
+      </div>
 
-
-
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">02</span>
 
       <div className="max-w-[860px] px-[var(--gutter)] mx-auto lg:mx-0 lg:ml-[calc(var(--gutter)+2rem)]">
         <span className="label-text text-[var(--gold)] mb-4 md:mb-6 block">OUR PHILOSOPHY</span>
@@ -208,8 +232,9 @@ function Manifesto() {
             <div
               key={i}
               ref={(el) => { lineRefs.current[i] = el; }}
-              className={`text-[var(--foreground)] ${visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
-                }`}
+              className={`text-[var(--foreground)] ${
+                visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
+              }`}
               style={{
                 fontFamily: "var(--font-display), sans-serif",
                 fontSize: "clamp(1.125rem, 2.5vw, 1.75rem)",
@@ -224,8 +249,9 @@ function Manifesto() {
           ))}
         </div>
         <div
-          className={`gold-rule mt-8 md:mt-12 w-32 md:w-48 origin-left ${visibleLines.has(2) ? "scale-x-100" : "scale-x-0"
-            }`}
+          className={`gold-rule mt-8 md:mt-12 w-32 md:w-48 origin-left ${
+            visibleLines.has(2) ? "scale-x-100" : "scale-x-0"
+          }`}
           style={{ transition: "transform 700ms cubic-bezier(0.23, 1, 0.32, 1) 600ms" }}
         />
       </div>
@@ -239,8 +265,8 @@ function ScaleMetrics() {
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/building-entry.jpg"
-          alt="Interior of the Admetus softgel manufacturing facility in Haryana"
+          src="/images/facility/softgels-production-line.jpg"
+          alt="Softgel production line at Admetus Lifesciences' Haryana facility, built for scale manufacturing"
           className="w-full h-full object-cover opacity-12"
           width={1920}
           height={1080}
@@ -248,7 +274,7 @@ function ScaleMetrics() {
         />
       </div>
 
-
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">03</span>
 
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <SectionReveal>
@@ -300,19 +326,20 @@ function ScaleMetrics() {
 
 /* ═══ Section 5: PRODUCTS -- Grid ═══ */
 function ProductShowcase() {
-  const featured = products.slice(0, 8);
+  const featured = products.slice(0, 7);
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-charcoal)]">
-
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">04</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)]">FORMULATION PORTFOLIO</span>
-          <h2 className="mt-8 display-section text-[var(--foreground)]">
+          <h2 className="mt-3 display-section text-[var(--foreground)]">
             ENGINEERED FOR EFFICACY
           </h2>
-          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10 mt-6" style={{ fontSize: "0.9375rem" }}>
+          <div className="gold-rule w-12 mt-4 mb-4" />
+          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10" style={{ fontSize: "0.9375rem" }}>
             Precision-formulated softgel capsules &mdash; each designed for optimal
             bioavailability and manufactured under strict quality controls. Supplied to hospitals and retailers worldwide.
           </p>
@@ -350,10 +377,10 @@ function ProductShowcase() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-6 md:mt-10 flex flex-col items-center justify-center gap-5 md:gap-6">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 md:gap-4">
         <Link
           href="/products/"
-          className="min-h-[44px] inline-flex items-center justify-center text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2"
+          className="min-h-[44px] inline-flex items-center justify-center sm:justify-start text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2"
           style={{
             fontFamily: "var(--font-display)",
             transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -460,12 +487,13 @@ function ManufacturingProcess() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-warm-dark)]">
-
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">05</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">MANUFACTURING</span>
-          <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10 mt-6 md:mt-8">THE PROCESS</h2>
+          <span className="label-text text-[var(--gold)] mb-3 block">MANUFACTURING</span>
+          <h2 className="display-section text-[var(--foreground)]">THE PROCESS</h2>
+          <div className="gold-rule w-12 mt-4 mb-8 md:mb-10" />
         </SectionReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-6 md:gap-y-8">
@@ -497,8 +525,8 @@ function VisualBreak() {
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/building-entry.jpg"
-          alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
+          src="/images/facility/softgels-production-line.jpg"
+          alt="Admetus Lifesciences softgel capsules on the production line, Village Anta, Haryana"
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -531,12 +559,12 @@ function Differentiators() {
     {
       title: "End-to-End Quality",
       body: "From raw material testing to final product release \u2014 100% inspection at every stage.",
-      image: "/images/facility/raw-material-section.jpg",
+      image: "/images/facility/encapsulation-arbes.jpg",
     },
     {
       title: "Globally Certified",
       body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
-      image: "/images/facility/raw-material-section.jpg",
+      image: "/images/facility/capsule-drying-women.jpg",
     },
     {
       title: "Custom Formulations",
@@ -547,14 +575,15 @@ function Differentiators() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-charcoal)] relative">
-
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">06</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">WHY ADMETUS</span>
-          <h2 className="display-section text-[var(--foreground)] mt-6 md:mt-8 mb-12 md:mb-16">
+          <span className="label-text text-[var(--gold)] mb-3 block">WHY ADMETUS</span>
+          <h2 className="display-section text-[var(--foreground)] mb-4">
             THE ADMETUS<br />DIFFERENCE
           </h2>
+          <div className="gold-rule w-16 mb-8 md:mb-10" />
         </SectionReveal>
 
         {/* Asymmetric grid */}
@@ -615,14 +644,14 @@ function Differentiators() {
 /* ═══ Section 9: PARTNERSHIP ═══ */
 function Partnership() {
   return (
-    <section className="min-h-[auto] md:min-h-[90vh] flex bg-[var(--bg-warm-dark)] relative">
-
+    <section className="min-h-[auto] md:min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative">
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">07</span>
 
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
         <img
-          src="/images/facility/capsule-drying-women.jpg"
-          alt="Nutraceutical research and formulation process for softgel capsule manufacturing"
+          src="/images/facility/softgels-pexels-topview-jar.jpg"
+          alt="Top-view of premium softgel capsules in jar — private label and contract manufacturing by Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1200}
           height={800}
@@ -632,13 +661,14 @@ function Partnership() {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center py-20 md:py-32 lg:py-16 px-[var(--gutter)] lg:pl-[var(--space-16)]">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center py-14 md:py-20 lg:py-0 px-[var(--gutter)] lg:pl-[var(--space-16)]">
         <div className="max-w-lg">
           <SectionReveal direction="right">
             <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
-            <h2 className="mt-4 mb-5 display-section text-[var(--foreground)]">
+            <h2 className="mt-4 display-section text-[var(--foreground)]">
               YOUR BRAND.<br />OUR SCIENCE.
             </h2>
+            <div className="gold-rule w-12 mt-5 mb-5" />
             <p className="body-large text-[var(--text-cream)]">
               From concept to shelf &mdash; turnkey private label softgel manufacturing.
             </p>
@@ -646,8 +676,8 @@ function Partnership() {
           <SectionReveal direction="right" delay={0.15}>
             <ul className="mt-6 md:mt-8 space-y-3">
               {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
-                <li key={s} className="flex items-center gap-3 body-text text-[var(--text-cream)]">
-                  <CheckCircle2 className="w-4 h-4 text-[var(--gold)] flex-shrink-0" />
+                <li key={s} className="flex items-center gap-4 body-text text-[var(--text-cream)]">
+                  <span className="w-5 h-px bg-[var(--gold)] flex-shrink-0" />
                   {s}
                 </li>
               ))}
@@ -677,16 +707,17 @@ function GlobalReach() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-black)] relative">
-
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">08</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
           <SectionReveal>
             <div>
-              <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">GLOBAL PRESENCE</span>
-              <h2 className="display-section text-[var(--foreground)] mt-6 md:mt-8 mb-8 md:mb-10">
+              <span className="label-text text-[var(--gold)] mb-3 block">GLOBAL PRESENCE</span>
+              <h2 className="display-section text-[var(--foreground)]">
                 BEYOND<br />BORDERS
               </h2>
+              <div className="gold-rule w-16 mt-5 mb-5" />
               <p className="body-large text-[var(--text-cream)] max-w-[480px]">
                 Regulatory-compliant export capabilities serving nutraceutical markets worldwide.
               </p>
@@ -698,15 +729,6 @@ function GlobalReach() {
                 Explore Export Capabilities
                 <ArrowRight size={13} />
               </Link>
-
-              <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 max-w-2xl">
-                {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
-                  <div key={region} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0" />
-                    <span className="text-sm text-[var(--text-cream)]">{region}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </SectionReveal>
 
@@ -725,7 +747,16 @@ function GlobalReach() {
           </div>
         </div>
 
-
+        <SectionReveal delay={0.2}>
+          <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
+              <div key={region} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0" />
+                <span className="text-sm text-[var(--text-cream)]">{region}</span>
+              </div>
+            ))}
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );
@@ -738,6 +769,7 @@ function TrustQuote() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <div className="max-w-[640px]">
+            <div className="gold-rule w-12 md:w-16 mb-8 md:mb-10" />
 
             <blockquote>
               <p
@@ -772,7 +804,7 @@ function ClosingCTA() {
       {/* Gold rule above */}
       <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
 
-
+      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">10</span>
 
       <SectionReveal>
         <div className="relative z-10 max-w-[var(--container-max)] w-full px-[var(--gutter)]">
@@ -810,7 +842,7 @@ function ClosingCTA() {
           </div>
 
           <p className="mt-6 md:mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
-            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608 &nbsp;|&nbsp; +91-9729977795
+            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608
           </p>
           <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">
             Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India
