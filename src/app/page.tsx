@@ -525,8 +525,8 @@ function VisualBreak() {
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/capsule-drying-line.jpg"
-          alt="Admetus Lifesciences softgel capsules on the drying line, Village Anta, Haryana"
+          src="/images/facility/building-entry.jpg"
+          alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -559,12 +559,12 @@ function Differentiators() {
     {
       title: "End-to-End Quality",
       body: "From raw material testing to final product release \u2014 100% inspection at every stage.",
-      image: "/images/facility/encapsulation-arbes.jpg",
+      image: "/images/facility/raw-material-section.jpg",
     },
     {
       title: "Globally Certified",
       body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
-      image: "/images/facility/capsule-drying-women.jpg",
+      image: "/images/facility/raw-material-section.jpg",
     },
     {
       title: "Custom Formulations",
