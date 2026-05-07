@@ -611,7 +611,7 @@ function Partnership() {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center py-14 md:py-20 lg:py-0 px-[var(--gutter)] lg:pl-[var(--space-16)]">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center pt-14 pb-8 md:pt-20 md:pb-10 lg:pt-20 lg:pb-10 px-[var(--gutter)] lg:pl-[var(--space-16)]">
         <div className="max-w-lg">
           <SectionReveal direction="right">
             <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
@@ -619,7 +619,7 @@ function Partnership() {
               YOUR BRAND.<br />OUR SCIENCE.
             </h2>
 
-            <p className="body-large text-[var(--text-cream)]">
+            <p className="body-large text-[var(--text-cream)] mt-6">
               From concept to shelf &mdash; turnkey private label softgel manufacturing.
             </p>
           </SectionReveal>
@@ -627,7 +627,7 @@ function Partnership() {
             <ul className="mt-6 md:mt-8 space-y-3">
               {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
                 <li key={s} className="flex items-center gap-4 body-text text-[var(--text-cream)]">
-                  <span className="w-5 h-px bg-[var(--gold)] flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)] flex-shrink-0" />
                   {s}
                 </li>
               ))}
@@ -762,9 +762,7 @@ function ClosingCTA() {
             YOUR NEXT MANUFACTURING&nbsp;PARTNER
           </h2>
 
-
-
-          <p className="text-[var(--text-cream)] max-w-[48ch] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
+          <p className="mt-6 text-[var(--text-cream)] max-w-[48ch] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
             <Link href="/contract-manufacturing/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">Contract manufacturing</Link>,{" "}
             <Link href="/private-label-softgel-manufacturer-india/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">private label solutions</Link>, and{" "}
             <Link href="/export/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">export-ready softgel capsules</Link>{" "}
@@ -790,7 +788,7 @@ function ClosingCTA() {
           </div>
 
           <p className="mt-6 md:mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
-            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608
+            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608 &nbsp;|&nbsp; +91-9729977795
           </p>
           <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">
             Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India
