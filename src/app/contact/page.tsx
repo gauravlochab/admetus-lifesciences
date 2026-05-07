@@ -104,7 +104,7 @@ export default function ContactPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)]">Get in Touch</span>
+          <span className="label-text text-stone-950 font-semibold">Get in Touch</span>
           <h1 className="mt-3 display-section text-[var(--hero-text)]">
             REQUEST A<br />QUOTE
           </h1>
@@ -295,7 +295,7 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <div className="mt-6 flex justify-end">
+                    <div className="mt-6 flex justify-center">
                       <button
                         type="submit"
                         disabled={submitting}
