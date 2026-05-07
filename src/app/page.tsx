@@ -1,22 +1,40 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { products } from "@/data/products";
 import { SectionReveal } from "@/components/section-reveal";
+import { AnimatedCounter } from "@/components/animated-counter";
+import { FlipWords } from "@/components/flip-words";
+import { CertMarquee } from "@/components/cert-marquee";
 
 /* ═══ Section 1: HERO ═══ */
 function Hero() {
   const [loaded, setLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    el.style.setProperty("--mouse-x", `${x}%`);
+    el.style.setProperty("--mouse-y", `${y}%`);
+  }, []);
+
   return (
-    <section className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden noise-overlay"
+      onMouseMove={handleMouseMove}
+    >
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
@@ -30,6 +48,9 @@ function Hero() {
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,10,10,0.88) 40%, rgba(10,10,10,0.55) 70%, rgba(10,10,10,0.4) 100%)" }} />
       </div>
+
+      {/* Spotlight overlay — tracks mouse */}
+      <div className="spotlight-overlay" />
 
       {/* Margin label */}
       <div
@@ -51,15 +72,23 @@ function Hero() {
 
           <h1 className="sr-only">Admetus Lifesciences - Precision Encapsulated Softgel Capsules</h1>
           <div aria-hidden="true">
-            {["PRECISION", "ENCAPSULATED"].map((word, i) => (
-              <div
-                key={word}
-                className={`display-hero text-[var(--hero-text)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-                style={{ transition: `opacity 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms, transform 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + i * 80}ms` }}
-              >
-                {word}
-              </div>
-            ))}
+            {/* First word replaced with kinetic FlipWords component */}
+            <div
+              className={`display-hero text-[var(--hero-text)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transition: `opacity 600ms cubic-bezier(0.23, 1, 0.32, 1) 300ms, transform 600ms cubic-bezier(0.23, 1, 0.32, 1) 300ms` }}
+            >
+              <FlipWords
+                words={["PRECISION", "QUALITY", "TRUST", "PURITY"]}
+                interval={2500}
+                className="text-[var(--gold)]"
+              />
+            </div>
+            <div
+              className={`display-hero text-[var(--hero-text)] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transition: `opacity 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + 80}ms, transform 600ms cubic-bezier(0.23, 1, 0.32, 1) ${300 + 80}ms` }}
+            >
+              ENCAPSULATED
+            </div>
           </div>
 
           <div
@@ -80,6 +109,7 @@ function Hero() {
           >
             <Link
               href="/manufacturing/"
+              data-cursor="pointer"
               className="btn-editorial cursor-pointer inline-flex items-center justify-center gap-3 px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
               style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
             >
@@ -121,26 +151,7 @@ function CredibilityStrip() {
   return (
     <section className="py-6 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="flex overflow-x-auto scrollbar-hide gap-6 md:gap-4 md:flex-wrap md:justify-between md:overflow-visible">
-          {certs.map((cert, i) => (
-            <SectionReveal key={cert.name} delay={i * 0.06}>
-              <div className="flex items-center gap-3 min-w-[150px] flex-shrink-0 md:min-w-0 md:flex-shrink">
-                <img src={cert.img} alt={cert.name} className="h-10 w-10 object-contain shrink-0" width={40} height={40} />
-                <div className="flex flex-col gap-0.5">
-                  <span
-                    className="text-[0.875rem] font-bold text-[var(--foreground)] tracking-tight leading-tight"
-                    style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
-                  >
-                    {cert.name}
-                  </span>
-                  <span className="text-[0.5625rem] tracking-[0.08em] uppercase text-[var(--text-muted)] whitespace-nowrap" style={{ fontFamily: "var(--font-display)" }}>
-                    {cert.desc}
-                  </span>
-                </div>
-              </div>
-            </SectionReveal>
-          ))}
-        </div>
+        <CertMarquee items={certs} speed={35} />
       </div>
     </section>
   );
@@ -211,7 +222,7 @@ function Manifesto() {
   }, []);
 
   const lines = [
-    "We don\u2019t just manufacture softgel capsules.",
+    "We don’t just manufacture softgel capsules.",
     "We engineer precision at molecular scale.",
     "Every capsule carries a commitment to human health.",
   ];
@@ -261,6 +272,12 @@ function Manifesto() {
 
 /* ═══ Section 4: SCALE & METRICS ═══ */
 function ScaleMetrics() {
+  const scaleStats = [
+    { end: 80, suffix: "+", label: "Formulations" },
+    { end: 5, suffix: "", label: "Certifications" },
+    { end: 100, suffix: "%", label: "Batch Inspection" },
+  ];
+
   return (
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
@@ -279,7 +296,7 @@ function ScaleMetrics() {
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)] mb-3 block">OUR FACILITY</span>
-          <h2 className="display-section text-[var(--foreground)]">
+          <h2 className="display-section text-[var(--foreground)] text-gradient-gold">
             BUILT FOR<br />SCALE
           </h2>
         </SectionReveal>
@@ -299,6 +316,20 @@ function ScaleMetrics() {
                 Elmach EPI 2000 blister packaging.
                 WHO-GMP certified facility in Haryana, India.
               </p>
+
+              {/* Animated stats row */}
+              <div className="mt-8 flex gap-8 md:gap-12">
+                {scaleStats.map((stat) => (
+                  <div key={stat.label} className="glass-stat p-4 rounded-sm">
+                    <AnimatedCounter
+                      end={stat.end}
+                      suffix={stat.suffix}
+                      label={stat.label}
+                      duration={2}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </SectionReveal>
 
@@ -351,7 +382,7 @@ function ProductShowcase() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
           {featured.map((product, i) => (
             <SectionReveal key={product.slug} delay={i * 0.04}>
-              <Link href={`/products/${product.slug}/`}>
+              <Link href={`/products/${product.slug}/`} data-cursor="pointer">
                 <div className="product-card border border-[var(--border-subtle)] p-4 md:p-5 h-full cursor-pointer min-h-[44px]"
                   style={{ background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))` }}
                 >
@@ -380,6 +411,7 @@ function ProductShowcase() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 md:gap-4">
         <Link
           href="/products/"
+          data-cursor="pointer"
           className="min-h-[44px] inline-flex items-center justify-center sm:justify-start text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2"
           style={{
             fontFamily: "var(--font-display)",
@@ -390,6 +422,7 @@ function ProductShowcase() {
         </Link>
         <a
           href="/catalogue.pdf"
+          data-cursor="pointer"
           className="btn-editorial inline-flex items-center justify-center gap-2 px-7 min-h-[44px] py-3 text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--foreground)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 cursor-pointer"
         >
           Download Product Catalogue
@@ -459,6 +492,7 @@ function CatalogueDownload() {
                 href="/catalogue.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-cursor="pointer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] transition-colors duration-200"
                 style={{ fontFamily: "var(--font-display)" }}
               >
@@ -486,8 +520,21 @@ function ManufacturingProcess() {
   ];
 
   return (
-    <section className="py-14 md:py-20 bg-[var(--bg-warm-dark)]">
+    <section className="py-14 md:py-20 bg-[var(--bg-warm-dark)] relative">
       <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">05</span>
+
+      {/* Scroll progress indicator */}
+      <div className="hidden md:block absolute bottom-0 left-0 right-0 h-px bg-[var(--border-subtle)]">
+        <div
+          className="h-px bg-gradient-to-r from-[var(--gold)] to-[var(--gold-light)]"
+          style={{
+            width: "0%",
+            animation: "rule-draw 1s var(--ease-out-strong) forwards",
+            animationTimeline: "view()",
+            animationRange: "entry 40% exit 10%",
+          }}
+        />
+      </div>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
@@ -496,23 +543,33 @@ function ManufacturingProcess() {
           <div className="gold-rule w-12 mt-4 mb-8 md:mb-10" />
         </SectionReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-6 md:gap-y-8">
-          {steps.map((step, i) => (
-            <SectionReveal key={step.num} delay={i * 0.05}>
-              <div className="flex gap-4 group">
-                <span className="text-[0.5625rem] font-mono text-[var(--gold)] opacity-60 pt-1">{step.num}</span>
-                <div>
-                  <h3
-                    className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--foreground)]"
-                    style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p className="mt-1.5 text-[0.8125rem] text-[var(--text-muted)] leading-relaxed max-w-[45ch]">{step.desc}</p>
+        <div className="relative">
+          {/* Tracing beam line — desktop only */}
+          <div className="hidden md:block absolute left-[3px] top-0 bottom-0 w-px bg-[var(--border-subtle)]" />
+          <div
+            className="hidden md:block absolute left-[3px] top-0 w-px h-16 tracing-beam-line"
+            style={{ background: "linear-gradient(to bottom, transparent, var(--gold), var(--gold-light), transparent)" }}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-6 md:gap-y-8 md:pl-6">
+            {steps.map((step, i) => (
+              <SectionReveal key={step.num} delay={i * 0.05}>
+                <div className="flex gap-4 group relative">
+                  {/* Node dot on the beam line — desktop */}
+                  <div className="hidden md:block absolute -left-[27px] top-1 w-2 h-2 rounded-full border border-[var(--gold)] bg-[var(--bg-warm-dark)] group-hover:bg-[var(--gold)] transition-colors duration-300" />
+                  <span className="text-[0.5625rem] font-mono text-[var(--gold)] opacity-60 pt-1">{step.num}</span>
+                  <div>
+                    <h3
+                      className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200"
+                    >
+                      {step.title}
+                    </h3>
+                    <p className="mt-1.5 text-[0.8125rem] text-[var(--text-muted)] leading-relaxed max-w-[45ch]">{step.desc}</p>
+                  </div>
                 </div>
-              </div>
-            </SectionReveal>
-          ))}
+              </SectionReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -553,17 +610,17 @@ function Differentiators() {
   const cards = [
     {
       title: "Advanced Equipment",
-      body: "ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packaging \u2014 precision-engineered for consistency.",
+      body: "ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packaging — precision-engineered for consistency.",
       image: "/images/facility/encapsulation-arbes.jpg",
     },
     {
       title: "End-to-End Quality",
-      body: "From raw material testing to final product release \u2014 100% inspection at every stage.",
+      body: "From raw material testing to final product release — 100% inspection at every stage.",
       image: "/images/facility/raw-material-section.jpg",
     },
     {
       title: "Globally Certified",
-      body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
+      body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world’s strictest standards.",
       image: "/images/facility/packing-area-women.jpg",
     },
     {
@@ -580,7 +637,7 @@ function Differentiators() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <span className="label-text text-[var(--gold)] mb-3 block">WHY ADMETUS</span>
-          <h2 className="display-section text-[var(--foreground)] mb-4">
+          <h2 className="display-section text-[var(--foreground)] text-gradient-gold mb-4">
             THE ADMETUS<br />DIFFERENCE
           </h2>
           <div className="gold-rule w-16 mb-8 md:mb-10" />
@@ -589,7 +646,7 @@ function Differentiators() {
         {/* Asymmetric grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <SectionReveal delay={0.05} className="md:col-span-2">
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 md:p-6 z-10">
@@ -601,7 +658,7 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
@@ -613,7 +670,7 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.15}>
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
@@ -625,7 +682,7 @@ function Differentiators() {
           </SectionReveal>
 
           <SectionReveal delay={0.2} className="md:col-span-2">
-            <div className="diff-card relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
+            <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
               <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 md:p-6 z-10">
@@ -644,7 +701,10 @@ function Differentiators() {
 /* ═══ Section 9: PARTNERSHIP ═══ */
 function Partnership() {
   return (
-    <section className="min-h-[auto] md:min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative">
+    <section className="min-h-[auto] md:min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative overflow-hidden">
+      {/* Aurora background effect */}
+      <div className="aurora-bg" />
+
       <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">07</span>
 
       {/* Left: Image with warm overlay */}
@@ -661,11 +721,11 @@ function Partnership() {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center py-14 md:py-20 lg:py-0 px-[var(--gutter)] lg:pl-[var(--space-16)]">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center py-14 md:py-20 lg:py-0 px-[var(--gutter)] lg:pl-[var(--space-16)] relative z-10">
         <div className="max-w-lg">
           <SectionReveal direction="right">
             <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
-            <h2 className="mt-4 display-section text-[var(--foreground)]">
+            <h2 className="mt-4 display-section text-[var(--foreground)] text-gradient-gold">
               YOUR BRAND.<br />OUR SCIENCE.
             </h2>
             <div className="gold-rule w-12 mt-5 mb-5" />
@@ -684,6 +744,7 @@ function Partnership() {
             </ul>
             <Link
               href="/contract-manufacturing/"
+              data-cursor="pointer"
               className="btn-editorial cursor-pointer mt-8 md:mt-10 inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
@@ -723,6 +784,7 @@ function GlobalReach() {
               </p>
               <Link
                 href="/export/"
+                data-cursor="pointer"
                 className="btn-editorial cursor-pointer mt-8 md:mt-10 inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
@@ -826,6 +888,7 @@ function ClosingCTA() {
           <div className="mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
             <Link
               href="/contact/"
+              data-cursor="pointer"
               className="btn-editorial cursor-pointer inline-flex items-center justify-center gap-3 px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[var(--gold)] hover:bg-[var(--gold-light)] w-full sm:w-auto"
               style={{ fontFamily: "var(--font-display)" }}
             >
@@ -834,6 +897,7 @@ function ClosingCTA() {
             </Link>
             <Link
               href="/contact/"
+              data-cursor="pointer"
               className="btn-editorial cursor-pointer inline-flex items-center justify-center gap-2 px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)]/40 hover:border-[var(--gold)] w-full sm:w-auto"
               style={{ fontFamily: "var(--font-display)" }}
             >

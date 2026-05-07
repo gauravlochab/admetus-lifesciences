@@ -5,6 +5,8 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { CustomCursor } from "@/components/custom-cursor";
+import { ScrollProgress } from "@/components/scroll-progress";
 
 const archivo = Archivo({
   variable: "--font-display",
@@ -186,6 +188,8 @@ export default function RootLayout({
             This site requires JavaScript for the best experience.
           </div>
         </noscript>
+        <ScrollProgress />
+        <CustomCursor />
         <SmoothScroll />
         <Navbar />
         <main id="main-content" className="flex-1">{children}</main>
