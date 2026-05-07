@@ -84,7 +84,7 @@ export function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 ${isHidden ? "-translate-y-full" : "translate-y-0"
-          } ${isScrolled ? "nav-glass" : "bg-transparent"
+          } ${isScrolled ? "bg-[var(--background)] border-b border-[var(--border-subtle)]" : "bg-[var(--background)]"
           }`}
         style={{
           height: "72px",
@@ -115,7 +115,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden xl:flex items-center gap-0.5 ml-16">
+          <div className="hidden xl:flex items-center gap-0.5 ml-36 shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -128,7 +128,7 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden xl:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-6 ml-10">
             <ThemeToggle />
             <Link
               href="/contact/"
