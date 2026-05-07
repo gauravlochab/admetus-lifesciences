@@ -74,11 +74,10 @@ export default function ContactPage() {
     }
   }
 
-  const baseInputClass =
-    "w-full px-4 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
-  const inputClass = `${baseInputClass} h-[50px]`;
-  const inputErrorClass = `${inputClass} !border-[var(--destructive)] focus:border-[var(--destructive)]/40`;
-  const textareaClass = `${baseInputClass} py-3 min-h-[120px] resize-none`;
+  const inputClass =
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
+  const inputErrorClass =
+    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
 
   function fieldError(field: keyof FormErrors) {
     if (!touched[field] || !errors[field]) return null;
@@ -101,7 +100,7 @@ export default function ContactPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Get in Touch</span>
@@ -171,7 +170,6 @@ export default function ContactPage() {
                           aria-invalid={touched.name && !!errors.name}
                           aria-describedby={touched.name && errors.name ? "contact-name-error" : undefined}
                           onBlur={(e) => handleBlur("name", e.currentTarget.form!)}
-                          suppressHydrationWarning
                         />
                         {fieldError("name")}
                       </div>
@@ -188,7 +186,6 @@ export default function ContactPage() {
                           aria-invalid={touched.company && !!errors.company}
                           aria-describedby={touched.company && errors.company ? "contact-company-error" : undefined}
                           onBlur={(e) => handleBlur("company", e.currentTarget.form!)}
-                          suppressHydrationWarning
                         />
                         {fieldError("company")}
                       </div>
@@ -205,7 +202,6 @@ export default function ContactPage() {
                           aria-invalid={touched.country && !!errors.country}
                           aria-describedby={touched.country && errors.country ? "contact-country-error" : undefined}
                           onBlur={(e) => handleBlur("country", e.currentTarget.form!)}
-                          suppressHydrationWarning
                         />
                         {fieldError("country")}
                       </div>
@@ -222,7 +218,6 @@ export default function ContactPage() {
                           aria-invalid={touched.email && !!errors.email}
                           aria-describedby={touched.email && errors.email ? "contact-email-error" : undefined}
                           onBlur={(e) => handleBlur("email", e.currentTarget.form!)}
-                          suppressHydrationWarning
                         />
                         {fieldError("email")}
                       </div>
@@ -235,7 +230,6 @@ export default function ContactPage() {
                           className={inputClass}
                           placeholder="+91 ..."
                           autoComplete="tel"
-                          suppressHydrationWarning
                         />
                       </div>
                       <div>
@@ -244,7 +238,6 @@ export default function ContactPage() {
                           id="contact-product"
                           name="product_interest"
                           className={inputClass}
-                          suppressHydrationWarning
                         >
                           <option value="">Select a product</option>
                           {products.map((p) => (
@@ -263,7 +256,6 @@ export default function ContactPage() {
                           type="text"
                           className={inputClass}
                           placeholder="e.g., 10,000 units"
-                          suppressHydrationWarning
                         />
                       </div>
                       <div>
@@ -272,7 +264,6 @@ export default function ContactPage() {
                           id="contact-packaging"
                           name="packaging_preference"
                           className={inputClass}
-                          suppressHydrationWarning
                         >
                           <option value="">Select preference</option>
                           <option value="blister">Blister Pack</option>
@@ -289,9 +280,8 @@ export default function ContactPage() {
                         id="contact-message"
                         name="message"
                         rows={4}
-                        className={textareaClass}
+                        className={`${inputClass} resize-none`}
                         placeholder="Share your requirements, specifications, or questions..."
-                        suppressHydrationWarning
                       />
                     </div>
 

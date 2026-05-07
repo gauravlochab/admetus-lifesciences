@@ -69,10 +69,10 @@ export default function ProductsPage() {
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filtered.map((product, i) => (
-              <SectionReveal key={product.slug} delay={i * 0.04} className="h-full">
-                <Link href={`/products/${product.slug}/`} className="group block h-full">
+              <SectionReveal key={product.slug} delay={i * 0.04}>
+                <Link href={`/products/${product.slug}/`} className="group block">
                   <div
-                    className="relative p-6 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200 flex flex-col justify-end group-hover:-translate-y-px h-full"
+                    className="relative p-6 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200 flex flex-col justify-end group-hover:-translate-y-px"
                     style={{
                       background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))`,
                       minHeight: "280px",
