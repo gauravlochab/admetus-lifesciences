@@ -141,8 +141,8 @@ export default function PrivateLabelPage() {
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/encapsulation-arbes.jpg"
-          alt="Private label softgel capsule manufacturing in India — Admetus Lifesciences"
+          src="/images/facility/softgels-pexels-topview-jar.jpg"
+          alt="Premium softgel capsules ready for private label branding — Admetus Lifesciences contract manufacturer, Haryana"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

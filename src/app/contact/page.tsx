@@ -93,8 +93,8 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/building-entry.jpg"
-          alt="Admetus Lifesciences facility exterior, ready for business enquiries and partnerships"
+          src="/images/facility/building-overview.jpg"
+          alt="Admetus Lifesciences WHO-GMP certified softgel manufacturing facility — Village Anta, Tehsil Safidon, Haryana"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

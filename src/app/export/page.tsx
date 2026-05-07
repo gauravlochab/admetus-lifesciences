@@ -68,8 +68,8 @@ export default function ExportPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/dispatch-area.jpg"
-          alt="Export-ready softgel capsule packaging for international nutraceutical markets"
+          src="/images/facility/softgels-pexels-topview-jar.jpg"
+          alt="Premium softgel capsules exported from India to global markets — Admetus Lifesciences, WHO-GMP certified manufacturer"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

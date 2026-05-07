@@ -133,8 +133,8 @@ export default function HaryanaPage() {
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/building-overview.jpg"
-          alt="Softgel capsule manufacturing facility in Jind, Haryana — Admetus Lifesciences"
+          src="/images/facility/raw-material-section.jpg"
+          alt="Raw material storage at Admetus Lifesciences — certified nutraceutical-grade ingredients for softgel manufacturing in Haryana"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

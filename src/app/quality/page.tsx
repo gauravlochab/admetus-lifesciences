@@ -70,8 +70,8 @@ export default function QualityPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/raw-material-section.jpg"
-          alt="Quality control laboratory at Admetus Lifesciences testing nutraceutical softgel capsules"
+          src="/images/facility/medicine-mixer.jpg"
+          alt="Medicine mixing equipment at Admetus Lifesciences — precision quality control at every stage of softgel manufacturing"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

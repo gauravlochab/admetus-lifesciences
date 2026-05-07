@@ -20,8 +20,8 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="/images/facility/softgels-production-line.jpg"
-          alt="Softgel capsules moving through precision encapsulation machinery at Admetus Lifesciences, WHO-GMP certified manufacturer in Haryana, India"
+          src="/images/facility/facility-production-hall.jpg"
+          alt="Admetus Lifesciences softgel manufacturing production hall — WHO-GMP certified facility in Village Anta, Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -564,7 +564,7 @@ function Differentiators() {
     {
       title: "Globally Certified",
       body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
-      image: "/images/facility/softgels-bulk.jpg",
+      image: "/images/facility/packing-area-women.jpg",
     },
     {
       title: "Custom Formulations",

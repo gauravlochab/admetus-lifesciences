@@ -55,8 +55,8 @@ export default function HalalKosherCase() {
 
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/dispatch-area.jpg"
-          alt="Halal Kosher GCC export case study — Admetus Lifesciences"
+          src="/images/facility/gelatin-section.jpg"
+          alt="Gelatin preparation section at Admetus Lifesciences — Halal-certified gelatin sourcing for GCC and international export"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

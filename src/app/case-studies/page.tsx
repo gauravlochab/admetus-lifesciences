@@ -45,8 +45,8 @@ export default function CaseStudiesPage() {
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/building-overview.jpg"
-          alt="Admetus Lifesciences WHO-GMP certified softgel manufacturing facility — real-world manufacturing case studies from Haryana"
+          src="/images/facility/dispatch-area.jpg"
+          alt="Admetus Lifesciences dispatch and logistics area — manufacturing case studies, export-ready softgel production"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
