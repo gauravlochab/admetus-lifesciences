@@ -293,17 +293,6 @@ function ScaleMetrics() {
             ))}
           </div>
         </div>
-
-        <SectionReveal delay={0.2}>
-          <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
-              <div key={region} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0" />
-                <span className="text-[var(--text-muted)] text-[0.9375rem]">{region}</span>
-              </div>
-            ))}
-          </div>
-        </SectionReveal>
       </div>
     </section>
   );
@@ -562,11 +551,10 @@ function Differentiators() {
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">WHY ADMETUS</span>
-          <h2 className="display-section text-[var(--foreground)] mb-4">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">WHY ADMETUS</span>
+          <h2 className="display-section text-[var(--foreground)] mt-6 md:mt-8 mb-12 md:mb-16">
             THE ADMETUS<br />DIFFERENCE
           </h2>
-          <div className="gold-rule w-16 mb-8 md:mb-10" />
         </SectionReveal>
 
         {/* Asymmetric grid */}
@@ -627,8 +615,8 @@ function Differentiators() {
 /* ═══ Section 9: PARTNERSHIP ═══ */
 function Partnership() {
   return (
-    <section className="min-h-[auto] md:min-h-[75vh] flex bg-[var(--bg-warm-dark)] relative">
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">07</span>
+    <section className="min-h-[auto] md:min-h-[90vh] flex bg-[var(--bg-warm-dark)] relative">
+
 
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
@@ -644,14 +632,13 @@ function Partnership() {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center py-14 md:py-20 lg:py-0 px-[var(--gutter)] lg:pl-[var(--space-16)]">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center py-20 md:py-32 lg:py-16 px-[var(--gutter)] lg:pl-[var(--space-16)]">
         <div className="max-w-lg">
           <SectionReveal direction="right">
             <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
-            <h2 className="mt-4 display-section text-[var(--foreground)]">
+            <h2 className="mt-4 mb-5 display-section text-[var(--foreground)]">
               YOUR BRAND.<br />OUR SCIENCE.
             </h2>
-            <div className="gold-rule w-12 mt-5 mb-5" />
             <p className="body-large text-[var(--text-cream)]">
               From concept to shelf &mdash; turnkey private label softgel manufacturing.
             </p>
@@ -659,8 +646,8 @@ function Partnership() {
           <SectionReveal direction="right" delay={0.15}>
             <ul className="mt-6 md:mt-8 space-y-3">
               {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
-                <li key={s} className="flex items-center gap-4 body-text text-[var(--text-cream)]">
-                  <span className="w-5 h-px bg-[var(--gold)] flex-shrink-0" />
+                <li key={s} className="flex items-center gap-3 body-text text-[var(--text-cream)]">
+                  <CheckCircle2 className="w-4 h-4 text-[var(--gold)] flex-shrink-0" />
                   {s}
                 </li>
               ))}
@@ -690,17 +677,16 @@ function GlobalReach() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-black)] relative">
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">08</span>
+
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
           <SectionReveal>
             <div>
-              <span className="label-text text-[var(--gold)] mb-3 block">GLOBAL PRESENCE</span>
-              <h2 className="display-section text-[var(--foreground)]">
+              <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">GLOBAL PRESENCE</span>
+              <h2 className="display-section text-[var(--foreground)] mt-6 md:mt-8 mb-8 md:mb-10">
                 BEYOND<br />BORDERS
               </h2>
-              <div className="gold-rule w-16 mt-5 mb-5" />
               <p className="body-large text-[var(--text-cream)] max-w-[480px]">
                 Regulatory-compliant export capabilities serving nutraceutical markets worldwide.
               </p>
@@ -738,6 +724,8 @@ function GlobalReach() {
             ))}
           </div>
         </div>
+
+
       </div>
     </section>
   );
@@ -750,7 +738,6 @@ function TrustQuote() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <div className="max-w-[640px]">
-            <div className="gold-rule w-12 md:w-16 mb-8 md:mb-10" />
 
             <blockquote>
               <p
@@ -785,7 +772,7 @@ function ClosingCTA() {
       {/* Gold rule above */}
       <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
 
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">10</span>
+
 
       <SectionReveal>
         <div className="relative z-10 max-w-[var(--container-max)] w-full px-[var(--gutter)]">
@@ -823,7 +810,7 @@ function ClosingCTA() {
           </div>
 
           <p className="mt-6 md:mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
-            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608
+            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608 &nbsp;|&nbsp; +91-9729977795
           </p>
           <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">
             Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India
