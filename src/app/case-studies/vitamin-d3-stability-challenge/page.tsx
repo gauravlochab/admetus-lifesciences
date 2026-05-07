@@ -54,8 +54,8 @@ export default function VitaminD3StabilityCase() {
 
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/encapsulation-arbes.jpg"
-          alt="Vitamin D3 softgel stability case study — Admetus Lifesciences"
+          src="/images/facility/elmach-blister-machine.jpg"
+          alt="Elmach EPI 2000 blister packing machine at Admetus Lifesciences — Vitamin D3 softgel stability and packaging case study"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

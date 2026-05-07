@@ -20,8 +20,8 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="/images/facility/building-overview.jpg"
-          alt="Admetus Lifesciences WHO-GMP softgel capsule manufacturing facility in Village Anta, Tehsil Safidon, District Jind, Haryana, India"
+          src="/images/facility/softgels-production-line.jpg"
+          alt="Softgel capsules moving through precision encapsulation machinery at Admetus Lifesciences, WHO-GMP certified manufacturer in Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -265,8 +265,8 @@ function ScaleMetrics() {
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/building-entry.jpg"
-          alt="Interior of the Admetus softgel manufacturing facility in Haryana"
+          src="/images/facility/encapsulation-arbes.jpg"
+          alt="ARBES SGX-806P encapsulation machine at Admetus Lifesciences' WHO-GMP certified softgel manufacturing facility"
           className="w-full h-full object-cover opacity-12"
           width={1920}
           height={1080}
@@ -409,10 +409,10 @@ function CatalogueDownload() {
           <SectionReveal>
             <div className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative max-w-md">
               <img
-                src="/images/facility/encapsulation-arbes.jpg"
+                src="/images/facility/softgels-pexels-topview-jar.jpg"
                 width={1000}
                 height={1250}
-                alt="Admetus Lifesciences product catalogue cover featuring nutraceutical softgel capsules"
+                alt="Premium softgel capsules in jar — Admetus Lifesciences 2026 product catalogue"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -525,8 +525,8 @@ function VisualBreak() {
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/building-entry.jpg"
-          alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
+          src="/images/facility/building-overview.jpg"
+          alt="Admetus Lifesciences manufacturing facility, Village Anta, Tehsil Safidon, Haryana — established 2020"
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -564,12 +564,12 @@ function Differentiators() {
     {
       title: "Globally Certified",
       body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
-      image: "/images/facility/raw-material-section.jpg",
+      image: "/images/facility/softgels-bulk.jpg",
     },
     {
       title: "Custom Formulations",
       body: "Private label and contract manufacturing with flexible MOQs and custom formulation capabilities.",
-      image: "/images/facility/elmach-blister-machine.jpg",
+      image: "/images/facility/colour-mixer-gelatin.jpg",
     },
   ];
 
