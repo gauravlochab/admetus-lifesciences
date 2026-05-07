@@ -20,8 +20,8 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0">
         <img
-          src="/images/facility/softgels-bulk.jpg"
-          alt="Premium amber softgel capsules manufactured by Admetus Lifesciences — WHO-GMP certified contract manufacturer in Haryana, India"
+          src="/images/facility/building-overview.jpg"
+          alt="Admetus Lifesciences WHO-GMP softgel capsule manufacturing facility in Village Anta, Tehsil Safidon, District Jind, Haryana, India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -239,8 +239,8 @@ function ScaleMetrics() {
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/softgels-production-line.jpg"
-          alt="Softgel production line at Admetus Lifesciences' Haryana facility, built for scale manufacturing"
+          src="/images/facility/building-entry.jpg"
+          alt="Interior of the Admetus softgel manufacturing facility in Haryana"
           className="w-full h-full object-cover opacity-12"
           width={1920}
           height={1080}
@@ -508,8 +508,8 @@ function VisualBreak() {
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
         <img
-          src="/images/facility/softgels-production-line.jpg"
-          alt="Admetus Lifesciences softgel capsules on the production line, Village Anta, Haryana"
+          src="/images/facility/building-entry.jpg"
+          alt="Admetus Lifesciences manufacturing facility exterior, Village Anta, Haryana"
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -542,12 +542,12 @@ function Differentiators() {
     {
       title: "End-to-End Quality",
       body: "From raw material testing to final product release \u2014 100% inspection at every stage.",
-      image: "/images/facility/encapsulation-arbes.jpg",
+      image: "/images/facility/raw-material-section.jpg",
     },
     {
       title: "Globally Certified",
       body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world\u2019s strictest standards.",
-      image: "/images/facility/capsule-drying-women.jpg",
+      image: "/images/facility/raw-material-section.jpg",
     },
     {
       title: "Custom Formulations",
@@ -633,8 +633,8 @@ function Partnership() {
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
         <img
-          src="/images/facility/softgels-pexels-topview-jar.jpg"
-          alt="Top-view of premium softgel capsules in jar — private label and contract manufacturing by Admetus Lifesciences"
+          src="/images/facility/capsule-drying-women.jpg"
+          alt="Nutraceutical research and formulation process for softgel capsule manufacturing"
           className="absolute inset-0 w-full h-full object-cover"
           width={1200}
           height={800}

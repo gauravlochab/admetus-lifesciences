@@ -45,7 +45,7 @@ export default function CaseStudiesPage() {
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/softgels-amber-closeup.jpg"
+          src="/images/facility/encapsulation-arbes.jpg"
           alt="Admetus Lifesciences manufacturing case studies"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}

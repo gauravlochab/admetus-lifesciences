@@ -71,8 +71,8 @@ export default function ManufacturingPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/softgels-pexels-closeup.jpg"
-          alt="Close-up of premium softgel capsules — Admetus Lifesciences contract manufacturing and private label facility in Haryana"
+          src="/images/facility/building-overview.jpg"
+          alt="State-of-the-art nutraceutical manufacturing equipment at Admetus Lifesciences"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
