@@ -179,6 +179,7 @@ function Manifesto() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisibleLines(new Set([0, 1, 2]));
       return;
     }
