@@ -40,10 +40,10 @@ export default function AboutPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0 opacity-55" style={{ background: "linear-gradient(to top, var(--hero-grad-start) 0%, var(--hero-grad-mid) 40%, transparent 75%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[#1A1710] font-bold tracking-[0.14em] mb-8 md:mb-10 block">PRECISION SOFTGEL MANUFACTURING</span>
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">PRECISION SOFTGEL MANUFACTURING</span>
           <h1
             className="display-section text-[var(--hero-text)] mt-6 md:mt-8 mb-8 md:mb-10"
             style={{ wordSpacing: "0.2em" }}
