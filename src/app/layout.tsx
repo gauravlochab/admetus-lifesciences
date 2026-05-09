@@ -88,6 +88,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full light`} suppressHydrationWarning>
       <head>
+        {/* Prevent Flash of Unstyled Content (FOUC) - Theme Initializer */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const saved = localStorage.getItem("admetus-theme") || "dark";
+                  if (saved === "dark") {
+                    document.documentElement.classList.remove("light");
+                  } else {
+                    document.documentElement.classList.add("light");
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {/* Structured data: Organization + LocalBusiness — sitewide entity definition for AI/search */}
         <script
           type="application/ld+json"
