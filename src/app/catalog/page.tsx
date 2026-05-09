@@ -230,7 +230,7 @@ export default function CatalogPage() {
             <div className="border border-[var(--border-subtle)] bg-[var(--bg-charcoal)] flex flex-col overflow-hidden">
 
               {/* Top: Header Row (Logo, Text, and Button aligned horizontally) */}
-              <div className="p-8 lg:p-10 bg-[#14120D] border-b border-[var(--border-subtle)] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+              <div className="p-8 lg:p-10 bg-[var(--bg-charcoal)] border-b border-[var(--border-subtle)] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                 <div className="flex items-center gap-5">
                   <ShieldCheck size={64} className="text-[var(--gold)] shrink-0" strokeWidth={1.2} />
                   <div>

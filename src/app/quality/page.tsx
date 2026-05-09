@@ -84,7 +84,6 @@ export default function QualityPage() {
           <h1 className="mt-8 display-section text-[var(--hero-text)]">
             UNCOMPROMISING<br />QUALITY STANDARDS
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Every softgel capsule manufactured at our{" "}
             <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">WHO-GMP certified Haryana facility</Link>{" "}
