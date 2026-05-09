@@ -14,7 +14,6 @@ interface CertMarqueeProps {
 
 export function CertMarquee({ items, speed = 40 }: CertMarqueeProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const animRef = useRef<number>(0);
   const posRef = useRef(0);
   const doubled = [...items, ...items]; // duplicate for seamless loop
 
@@ -22,6 +21,10 @@ export function CertMarquee({ items, speed = 40 }: CertMarqueeProps) {
     const track = trackRef.current;
     if (!track) return;
     const totalWidth = track.scrollWidth / 2; // width of one set
+    const container = track.parentElement;
+    if (!container) return;
+
+    let animId = 0;
 
     function tick() {
       posRef.current -= speed / 60;
@@ -29,15 +32,32 @@ export function CertMarquee({ items, speed = 40 }: CertMarqueeProps) {
         posRef.current = 0;
       }
       if (track) track.style.transform = `translateX(${posRef.current}px)`;
-      animRef.current = requestAnimationFrame(tick);
+      animId = requestAnimationFrame(tick);
     }
 
-    animRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(animRef.current);
+    function start() {
+      cancelAnimationFrame(animId);
+      animId = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+      cancelAnimationFrame(animId);
+    }
+
+    start();
+
+    container.addEventListener("mouseenter", stop);
+    container.addEventListener("mouseleave", start);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      container.removeEventListener("mouseenter", stop);
+      container.removeEventListener("mouseleave", start);
+    };
   }, [speed]);
 
   return (
-    <div className="overflow-hidden w-full" onMouseEnter={() => cancelAnimationFrame(animRef.current)}>
+    <div className="overflow-hidden w-full">
       <div ref={trackRef} className="flex gap-8 md:gap-12 whitespace-nowrap will-change-transform">
         {doubled.map((cert, i) => (
           <div
