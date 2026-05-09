@@ -331,7 +331,7 @@ function ProductShowcase() {
   const featured = products.slice(0, 7);
 
   return (
-    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)]">
+    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)] relative">
       <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">04</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
@@ -605,8 +605,8 @@ function Differentiators() {
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">WHY ADMETUS</span>
-          <h2 className="display-section text-[var(--foreground)] text-gradient-gold mb-4">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">WHY ADMETUS</span>
+          <h2 className="display-section text-[var(--foreground)] text-gradient-gold mb-12 md:mb-16">
             THE ADMETUS<br />DIFFERENCE
           </h2>
 
@@ -743,8 +743,8 @@ function GlobalReach() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
           <SectionReveal>
             <div>
-              <span className="label-text text-[var(--gold)] mb-3 block">GLOBAL PRESENCE</span>
-              <h2 className="display-section text-[var(--foreground)]">
+              <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">GLOBAL PRESENCE</span>
+              <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10">
                 BEYOND<br />BORDERS
               </h2>
 
@@ -760,6 +760,20 @@ function GlobalReach() {
                 Explore Export Capabilities
                 <ArrowRight size={13} />
               </Link>
+
+              <div className="mt-12 md:mt-16 grid grid-cols-2 gap-x-6 gap-y-3 max-w-md">
+                {[
+                  "Middle East", "Africa",
+                  "Southeast Asia", "Latin America",
+                  "Central Asia", "South Asia",
+                  "CIS Countries", "East Africa"
+                ].map((region) => (
+                  <div key={region} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0 rounded-full" />
+                    <span className="text-sm text-[var(--text-cream)]">{region}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </SectionReveal>
 
@@ -777,17 +791,6 @@ function GlobalReach() {
             ))}
           </div>
         </div>
-
-        <SectionReveal delay={0.2}>
-          <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
-              <div key={region} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0" />
-                <span className="text-sm text-[var(--text-cream)]">{region}</span>
-              </div>
-            ))}
-          </div>
-        </SectionReveal>
       </div>
     </section>
   );
@@ -839,7 +842,7 @@ function ClosingCTA() {
 
       <SectionReveal>
         <div className="relative z-10 max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)] mb-4 block">LET&apos;S BUILD TOGETHER</span>
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">LET&apos;S BUILD TOGETHER</span>
 
           <h2 className="heading-1 text-[var(--foreground)] uppercase">
             YOUR NEXT MANUFACTURING&nbsp;PARTNER
