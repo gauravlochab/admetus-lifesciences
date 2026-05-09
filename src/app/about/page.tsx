@@ -201,7 +201,7 @@ export default function AboutPage() {
       {/* Credibility Statistics */}
       <section className="py-12 border-y border-[var(--border-subtle)]">
         <div className="max-w-[1400px] mx-auto px-[var(--gutter)]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>05</div>
               <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">International Certifications</div>
