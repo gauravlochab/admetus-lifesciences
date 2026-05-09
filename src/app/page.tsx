@@ -91,11 +91,6 @@ function Hero() {
             </div>
           </div>
 
-          <div
-            className={`gold-rule w-16 md:w-24 mt-4 md:mt-6 origin-left ${loaded ? "scale-x-100" : "scale-x-0"}`}
-            style={{ transition: `transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 600ms` }}
-          />
-
           <p
             className={`mt-3 md:mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
@@ -118,21 +113,6 @@ function Hero() {
             </Link>
           </div>
         </div>
-      </div>
-
-      {/* Section number */}
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">01</span>
-
-      {/* Scroll indicator */}
-      <div
-        className={`absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
-        style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1400ms" }}
-      >
-        <span className="label-text text-[var(--text-muted)] !text-[0.5rem]">Scroll</span>
-        <div
-          className="w-px h-8 md:h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
-          style={{ animation: "scroll-drift 2.5s ease-in-out infinite" }}
-        />
       </div>
     </section>
   );
@@ -259,12 +239,6 @@ function Manifesto() {
             </div>
           ))}
         </div>
-        <div
-          className={`gold-rule mt-8 md:mt-12 w-32 md:w-48 origin-left ${
-            visibleLines.has(2) ? "scale-x-100" : "scale-x-0"
-          }`}
-          style={{ transition: "transform 700ms cubic-bezier(0.23, 1, 0.32, 1) 600ms" }}
-        />
       </div>
     </section>
   );
@@ -366,8 +340,7 @@ function ProductShowcase() {
           <h2 className="mt-3 display-section text-[var(--foreground)]">
             ENGINEERED FOR EFFICACY
           </h2>
-          <div className="gold-rule w-12 mt-4 mb-4" />
-          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10" style={{ fontSize: "0.9375rem" }}>
+          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10 mt-6" style={{ fontSize: "0.9375rem" }}>
             Precision-formulated softgel capsules &mdash; each designed for optimal
             bioavailability and manufactured under strict quality controls. Supplied to hospitals and retailers worldwide.
           </p>
@@ -535,9 +508,8 @@ function ManufacturingProcess() {
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">MANUFACTURING</span>
-          <h2 className="display-section text-[var(--foreground)]">THE PROCESS</h2>
-          <div className="gold-rule w-12 mt-4 mb-8 md:mb-10" />
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">MANUFACTURING</span>
+          <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10 mt-6 md:mt-8">THE PROCESS</h2>
         </SectionReveal>
 
         <div className="relative">
