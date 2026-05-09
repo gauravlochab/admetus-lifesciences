@@ -81,7 +81,7 @@ export default function QualityPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Quality & Certifications</span>
-          <h1 className="mt-8 display-section text-[var(--hero-text)]">
+          <h1 className="mt-8 mb-8 md:mb-10 display-section text-[var(--hero-text)]">
             UNCOMPROMISING<br />QUALITY STANDARDS
           </h1>
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
