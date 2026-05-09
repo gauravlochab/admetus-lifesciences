@@ -160,7 +160,7 @@ export default async function ProductDetailPage({
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-10 overflow-hidden">
         <img
-          src="/images/facility/softgels-machine.jpg"
+          src="/images/facility/colour-mixer-gelatin.jpg"
           alt={`${product.name} softgel capsules by Admetus Lifesciences`}
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}

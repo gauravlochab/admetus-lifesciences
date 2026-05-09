@@ -83,9 +83,11 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 ${isHidden ? "-translate-y-full" : "translate-y-0"
-          } ${isScrolled ? "bg-[var(--background)] border-b border-[var(--border-subtle)]" : "bg-[var(--background)]"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 ${
+          isHidden ? "-translate-y-full" : "translate-y-0"
+        } ${
+          isScrolled ? "bg-[var(--background)] border-b border-[var(--border-subtle)]" : "bg-[var(--background)]"
+        }`}
         style={{
           height: "72px",
           transition: "transform 400ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -94,7 +96,7 @@ export function Navbar() {
       >
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between" aria-label="Main navigation">
           {/* Wordmark */}
-          <Link href="/" className="group flex items-center gap-4 sm:gap-5 shrink-0" aria-label="Admetus Lifesciences home">
+          <Link href="/" className="group flex items-center gap-2 sm:gap-2.5 min-w-0 shrink-0" aria-label="Admetus Lifesciences home">
             <img
               src="/images/logo-mark.png"
               alt=""
@@ -169,14 +171,15 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-background/95 backdrop-blur-md"
+            className="fixed inset-0 z-[60] flex flex-col items-center justify-center"
+            style={{ background: "rgba(10,10,10,0.97)" }}
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
           >
             <button
               onClick={() => { setIsMobileOpen(false); menuButtonRef.current?.focus(); }}
-              className="absolute top-4 right-4 flex items-center justify-center min-w-[48px] min-h-[48px] p-3 text-foreground"
+              className="absolute top-4 right-4 flex items-center justify-center min-w-[48px] min-h-[48px] p-3 text-[var(--text-white)]"
               aria-label="Close navigation menu"
             >
               <X size={22} />
@@ -193,7 +196,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className="text-xl font-semibold text-foreground uppercase tracking-[0.06em] py-1"
+                    className="text-xl font-semibold text-[var(--text-white)] uppercase tracking-[0.06em] py-1"
                     style={{ fontFamily: "var(--font-display), Archivo, sans-serif" }}
                   >
                     {link.label}
@@ -209,7 +212,7 @@ export function Navbar() {
                 <Link
                   href="/contact/"
                   onClick={() => setIsMobileOpen(false)}
-                  className="btn-editorial px-7 py-3.5 text-[0.6875rem] font-bold text-primary-foreground bg-primary uppercase tracking-[0.12em]"
+                  className="btn-editorial px-7 py-3.5 text-[0.6875rem] font-bold text-[var(--bg-black)] bg-[var(--gold)] uppercase tracking-[0.12em]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Request a Quote

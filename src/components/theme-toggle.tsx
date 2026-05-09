@@ -4,35 +4,25 @@ import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export function ThemeToggle() {
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem("admetus-theme");
-    const osLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    if (saved === "light" || (!saved && osLight)) {
-      setIsLight(true);
-      document.documentElement.classList.add("light");
+    if (saved === "dark") {
+      setIsLight(false);
+      document.documentElement.classList.remove("light");
     }
   }, []);
 
   function toggle() {
     const next = !isLight;
-    
-    const applyTheme = () => {
-      setIsLight(next);
-      if (next) {
-        document.documentElement.classList.add("light");
-        localStorage.setItem("admetus-theme", "light");
-      } else {
-        document.documentElement.classList.remove("light");
-        localStorage.setItem("admetus-theme", "dark");
-      }
-    };
-
-    if (!document.startViewTransition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      applyTheme();
+    setIsLight(next);
+    if (next) {
+      document.documentElement.classList.add("light");
+      localStorage.setItem("admetus-theme", "light");
     } else {
-      document.startViewTransition(applyTheme);
+      document.documentElement.classList.remove("light");
+      localStorage.setItem("admetus-theme", "dark");
     }
   }
 

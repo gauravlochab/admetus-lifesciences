@@ -5,6 +5,8 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { CustomCursor } from "@/components/custom-cursor";
+import { ScrollProgress } from "@/components/scroll-progress";
 
 const archivo = Archivo({
   variable: "--font-display",
@@ -84,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full`} suppressHydrationWarning>
+    <html lang="en" className={`${archivo.variable} ${sourceSerif.variable} ${jetbrains.variable} h-full light`} suppressHydrationWarning>
       <head>
         {/* Structured data: Organization + LocalBusiness — sitewide entity definition for AI/search */}
         <script
@@ -167,12 +169,7 @@ export default function RootLayout({
           }}
         />
         <script dangerouslySetInnerHTML={{ __html: `
-          try { 
-            let t = localStorage.getItem('admetus-theme');
-            if (t === 'light' || (!t && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-              document.documentElement.classList.add('light');
-            }
-          } catch(e){}
+          try { if(localStorage.getItem('admetus-theme')==='dark') document.documentElement.classList.remove('light'); } catch(e){}
         `}} />
         {/* Delight #9: Console easter egg */}
         <script dangerouslySetInnerHTML={{ __html: `
@@ -181,7 +178,7 @@ export default function RootLayout({
           console.log('%cInterested in partnership? \\u2192 admetuslifesciences@gmail.com', 'font-size: 11px; color: #8A8274;');
         `}} />
       </head>
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
         {/* Skip to content link for keyboard navigation */}
         <a href="#main-content" className="skip-to-content">
           Skip to main content
@@ -191,6 +188,8 @@ export default function RootLayout({
             This site requires JavaScript for the best experience.
           </div>
         </noscript>
+        <ScrollProgress />
+        <CustomCursor />
         <SmoothScroll />
         <Navbar />
         <main id="main-content" className="flex-1">{children}</main>

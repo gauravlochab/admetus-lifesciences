@@ -102,8 +102,8 @@ export default function VitaminD3Page() {
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/softgels-detail.jpg"
-          alt="Vitamin D3 softgel contract manufacturing — Cholecalciferol 60,000 IU and Calcitriol K2 — Admetus Lifesciences"
+          src="/images/facility/capsule-drying-line.jpg"
+          alt="Softgel capsule drying line at Admetus Lifesciences — post-encapsulation drying for Vitamin D3 and nutraceutical formulations"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}

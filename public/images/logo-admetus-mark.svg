@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Circular swoosh -->
+  <ellipse cx="40" cy="40" rx="30" ry="30" stroke="url(#swoosh-grad)" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-dasharray="155 33" transform="rotate(-30 40 40)"/>
+  <!-- Inner green arc accent -->
+  <path d="M18 55 Q10 40 18 25" stroke="#3EAA58" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- AD Monogram -->
+  <path d="M28 52 L37 24 L42 52" stroke="#8B6B2A" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="30.5" y1="42" x2="40" y2="42" stroke="#8B6B2A" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M42 24 L42 52 Q56 52 56 38 Q56 24 42 24 Z" stroke="#8B6B2A" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Leaf at bottom -->
+  <path d="M55 58 Q60 50 54 44" stroke="#3EAA58" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M55 58 Q48 54 54 44" fill="#3EAA58" opacity="0.7"/>
+  <circle cx="55" cy="60" r="1.8" fill="#3EAA58"/>
+
+  <defs>
+    <linearGradient id="swoosh-grad" x1="10" y1="10" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2BACC2"/>
+      <stop offset="50%" stop-color="#33C4A0"/>
+      <stop offset="100%" stop-color="#3EAA58"/>
+    </linearGradient>
+  </defs>
+</svg>
