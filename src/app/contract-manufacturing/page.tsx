@@ -90,7 +90,7 @@ export default function ContractManufacturingPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
-          <h1 className="mt-3 mb-8 md:mb-10 display-section text-[var(--hero-text)]">
+          <h1 className="mt-6 md:mt-8 mb-8 md:mb-10 display-section text-[var(--hero-text)]">
             YOUR BRAND.<br />OUR&nbsp;MANUFACTURING.
           </h1>
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
@@ -105,7 +105,7 @@ export default function ContractManufacturingPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)] mb-3 block">SERVICES</span>
+            <span className="label-text text-[var(--gold)] mb-6 md:mb-8 block">SERVICES</span>
             <h2 className="display-section text-[var(--foreground)] mb-10 md:mb-12">
               WHAT WE&nbsp;OFFER
             </h2>
@@ -136,7 +136,7 @@ export default function ContractManufacturingPage() {
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)]">Partnership Advantage</span>
-                <h2 className="mt-3 display-section text-[var(--foreground)] mb-8 md:mb-10" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                <h2 className="mt-6 md:mt-8 display-section text-[var(--foreground)] mb-8 md:mb-10" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                   WHY MANUFACTURE WITH&nbsp;US
                 </h2>
                 <ul className="space-y-3">
