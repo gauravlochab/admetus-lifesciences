@@ -268,8 +268,8 @@ function ScaleMetrics() {
       <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">03</span>
 
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-        <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">OUR FACILITY</span>
+        <SectionReveal className="mb-10 md:mb-14">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">OUR FACILITY</span>
           <h2 className="display-section text-[var(--foreground)] text-gradient-gold">
             BUILT FOR<br />SCALE
           </h2>
@@ -336,11 +336,11 @@ function ProductShowcase() {
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)]">FORMULATION PORTFOLIO</span>
-          <h2 className="mt-3 display-section text-[var(--foreground)]">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">FORMULATION PORTFOLIO</span>
+          <h2 className="display-section text-[var(--foreground)]">
             ENGINEERED FOR EFFICACY
           </h2>
-          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10 mt-6" style={{ fontSize: "0.9375rem" }}>
+          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10 mt-8 md:mt-12" style={{ fontSize: "0.9375rem" }}>
             Precision-formulated softgel capsules &mdash; each designed for optimal
             bioavailability and manufactured under strict quality controls. Supplied to hospitals and retailers worldwide.
           </p>
@@ -378,11 +378,11 @@ function ProductShowcase() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 md:gap-4">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-12 md:mt-16 flex flex-col items-center justify-center gap-4 text-center">
         <Link
           href="/products/"
           data-cursor="pointer"
-          className="min-h-[44px] inline-flex items-center justify-center sm:justify-start text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2"
+          className="min-h-[44px] inline-flex items-center justify-center text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2 hover:text-[var(--gold-light)]"
           style={{
             fontFamily: "var(--font-display)",
             transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -512,21 +512,13 @@ function ManufacturingProcess() {
           <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10 mt-6 md:mt-8">THE PROCESS</h2>
         </SectionReveal>
 
-        <div className="relative">
-          {/* Tracing beam line — desktop only */}
-          <div className="hidden md:block absolute left-[3px] top-0 bottom-0 w-px bg-[var(--border-subtle)]" />
-          <div
-            className="hidden md:block absolute left-[3px] top-0 w-px h-16 tracing-beam-line"
-            style={{ background: "linear-gradient(to bottom, transparent, var(--gold), var(--gold-light), transparent)" }}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-6 md:gap-y-8 md:pl-6">
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-8">
             {steps.map((step, i) => (
               <SectionReveal key={step.num} delay={i * 0.05}>
-                <div className="flex gap-4 group relative">
-                  {/* Node dot on the beam line — desktop */}
-                  <div className="hidden md:block absolute -left-[27px] top-1 w-2 h-2 rounded-full border border-[var(--gold)] bg-[var(--bg-warm-dark)] group-hover:bg-[var(--gold)] transition-colors duration-300" />
-                  <span className="text-[0.5625rem] font-mono text-[var(--gold)] opacity-60 pt-1">{step.num}</span>
+                <div className="flex items-start gap-4 group">
+                  {/* Hollow gold circle bullet aligned perfectly inline with text */}
+                  <div className="w-2.5 h-2.5 rounded-full border border-[var(--gold)] bg-transparent group-hover:bg-[var(--gold)] transition-colors duration-300 mt-1.5 flex-shrink-0" />
                   <div>
                     <h3
                       className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200"
