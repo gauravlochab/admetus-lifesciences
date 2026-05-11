@@ -84,7 +84,7 @@ export function CustomCursor() {
         return {
           width: 32,
           height: 32,
-          backgroundColor: "transparent",
+          backgroundColor: "rgba(0, 0, 0, 0)",
           border: "1.5px solid var(--gold)",
           borderRadius: "50%",
           x: "-50%",

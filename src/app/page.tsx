@@ -224,9 +224,8 @@ function Manifesto() {
             <div
               key={i}
               ref={(el) => { lineRefs.current[i] = el; }}
-              className={`text-[var(--foreground)] ${
-                visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
-              }`}
+              className={`text-[var(--foreground)] ${visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
+                }`}
               style={{
                 fontFamily: "var(--font-display), sans-serif",
                 fontSize: "clamp(1.125rem, 2.5vw, 1.75rem)",
