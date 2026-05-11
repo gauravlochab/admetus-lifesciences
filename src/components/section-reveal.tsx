@@ -20,6 +20,7 @@ export function SectionReveal({
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReducedMotion(
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
     );
@@ -27,6 +28,7 @@ export function SectionReveal({
 
   useEffect(() => {
     if (reducedMotion) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsVisible(true);
       return;
     }

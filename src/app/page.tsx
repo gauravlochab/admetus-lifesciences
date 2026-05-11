@@ -61,7 +61,7 @@ function Hero() {
       </div>
 
       {/* Content -- left-aligned, asymmetric */}
-      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-20 pb-20 md:pt-0 md:pb-0">
+      <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)] pt-[90px] pb-20 md:pt-[100px] md:pb-10">
         <div className="max-w-[var(--content-narrow)]">
           <div
             className={`label-text text-[var(--gold)] mb-3 md:mb-5 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
@@ -91,11 +91,6 @@ function Hero() {
             </div>
           </div>
 
-          <div
-            className={`gold-rule w-16 md:w-24 mt-4 md:mt-6 origin-left ${loaded ? "scale-x-100" : "scale-x-0"}`}
-            style={{ transition: `transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 600ms` }}
-          />
-
           <p
             className={`mt-3 md:mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
@@ -118,21 +113,6 @@ function Hero() {
             </Link>
           </div>
         </div>
-      </div>
-
-      {/* Section number */}
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">01</span>
-
-      {/* Scroll indicator */}
-      <div
-        className={`absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5 ${loaded ? "opacity-100" : "opacity-0"}`}
-        style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 1400ms" }}
-      >
-        <span className="label-text text-[var(--text-muted)] !text-[0.5rem]">Scroll</span>
-        <div
-          className="w-px h-8 md:h-10 bg-gradient-to-b from-[var(--text-muted)] to-transparent origin-top"
-          style={{ animation: "scroll-drift 2.5s ease-in-out infinite" }}
-        />
       </div>
     </section>
   );
@@ -199,6 +179,7 @@ function Manifesto() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisibleLines(new Set([0, 1, 2]));
       return;
     }
@@ -243,9 +224,8 @@ function Manifesto() {
             <div
               key={i}
               ref={(el) => { lineRefs.current[i] = el; }}
-              className={`text-[var(--foreground)] ${
-                visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
-              }`}
+              className={`text-[var(--foreground)] ${visibleLines.has(i) ? "opacity-100 translate-y-0" : "opacity-[0.12] translate-y-3"
+                }`}
               style={{
                 fontFamily: "var(--font-display), sans-serif",
                 fontSize: "clamp(1.125rem, 2.5vw, 1.75rem)",
@@ -259,12 +239,6 @@ function Manifesto() {
             </div>
           ))}
         </div>
-        <div
-          className={`gold-rule mt-8 md:mt-12 w-32 md:w-48 origin-left ${
-            visibleLines.has(2) ? "scale-x-100" : "scale-x-0"
-          }`}
-          style={{ transition: "transform 700ms cubic-bezier(0.23, 1, 0.32, 1) 600ms" }}
-        />
       </div>
     </section>
   );
@@ -294,15 +268,12 @@ function ScaleMetrics() {
       <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">03</span>
 
       <div className="relative z-10 mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-        <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">OUR FACILITY</span>
+        <SectionReveal className="mb-10 md:mb-14">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">OUR FACILITY</span>
           <h2 className="display-section text-[var(--foreground)] text-gradient-gold">
             BUILT FOR<br />SCALE
           </h2>
         </SectionReveal>
-
-        {/* Thin gold rule */}
-        <div className="gold-rule w-16 mt-4 md:mt-6 mb-8 md:mb-10" />
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1px_1fr] gap-8 lg:gap-16">
           <SectionReveal delay={0.1}>
@@ -360,17 +331,16 @@ function ProductShowcase() {
   const featured = products.slice(0, 7);
 
   return (
-    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)]">
+    <section className="py-14 md:py-20 bg-[var(--bg-charcoal)] relative">
       <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-20">04</span>
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)]">FORMULATION PORTFOLIO</span>
-          <h2 className="mt-3 display-section text-[var(--foreground)]">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">FORMULATION PORTFOLIO</span>
+          <h2 className="display-section text-[var(--foreground)]">
             ENGINEERED FOR EFFICACY
           </h2>
-          <div className="gold-rule w-12 mt-4 mb-4" />
-          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10" style={{ fontSize: "0.9375rem" }}>
+          <p className="body-text text-[var(--text-cream)] max-w-[52ch] mb-8 md:mb-10 mt-8 md:mt-12" style={{ fontSize: "0.9375rem" }}>
             Precision-formulated softgel capsules &mdash; each designed for optimal
             bioavailability and manufactured under strict quality controls. Supplied to hospitals and retailers worldwide.
           </p>
@@ -408,11 +378,11 @@ function ProductShowcase() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-6 md:mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 md:gap-4">
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] mt-12 md:mt-16 flex flex-col items-center justify-center gap-4 text-center">
         <Link
           href="/products/"
           data-cursor="pointer"
-          className="min-h-[44px] inline-flex items-center justify-center sm:justify-start text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2"
+          className="min-h-[44px] inline-flex items-center justify-center text-[0.75rem] font-bold uppercase tracking-[0.1em] text-[var(--gold)] gap-2 hover:text-[var(--gold-light)]"
           style={{
             fontFamily: "var(--font-display)",
             transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -461,11 +431,11 @@ function CatalogueDownload() {
 
           <SectionReveal delay={0.1}>
             <div>
-              <span className="label-text text-[var(--gold)] mb-3 block">DOWNLOAD CATALOGUE</span>
-              <h2 className="display-section text-[var(--foreground)] mt-3 mb-4">
+              <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">DOWNLOAD CATALOGUE</span>
+              <h2 className="display-section text-[var(--foreground)] mt-0 mb-8 md:mb-10">
                 EXPLORE OUR<br />FULL RANGE
               </h2>
-              <div className="gold-rule w-16 mb-6" />
+
               <p className="body-text text-[var(--text-cream)] max-w-[58ch] mb-6" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                 Get the complete Admetus product catalogue with detailed
                 composition, pack sizes, and product photographs across 80+
@@ -473,17 +443,17 @@ function CatalogueDownload() {
                 and importers evaluating&nbsp;partnerships.
               </p>
 
-              <ul className="space-y-2.5 mb-8 max-w-[52ch]">
-                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
-                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+              <ul className="space-y-3 mb-8 max-w-[52ch]">
+                <li className="flex items-center gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="w-[5px] h-[5px] rounded-full bg-[var(--gold)] flex-shrink-0" />
                   Full product range with images, composition, and pack sizes
                 </li>
-                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
-                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+                <li className="flex items-center gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="w-[5px] h-[5px] rounded-full bg-[var(--gold)] flex-shrink-0" />
                   Manufacturing certifications and quality documentation
                 </li>
-                <li className="flex items-start gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
-                  <span className="text-[var(--gold)] mt-1">&bull;</span>
+                <li className="flex items-center gap-3 body-text text-[var(--text-muted)]" style={{ fontSize: "0.875rem" }}>
+                  <span className="w-[5px] h-[5px] rounded-full bg-[var(--gold)] flex-shrink-0" />
                   Contract manufacturing &amp; private label capabilities
                 </li>
               </ul>
@@ -538,26 +508,17 @@ function ManufacturingProcess() {
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">MANUFACTURING</span>
-          <h2 className="display-section text-[var(--foreground)]">THE PROCESS</h2>
-          <div className="gold-rule w-12 mt-4 mb-8 md:mb-10" />
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">MANUFACTURING</span>
+          <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10 mt-6 md:mt-8">THE PROCESS</h2>
         </SectionReveal>
 
-        <div className="relative">
-          {/* Tracing beam line — desktop only */}
-          <div className="hidden md:block absolute left-[3px] top-0 bottom-0 w-px bg-[var(--border-subtle)]" />
-          <div
-            className="hidden md:block absolute left-[3px] top-0 w-px h-16 tracing-beam-line"
-            style={{ background: "linear-gradient(to bottom, transparent, var(--gold), var(--gold-light), transparent)" }}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-6 md:gap-y-8 md:pl-6">
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-8">
             {steps.map((step, i) => (
               <SectionReveal key={step.num} delay={i * 0.05}>
-                <div className="flex gap-4 group relative">
-                  {/* Node dot on the beam line — desktop */}
-                  <div className="hidden md:block absolute -left-[27px] top-1 w-2 h-2 rounded-full border border-[var(--gold)] bg-[var(--bg-warm-dark)] group-hover:bg-[var(--gold)] transition-colors duration-300" />
-                  <span className="text-[0.5625rem] font-mono text-[var(--gold)] opacity-60 pt-1">{step.num}</span>
+                <div className="flex items-start gap-4 group">
+                  {/* Hollow gold circle bullet aligned perfectly inline with text */}
+                  <div className="w-2.5 h-2.5 rounded-full border border-[var(--gold)] bg-transparent group-hover:bg-[var(--gold)] transition-colors duration-300 mt-1.5 flex-shrink-0" />
                   <div>
                     <h3
                       className="text-sm font-bold uppercase tracking-[0.05em] text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200"
@@ -595,7 +556,7 @@ function VisualBreak() {
 
       <div className="absolute inset-0 flex items-end p-[var(--gutter)]">
         <div className="flex items-center gap-4 md:gap-6">
-          <div className="gold-rule w-6 md:w-8" />
+
           <span className="label-text text-white text-[0.5625rem] md:text-[0.6875rem]" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
             VILLAGE ANTA, HARYANA &mdash; EST. 2020
           </span>
@@ -636,11 +597,11 @@ function Differentiators() {
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
-          <span className="label-text text-[var(--gold)] mb-3 block">WHY ADMETUS</span>
-          <h2 className="display-section text-[var(--foreground)] text-gradient-gold mb-4">
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">WHY ADMETUS</span>
+          <h2 className="display-section text-[var(--foreground)] text-gradient-gold mb-12 md:mb-16">
             THE ADMETUS<br />DIFFERENCE
           </h2>
-          <div className="gold-rule w-16 mb-8 md:mb-10" />
+
         </SectionReveal>
 
         {/* Asymmetric grid */}
@@ -721,15 +682,15 @@ function Partnership() {
       </div>
 
       {/* Right: Content */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center py-14 md:py-20 lg:py-0 px-[var(--gutter)] lg:pl-[var(--space-16)] relative z-10">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center pt-14 pb-8 md:pt-20 md:pb-10 lg:pt-20 lg:pb-10 px-[var(--gutter)] lg:pl-[var(--space-16)] relative z-10">
         <div className="max-w-lg">
           <SectionReveal direction="right">
             <span className="label-text text-[var(--gold)]">PARTNER WITH US</span>
             <h2 className="mt-4 display-section text-[var(--foreground)] text-gradient-gold">
               YOUR BRAND.<br />OUR SCIENCE.
             </h2>
-            <div className="gold-rule w-12 mt-5 mb-5" />
-            <p className="body-large text-[var(--text-cream)]">
+
+            <p className="body-large text-[var(--text-cream)] mt-6">
               From concept to shelf &mdash; turnkey private label softgel manufacturing.
             </p>
           </SectionReveal>
@@ -737,7 +698,7 @@ function Partnership() {
             <ul className="mt-6 md:mt-8 space-y-3">
               {["Custom formulations", "Flexible MOQs", "Regulatory support", "Export documentation"].map((s) => (
                 <li key={s} className="flex items-center gap-4 body-text text-[var(--text-cream)]">
-                  <span className="w-5 h-px bg-[var(--gold)] flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)] flex-shrink-0" />
                   {s}
                 </li>
               ))}
@@ -768,17 +729,17 @@ function GlobalReach() {
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-black)] relative">
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number">08</span>
+
 
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
           <SectionReveal>
             <div>
-              <span className="label-text text-[var(--gold)] mb-3 block">GLOBAL PRESENCE</span>
-              <h2 className="display-section text-[var(--foreground)]">
+              <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">GLOBAL PRESENCE</span>
+              <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10">
                 BEYOND<br />BORDERS
               </h2>
-              <div className="gold-rule w-16 mt-5 mb-5" />
+
               <p className="body-large text-[var(--text-cream)] max-w-[480px]">
                 Regulatory-compliant export capabilities serving nutraceutical markets worldwide.
               </p>
@@ -791,6 +752,20 @@ function GlobalReach() {
                 Explore Export Capabilities
                 <ArrowRight size={13} />
               </Link>
+
+              <div className="mt-12 md:mt-16 grid grid-cols-2 gap-x-6 gap-y-3 max-w-md">
+                {[
+                  "Middle East", "Africa",
+                  "Southeast Asia", "Latin America",
+                  "Central Asia", "South Asia",
+                  "CIS Countries", "East Africa"
+                ].map((region) => (
+                  <div key={region} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0 rounded-full" />
+                    <span className="text-sm text-[var(--text-cream)]">{region}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </SectionReveal>
 
@@ -808,17 +783,6 @@ function GlobalReach() {
             ))}
           </div>
         </div>
-
-        <SectionReveal delay={0.2}>
-          <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {["Middle East", "Africa", "Southeast Asia", "Latin America", "Central Asia", "South Asia", "CIS Countries", "East Africa"].map((region) => (
-              <div key={region} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0" />
-                <span className="text-sm text-[var(--text-cream)]">{region}</span>
-              </div>
-            ))}
-          </div>
-        </SectionReveal>
       </div>
     </section>
   );
@@ -831,7 +795,7 @@ function TrustQuote() {
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
         <SectionReveal>
           <div className="max-w-[640px]">
-            <div className="gold-rule w-12 md:w-16 mb-8 md:mb-10" />
+
 
             <blockquote>
               <p
@@ -847,7 +811,7 @@ function TrustQuote() {
             </blockquote>
 
             <div className="mt-6 md:mt-8 flex items-center gap-4">
-              <div className="gold-rule w-6" />
+
               <p className="label-text text-[var(--gold)]">
                 ADMETUS LIFESCIENCES
               </p>
@@ -866,19 +830,17 @@ function ClosingCTA() {
       {/* Gold rule above */}
       <div className="absolute top-0 left-[var(--gutter)] right-[var(--gutter)] gold-rule" />
 
-      <span className="hidden lg:block absolute top-20 right-[var(--gutter)] section-number z-10">10</span>
+
 
       <SectionReveal>
         <div className="relative z-10 max-w-[var(--container-max)] w-full px-[var(--gutter)]">
-          <span className="label-text text-[var(--gold)] mb-4 block">LET&apos;S BUILD TOGETHER</span>
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">LET&apos;S BUILD TOGETHER</span>
 
           <h2 className="heading-1 text-[var(--foreground)] uppercase">
             YOUR NEXT MANUFACTURING&nbsp;PARTNER
           </h2>
 
-          <div className="h-px w-12 bg-[var(--gold)]/40 mt-4 mb-5" />
-
-          <p className="text-[var(--text-cream)] max-w-[48ch] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
+          <p className="mt-6 text-[var(--text-cream)] max-w-[48ch] leading-relaxed" style={{ fontSize: "0.9375rem" }}>
             <Link href="/contract-manufacturing/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">Contract manufacturing</Link>,{" "}
             <Link href="/private-label-softgel-manufacturer-india/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">private label solutions</Link>, and{" "}
             <Link href="/export/" className="text-[var(--text-cream)] hover:text-[var(--gold)] underline-offset-4 underline decoration-[var(--gold)]/20 hover:decoration-[var(--gold)]/60 transition-colors">export-ready softgel capsules</Link>{" "}
@@ -906,7 +868,7 @@ function ClosingCTA() {
           </div>
 
           <p className="mt-6 md:mt-8 mono-text text-[0.75rem] text-[var(--text-muted)]">
-            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608
+            admetuslifesciences@gmail.com &nbsp;|&nbsp; +91-7497841608 &nbsp;|&nbsp; +91-9729977795
           </p>
           <p className="mt-1.5 body-text text-[var(--text-muted)] !text-[0.8125rem]">
             Village Anta, Tehsil Safidon, Distt. Jind, Haryana - 126112, India

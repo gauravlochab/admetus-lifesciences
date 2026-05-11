@@ -40,7 +40,7 @@ export default function AboutPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">PRECISION SOFTGEL MANUFACTURING</span>
@@ -61,7 +61,7 @@ export default function AboutPage() {
       {/* Company Story — asymmetric two-column */}
       <section className="py-20 bg-[var(--bg-black)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)] mb-3 block">OUR STORY</span>
@@ -201,7 +201,7 @@ export default function AboutPage() {
       {/* Credibility Statistics */}
       <section className="py-12 border-y border-[var(--border-subtle)]">
         <div className="max-w-[1400px] mx-auto px-[var(--gutter)]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-[var(--gold)]" style={{ fontFamily: "var(--font-display)" }}>05</div>
               <div className="mt-1 text-xs uppercase tracking-[0.1em] text-[var(--text-muted)]">International Certifications</div>
@@ -227,10 +227,9 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <SectionReveal>
-              <div className="value-row p-6 border border-[var(--border-subtle)]">
-                <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">01</span>
-                <span className="label-text text-[var(--gold)] mb-3 block">MISSION</span>
-                <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
+              <div className="value-row p-8 md:p-10 border border-[var(--border-subtle)]">
+                <span className="label-text text-[var(--gold)] mb-4 block">MISSION</span>
+                <h3 className="heading-2 text-[var(--foreground)] uppercase mt-6 mb-5">
                   Our Mission
                 </h3>
                 <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
@@ -242,10 +241,9 @@ export default function AboutPage() {
             </SectionReveal>
 
             <SectionReveal delay={0.08}>
-              <div className="value-row p-6 border border-[var(--border-subtle)]">
-                <span className="mono-text text-[0.5rem] text-[var(--text-muted)] opacity-50 block mb-3">02</span>
-                <span className="label-text text-[var(--gold)] mb-3 block">VISION</span>
-                <h3 className="heading-2 text-[var(--foreground)] uppercase mt-4 mb-3">
+              <div className="value-row p-8 md:p-10 border border-[var(--border-subtle)]">
+                <span className="label-text text-[var(--gold)] mb-4 block">VISION</span>
+                <h3 className="heading-2 text-[var(--foreground)] uppercase mt-6 mb-5">
                   Our Vision
                 </h3>
                 <p className="body-text text-[var(--text-cream)] max-w-[52ch]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
@@ -278,11 +276,10 @@ export default function AboutPage() {
 
             <SectionReveal delay={0.1}>
               <div>
-                <span className="label-text text-[var(--gold)] mb-3 block">SOCIAL CAUSE</span>
-                <h2 className="display-section text-[var(--foreground)] mt-3 mb-4">
+                <span className="label-text text-[var(--gold)] mb-6 block">SOCIAL CAUSE</span>
+                <h2 className="display-section text-[var(--foreground)] mt-4 mb-8">
                   EMPOWERING<br />RURAL WOMEN
                 </h2>
-                <div className="gold-rule w-16 mb-6" />
                 <div className="space-y-5 max-w-[58ch]">
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     Our facility runs on a workforce that is almost entirely

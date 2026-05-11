@@ -78,14 +78,13 @@ export default function ManufacturingPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
+        <div className="absolute inset-0 opacity-45 dark:opacity-80" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Contract Manufacturing & Private Label</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <h1 className="mt-6 md:mt-8 mb-8 md:mb-10 display-section text-[var(--hero-text)]">
             AVAILABLE FOR<br />READY BRANDS
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Available for ready brands, contract manufacturing, and private
             label production. Our <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">Haryana facility</Link> delivers
@@ -206,11 +205,10 @@ export default function ManufacturingPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-6 block">Frequently Asked</span>
+            <h2 className="mt-4 display-section text-[var(--foreground)] mb-12">
               MANUFACTURING Q&amp;A
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">

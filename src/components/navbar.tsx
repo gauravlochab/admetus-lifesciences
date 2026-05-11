@@ -86,7 +86,7 @@ export function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 ${
           isHidden ? "-translate-y-full" : "translate-y-0"
         } ${
-          isScrolled ? "nav-glass" : "bg-transparent"
+          isScrolled ? "bg-[var(--background)] border-b border-[var(--border-subtle)]" : "bg-[var(--background)]"
         }`}
         style={{
           height: "72px",
@@ -96,7 +96,7 @@ export function Navbar() {
       >
         <nav className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)] h-full flex items-center justify-between" aria-label="Main navigation">
           {/* Wordmark */}
-          <Link href="/" className="group flex items-center gap-2 sm:gap-2.5 min-w-0" aria-label="Admetus Lifesciences home">
+          <Link href="/" className="group flex items-center gap-2 sm:gap-2.5 min-w-0 shrink-0" aria-label="Admetus Lifesciences home">
             <img
               src="/images/logo-mark.png"
               alt=""
@@ -105,7 +105,7 @@ export function Navbar() {
               height={40}
             />
             <span
-              className={`tracking-[0.18em] text-base sm:text-lg font-bold truncate ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
+              className={`tracking-[0.18em] text-base sm:text-lg font-bold ${isScrolled ? "text-[var(--foreground)]" : "text-[var(--hero-text)]"}`}
               style={{
                 fontFamily: "var(--font-display), Archivo, sans-serif",
                 transition: "letter-spacing 300ms cubic-bezier(0.23, 1, 0.32, 1)",
@@ -117,7 +117,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden xl:flex items-center gap-0.5">
+          <div className="hidden xl:flex items-center gap-0.5 ml-36 shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -130,7 +130,7 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden xl:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-6 ml-10">
             <ThemeToggle />
             <Link
               href="/contact/"

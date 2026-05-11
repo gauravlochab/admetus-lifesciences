@@ -75,9 +75,9 @@ export default function ContactPage() {
   }
 
   const inputClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
+    "w-full h-12 px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--border-subtle)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
   const inputErrorClass =
-    "w-full px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
+    "w-full h-12 px-4 py-3 bg-[var(--bg-warm-dark)] border border-[var(--destructive)] text-[var(--foreground)] body-text text-base placeholder-[var(--text-muted)]/40 focus:border-[var(--gold)]/40 focus:shadow-[0_0_0_3px_rgba(200,169,81,0.08)] focus:outline-none transition-all duration-200";
 
   function fieldError(field: keyof FormErrors) {
     if (!touched[field] || !errors[field]) return null;
@@ -104,10 +104,9 @@ export default function ContactPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Get in Touch</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <h1 className="mt-3 mb-8 md:mb-10 display-section text-[var(--hero-text)]">
             REQUEST A<br />QUOTE
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             For bulk and export enquiries, contract manufacturing, or private
             label requirements -- share your details and our team will respond&nbsp;promptly.
@@ -156,7 +155,7 @@ export default function ContactPage() {
                       </div>
                     )}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
                       <div>
                         <label htmlFor="contact-name" className="block label-text text-[var(--text-muted)] mb-1.5">Full Name *</label>
                         <input
@@ -280,12 +279,12 @@ export default function ContactPage() {
                         id="contact-message"
                         name="message"
                         rows={4}
-                        className={`${inputClass} resize-none`}
+                        className={`${inputClass} h-auto resize-none`}
                         placeholder="Share your requirements, specifications, or questions..."
                       />
                     </div>
 
-                    <div className="mt-6 flex justify-end">
+                    <div className="mt-6 flex justify-center">
                       <button
                         type="submit"
                         disabled={submitting}
