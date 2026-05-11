@@ -185,9 +185,6 @@ export default function RootLayout({
             }),
           }}
         />
-        <script dangerouslySetInnerHTML={{ __html: `
-          try { if(localStorage.getItem('admetus-theme')==='dark') document.documentElement.classList.remove('light'); } catch(e){}
-        `}} />
         {/* Delight #9: Console easter egg */}
         <script dangerouslySetInnerHTML={{ __html: `
           console.log('%c\\u2726 Admetus Lifesciences', 'font-size: 14px; font-weight: bold; color: #C8A951;');
@@ -195,7 +192,7 @@ export default function RootLayout({
           console.log('%cInterested in partnership? \\u2192 admetuslifesciences@gmail.com', 'font-size: 11px; color: #8A8274;');
         `}} />
       </head>
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300" suppressHydrationWarning>
         {/* Skip to content link for keyboard navigation */}
         <a href="#main-content" className="skip-to-content">
           Skip to main content
