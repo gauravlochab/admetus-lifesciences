@@ -31,7 +31,7 @@ export default function ProductsPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">PRODUCT PORTFOLIO</span>
-          <h1 
+          <h1
             className="display-section text-[var(--hero-text)] mt-6 md:mt-8 mb-8 md:mb-10 leading-snug"
             style={{ wordSpacing: "0.2em", lineHeight: "1.15" }}
           >
@@ -54,11 +54,10 @@ export default function ProductsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 sm:px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-all duration-200 ${
-                  activeCategory === cat
+                className={`px-4 sm:px-7 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none text-[0.6875rem] font-semibold uppercase tracking-[0.12em] border transition-all duration-200 ${activeCategory === cat
                     ? "bg-[var(--gold)] text-[var(--bg-black)] border-[var(--gold)]"
                     : "text-[var(--text-muted)] border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
-                }`}
+                  }`}
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {cat}
@@ -69,10 +68,10 @@ export default function ProductsPage() {
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filtered.map((product, i) => (
-              <SectionReveal key={product.slug} delay={i * 0.04}>
-                <Link href={`/products/${product.slug}/`} className="group block">
+              <SectionReveal key={product.slug} delay={i * 0.04} className="h-full">
+                <Link href={`/products/${product.slug}/`} className="group block h-full">
                   <div
-                    className="relative p-6 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200 flex flex-col justify-end group-hover:-translate-y-px"
+                    className="relative p-6 border border-[var(--border-subtle)] hover:border-[var(--gold)]/15 hover:shadow-[0_0_0_1px_rgba(200,169,81,0.15)] transition-all duration-200 flex flex-col justify-end group-hover:-translate-y-px h-full"
                     style={{
                       background: `linear-gradient(160deg, ${product.color}06, var(--bg-charcoal))`,
                       minHeight: "280px",
