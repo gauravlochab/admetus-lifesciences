@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 
 interface CertItem {
   name: string;
@@ -65,7 +66,7 @@ export function CertMarquee({ items, speed = 40 }: CertMarqueeProps) {
             className="flex items-center gap-3 flex-shrink-0 group"
           >
             <div className="w-8 h-8 flex-shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-              <img src={cert.img} alt={cert.name} className="w-full h-full object-contain" />
+              <Image src={cert.img} alt={cert.name} width={32} height={32} className="w-full h-full object-contain" />
             </div>
             <div>
               <div className="text-[0.625rem] font-bold uppercase tracking-[0.12em] text-[var(--text-cream)] opacity-80 group-hover:opacity-100 group-hover:text-[var(--gold)] transition-all duration-300">
