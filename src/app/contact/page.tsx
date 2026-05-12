@@ -59,7 +59,7 @@ export default function ContactPage() {
     try {
       // Create an AbortController to prevent infinite loading if the network hangs
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      const timeoutId = setTimeout(() => controller.abort(), 25000); // 25 second timeout
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
