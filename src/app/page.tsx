@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { products } from "@/data/products";
 import { SectionReveal } from "@/components/section-reveal";
@@ -37,13 +38,12 @@ function Hero() {
     >
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
-        <img
+        <Image
           src="/images/facility/encapsulation-arbes.jpg"
           alt="ARBES SGX-806P encapsulation machinery at Admetus Lifesciences — precision softgel manufacturing, WHO-GMP certified, Village Anta, Haryana"
-          className="absolute inset-0 w-full h-full object-cover"
-          width={1920}
-          height={1080}
-          loading="eager" fetchPriority="high"
+          className="object-cover"
+          fill
+          priority
           style={{ animation: "ken-burns 25s ease-in-out infinite alternate" }}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,10,10,0.88) 40%, rgba(10,10,10,0.55) 70%, rgba(10,10,10,0.4) 100%)" }} />
@@ -255,13 +255,11 @@ function ScaleMetrics() {
   return (
     <section className="relative py-14 md:py-20 bg-[var(--bg-black)]">
       <div className="absolute inset-0 img-vignette">
-        <img
+        <Image
           src="/images/facility/encapsulation-arbes.jpg"
           alt="ARBES SGX-806P encapsulation machine at Admetus Lifesciences' WHO-GMP certified softgel manufacturing facility"
-          className="w-full h-full object-cover opacity-12"
-          width={1920}
-          height={1080}
-          loading="lazy"
+          className="object-cover opacity-12"
+          fill
         />
       </div>
 
@@ -411,13 +409,11 @@ function CatalogueDownload() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-center">
           <SectionReveal>
             <div className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative max-w-md">
-              <img
+              <Image
                 src="/images/facility/softgels-pexels-topview-jar.jpg"
-                width={1000}
-                height={1250}
                 alt="Premium softgel capsules in jar — Admetus Lifesciences 2026 product catalogue"
-                className="w-full h-full object-cover"
-                loading="lazy"
+                className="object-cover"
+                fill
               />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.55), transparent 50%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
@@ -542,13 +538,11 @@ function VisualBreak() {
   return (
     <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
       <div className="absolute inset-0 img-vignette">
-        <img
+        <Image
           src="/images/facility/building-overview.jpg"
           alt="Admetus Lifesciences manufacturing facility, Village Anta, Tehsil Safidon, Haryana — established 2020"
-          className="w-full h-full object-cover"
-          width={1920}
-          height={1080}
-          loading="lazy"
+          className="object-cover"
+          fill
         />
       </div>
       <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.55), transparent 50%, rgba(10,10,10,0.25))" }} />
@@ -608,7 +602,7 @@ function Differentiators() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <SectionReveal delay={0.05} className="md:col-span-2">
             <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
-              <img src={cards[0].image} alt={cards[0].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
+              <Image src={cards[0].image} alt={cards[0].title} className="object-cover" fill />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 md:p-6 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">01</span>
@@ -620,7 +614,7 @@ function Differentiators() {
 
           <SectionReveal delay={0.1}>
             <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[280px] md:min-h-[380px] flex flex-col justify-end img-warm-overlay">
-              <img src={cards[1].image} alt={cards[1].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
+              <Image src={cards[1].image} alt={cards[1].title} className="object-cover" fill />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">02</span>
@@ -632,7 +626,7 @@ function Differentiators() {
 
           <SectionReveal delay={0.15}>
             <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
-              <img src={cards[2].image} alt={cards[2].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
+              <Image src={cards[2].image} alt={cards[2].title} className="object-cover" fill />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">03</span>
@@ -644,7 +638,7 @@ function Differentiators() {
 
           <SectionReveal delay={0.2} className="md:col-span-2">
             <div className="diff-card border-shimmer relative overflow-hidden border border-[var(--border-subtle)] group min-h-[260px] md:min-h-[340px] flex flex-col justify-end img-warm-overlay">
-              <img src={cards[3].image} alt={cards[3].title} className="absolute inset-0 w-full h-full object-cover" width={600} height={800} loading="lazy" />
+              <Image src={cards[3].image} alt={cards[3].title} className="object-cover" fill />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.88), rgba(10,10,10,0.2) 60%, transparent)" }} />
               <div className="relative p-5 md:p-6 z-10">
                 <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40 block mb-2">04</span>
@@ -670,13 +664,11 @@ function Partnership() {
 
       {/* Left: Image with warm overlay */}
       <div className="hidden lg:flex w-1/2 relative overflow-hidden img-warm-overlay">
-        <img
+        <Image
           src="/images/facility/capsule-drying-women.jpg"
           alt="Nutraceutical research and formulation process for softgel capsule manufacturing"
-          className="absolute inset-0 w-full h-full object-cover"
-          width={1200}
-          height={800}
-          loading="lazy"
+          className="object-cover"
+          fill
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,23,16,0.3), rgba(10,10,10,0.15))" }} />
       </div>
