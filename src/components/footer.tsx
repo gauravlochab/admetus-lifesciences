@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const productLinks = [
   { href: "/catalog/", label: "Catalog (PDFs)" },
@@ -29,7 +30,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16">
           {/* Company Info */}
           <div>
-            <img
+            <Image
               src="/images/logo-horizontal.png"
               alt="Admetus Lifesciences"
               className="h-10 sm:h-12 w-auto max-w-[200px]"
