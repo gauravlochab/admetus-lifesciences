@@ -57,17 +57,26 @@ export default function ContactPage() {
     formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
 
     try {
+      // Create an AbortController to prevent infinite loading if the network hangs
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
+        signal: controller.signal,
       });
+      
+      clearTimeout(timeoutId);
+      
       const data = await res.json();
       if (data.success) {
         setSubmitted(true);
       } else {
         setSubmitError(true);
       }
-    } catch {
+    } catch (err) {
+      console.error("Form submission error:", err);
       setSubmitError(true);
     } finally {
       setSubmitting(false);
