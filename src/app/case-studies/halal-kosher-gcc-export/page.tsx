@@ -38,6 +38,7 @@ const articleJsonLd = {
   author: { "@id": "https://www.admetuslifesciences.com/#organization" },
   datePublished: "2026-04-30",
   dateModified: "2026-04-30",
+  image: "https://www.admetuslifesciences.com/images/facility/gelatin-section.jpg",
   about: [
     "Halal certification for nutraceuticals",
     "Kosher certification for softgel manufacturing",

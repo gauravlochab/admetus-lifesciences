@@ -8,6 +8,25 @@ import { products } from "@/data/products";
 
 const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.admetuslifesciences.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Products",
+      item: "https://www.admetuslifesciences.com/products/",
+    },
+  ],
+};
+
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -17,27 +36,31 @@ export default function ProductsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/packing-area-women.jpg"
-          alt="Precision-formulated softgel capsules on the production line at Admetus Lifesciences — 80+ nutraceutical formulations"
+          src="/images/facility/softgels-hero-golden.jpg"
+          alt="Admetus Lifesciences softgel capsule product portfolio — 80+ nutraceutical and pharmaceutical formulations, contract manufacturing India"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(5,4,3,0.92) 0%, rgba(5,4,3,0.70) 40%, rgba(5,4,3,0.35) 65%, rgba(5,4,3,0.05) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.06), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">Product Portfolio</span>
-          <h1 
-            className="display-section text-[var(--hero-text)] mt-6 md:mt-8 mb-8 md:mb-10 leading-snug"
-            style={{ wordSpacing: "0.2em", lineHeight: "1.15" }}
+          <h1
+            className="display-section mt-6 md:mt-8 mb-8 md:mb-10 leading-snug"
+            style={{ wordSpacing: "0.2em", lineHeight: "1.15", color: "#F7F4EF" }}
           >
             NUTRACEUTICAL<br />SOFTGEL CAPSULES
           </h1>
-          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="body-large max-w-[58ch]" style={{ color: "#E0D8C8" }}>
             Each product in our portfolio is formulated for optimal bioavailability
             and manufactured under strict quality controls. Available for ready
             brands, contract manufacturing, and private&nbsp;label.

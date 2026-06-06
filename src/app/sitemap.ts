@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
+import { blogPosts } from "@/data/blog-posts";
 
 export const dynamic = "force-static";
 
@@ -18,10 +19,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/quality/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/export/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/contact/`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    // Blog index
+    { url: `${BASE}/blog/`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     // SEO landing pages
     { url: `${BASE}/softgel-capsule-manufacturer-haryana/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/private-label-softgel-manufacturer-india/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/contract-manufacturing-vitamin-d3-softgel/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/third-party-softgel-manufacturer-india/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/halal-softgel-manufacturer-india/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/softgel-capsule-exporter-india/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/nutraceutical-manufacturer-india/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/omega-3-softgel-manufacturer-india/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     // Case studies
     { url: `${BASE}/case-studies/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/case-studies/vitamin-d3-stability-challenge/`, lastModified: now, changeFrequency: "yearly", priority: 0.65 },
@@ -35,5 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...productRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}/`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...productRoutes, ...blogRoutes];
 }

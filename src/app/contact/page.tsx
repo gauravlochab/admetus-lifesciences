@@ -40,7 +40,7 @@ export default function ContactPage() {
     setErrors(validate(form));
   }
 
-  // TODO: Replace YOUR_ACCESS_KEY_HERE with Web3Forms access key from https://web3forms.com
+  {/* TODO: Replace with real Web3Forms access key */}
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -54,7 +54,7 @@ export default function ContactPage() {
     setSubmitError(false);
 
     const formData = new FormData(form);
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "");
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -90,6 +90,55 @@ export default function ContactPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact Admetus Lifesciences",
+            url: "https://www.admetuslifesciences.com/contact/",
+            mainEntity: {
+              "@type": "LocalBusiness",
+              "@id": "https://www.admetuslifesciences.com/#localbusiness",
+              name: "Admetus Lifesciences",
+              telephone: "+91-9729977795",
+              email: "admetuslifesciences@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Village Anta, Tehsil Safidon",
+                addressLocality: "Jind",
+                addressRegion: "Haryana",
+                postalCode: "126112",
+                addressCountry: "IN",
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                opens: "09:00",
+                closes: "18:00",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+91-9729977795",
+                contactType: "sales",
+                availableLanguage: ["English", "Hindi"],
+              },
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.admetuslifesciences.com/" },
+            { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.admetuslifesciences.com/contact/" },
+          ],
+        }) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
@@ -140,8 +189,8 @@ export default function ContactPage() {
                     className="p-5 sm:p-8 bg-[var(--bg-charcoal)] border border-[var(--border-subtle)]"
                     noValidate
                   >
-                    {/* TODO: Replace YOUR_ACCESS_KEY_HERE with Web3Forms access key from https://web3forms.com */}
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                    {/* TODO: Replace with real Web3Forms access key */}
+                    <input type="hidden" name="access_key" value="" />
                     <input type="hidden" name="from_name" value="Admetus Website" />
                     <input type="hidden" name="subject" value="New Enquiry from Admetus Lifesciences Website" />
                     <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />

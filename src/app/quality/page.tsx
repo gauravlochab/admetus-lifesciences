@@ -67,25 +67,45 @@ export default function QualityPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.admetuslifesciences.com/" },
+            { "@type": "ListItem", position: 2, name: "Quality", item: "https://www.admetuslifesciences.com/quality/" },
+          ],
+        }) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Quality Assurance — Admetus Lifesciences",
+          speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".body-large"] },
+        }) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/medicine-mixer.jpg"
-          alt="Medicine mixing equipment at Admetus Lifesciences — precision quality control at every stage of softgel manufacturing"
+          src="/images/facility/softgels-pile-cinematic.jpg"
+          alt="Pharmaceutical-grade softgel capsules — every batch at Admetus Lifesciences meets strict quality standards, WHO-GMP certified"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--hero-grad-start) 0%, var(--hero-grad-end) 40%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(5,4,3,0.92) 0%, rgba(5,4,3,0.70) 40%, rgba(5,4,3,0.35) 65%, rgba(5,4,3,0.05) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.06), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Quality & Certifications</span>
-          <h1 className="mt-8 display-section text-[var(--hero-text)]">
+          <h1 className="mt-8 display-section" style={{ color: "#F7F4EF" }}>
             UNCOMPROMISING<br />QUALITY STANDARDS
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="body-large max-w-[58ch]" style={{ color: "#E0D8C8" }}>
             Every softgel capsule manufactured at our{" "}
             <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">WHO-GMP certified Haryana facility</Link>{" "}
             undergoes rigorous quality control -- from raw material testing to
@@ -121,7 +141,9 @@ export default function QualityPage() {
           <SectionReveal delay={0.2}>
             <div className="py-6 border-t border-dashed border-[var(--border-subtle)]">
               <p className="body-text text-[var(--text-muted)]">
-                Additional certifications and documentation available on&nbsp;request.
+                Our facility is certified by{" "}
+                <a href="https://www.fssai.gov.in/" target="_blank" rel="noopener noreferrer" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline underline-offset-2">FSSAI</a>
+                {" "}and other regulatory bodies. Additional certifications and documentation available on&nbsp;request.
               </p>
             </div>
           </SectionReveal>

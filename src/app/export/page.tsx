@@ -48,6 +48,25 @@ const faqs = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.admetuslifesciences.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Export",
+      item: "https://www.admetuslifesciences.com/export/",
+    },
+  ],
+};
+
 export default function ExportPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -63,26 +82,30 @@ export default function ExportPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
-          src="/images/facility/softgels-pexels-topview-jar.jpg"
+          src="/images/facility/softgels-hero-golden.jpg"
           alt="Premium softgel capsules exported from India to global markets — Admetus Lifesciences, WHO-GMP certified manufacturer"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0 opacity-60" style={{ background: "linear-gradient(to top, var(--hero-grad-start), var(--hero-grad-mid) 50%, var(--hero-grad-end))" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(5,4,3,0.92) 0%, rgba(5,4,3,0.70) 40%, rgba(5,4,3,0.35) 65%, rgba(5,4,3,0.05) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.06), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">International Markets</span>
-          <h1 className="mt-8 display-section text-[var(--hero-text)]">
+          <h1 className="mt-8 display-section" style={{ color: "#F7F4EF" }}>
             FROM INDIA<br />TO THE&nbsp;WORLD
           </h1>
-          <p className="mt-8 body-large text-[var(--text-cream)] max-w-[58ch]">
+          <p className="mt-8 body-large max-w-[58ch]" style={{ color: "#E0D8C8" }}>
             Admetus Lifesciences serves international buyers worldwide --
             importers and distributors seeking a reliable, quality-focused{" "}
             <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">softgel manufacturer in Haryana, India</Link>{" "}

@@ -38,8 +38,8 @@ function Hero() {
       {/* Background image with warm overlay */}
       <div className="absolute inset-0 img-warm-overlay">
         <img
-          src="/images/facility/encapsulation-arbes.jpg"
-          alt="ARBES SGX-806P encapsulation machinery at Admetus Lifesciences — precision softgel manufacturing, WHO-GMP certified, Village Anta, Haryana"
+          src="/images/facility/softgels-hero-golden.jpg"
+          alt="Premium golden softgel capsules — WHO-GMP certified nutraceutical manufacturing by Admetus Lifesciences, Village Anta, Haryana"
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={1080}
@@ -222,7 +222,7 @@ function Manifesto() {
   }, []);
 
   const lines = [
-    "We don’t just manufacture softgel capsules.",
+    "We don't just manufacture softgel capsules.",
     "We engineer precision at molecular scale.",
     "Every capsule carries a commitment to human health.",
   ];
@@ -442,10 +442,10 @@ function CatalogueDownload() {
           <SectionReveal>
             <div className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden border border-[var(--border-subtle)] img-warm-overlay relative max-w-md">
               <img
-                src="/images/facility/softgels-pexels-topview-jar.jpg"
+                src="/images/facility/softgels-pile-cinematic.jpg"
                 width={1000}
                 height={1250}
-                alt="Premium softgel capsules in jar — Admetus Lifesciences 2026 product catalogue"
+                alt="Admetus Lifesciences softgel capsule range — 2026 product catalogue, nutraceutical contract manufacturing India"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -576,34 +576,6 @@ function ManufacturingProcess() {
   );
 }
 
-/* ═══ Section 7: VISUAL BREAK (static) ═══ */
-function VisualBreak() {
-  return (
-    <section className="relative h-[35vh] md:h-[50vh] overflow-hidden">
-      <div className="absolute inset-0 img-vignette">
-        <img
-          src="/images/facility/building-overview.jpg"
-          alt="Admetus Lifesciences manufacturing facility, Village Anta, Tehsil Safidon, Haryana — established 2020"
-          className="w-full h-full object-cover"
-          width={1920}
-          height={1080}
-          loading="lazy"
-        />
-      </div>
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,0.55), transparent 50%, rgba(10,10,10,0.25))" }} />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.05), transparent 60%)" }} />
-
-      <div className="absolute inset-0 flex items-end p-[var(--gutter)]">
-        <div className="flex items-center gap-4 md:gap-6">
-          <div className="gold-rule w-6 md:w-8" />
-          <span className="label-text text-white text-[0.5625rem] md:text-[0.6875rem]" style={{ textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}>
-            VILLAGE ANTA, HARYANA &mdash; EST. 2020
-          </span>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ═══ Section 8: DIFFERENTIATORS ═══ */
 function Differentiators() {
@@ -620,7 +592,7 @@ function Differentiators() {
     },
     {
       title: "Globally Certified",
-      body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world’s strictest standards.",
+      body: "FSSAI, GMP, HACCP, Halal, and WHO-GMP certified. Meeting the world's strictest standards.",
       image: "/images/facility/packing-area-women.jpg",
     },
     {
@@ -859,6 +831,79 @@ function TrustQuote() {
   );
 }
 
+/* ═══ HOMEPAGE FAQ ═══ */
+function HomepageFAQ() {
+  const faqItems = [
+    {
+      question: "What types of softgel capsules does Admetus Lifesciences manufacture?",
+      answer: "Admetus Lifesciences manufactures 80+ nutraceutical softgel capsule formulations including Vitamin D3 (Cholecalciferol 60,000 IU), Omega-3 Fish Oil with Vitamin E, Krill Oil, Calcitriol + Calcium + K2-7, Glutathione + ALA, Ginseng + Astaxanthin multivitamin, Lycopene + Grape Seed, Isoflavones (women’s health), Ginkgo + Tribulus (men’s vitality), and Nigella Sativa (Kalonji). Custom formulations are developed on request.",
+    },
+    {
+      question: "What certifications does the Admetus manufacturing facility hold?",
+      answer: "Our facility in Village Anta, Tehsil Safidon, Jind, Haryana holds five international certifications: FSSAI (Food Safety and Standards Authority of India), GMP (Good Manufacturing Practice), HACCP (Hazard Analysis and Critical Control Points), Halal certification, and WHO-GMP (World Health Organization Good Manufacturing Practice). Certificate copies are available for qualified business inquiries.",
+    },
+    {
+      question: "What is the minimum order quantity for softgel contract manufacturing?",
+      answer: "Minimum order quantities are flexible based on formulation, packaging format, and order configuration. We support pilot batch runs for new brands testing the market as well as full-scale commercial production for established distributors. Specific MOQ for your requirements is confirmed within 48 hours of inquiry.",
+    },
+    {
+      question: "Which countries does Admetus export softgel capsules to?",
+      answer: "We export to multiple international regions including the Middle East and GCC (UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain), Africa (Kenya, Nigeria, Ghana, Tanzania, South Africa), Southeast Asia (Malaysia, Indonesia, Philippines, Vietnam), Central Asia and CIS countries (Kazakhstan, Uzbekistan, Tajikistan), Latin America (Mexico, Colombia, Bolivia), and South Asia (Nepal, Sri Lanka, Bangladesh).",
+    },
+    {
+      question: "What is the typical lead time from order to dispatch?",
+      answer: "Standard lead time is 30-45 days from confirmed order, covering raw material sourcing, encapsulation on our ARBES SGX-806P line, controlled-environment drying, 100% batch quality inspection, and Elmach EPI 2000 blister packaging. Custom formulations requiring stability validation may need additional time. Specific timelines are committed in the proforma invoice.",
+    },
+  ];
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  const speakableJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Admetus Lifesciences — Precision Softgel Capsule Manufacturer",
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".body-large"] },
+  };
+
+  return (
+    <section className="py-16 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
+
+      <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+        <span className="label-text text-[var(--gold)]">FREQUENTLY ASKED</span>
+        <h2 className="mt-3 display-section text-[var(--foreground)]" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>ABOUT ADMETUS</h2>
+        <div className="gold-rule w-16 mb-10" />
+
+        {faqItems.map((item, i) => (
+          <details key={i} className="group py-6 border-t border-[var(--border-subtle)] last:border-b">
+            <summary className="flex items-start gap-5 cursor-pointer list-none">
+              <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="heading-2 text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200" style={{ fontSize: "clamp(1rem, 1.6vw, 1.25rem)" }}>
+                {item.question}
+              </h3>
+            </summary>
+            <p className="mt-4 ml-12 body-text text-[var(--text-muted)] max-w-[68ch]">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ═══ Section 12: CLOSING CTA ═══ */
 function ClosingCTA() {
   return (
@@ -929,11 +974,11 @@ export default function Home() {
       <ProductShowcase />
       <CatalogueDownload />
       <ManufacturingProcess />
-      <VisualBreak />
       <Differentiators />
       <Partnership />
       <GlobalReach />
       <TrustQuote />
+      <HomepageFAQ />
       <ClosingCTA />
     </>
   );

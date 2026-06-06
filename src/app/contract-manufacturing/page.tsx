@@ -59,6 +59,25 @@ const faqs = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.admetuslifesciences.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contract Manufacturing",
+      item: "https://www.admetuslifesciences.com/contract-manufacturing/",
+    },
+  ],
+};
+
 export default function ContractManufacturingPage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -72,6 +91,10 @@ export default function ContractManufacturingPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -127,6 +150,67 @@ export default function ContractManufacturingPage() {
                 </div>
               </SectionReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Manufacturing Models Comparison Table */}
+      <section className="py-16 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <span className="label-text text-[var(--gold)] mb-3 block">COMPARISON</span>
+          <h2 className="display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>
+            CONTRACT VS PRIVATE LABEL VS THIRD&nbsp;PARTY
+          </h2>
+          <div className="gold-rule w-16 mb-8" />
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <th scope="col" className="py-4 pr-6 label-text text-[var(--gold)]">Feature</th>
+                  <th scope="col" className="py-4 pr-6 label-text text-[var(--gold)]">Contract Manufacturing</th>
+                  <th scope="col" className="py-4 pr-6 label-text text-[var(--gold)]">Private Label</th>
+                  <th scope="col" className="py-4 label-text text-[var(--gold)]">Third Party</th>
+                </tr>
+              </thead>
+              <tbody className="body-text text-[var(--text-cream)]">
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <td className="py-4 pr-6 text-[var(--text-muted)]">Formulation</td>
+                  <td className="py-4 pr-6">Your formula or ours</td>
+                  <td className="py-4 pr-6">Our ready formulations</td>
+                  <td className="py-4">Our ready formulations</td>
+                </tr>
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <td className="py-4 pr-6 text-[var(--text-muted)]">Branding</td>
+                  <td className="py-4 pr-6">Your brand</td>
+                  <td className="py-4 pr-6">Your brand</td>
+                  <td className="py-4">Our brand, your distribution</td>
+                </tr>
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <td className="py-4 pr-6 text-[var(--text-muted)]">MOQ</td>
+                  <td className="py-4 pr-6">Flexible, higher for custom</td>
+                  <td className="py-4 pr-6">Flexible</td>
+                  <td className="py-4">Flexible</td>
+                </tr>
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <td className="py-4 pr-6 text-[var(--text-muted)]">Lead Time</td>
+                  <td className="py-4 pr-6">30-45 days (custom may add)</td>
+                  <td className="py-4 pr-6">30-45 days</td>
+                  <td className="py-4">30-45 days</td>
+                </tr>
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <td className="py-4 pr-6 text-[var(--text-muted)]">Documentation</td>
+                  <td className="py-4 pr-6">Full COA, batch records</td>
+                  <td className="py-4 pr-6">Full COA, batch records</td>
+                  <td className="py-4">Full COA, batch records</td>
+                </tr>
+                <tr>
+                  <td className="py-4 pr-6 text-[var(--text-muted)]">Best For</td>
+                  <td className="py-4 pr-6">Established brands with proprietary formulas</td>
+                  <td className="py-4 pr-6">New brands launching quickly</td>
+                  <td className="py-4">PCD pharma franchise distributors</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

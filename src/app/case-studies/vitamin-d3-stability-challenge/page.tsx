@@ -38,6 +38,7 @@ const articleJsonLd = {
   author: { "@id": "https://www.admetuslifesciences.com/#organization" },
   datePublished: "2026-04-30",
   dateModified: "2026-04-30",
+  image: "https://www.admetuslifesciences.com/images/facility/elmach-blister-machine.jpg",
   about: [
     "Vitamin D3 softgel manufacturing",
     "Cholecalciferol stability testing",

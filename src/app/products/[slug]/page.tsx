@@ -43,6 +43,7 @@ export default async function ProductDetailPage({
     description: `${product.name} — ${product.tagline}. ${product.composition}.`,
     category: product.category,
     url: `https://www.admetuslifesciences.com/products/${product.slug}/`,
+    image: `https://www.admetuslifesciences.com/images/facility/colour-mixer-gelatin.jpg`,
     brand: {
       "@type": "Brand",
       name: "Admetus Lifesciences",
@@ -70,6 +71,17 @@ export default async function ProductDetailPage({
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Brand owners, distributors, importers — contract manufacturing and private label",
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "INR",
+      price: "0",
+      priceValidUntil: "2027-12-31",
+      url: `https://www.admetuslifesciences.com/products/${product.slug}/`,
+      seller: {
+        "@id": "https://www.admetuslifesciences.com/#organization",
+      },
     },
   };
 

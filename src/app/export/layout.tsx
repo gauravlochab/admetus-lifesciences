@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Halal Certified Softgel Manufacturer for Export — India",
+  title: "Softgel Capsule Exporter India — Halal Certified, WHO-GMP",
   description:
-    "Halal, FSSAI, WHO-GMP certified softgel capsule manufacturer in India serving GCC, ASEAN, USA, Europe markets. Full export documentation — COA, FSC, country-specific regulatory paperwork.",
+    "Leading softgel capsule exporter from India — Halal, FSSAI, WHO-GMP certified. Serving GCC, Middle East, Africa, ASEAN, Latin America & CIS markets. Nutraceutical export with full documentation — COA, FSC, Free Sale Certificate, country-specific regulatory paperwork.",
   alternates: {
     canonical: "https://www.admetuslifesciences.com/export/",
+  },
+  openGraph: {
+    title: "Softgel Capsule Exporter India — Halal Certified, WHO-GMP",
+    description:
+      "Leading softgel capsule exporter from India — Halal, FSSAI, WHO-GMP certified. Serving GCC, Middle East, Africa, ASEAN, Latin America & CIS markets. Nutraceutical export with full documentation — COA, FSC, Free Sale Certificate, country-specific regulatory paperwork.",
+    url: "https://www.admetuslifesciences.com/export/",
   },
 };
 

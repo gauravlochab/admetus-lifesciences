@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Softgel Manufacturing Facility in Jind, Haryana — ARBES SGX-806P",
+  title: "Softgel Manufacturing Facility in Jind, Haryana — ARBES SGX-806P | WHO-GMP",
   description:
-    "WHO-GMP certified softgel manufacturing facility in Jind, Haryana — ARBES SGX-806P encapsulation, Elmach EPI 2000 blister packing, in-house QC laboratory, 7-stage production process from raw material to dispatch.",
+    "WHO-GMP certified softgel & soft gelatin capsule manufacturing facility in Jind, Haryana, India — ARBES SGX-806P encapsulation, Elmach EPI 2000 blister packing, in-house QC laboratory, 7-stage production process. Third party & contract manufacturing available.",
   alternates: {
     canonical: "https://www.admetuslifesciences.com/manufacturing/",
+  },
+  openGraph: {
+    title: "Softgel Manufacturing Facility in Jind, Haryana — ARBES SGX-806P | WHO-GMP",
+    description:
+      "WHO-GMP certified softgel & soft gelatin capsule manufacturing facility in Jind, Haryana, India — ARBES SGX-806P encapsulation, Elmach EPI 2000 blister packing, in-house QC laboratory, 7-stage production process. Third party & contract manufacturing available.",
+    url: "https://www.admetuslifesciences.com/manufacturing/",
   },
 };
 

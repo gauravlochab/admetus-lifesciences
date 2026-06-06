@@ -14,11 +14,17 @@ const productLinks = [
 
 const serviceLinks = [
   { href: "/contract-manufacturing/", label: "Contract Manufacturing" },
+  { href: "/third-party-softgel-manufacturer-india/", label: "Third Party Manufacturing" },
   { href: "/private-label-softgel-manufacturer-india/", label: "Private Label India" },
+  { href: "/nutraceutical-manufacturer-india/", label: "Nutraceutical Manufacturer" },
+  { href: "/halal-softgel-manufacturer-india/", label: "Halal Softgel Manufacturer" },
+  { href: "/omega-3-softgel-manufacturer-india/", label: "Omega-3 Manufacturer" },
+  { href: "/softgel-capsule-exporter-india/", label: "Softgel Exporter India" },
   { href: "/contract-manufacturing-vitamin-d3-softgel/", label: "Vitamin D3 Manufacturing" },
   { href: "/softgel-capsule-manufacturer-haryana/", label: "Haryana Facility" },
   { href: "/export/", label: "Export" },
   { href: "/case-studies/", label: "Case Studies" },
+  { href: "/blog/", label: "Blog & Insights" },
   { href: "/contact/", label: "Request a Quote" },
 ];
 

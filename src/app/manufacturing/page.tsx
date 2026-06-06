@@ -62,11 +62,54 @@ export default function ManufacturingPage() {
     })),
   };
 
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How Softgel Capsules Are Manufactured at Admetus Lifesciences",
+    description: "7-stage precision softgel capsule manufacturing process from raw material sourcing to final dispatch.",
+    totalTime: "P45D",
+    step: processSteps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.title,
+      text: s.desc,
+    })),
+  };
+
+  const speakableJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Softgel Manufacturing Facility",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".body-large"],
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.admetuslifesciences.com/" },
+            { "@type": "ListItem", position: 2, name: "Manufacturing", item: "https://www.admetuslifesciences.com/manufacturing/" },
+          ],
+        }) }}
       />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
@@ -126,6 +169,11 @@ export default function ManufacturingPage() {
             <h2 className="mt-8 display-section text-[var(--foreground)] mb-10">
               FROM RAW MATERIAL TO&nbsp;DISPATCH
             </h2>
+            <p className="body-text text-[var(--text-cream)] max-w-[58ch] mb-6">
+              Our manufacturing process follows{" "}
+              <a href="https://www.who.int/health-topics/health-products-policy-and-standards" target="_blank" rel="noopener noreferrer" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline underline-offset-2">WHO manufacturing standards</a>{" "}
+              at every stage, ensuring consistency, traceability, and quality from raw material intake to final dispatch.
+            </p>
           </SectionReveal>
 
           <div className="space-y-0">

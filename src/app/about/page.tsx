@@ -24,11 +24,73 @@ export default function AboutPage() {
     ],
   };
 
+  const aboutFaqItems = [
+    {
+      question: "When was Admetus Lifesciences founded?",
+      answer: "Admetus Lifesciences was founded in 2020 by Mr. Anudeep Deswal with a vision to build a precision softgel capsule manufacturing facility in Haryana, India that meets international quality standards while creating meaningful employment for women in surrounding rural villages.",
+    },
+    {
+      question: "Who is the founder of Admetus Lifesciences?",
+      answer: "Anudeep Deswal is the founder and managing director of Admetus Lifesciences. Under his leadership, the company has built a portfolio of 80+ nutraceutical softgel formulations, achieved FSSAI, GMP, HACCP, Halal, and WHO-GMP certifications, and established the facility as a contract manufacturing partner for brand owners, distributors, and importers across India and international markets.",
+    },
+    {
+      question: "Where is the Admetus Lifesciences manufacturing facility?",
+      answer: "The Admetus Lifesciences manufacturing facility is located at Village Anta, Tehsil Safidon, District Jind, Haryana 126112, India. The facility is purpose-built for precision nutraceutical manufacturing, equipped with ARBES SGX-806P encapsulation and Elmach EPI 2000 blister packaging lines.",
+    },
+    {
+      question: "What certifications does Admetus Lifesciences hold?",
+      answer: "Admetus Lifesciences holds five international certifications: FSSAI (Food Safety and Standards Authority of India), GMP (Good Manufacturing Practice), HACCP (Hazard Analysis and Critical Control Points), Halal certification, and WHO-GMP (World Health Organization Good Manufacturing Practice). These certifications ensure every product meets the highest international quality and safety standards.",
+    },
+    {
+      question: "What is Admetus Lifesciences' social mission?",
+      answer: "Admetus Lifesciences employs a 90%+ women workforce from surrounding villages of Safidon and Village Anta in Haryana. The company believes quality manufacturing and rural development are interconnected goals, creating skilled employment opportunities for rural women in encapsulation, quality control, packing, and dispatch operations.",
+    },
+  ];
+
+  const aboutFaqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: aboutFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  const aboutSpeakableJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "About Admetus Lifesciences — Our Story, Mission & Team",
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".body-large"] },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(founderJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutFaqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.admetuslifesciences.com/" },
+            { "@type": "ListItem", position: 2, name: "About", item: "https://www.admetuslifesciences.com/about/" },
+          ],
+        }) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSpeakableJsonLd) }}
       />
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
@@ -85,7 +147,9 @@ export default function AboutPage() {
                   <p className="body-text text-[var(--text-cream)]" style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}>
                     We place great emphasis on quality assurance and regulatory
                     compliance. Our team follows stringent quality control processes
-                    at every stage of manufacturing, ensuring maximum therapeutic
+                    at every stage of manufacturing, adhering to{" "}
+                    <a href="https://www.who.int/publications/i/item/who-good-manufacturing-practices" target="_blank" rel="noopener noreferrer" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline underline-offset-2">WHO Good Manufacturing Practices</a>{" "}
+                    and ensuring maximum therapeutic
                     effectiveness in every capsule. Every batch meets international
                     standards and customer expectations — from raw material sourcing
                     to final&nbsp;dispatch.
@@ -372,6 +436,29 @@ export default function AboutPage() {
               </SectionReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* About FAQ */}
+      <section className="py-16 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <span className="label-text text-[var(--gold)]">FREQUENTLY ASKED</span>
+          <h2 className="mt-3 display-section text-[var(--foreground)]" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>ABOUT OUR COMPANY</h2>
+          <div className="gold-rule w-16 mb-10" />
+
+          {aboutFaqItems.map((item, i) => (
+            <details key={i} className="group py-6 border-t border-[var(--border-subtle)] last:border-b">
+              <summary className="flex items-start gap-5 cursor-pointer list-none">
+                <span className="mono-text text-[0.6875rem] font-bold text-[var(--gold)] shrink-0 mt-1">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="heading-2 text-[var(--foreground)] group-hover:text-[var(--gold)] transition-colors duration-200" style={{ fontSize: "clamp(1rem, 1.6vw, 1.25rem)" }}>
+                  {item.question}
+                </h3>
+              </summary>
+              <p className="mt-4 ml-12 body-text text-[var(--text-muted)] max-w-[68ch]">
+                {item.answer}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

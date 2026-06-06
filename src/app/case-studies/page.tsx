@@ -39,9 +39,32 @@ const cases = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.admetuslifesciences.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Case Studies",
+      item: "https://www.admetuslifesciences.com/case-studies/",
+    },
+  ],
+};
+
 export default function CaseStudiesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
