@@ -97,15 +97,14 @@ export default function QualityPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(5,4,3,0.92) 0%, rgba(5,4,3,0.70) 40%, rgba(5,4,3,0.35) 65%, rgba(5,4,3,0.05) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.06), transparent 60%)" }} />
+        <div className="absolute inset-0 opacity-45 dark:opacity-80" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Quality & Certifications</span>
-          <h1 className="mt-8 display-section" style={{ color: "#F7F4EF" }}>
+          <h1 className="mt-8 mb-8 md:mb-10 display-section text-[var(--hero-text)]">
             UNCOMPROMISING<br />QUALITY STANDARDS
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
-          <p className="body-large max-w-[58ch]" style={{ color: "#E0D8C8" }}>
+          <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             Every softgel capsule manufactured at our{" "}
             <Link href="/softgel-capsule-manufacturer-haryana/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">WHO-GMP certified Haryana facility</Link>{" "}
             undergoes rigorous quality control -- from raw material testing to
@@ -205,11 +204,10 @@ export default function QualityPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-6 block">Frequently Asked</span>
+            <h2 className="mt-4 display-section text-[var(--foreground)] mb-12">
               QUALITY &amp; CERTIFICATIONS Q&amp;A
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
@@ -241,7 +239,7 @@ export default function QualityPage() {
       <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-8" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>
               REQUEST QUALITY DOCUMENTATION
             </h2>
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">

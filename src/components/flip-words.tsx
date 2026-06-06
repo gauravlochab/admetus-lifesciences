@@ -12,14 +12,20 @@ export function FlipWords({ words, interval = 2500, className = "" }: FlipWordsP
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
     const timer = setInterval(() => {
       setIsExiting(true);
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setCurrentIndex((i) => (i + 1) % words.length);
         setIsExiting(false);
       }, 300);
     }, interval);
-    return () => clearInterval(timer);
+
+    return () => {
+      clearInterval(timer);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [words, interval]);
 
   return (

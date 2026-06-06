@@ -6,6 +6,7 @@ import { motion, useMotionValue, useSpring } from "motion/react";
 type CursorVariant = "default" | "pointer" | "text";
 
 export function CustomCursor() {
+  const [mounted, setMounted] = useState(false);
   const [variant, setVariant] = useState<CursorVariant>("default");
   const [isVisible, setIsVisible] = useState(false);
 
@@ -17,6 +18,8 @@ export function CustomCursor() {
   const cursorY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
     // Only activate on desktop (>= 1024px)
     if (window.innerWidth < 1024) return;
 
@@ -72,8 +75,8 @@ export function CustomCursor() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Don't render on server or mobile
-  if (typeof window !== "undefined" && window.innerWidth < 1024) return null;
+  // Don't render on server, mobile, or before mounting
+  if (!mounted || (typeof window !== "undefined" && window.innerWidth < 1024)) return null;
 
   const getDotStyles = () => {
     switch (variant) {
@@ -81,7 +84,7 @@ export function CustomCursor() {
         return {
           width: 32,
           height: 32,
-          backgroundColor: "transparent",
+          backgroundColor: "rgba(0, 0, 0, 0)",
           border: "1.5px solid var(--gold)",
           borderRadius: "50%",
           x: "-50%",

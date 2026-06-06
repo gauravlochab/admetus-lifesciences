@@ -113,10 +113,9 @@ export default function ContractManufacturingPage() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">Contract Manufacturing</span>
-          <h1 className="mt-3 display-section text-[var(--hero-text)]">
+          <h1 className="mt-6 md:mt-8 mb-8 md:mb-10 display-section text-[var(--hero-text)]">
             YOUR BRAND.<br />OUR&nbsp;MANUFACTURING.
           </h1>
-          <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
             From custom formulation to <Link href="/private-label-softgel-manufacturer-india/" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">private label packaging</Link>{" "}
             -- Admetus Lifesciences is your end-to-end softgel capsule
@@ -129,11 +128,10 @@ export default function ContractManufacturingPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)] mb-3 block">SERVICES</span>
-            <h2 className="display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-6 md:mb-8 block">SERVICES</span>
+            <h2 className="display-section text-[var(--foreground)] mb-10 md:mb-12">
               WHAT WE&nbsp;OFFER
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
@@ -222,10 +220,9 @@ export default function ContractManufacturingPage() {
             <SectionReveal>
               <div>
                 <span className="label-text text-[var(--gold)]">Partnership Advantage</span>
-                <h2 className="mt-3 display-section text-[var(--foreground)] mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
+                <h2 className="mt-6 md:mt-8 display-section text-[var(--foreground)] mb-8 md:mb-10" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                   WHY MANUFACTURE WITH&nbsp;US
                 </h2>
-                <div className="gold-rule w-12 mb-8" />
                 <ul className="space-y-3">
                   {advantages.map((adv) => (
                     <li key={adv} className="flex items-start gap-4 body-text text-[var(--text-cream)]">
@@ -269,11 +266,10 @@ export default function ContractManufacturingPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-6 block">Frequently Asked</span>
+            <h2 className="mt-4 display-section text-[var(--foreground)] mb-12">
               QUESTIONS &amp; ANSWERS
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
@@ -305,10 +301,9 @@ export default function ContractManufacturingPage() {
       <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>
               START YOUR MANUFACTURING PARTNERSHIP
             </h2>
-            <div className="gold-rule w-12 mt-4 mb-4" />
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">
               Share your requirements and our team will respond with a detailed
               proposal within 48&nbsp;hours.

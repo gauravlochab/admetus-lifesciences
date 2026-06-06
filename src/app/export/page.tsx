@@ -98,8 +98,8 @@ export default function ExportPage() {
           height={1080}
           loading="eager"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(5,4,3,0.92) 0%, rgba(5,4,3,0.70) 40%, rgba(5,4,3,0.35) 65%, rgba(5,4,3,0.05) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.06), transparent 60%)" }} />
+        <div className="absolute inset-0 opacity-45 dark:opacity-80" style={{ background: "linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 50%, var(--hero-overlay-top))" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(200,169,81,0.04), transparent 60%)" }} />
         <div className="relative mx-auto max-w-[var(--container-max)] w-full px-[var(--gutter)]">
           <span className="label-text text-[var(--gold)]">International Markets</span>
           <h1 className="mt-8 display-section" style={{ color: "#F7F4EF" }}>
@@ -202,11 +202,10 @@ export default function ExportPage() {
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <span className="label-text text-[var(--gold)]">Frequently Asked</span>
-            <h2 className="mt-3 display-section text-[var(--foreground)] mb-4">
+            <span className="label-text text-[var(--gold)] mb-6 block">Frequently Asked</span>
+            <h2 className="mt-4 display-section text-[var(--foreground)] mb-12">
               EXPORT &amp; INTERNATIONAL Q&amp;A
             </h2>
-            <div className="gold-rule w-16 mb-10" />
           </SectionReveal>
 
           <div className="space-y-0">
@@ -238,7 +237,7 @@ export default function ExportPage() {
       <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
-            <h2 className="display-section text-[var(--foreground)]">
+            <h2 className="display-section text-[var(--foreground)] mb-8" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>
               START AN EXPORT&nbsp;ENQUIRY
             </h2>
             <p className="body-text text-[var(--text-muted)] max-w-[58ch]">

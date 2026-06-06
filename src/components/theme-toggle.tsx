@@ -4,13 +4,16 @@ import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export function ThemeToggle() {
+  const [mounted, setMounted] = useState(false);
   const [isLight, setIsLight] = useState(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
     const saved = localStorage.getItem("admetus-theme");
     if (saved === "dark") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsLight(false);
-      document.documentElement.classList.remove("light");
     }
   }, []);
 
@@ -24,6 +27,10 @@ export function ThemeToggle() {
       document.documentElement.classList.remove("light");
       localStorage.setItem("admetus-theme", "dark");
     }
+  }
+
+  if (!mounted) {
+    return <div className="w-[31px] h-[31px]" />;
   }
 
   return (
