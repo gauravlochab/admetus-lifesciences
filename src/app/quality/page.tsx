@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Can I audit your manufacturing facility?",
-    a: "Yes — we welcome scheduled facility audits from prospective partners, distributors, and certification bodies. Visits are typically arranged within 1–2 weeks of an audit request. Contact us at admetuslifesciences@gmail.com to schedule.",
+    a: "Yes — we welcome scheduled facility audits from prospective partners, distributors, and certification bodies. Visits are typically arranged within 1–2 weeks of an audit request. Contact us at team@admetuslifesciences.com to schedule.",
   },
   {
     q: "What certifications does Admetus Lifesciences hold?",

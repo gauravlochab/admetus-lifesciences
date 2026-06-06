@@ -132,7 +132,7 @@ export default function RootLayout({
                     "Precision softgel capsule manufacturer in Haryana, India. Contract manufacturing, private label, and export-ready nutraceutical softgel capsules. FSSAI, GMP, HACCP, Halal, WHO-GMP certified.",
                   foundingDate: "2020",
                   founder: { "@type": "Person", name: "Anudeep Deswal" },
-                  email: "admetuslifesciences@gmail.com",
+                  email: "team@admetuslifesciences.com",
                   telephone: "+91-7497841608",
                   contactPoint: {
                     "@type": "ContactPoint",
@@ -215,7 +215,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `
           console.log('%c\\u2726 Admetus Lifesciences', 'font-size: 14px; font-weight: bold; color: #C8A951;');
           console.log('%cPrecision-engineered softgel capsules from India.', 'font-size: 11px; color: #8A8274;');
-          console.log('%cInterested in partnership? \\u2192 admetuslifesciences@gmail.com', 'font-size: 11px; color: #8A8274;');
+          console.log('%cInterested in partnership? \\u2192 team@admetuslifesciences.com', 'font-size: 11px; color: #8A8274;');
         `}} />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300" suppressHydrationWarning>

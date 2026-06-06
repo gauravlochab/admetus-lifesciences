@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "Do you manufacture Kosher softgel capsules as well?",
-    a: "Our facility is primarily Halal certified. For buyers requiring Kosher certification, we can discuss requirements on a case-by-case basis — the manufacturing protocols for Halal and Kosher have significant overlap in terms of ingredient sourcing and process controls. Contact us at admetuslifesciences@gmail.com for Kosher-specific inquiries.",
+    a: "Our facility is primarily Halal certified. For buyers requiring Kosher certification, we can discuss requirements on a case-by-case basis — the manufacturing protocols for Halal and Kosher have significant overlap in terms of ingredient sourcing and process controls. Contact us at team@admetuslifesciences.com for Kosher-specific inquiries.",
   },
   {
     q: "What is the MOQ for Halal certified softgel orders?",
@@ -337,8 +337,8 @@ export default function HalalSoftgelPage() {
               embassy-attested as required by the destination country. For GCC markets, we
               routinely provide documentation formatted for SFDA and ESMA product registration
               submissions. Contact us at{" "}
-              <a href="mailto:admetuslifesciences@gmail.com" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">
-                admetuslifesciences@gmail.com
+              <a href="mailto:team@admetuslifesciences.com" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">
+                team@admetuslifesciences.com
               </a>{" "}
               to request a sample documentation package.
             </p>

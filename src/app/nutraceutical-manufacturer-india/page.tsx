@@ -126,7 +126,7 @@ const faqs = [
   },
   {
     q: "What is the MOQ for nutraceutical softgel orders?",
-    a: "MOQs are flexible based on the specific formulation, capsule size, and packaging format. We support pilot runs for new brands entering the nutraceutical market as well as full-scale production for established distributors. Specific MOQ and pricing for your requirement is confirmed within 48 hours of inquiry at admetuslifesciences@gmail.com.",
+    a: "MOQs are flexible based on the specific formulation, capsule size, and packaging format. We support pilot runs for new brands entering the nutraceutical market as well as full-scale production for established distributors. Specific MOQ and pricing for your requirement is confirmed within 48 hours of inquiry at team@admetuslifesciences.com.",
   },
   {
     q: "Can you develop custom nutraceutical formulations?",

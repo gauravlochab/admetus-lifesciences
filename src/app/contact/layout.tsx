@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Admetus Lifesciences — Softgel Manufacturer Quote",
   description:
-    "Request a quote for softgel contract manufacturing, private label, or export. Quotation within 48 hours. Email: admetuslifesciences@gmail.com. Facility: Jind, Haryana 126112.",
+    "Request a quote for softgel contract manufacturing, private label, or export. Quotation within 48 hours. Email: team@admetuslifesciences.com. Facility: Jind, Haryana 126112.",
   alternates: {
     canonical: "https://www.admetuslifesciences.com/contact/",
   },
   openGraph: {
     title: "Contact Admetus Lifesciences — Softgel Manufacturer Quote",
     description:
-      "Request a quote for softgel contract manufacturing, private label, or export. Quotation within 48 hours. Email: admetuslifesciences@gmail.com. Facility: Jind, Haryana 126112.",
+      "Request a quote for softgel contract manufacturing, private label, or export. Quotation within 48 hours. Email: team@admetuslifesciences.com. Facility: Jind, Haryana 126112.",
     url: "https://www.admetuslifesciences.com/contact/",
   },
 };

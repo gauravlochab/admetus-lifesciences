@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What is the minimum order quantity (MOQ) for Haryana-based softgel manufacturing?",
-    a: "MOQs are flexible based on the formulation, packaging format, and order configuration. We support pilot runs for new brands and full-scale production for established distributors. Specific MOQ for your order is confirmed within 48 hours of inquiry at admetuslifesciences@gmail.com.",
+    a: "MOQs are flexible based on the formulation, packaging format, and order configuration. We support pilot runs for new brands and full-scale production for established distributors. Specific MOQ for your order is confirmed within 48 hours of inquiry at team@admetuslifesciences.com.",
   },
   {
     q: "Can international buyers visit your Haryana facility?",

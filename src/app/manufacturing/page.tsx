@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Can I visit and audit the facility before placing an order?",
-    a: "Yes — facility audits are welcomed for prospective partners and certification bodies. Visits are typically arranged within 1–2 weeks of an audit request. Contact us at admetuslifesciences@gmail.com to schedule. We can also provide GMP, WHO-GMP, and HACCP audit reports remotely if a visit isn't feasible.",
+    a: "Yes — facility audits are welcomed for prospective partners and certification bodies. Visits are typically arranged within 1–2 weeks of an audit request. Contact us at team@admetuslifesciences.com to schedule. We can also provide GMP, WHO-GMP, and HACCP audit reports remotely if a visit isn't feasible.",
   },
   {
     q: "Is the facility GMP certified?",

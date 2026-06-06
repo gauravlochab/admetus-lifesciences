@@ -136,11 +136,11 @@ export function Footer() {
               <div>
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
                 <a
-                  href="mailto:admetuslifesciences@gmail.com"
+                  href="mailto:team@admetuslifesciences.com"
                   className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem] break-all"
                   style={{ transition: "color 200ms cubic-bezier(0.23, 1, 0.32, 1)" }}
                 >
-                  admetuslifesciences@gmail.com
+                  team@admetuslifesciences.com
                 </a>
               </div>
             </address>

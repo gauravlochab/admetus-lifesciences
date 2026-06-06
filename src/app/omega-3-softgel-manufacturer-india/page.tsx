@@ -80,7 +80,7 @@ const faqs = [
   },
   {
     q: "What is the MOQ for Omega-3 softgel orders?",
-    a: "MOQs are flexible based on formulation, packaging format, and order configuration. We support pilot runs for brands launching new omega-3 product lines as well as full-scale production for established distributors. Specific MOQ for your order is confirmed within 48 hours of inquiry at admetuslifesciences@gmail.com.",
+    a: "MOQs are flexible based on formulation, packaging format, and order configuration. We support pilot runs for brands launching new omega-3 product lines as well as full-scale production for established distributors. Specific MOQ for your order is confirmed within 48 hours of inquiry at team@admetuslifesciences.com.",
   },
   {
     q: "Are your Omega-3 softgels Halal certified?",

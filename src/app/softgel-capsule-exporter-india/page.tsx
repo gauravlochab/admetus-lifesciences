@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: "What is the minimum order quantity for export orders?",
-    a: "Export MOQs are flexible and depend on the formulation, packaging format, and destination country. We support both pilot orders for market testing and full-scale production runs for established distributors. Specific MOQ and pricing for your order configuration is confirmed within 48 hours of inquiry at admetuslifesciences@gmail.com.",
+    a: "Export MOQs are flexible and depend on the formulation, packaging format, and destination country. We support both pilot orders for market testing and full-scale production runs for established distributors. Specific MOQ and pricing for your order configuration is confirmed within 48 hours of inquiry at team@admetuslifesciences.com.",
   },
   {
     q: "What is the typical lead time for export softgel orders?",

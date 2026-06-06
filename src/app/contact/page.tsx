@@ -103,7 +103,7 @@ export default function ContactPage() {
               "@id": "https://www.admetuslifesciences.com/#localbusiness",
               name: "Admetus Lifesciences",
               telephone: "+91-9729977795",
-              email: "admetuslifesciences@gmail.com",
+              email: "team@admetuslifesciences.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Village Anta, Tehsil Safidon",
@@ -358,8 +358,8 @@ export default function ContactPage() {
                     <div className="space-y-4">
                       <div>
                         <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Email</span>
-                        <a href="mailto:admetuslifesciences@gmail.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem] break-all">
-                          admetuslifesciences@gmail.com
+                        <a href="mailto:team@admetuslifesciences.com" className="body-text text-[var(--foreground)] hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem] break-all">
+                          team@admetuslifesciences.com
                         </a>
                       </div>
                       <div>

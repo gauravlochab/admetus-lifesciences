@@ -27,7 +27,7 @@ const advantages = [
 const faqs = [
   {
     q: "What is the minimum order quantity (MOQ) for contract manufacturing?",
-    a: "MOQs are flexible and depend on the formulation, packaging format, and active ingredients. We support both small pilot runs for new brands and large-volume production for established distributors. Share your requirements at admetuslifesciences@gmail.com and we will respond with a specific MOQ within 48 hours.",
+    a: "MOQs are flexible and depend on the formulation, packaging format, and active ingredients. We support both small pilot runs for new brands and large-volume production for established distributors. Share your requirements at team@admetuslifesciences.com and we will respond with a specific MOQ within 48 hours.",
   },
   {
     q: "Which certifications does Admetus Lifesciences hold?",
