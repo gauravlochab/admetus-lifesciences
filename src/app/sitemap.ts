@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/case-studies/`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/case-studies/vitamin-d3-stability-challenge/`, lastModified: now, changeFrequency: "yearly", priority: 0.65 },
     { url: `${BASE}/case-studies/halal-kosher-gcc-export/`, lastModified: now, changeFrequency: "yearly", priority: 0.65 },
+    // Export country pages — Wave 2
+    { url: `${BASE}/export/philippines/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/kenya/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/somalia/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/yemen/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/myanmar/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
   ];
 
   const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
