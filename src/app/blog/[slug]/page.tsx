@@ -44,6 +44,24 @@ export async function generateMetadata({
 
 /* ---------- FAQ data per slug ---------- */
 const faqMap: Record<string, { q: string; a: string }[]> = {
+  "top-10-softgel-capsule-manufacturers-india": [
+    {
+      q: "Which is the best softgel capsule manufacturer in India?",
+      a: "The best manufacturer depends on your specific requirements — product type, order volume, target market, and certification needs. For WHO-GMP and Halal certified contract manufacturing with flexible MOQs and export capability to Africa, the Middle East, and Southeast Asia, Admetus Lifesciences is a strong choice. For large-volume pharmaceutical generics, companies like Sun Pharma and Cipla are industry leaders.",
+    },
+    {
+      q: "What certifications should a softgel manufacturer in India have?",
+      a: "At minimum: FSSAI Central License (not state), GMP, and HACCP. For international markets, WHO-GMP is increasingly required. Halal certification is essential for Middle Eastern, North African, and Southeast Asian markets. ISO 9001 and ISO 22000 are additional quality indicators. Always verify that certificates are current and not expired.",
+    },
+    {
+      q: "How much does softgel contract manufacturing cost in India?",
+      a: "Costs vary based on formulation complexity, fill volume, raw material sourcing, order quantity, and packaging format. India offers competitive pricing compared to European and North American manufacturers due to lower labour and operational costs. Request detailed quotes from 2-3 manufacturers and compare on a per-unit basis, including packaging and documentation costs for export orders.",
+    },
+    {
+      q: "Can I get samples before placing a bulk order?",
+      a: "Most reputable manufacturers offer evaluation samples for qualified business enquiries. At Admetus Lifesciences, sample requests are available for brand owners, distributors, and importers. Samples allow you to evaluate capsule quality, fill consistency, shell integrity, and dissolution performance before committing to a production order.",
+    },
+  ],
   "what-are-softgel-capsules": [
     {
       q: "What are softgel capsules made of?",

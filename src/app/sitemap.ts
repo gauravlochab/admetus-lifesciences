@@ -21,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/contact/`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     // Blog index
     { url: `${BASE}/blog/`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    // Partnership & samples
+    { url: `${BASE}/partnership-process/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/request-samples/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // SEO landing pages
     { url: `${BASE}/softgel-capsule-manufacturer-haryana/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/private-label-softgel-manufacturer-india/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },

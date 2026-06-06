@@ -22,6 +22,8 @@ const serviceLinks = [
   { href: "/softgel-capsule-exporter-india/", label: "Softgel Exporter India" },
   { href: "/contract-manufacturing-vitamin-d3-softgel/", label: "Vitamin D3 Manufacturing" },
   { href: "/softgel-capsule-manufacturer-haryana/", label: "Haryana Facility" },
+  { href: "/partnership-process/", label: "How to Work With Us" },
+  { href: "/request-samples/", label: "Request Samples" },
   { href: "/export/", label: "Export" },
   { href: "/case-studies/", label: "Case Studies" },
   { href: "/blog/", label: "Blog & Insights" },
