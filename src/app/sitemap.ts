@@ -66,6 +66,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/export/mozambique/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/export/dr-congo/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/export/sudan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    // Wave 3 country pages — Central Asia, South Asia, GCC
+    { url: `${BASE}/export/tajikistan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/uzbekistan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/bangladesh/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/saudi-arabia/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
   ];
 
   const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
