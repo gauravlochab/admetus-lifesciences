@@ -44,6 +44,60 @@ export async function generateMetadata({
 
 /* ---------- FAQ data per slug ---------- */
 const faqMap: Record<string, { q: string; a: string }[]> = {
+  "top-10-nutraceutical-exporters-india": [
+    {
+      q: "Which country is the largest importer of nutraceuticals from India?",
+      a: "The United States is the largest single-country importer, followed by GCC countries (Saudi Arabia, UAE, Qatar, Kuwait), Nigeria, Kenya, and the Philippines. African and Southeast Asian markets are growing fastest in terms of year-over-year import volume.",
+    },
+    {
+      q: "What certifications do I need from an Indian nutraceutical exporter?",
+      a: "At minimum, ensure your supplier holds an FSSAI Central License, GMP, and WHO-GMP. For Muslim-majority markets, Halal certification is essential. Depending on your country's regulatory framework, you may also need the manufacturer to provide a Free Sale Certificate, Certificate of Pharmaceutical Product (CPP), or specific lab test reports.",
+    },
+    {
+      q: "How long does it take to import nutraceuticals from India?",
+      a: "From order confirmation to dispatch, the typical manufacturing lead time is 30-45 days. Shipping adds 15-35 days depending on the destination (East Africa: 15-20 days, Middle East: 10-15 days, Southeast Asia: 12-18 days). Total door-to-door timeline is typically 45-75 days, plus customs clearance time in your country.",
+    },
+    {
+      q: "Can I get private-label nutraceuticals from Indian manufacturers?",
+      a: "Yes. Most leading Indian nutraceutical exporters — including Admetus Lifesciences — offer private-label services where they manufacture ready-made formulations and package them under your brand name. This is the fastest and most cost-effective way to launch a nutraceutical brand without investing in your own manufacturing infrastructure.",
+    },
+  ],
+  "top-10-halal-softgel-manufacturers-india": [
+    {
+      q: "Is Halal certification mandatory for softgel capsules?",
+      a: "It depends on the destination market. In GCC countries, Indonesia, Malaysia, and Brunei, Halal certification is either legally required or strongly preferred by regulatory authorities. In Muslim-majority countries across Africa and Central Asia, Halal certification is a commercial necessity. In non-Muslim-majority countries, Halal certification is optional but can expand your addressable market.",
+    },
+    {
+      q: "What is the difference between Halal and Halal-friendly?",
+      a: "\"Halal-friendly\" is a marketing term with no standardised definition — it typically means the manufacturer avoids porcine ingredients but has not undergone third-party Halal certification. Genuine Halal certification requires auditing by a recognised certification body covering raw material sourcing, manufacturing processes, cross-contamination controls, and ongoing surveillance. Always insist on formal certification, not self-declaration.",
+    },
+    {
+      q: "Can vegetarian softgels be considered Halal?",
+      a: "Vegetarian softgels (using plant-based shells like HPMC or modified starch) avoid the gelatin-source issue entirely. However, they still need to be manufactured in a facility with Halal-certified processes — other ingredients (glycerin, oils, excipients) must also be Halal-compliant. Vegetarian softgels with Halal certification offer the broadest market coverage.",
+    },
+    {
+      q: "How do I verify an Indian manufacturer's Halal certification?",
+      a: "Request a copy of the Halal certificate, note the issuing body's name and certificate number, and verify directly with the certification body (most have online verification portals). Check the certificate's validity dates and scope — ensure it covers the specific product categories and formulations you plan to order.",
+    },
+  ],
+  "how-to-import-softgel-capsules-from-india": [
+    {
+      q: "What is the minimum order quantity to import softgels from India?",
+      a: "MOQ varies by manufacturer. Large facilities may require 50,000-100,000 capsules per SKU. Flexible manufacturers like Admetus Lifesciences offer lower MOQs to accommodate first-time buyers and pilot orders. Clarify MOQ per SKU, not per total order, when comparing manufacturers.",
+    },
+    {
+      q: "How long does the entire import process take from first contact to delivery?",
+      a: "A typical timeline: manufacturer evaluation and sample request (2-4 weeks), sample evaluation (1-2 weeks), order negotiation and confirmation (1-2 weeks), production (4-6 weeks), shipping (1-4 weeks depending on destination), customs clearance (1-2 weeks). Total: approximately 10-18 weeks from first contact to goods in your warehouse.",
+    },
+    {
+      q: "Do I need a specific licence to import softgel capsules?",
+      a: "In most countries, yes. You typically need an import licence or registration with your national drug regulatory authority or food safety authority. The specific requirements vary by country and by whether the products are classified as pharmaceuticals, nutraceuticals, or food supplements. Check with your local regulatory body before placing an order.",
+    },
+    {
+      q: "What payment methods are accepted by Indian softgel manufacturers?",
+      a: "Telegraphic Transfer (TT/wire transfer) is most common — typically 30-50% advance, balance before shipment. Letters of Credit (LC) are used for larger orders. PayPal and trade finance platforms are occasionally accepted for smaller transactions. Open-account terms (net 30/60) are rarely offered for first orders but may be negotiated after an established trading relationship.",
+    },
+  ],
   "top-10-softgel-capsule-manufacturers-india": [
     {
       q: "Which is the best softgel capsule manufacturer in India?",

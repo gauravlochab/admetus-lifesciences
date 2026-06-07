@@ -66,11 +66,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/export/mozambique/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/export/dr-congo/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/export/sudan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    // Wave 3 country pages — Central Asia, South Asia, GCC
+    // SE Asia country pages
+    { url: `${BASE}/export/indonesia/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/vietnam/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/cambodia/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/laos/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/malaysia/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/thailand/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    // Middle East country pages
+    { url: `${BASE}/export/saudi-arabia/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/export/qatar/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/oman/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/kuwait/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/bahrain/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/jordan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/lebanon/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/syria/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    // Central Asia + South Asia country pages
     { url: `${BASE}/export/tajikistan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/export/uzbekistan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/kyrgyzstan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/export/turkmenistan/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/export/bangladesh/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${BASE}/export/saudi-arabia/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
   ];
 
   const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
