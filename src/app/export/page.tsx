@@ -4,6 +4,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
 
+/* ------------------------------------------------------------------ */
+/*  Static data                                                       */
+/* ------------------------------------------------------------------ */
+
 const exportCapabilities = [
   { title: "Export-Ready Packaging", desc: "Products packaged to international standards with proper labeling, batch coding, and tamper-evident sealing." },
   { title: "Documentation Support", desc: "Complete export documentation including COA, batch records, and regulatory paperwork -- shared on request." },
@@ -48,6 +52,128 @@ const faqs = [
   },
 ];
 
+/* ------------------------------------------------------------------ */
+/*  Export markets — organised by region                              */
+/* ------------------------------------------------------------------ */
+
+interface CountryEntry {
+  name: string;
+  slug: string;
+}
+
+interface RegionGroup {
+  region: string;
+  countries: CountryEntry[];
+}
+
+const exportMarkets: RegionGroup[] = [
+  {
+    region: "SAARC & South Asia",
+    countries: [
+      { name: "Nepal", slug: "nepal" },
+      { name: "Afghanistan", slug: "afghanistan" },
+      { name: "Bangladesh", slug: "bangladesh" },
+      { name: "Myanmar", slug: "myanmar" },
+    ],
+  },
+  {
+    region: "Southeast Asia",
+    countries: [
+      { name: "Philippines", slug: "philippines" },
+      { name: "Indonesia", slug: "indonesia" },
+      { name: "Vietnam", slug: "vietnam" },
+      { name: "Cambodia", slug: "cambodia" },
+      { name: "Laos", slug: "laos" },
+      { name: "Malaysia", slug: "malaysia" },
+      { name: "Thailand", slug: "thailand" },
+    ],
+  },
+  {
+    region: "Middle East & GCC",
+    countries: [
+      { name: "UAE", slug: "uae" },
+      { name: "Saudi Arabia", slug: "saudi-arabia" },
+      { name: "Qatar", slug: "qatar" },
+      { name: "Oman", slug: "oman" },
+      { name: "Kuwait", slug: "kuwait" },
+      { name: "Bahrain", slug: "bahrain" },
+      { name: "Iraq", slug: "iraq" },
+      { name: "Jordan", slug: "jordan" },
+      { name: "Lebanon", slug: "lebanon" },
+      { name: "Syria", slug: "syria" },
+      { name: "Yemen", slug: "yemen" },
+    ],
+  },
+  {
+    region: "Central Asia",
+    countries: [
+      { name: "Tajikistan", slug: "tajikistan" },
+      { name: "Uzbekistan", slug: "uzbekistan" },
+      { name: "Kyrgyzstan", slug: "kyrgyzstan" },
+      { name: "Turkmenistan", slug: "turkmenistan" },
+    ],
+  },
+  {
+    region: "North Africa",
+    countries: [
+      { name: "Egypt", slug: "egypt" },
+      { name: "Morocco", slug: "morocco" },
+      { name: "Algeria", slug: "algeria" },
+      { name: "Tunisia", slug: "tunisia" },
+      { name: "Libya", slug: "libya" },
+    ],
+  },
+  {
+    region: "West Africa",
+    countries: [
+      { name: "Nigeria", slug: "nigeria" },
+      { name: "Ghana", slug: "ghana" },
+      { name: "Senegal", slug: "senegal" },
+      { name: "Cameroon", slug: "cameroon" },
+      { name: "Sierra Leone", slug: "sierra-leone" },
+    ],
+  },
+  {
+    region: "Sahel",
+    countries: [
+      { name: "Mali", slug: "mali" },
+      { name: "Niger", slug: "niger" },
+      { name: "Chad", slug: "chad" },
+      { name: "Mauritania", slug: "mauritania" },
+      { name: "Sudan", slug: "sudan" },
+    ],
+  },
+  {
+    region: "East Africa",
+    countries: [
+      { name: "Kenya", slug: "kenya" },
+      { name: "Somalia", slug: "somalia" },
+      { name: "Tanzania", slug: "tanzania" },
+      { name: "Ethiopia", slug: "ethiopia" },
+      { name: "Uganda", slug: "uganda" },
+      { name: "Rwanda", slug: "rwanda" },
+      { name: "South Sudan", slug: "south-sudan" },
+    ],
+  },
+  {
+    region: "Southern & Central Africa",
+    countries: [
+      { name: "South Africa", slug: "south-africa" },
+      { name: "Mozambique", slug: "mozambique" },
+      { name: "DR Congo", slug: "dr-congo" },
+    ],
+  },
+];
+
+const totalCountries = exportMarkets.reduce(
+  (sum, r) => sum + r.countries.length,
+  0
+);
+
+/* ------------------------------------------------------------------ */
+/*  JSON-LD                                                           */
+/* ------------------------------------------------------------------ */
+
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -66,6 +192,10 @@ const breadcrumbJsonLd = {
     },
   ],
 };
+
+/* ------------------------------------------------------------------ */
+/*  Page component                                                    */
+/* ------------------------------------------------------------------ */
 
 export default function ExportPage() {
   const faqJsonLd = {
@@ -88,7 +218,8 @@ export default function ExportPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Hero */}
+
+      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="relative min-h-[50vh] flex items-end pt-24 pb-12 overflow-hidden">
         <img
           src="/images/facility/softgels-hero-golden.jpg"
@@ -114,7 +245,57 @@ export default function ExportPage() {
         </div>
       </section>
 
-      {/* Capabilities */}
+      {/* ── Export Markets ───────────────────────────────────────── */}
+      <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+        <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+          <SectionReveal>
+            <span className="label-text text-[var(--gold)] mb-8 block">
+              {totalCountries} COUNTRIES
+            </span>
+            <h2 className="display-section text-[var(--foreground)] mb-4">
+              OUR GLOBAL EXPORT&nbsp;MARKETS
+            </h2>
+            <p className="body-text text-[var(--text-muted)] max-w-[68ch] mb-14">
+              We supply WHO-GMP certified softgel capsules, tablets, and
+              nutraceutical formulations to importers and distributors across{" "}
+              {totalCountries} countries. Select a market below to view
+              country-specific export&nbsp;details.
+            </p>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {exportMarkets.map((group, gi) => (
+              <SectionReveal key={group.region} delay={gi * 0.05}>
+                <div className="p-6 border border-[var(--border-subtle)] bg-[var(--bg-warm-dark)] h-full">
+                  <span className="label-text text-[var(--gold)] block mb-5">
+                    {group.region}
+                  </span>
+                  <ul className="space-y-0">
+                    {group.countries.map((country) => (
+                      <li key={country.slug}>
+                        <Link
+                          href={`/export/${country.slug}/`}
+                          className="group flex items-center gap-3 py-2.5 border-t border-[var(--border-subtle)] first:border-t-0"
+                        >
+                          <ArrowRight
+                            size={12}
+                            className="text-[var(--gold)] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 shrink-0"
+                          />
+                          <span className="body-text text-[var(--text-cream)] group-hover:text-[var(--gold)] transition-colors duration-200">
+                            {country.name}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Capabilities ─────────────────────────────────────────── */}
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
@@ -142,7 +323,7 @@ export default function ExportPage() {
         </div>
       </section>
 
-      {/* For International Buyers */}
+      {/* ── For International Buyers ─────────────────────────────── */}
       <section className="py-20 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -198,7 +379,7 @@ export default function ExportPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ── FAQ ──────────────────────────────────────────────────── */}
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>
@@ -233,7 +414,7 @@ export default function ExportPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ──────────────────────────────────────────────────── */}
       <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
           <SectionReveal>

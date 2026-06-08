@@ -721,68 +721,185 @@ function Partnership() {
 
 /* ═══ Section 10: GLOBAL REACH ═══ */
 function GlobalReach() {
-  const features = [
-    { title: "Export Markets", desc: "Serving nutraceutical markets across multiple international regions." },
-    { title: "Regulatory Compliance", desc: "Documentation and certifications for seamless global market entry." },
-    { title: "Logistics Support", desc: "Export packaging, freight coordination, and customs documentation." },
+  const regions: { name: string; countries: { name: string; slug: string }[] }[] = [
+    {
+      name: "South Asia",
+      countries: [
+        { name: "Nepal", slug: "nepal" },
+        { name: "Afghanistan", slug: "afghanistan" },
+        { name: "Bangladesh", slug: "bangladesh" },
+        { name: "Myanmar", slug: "myanmar" },
+      ],
+    },
+    {
+      name: "Southeast Asia",
+      countries: [
+        { name: "Philippines", slug: "philippines" },
+        { name: "Indonesia", slug: "indonesia" },
+        { name: "Vietnam", slug: "vietnam" },
+        { name: "Cambodia", slug: "cambodia" },
+        { name: "Laos", slug: "laos" },
+        { name: "Malaysia", slug: "malaysia" },
+        { name: "Thailand", slug: "thailand" },
+      ],
+    },
+    {
+      name: "Middle East & GCC",
+      countries: [
+        { name: "UAE", slug: "uae" },
+        { name: "Saudi Arabia", slug: "saudi-arabia" },
+        { name: "Qatar", slug: "qatar" },
+        { name: "Oman", slug: "oman" },
+        { name: "Kuwait", slug: "kuwait" },
+        { name: "Bahrain", slug: "bahrain" },
+        { name: "Iraq", slug: "iraq" },
+        { name: "Jordan", slug: "jordan" },
+        { name: "Lebanon", slug: "lebanon" },
+        { name: "Syria", slug: "syria" },
+        { name: "Yemen", slug: "yemen" },
+      ],
+    },
+    {
+      name: "Central Asia",
+      countries: [
+        { name: "Tajikistan", slug: "tajikistan" },
+        { name: "Uzbekistan", slug: "uzbekistan" },
+        { name: "Kyrgyzstan", slug: "kyrgyzstan" },
+        { name: "Turkmenistan", slug: "turkmenistan" },
+      ],
+    },
+    {
+      name: "North Africa",
+      countries: [
+        { name: "Egypt", slug: "egypt" },
+        { name: "Morocco", slug: "morocco" },
+        { name: "Algeria", slug: "algeria" },
+        { name: "Tunisia", slug: "tunisia" },
+        { name: "Libya", slug: "libya" },
+      ],
+    },
+    {
+      name: "West Africa",
+      countries: [
+        { name: "Nigeria", slug: "nigeria" },
+        { name: "Ghana", slug: "ghana" },
+        { name: "Senegal", slug: "senegal" },
+        { name: "Cameroon", slug: "cameroon" },
+        { name: "Sierra Leone", slug: "sierra-leone" },
+      ],
+    },
+    {
+      name: "Sahel",
+      countries: [
+        { name: "Mali", slug: "mali" },
+        { name: "Niger", slug: "niger" },
+        { name: "Chad", slug: "chad" },
+        { name: "Mauritania", slug: "mauritania" },
+        { name: "Sudan", slug: "sudan" },
+      ],
+    },
+    {
+      name: "East Africa",
+      countries: [
+        { name: "Kenya", slug: "kenya" },
+        { name: "Somalia", slug: "somalia" },
+        { name: "Tanzania", slug: "tanzania" },
+        { name: "Ethiopia", slug: "ethiopia" },
+        { name: "Uganda", slug: "uganda" },
+        { name: "Rwanda", slug: "rwanda" },
+        { name: "South Sudan", slug: "south-sudan" },
+      ],
+    },
+    {
+      name: "Southern Africa",
+      countries: [
+        { name: "South Africa", slug: "south-africa" },
+        { name: "Mozambique", slug: "mozambique" },
+        { name: "DR Congo", slug: "dr-congo" },
+      ],
+    },
   ];
 
   return (
     <section className="py-14 md:py-20 bg-[var(--bg-black)] relative">
-
-
       <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16">
-          <SectionReveal>
-            <div>
-              <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">GLOBAL PRESENCE</span>
-              <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10">
-                BEYOND<br />BORDERS
-              </h2>
+        {/* Header */}
+        <SectionReveal>
+          <span className="label-text text-[var(--gold)] mb-8 md:mb-10 block">GLOBAL PRESENCE</span>
+          <h2 className="display-section text-[var(--foreground)] mb-8 md:mb-10">
+            BEYOND<br />BORDERS
+          </h2>
+          <p className="body-large text-[var(--text-cream)] max-w-[580px]">
+            Regulatory-compliant export capabilities serving nutraceutical markets across 44 countries worldwide.
+          </p>
+        </SectionReveal>
 
-              <p className="body-large text-[var(--text-cream)] max-w-[480px]">
-                Regulatory-compliant export capabilities serving nutraceutical markets worldwide.
-              </p>
-              <Link
-                href="/export/"
-                data-cursor="pointer"
-                className="btn-editorial cursor-pointer mt-8 md:mt-10 inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Explore Export Capabilities
-                <ArrowRight size={13} />
-              </Link>
-
-              <div className="mt-12 md:mt-16 grid grid-cols-2 gap-x-6 gap-y-3 max-w-md">
-                {[
-                  "Middle East", "Africa",
-                  "Southeast Asia", "Latin America",
-                  "Central Asia", "South Asia",
-                  "CIS Countries", "East Africa"
-                ].map((region) => (
-                  <div key={region} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[var(--gold)] flex-shrink-0 rounded-full" />
-                    <span className="text-sm text-[var(--text-cream)]">{region}</span>
-                  </div>
-                ))}
+        {/* Stats bar */}
+        <SectionReveal delay={0.08}>
+          <div className="mt-8 md:mt-10 flex flex-wrap gap-6 md:gap-10">
+            {[
+              { value: "44", label: "Countries" },
+              { value: "5", label: "Continents" },
+              { value: "9", label: "Regions" },
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-baseline gap-2">
+                <span
+                  className="text-2xl md:text-3xl font-bold text-[var(--gold)]"
+                  style={{ fontFamily: "var(--font-display), sans-serif" }}
+                >
+                  {stat.value}
+                </span>
+                <span className="text-[0.6875rem] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+                  {stat.label}
+                </span>
               </div>
-            </div>
-          </SectionReveal>
-
-          <div className="flex flex-col justify-center gap-0">
-            {features.map((f, i) => (
-              <SectionReveal key={f.title} delay={i * 0.08}>
-                <div className="py-5 md:py-6 border-t border-[var(--border-subtle)]">
-                  <div className="flex items-baseline gap-4 mb-2">
-                    <span className="mono-text text-[0.5625rem] text-[var(--text-muted)] opacity-40">{String(i + 1).padStart(2, "0")}</span>
-                    <h3 className="heading-2 text-[var(--foreground)]" style={{ fontSize: "clamp(1.125rem, 2vw, 1.5rem)" }}>{f.title}</h3>
-                  </div>
-                  <p className="body-text text-[var(--text-muted)] max-w-[65ch] pl-[calc(0.5625rem*3+1rem)] md:ml-[calc(0.5625rem*3+1rem)] md:pl-0">{f.desc}</p>
-                </div>
-              </SectionReveal>
             ))}
           </div>
+        </SectionReveal>
+
+        {/* Region grid */}
+        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {regions.map((region, ri) => (
+            <SectionReveal key={region.name} delay={0.05 + ri * 0.04}>
+              <div>
+                <h3 className="heading-2 text-[var(--foreground)] mb-3 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-[var(--gold)] rounded-full flex-shrink-0" />
+                  {region.name}
+                  <span className="text-[0.625rem] text-[var(--text-muted)] font-normal ml-1">
+                    ({region.countries.length})
+                  </span>
+                </h3>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 pl-3.5">
+                  {region.countries.map((country) => (
+                    <Link
+                      key={country.slug}
+                      href={`/export/${country.slug}/`}
+                      className="text-[var(--text-cream)] hover:text-[var(--gold)] transition-colors duration-200"
+                      style={{ fontSize: "0.8125rem" }}
+                    >
+                      {country.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
+          ))}
         </div>
+
+        {/* CTA */}
+        <SectionReveal delay={0.4}>
+          <div className="mt-12 md:mt-16">
+            <Link
+              href="/export/"
+              data-cursor="pointer"
+              className="btn-editorial cursor-pointer inline-flex items-center justify-center gap-3 w-full sm:w-auto px-6 md:px-[var(--space-8)] min-h-[44px] py-3 md:py-[var(--space-4)] text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--bg-black)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Explore Export Capabilities
+              <ArrowRight size={13} />
+            </Link>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );

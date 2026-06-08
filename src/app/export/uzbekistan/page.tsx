@@ -526,6 +526,26 @@ export default function UzbekistanExportPage() {
         </div>
       </section>
 
+      {/* Related Markets */}
+      <SectionReveal>
+        <section className="py-12 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+          <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+            <span className="label-text text-[var(--gold)] mb-4 block">RELATED MARKETS</span>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/export/tajikistan/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Tajikistan
+              </Link>
+              <Link href="/export/kyrgyzstan/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Kyrgyzstan
+              </Link>
+              <Link href="/export/turkmenistan/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Turkmenistan
+              </Link>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">

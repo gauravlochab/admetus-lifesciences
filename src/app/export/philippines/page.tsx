@@ -623,6 +623,35 @@ export default function PhilippinesPage() {
         </div>
       </section>
 
+      {/* Related Markets */}
+      <SectionReveal>
+        <section className="py-12 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+          <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+            <span className="label-text text-[var(--gold)] mb-4 block">RELATED MARKETS</span>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/export/indonesia/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Indonesia
+              </Link>
+              <Link href="/export/vietnam/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Vietnam
+              </Link>
+              <Link href="/export/cambodia/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Cambodia
+              </Link>
+              <Link href="/export/laos/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Laos
+              </Link>
+              <Link href="/export/malaysia/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Malaysia
+              </Link>
+              <Link href="/export/thailand/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Thailand
+              </Link>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
       {/* CTA */}
       <section className="py-20 bg-[var(--bg-charcoal)] border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">

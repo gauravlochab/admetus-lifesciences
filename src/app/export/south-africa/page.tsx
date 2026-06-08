@@ -690,6 +690,23 @@ export default function SouthAfricaPage() {
         </div>
       </section>
 
+      {/* Related Markets */}
+      <SectionReveal>
+        <section className="py-12 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+          <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+            <span className="label-text text-[var(--gold)] mb-4 block">RELATED MARKETS</span>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/export/mozambique/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Mozambique
+              </Link>
+              <Link href="/export/dr-congo/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                DR Congo
+              </Link>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
       {/* CTA */}
       <section className="py-20 border-t border-[var(--border-subtle)]">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">

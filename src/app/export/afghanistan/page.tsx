@@ -527,6 +527,26 @@ export default function AfghanistanPage() {
         </div>
       </section>
 
+      {/* Related Markets */}
+      <SectionReveal>
+        <section className="py-12 bg-[var(--bg-charcoal)] border-y border-[var(--border-subtle)]">
+          <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">
+            <span className="label-text text-[var(--gold)] mb-4 block">RELATED MARKETS</span>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/export/nepal/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Nepal
+              </Link>
+              <Link href="/export/bangladesh/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Bangladesh
+              </Link>
+              <Link href="/export/myanmar/" className="px-4 py-2 body-text text-[var(--text-cream)] border border-[var(--border-subtle)] hover:border-[var(--gold)]/30 hover:text-[var(--gold)] transition-all duration-200 !text-[0.8125rem]">
+                Myanmar
+              </Link>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--gutter)]">

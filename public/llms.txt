@@ -1,82 +1,128 @@
 # Admetus Lifesciences
-
-> Admetus Lifesciences is a precision softgel capsule manufacturer based in Haryana, India. Founded in 2020 by Mr. Anudeep Deswal, the company specializes in contract manufacturing, private label, and export-ready nutraceutical softgel capsules for global brand owners, distributors, and importers.
+> Precision softgel capsule manufacturer in Haryana, India. WHO-GMP, FSSAI, GMP, HACCP, Halal certified. Contract manufacturing, private label, third party manufacturing, and export to 44 countries across Africa, Middle East, Southeast Asia, Central Asia, and South Asia.
 
 ## Company
-
-- Legal name: Admetus Lifesciences
-- Founded: 2020
-- Founder: Mr. Anudeep Deswal
-- Manufacturing facility: Village Anta, Tehsil Safidon, District Jind, Haryana 126112, India
-- Business type: B2B nutraceutical softgel capsule manufacturer
-- Capabilities: Contract manufacturing, private label, custom formulation, export
-- Workforce: 90%+ women from rural Haryana villages
-- Equipment: ARBES SGX-806P soft gelatin encapsulation line, Elmach EPI 2000 blister packing machine
+- Founded: 2020 by Anudeep Deswal
+- Location: Village Anta, Tehsil Safidon, District Jind, Haryana 126112, India
+- Contact: team@admetuslifesciences.com | +91-7497841608
 - Certifications: FSSAI, GMP, HACCP, Halal, WHO-GMP
+- Equipment: ARBES SGX-806P encapsulation, Elmach EPI 2000 blister packing
+- Products: 80+ softgel capsule formulations
 
-## Core Pages
+## Main Pages
+- /: Homepage
+- /about/: About Admetus Lifesciences, founder Anudeep Deswal, mission, values
+- /products/: Full product portfolio — 10+ softgel formulations
+- /manufacturing/: WHO-GMP certified facility, 7-step manufacturing process
+- /quality/: Quality control systems, certifications
+- /contract-manufacturing/: Contract manufacturing services, MOQ, lead time
+- /export/: Export capabilities — 44 countries across 9 regions
+- /contact/: Contact form, address, phone, WhatsApp
+- /blog/: Industry insights, buyer guides, manufacturer rankings
+- /request-samples/: Request product evaluation samples
+- /partnership-process/: How to work with us — 6-step process, MOQ, payment terms
+- /catalog/: Product catalog downloads (PDF)
+- /case-studies/: Manufacturing partnership case studies
 
-- [Homepage](https://www.admetuslifesciences.com/): Overview of Admetus Lifesciences as a precision softgel manufacturer
-- [About](https://www.admetuslifesciences.com/about/): Company story, mission, vision, social impact (rural women workforce), values
-- [Manufacturing](https://www.admetuslifesciences.com/manufacturing/): Facility overview, equipment, production process from raw material to dispatch
-- [Contract Manufacturing & Private Label](https://www.admetuslifesciences.com/contract-manufacturing/): Services for brand owners — third-party manufacturing, private label, custom formulation, bulk supply, export partnerships
-- [Products](https://www.admetuslifesciences.com/products/): Catalog of 10 nutraceutical softgel formulations
-- [Catalog](https://www.admetuslifesciences.com/catalog/): Downloadable catalogs — private-label menu (10 SKUs), contract-manufacturing capabilities (115+ formulations under FSSAI Central License #10020064002545), and the FSSAI license itself
-- [Quality](https://www.admetuslifesciences.com/quality/): Quality control processes, certifications, batch testing
-- [Export](https://www.admetuslifesciences.com/export/): International export capabilities and documentation
-- [Contact](https://www.admetuslifesciences.com/contact/): Inquiries, demo requests, facility audits
+## SEO Landing Pages
+- /softgel-capsule-manufacturer-haryana/: Location-based — Haryana facility
+- /private-label-softgel-manufacturer-india/: Private label services
+- /contract-manufacturing-vitamin-d3-softgel/: Vitamin D3 contract manufacturing
+- /third-party-softgel-manufacturer-india/: Third party manufacturing
+- /halal-softgel-manufacturer-india/: Halal certified manufacturing
+- /softgel-capsule-exporter-india/: Export capabilities
+- /nutraceutical-manufacturer-india/: Nutraceutical manufacturing
+- /omega-3-softgel-manufacturer-india/: Omega-3 Fish Oil & Krill Oil
 
-## Service Pages
+## Export Country Pages (44 countries)
+### South Asia
+- /export/nepal/: Nepal — Free Trade Agreement, zero duties
+- /export/afghanistan/: Afghanistan — 1233% nutraceutical growth
+- /export/bangladesh/: Bangladesh — SAARC, 170M population
+- /export/myanmar/: Myanmar — $161M pharma imports from India
 
-- [Softgel Capsule Manufacturer in Haryana](https://www.admetuslifesciences.com/softgel-capsule-manufacturer-haryana/): Geographic-focused page covering the Jind, Haryana facility — equipment, process, certifications, and FAQs for buyers seeking a Haryana-based softgel manufacturer
-- [Private Label Softgel Manufacturer India](https://www.admetuslifesciences.com/private-label-softgel-manufacturer-india/): Brand owner-focused page covering 5-step private label process, available formulations, packaging options, and exclusivity terms
-- [Vitamin D3 Softgel Contract Manufacturer](https://www.admetuslifesciences.com/contract-manufacturing-vitamin-d3-softgel/): Formulation-focused page on Cholecalciferol 60,000 IU and Calcitriol + Calcium + K2-7 softgel manufacturing
+### Southeast Asia
+- /export/philippines/: Philippines — India is #1 supplier (53% of softgel imports)
+- /export/indonesia/: Indonesia — 270M population, largest Muslim country, BPOM
+- /export/vietnam/: Vietnam — 100M population, DAV
+- /export/cambodia/: Cambodia — low regulatory barriers
+- /export/laos/: Laos — zero barriers
+- /export/malaysia/: Malaysia — NPRA, JAKIM Halal required
+- /export/thailand/: Thailand — Thai FDA, ASEAN hub
 
-## Case Studies
+### Middle East & GCC
+- /export/uae/: UAE — Dubai GCC re-export hub, MoHAP
+- /export/saudi-arabia/: Saudi Arabia — SFDA, $8.9B market
+- /export/qatar/: Qatar — MOPH, highest GDP per capita
+- /export/oman/: Oman — closest GCC to India (3-5 days)
+- /export/kuwait/: Kuwait — KDCPA
+- /export/bahrain/: Bahrain — easiest GCC entry
+- /export/iraq/: Iraq — low regulation, massive demand
+- /export/jordan/: Jordan — JFDA, regional hub
+- /export/lebanon/: Lebanon — economic crisis, price-sensitive
+- /export/syria/: Syria — post-conflict, import-dependent
+- /export/yemen/: Yemen — humanitarian demand, Halal
 
-- [Vitamin D3 60K IU Stability Challenge](https://www.admetuslifesciences.com/case-studies/vitamin-d3-stability-challenge/): Illustrative scenario showing how a stability concern was resolved in 6 weeks through active overage, drying optimization, and PVDC blister upgrade
-- [Halal + Kosher GCC Export Launch](https://www.admetuslifesciences.com/case-studies/halal-kosher-gcc-export/): Illustrative scenario showing dual-certified Omega-3 softgel preparation for GCC + Israel launch in 12 weeks
+### Central Asia
+- /export/tajikistan/: Tajikistan — borders Afghanistan, CIS
+- /export/uzbekistan/: Uzbekistan — 35M population, EAEU
+- /export/kyrgyzstan/: Kyrgyzstan — Muslim-majority, CIS
+- /export/turkmenistan/: Turkmenistan — 100% pharma imports
 
-## Product Catalog (10 Softgel Formulations)
+### North Africa
+- /export/egypt/: Egypt — 105M, largest Arab country, EDA
+- /export/morocco/: Morocco — DMP, Francophone gateway
+- /export/algeria/: Algeria — 45M population, DPH
+- /export/tunisia/: Tunisia — DPM, Libya gateway
+- /export/libya/: Libya — post-conflict, minimal regulation
 
-### Calcium & Bone Health
-- [Calcitriol + Calcium + K2-7](https://www.admetuslifesciences.com/products/calcitriol-calcium-k27-softgel/): Advanced bone health with Vitamin K2-7 — Calcitriol, Calcium Carbonate, K2-7, B12, Zinc, Magnesium, L-Methylfolate
-- [Cholecalciferol 60,000 IU](https://www.admetuslifesciences.com/products/cholecalciferol-60000-iu/): High-dose Vitamin D3 weekly therapy
+### West Africa
+- /export/nigeria/: Nigeria — $449M market, NAFDAC, 70% Indian generics
+- /export/ghana/: Ghana — FDA Ghana, +22.6% growth
+- /export/senegal/: Senegal — 95% Muslim, ECOWAS hub
+- /export/cameroon/: Cameroon — bilingual, CEMAC hub
+- /export/sierra-leone/: Sierra Leone — low barriers, humanitarian
 
-### Omega & Heart Health
-- [Omega-3 + Vitamin E](https://www.admetuslifesciences.com/products/omega-3-vitamin-e-softgel/): Pure fish oil for cardiovascular and brain health
-- [Krill Oil](https://www.admetuslifesciences.com/products/krill-oil-softgel/): Phospholipid-bound omega-3 with natural astaxanthin
+### Sahel
+- /export/mali/: Mali — 95% Muslim, very low barriers
+- /export/niger/: Niger — 99% Muslim, highest need
+- /export/chad/: Chad — critical medicine shortages
+- /export/mauritania/: Mauritania — 100% Muslim, Atlantic port
+- /export/sudan/: Sudan — Red Sea port, 7-10 day shipping
 
-### Antioxidant & Multivitamin
-- [Ginseng + Astaxanthin Multi](https://www.admetuslifesciences.com/products/ginseng-astaxanthin-multivitamin/): Premium energy and vitality complex
-- [Glutathione + ALA + Grape Seed](https://www.admetuslifesciences.com/products/glutathione-ala-grape-seed/): Advanced skin and antioxidant formula
-- [Lycopene + Grape Seed Multi](https://www.admetuslifesciences.com/products/lycopene-grape-seed-multivitamin/): Potent antioxidant multimineral blend
+### East Africa
+- /export/kenya/: Kenya — $353M, PPB, gateway to East Africa
+- /export/somalia/: Somalia — 100% import-dependent, Halal
+- /export/tanzania/: Tanzania — TFDA, Central Africa gateway
+- /export/ethiopia/: Ethiopia — 120M population, EFDA
+- /export/uganda/: Uganda — NDA, via Mombasa
+- /export/rwanda/: Rwanda — "Africa's Singapore"
+- /export/south-sudan/: South Sudan — youngest nation, humanitarian
 
-### Women's Health
-- [Isoflavones + Calcium + D3](https://www.admetuslifesciences.com/products/isoflavones-calcium-vitamin-d3/): Complete women's bone and hormonal support
+### Southern & Central Africa
+- /export/south-africa/: South Africa — $669M, SAHPRA
+- /export/mozambique/: Mozambique — ANARME, Portuguese-speaking
+- /export/dr-congo/: DR Congo — 100M+ population, ACOREP
 
-### Men's Health
-- [Ginkgo + Tribulus Vitality](https://www.admetuslifesciences.com/products/ginkgo-tribulus-mens-vitality/): Men's performance and vitality formula
+## Products
+- /products/cholecalciferol-60000-iu/: Vitamin D3 60,000 IU
+- /products/calcitriol-calcium-k27-softgel/: Calcitriol + Calcium + K2-7
+- /products/omega-3-vitamin-e-softgel/: Omega-3 + Vitamin E
+- /products/krill-oil-softgel/: Krill Oil
+- /products/ginseng-astaxanthin-multivitamin/: Ginseng + Astaxanthin Multi
+- /products/glutathione-ala-grape-seed/: Glutathione + ALA + Grape Seed
+- /products/lycopene-grape-seed-multivitamin/: Lycopene + Grape Seed Multi
+- /products/isoflavones-calcium-vitamin-d3/: Isoflavones + Calcium + D3
+- /products/ginkgo-tribulus-mens-vitality/: Ginkgo + Tribulus Vitality
+- /products/nigella-sativa-kalonji/: Nigella Sativa (Kalonji/Black Seed Oil)
 
-### Herbal & Specialty
-- [Nigella Sativa (Kalonji)](https://www.admetuslifesciences.com/products/nigella-sativa-kalonji/): Traditional black seed oil softgel
-
-## Key Facts for Buyers
-
-- Minimum order quantities (MOQ): Flexible based on formulation and packaging
-- Lead time: Quote within 48 hours of inquiry
-- Sample policy: Samples available on approval after specifications confirmed
-- Packaging options: Blister packs, bottles, custom carton designs
-- Documentation: Full batch documentation, Certificate of Analysis (COA), regulatory support for export
-- Facility audits: Welcomed for partnership evaluation
-- Production process: Raw material sourcing → formulation → encapsulation → drying → quality inspection → blister packing → final packing & dispatch
-
-## Resources
-
-- [Product Catalogue PDF](https://www.admetuslifesciences.com/catalogue.pdf): Full product catalogue with specifications
-
-## Contact
-
-- Email: admetuslifesciences@gmail.com
-- Manufacturing facility: Village Anta, Tehsil Safidon, District Jind, Haryana 126112, India
-- For: Contract manufacturing inquiries, private label discussions, sample requests, facility audit scheduling, export partnerships
+## Blog Posts
+- /blog/top-10-softgel-capsule-manufacturers-india/: Top 10 Softgel Capsule Manufacturers in India (2026)
+- /blog/top-10-nutraceutical-exporters-india/: Top 10 Nutraceutical Exporters from India (2026)
+- /blog/top-10-halal-softgel-manufacturers-india/: Top 10 Halal Softgel Manufacturers in India (2026)
+- /blog/how-to-import-softgel-capsules-from-india/: How to Import Softgel Capsules from India — Complete Guide
+- /blog/what-are-softgel-capsules/: What Are Softgel Capsules?
+- /blog/softgel-vs-tablet-vs-capsule/: Softgel vs Tablet vs Hard Capsule
+- /blog/how-softgel-capsules-are-made/: How Softgel Capsules Are Made
+- /blog/choose-softgel-manufacturer-india/: How to Choose a Softgel Manufacturer in India
+- /blog/vitamin-d3-deficiency-india/: Vitamin D3 Deficiency in India
