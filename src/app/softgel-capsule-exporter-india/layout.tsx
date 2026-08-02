@@ -4,6 +4,17 @@ export const metadata: Metadata = {
   title: "Softgel Capsule Exporter India — Nutraceutical Export to Africa, Middle East, Asia",
   description:
     "Leading softgel capsule exporter from India — nutraceutical & pharmaceutical soft gelatin capsule exports to Africa, Middle East, GCC, Southeast Asia, Latin America, CIS countries. WHO-GMP, Halal, FSSAI certified. Full export documentation.",
+  keywords: [
+    "softgel capsule exporter india",
+    "nutraceutical exporter india",
+    "bulk softgel capsule supplier india",
+    "import softgel capsules from india",
+    "wholesale nutraceutical products",
+    "softgel exporter africa middle east",
+    "gcc softgel capsule supplier",
+    "global softgel supplier",
+    "who-gmp export manufacturer",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/softgel-capsule-exporter-india/",
   },

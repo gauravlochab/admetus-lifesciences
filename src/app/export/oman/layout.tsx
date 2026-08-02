@@ -5,6 +5,18 @@ export const metadata: Metadata = {
     "Softgel Capsule Manufacturer India for Oman — Halal Certified, WHO-GMP",
   description:
     "Halal certified and WHO-GMP softgel capsule manufacturer in India for Oman. MOH (Ministry of Health) registration support. India-Oman historical trade ties, closest GCC country to India. Nigella Sativa, Vitamin D3 60K IU, Omega-3. JNPT/Mundra to Sohar/Salalah in 3-5 days.",
+  keywords: [
+    "softgel capsule exporter oman",
+    "nutraceutical exporter oman",
+    "softgel capsule supplier oman",
+    "supplement supplier oman",
+    "who-gmp softgel oman",
+    "halal softgel capsules oman",
+    "import softgel capsules oman",
+    "nutraceutical & ayurvedic softgel oman",
+    "softgel capsule manufacturer india",
+    "bulk softgel capsule supplier india",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/export/oman/",
   },

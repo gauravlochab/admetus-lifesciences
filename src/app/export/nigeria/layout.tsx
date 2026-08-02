@@ -5,6 +5,18 @@ export const metadata: Metadata = {
     "Softgel Capsule Manufacturer India for Nigeria — NAFDAC Ready, WHO-GMP Certified",
   description:
     "WHO-GMP certified softgel capsule manufacturer in India for Nigerian importers. Nigeria imports $449M pharma from India — 70% of Nigeria's pharmaceuticals are Indian generics. NAFDAC registration support, Free Sale Certificate, full export documentation.",
+  keywords: [
+    "softgel capsule exporter nigeria",
+    "nutraceutical exporter nigeria",
+    "softgel capsule supplier nigeria",
+    "supplement supplier nigeria",
+    "who-gmp softgel nigeria",
+    "halal softgel capsules nigeria",
+    "import softgel capsules nigeria",
+    "nutraceutical & ayurvedic softgel nigeria",
+    "softgel capsule manufacturer india",
+    "bulk softgel capsule supplier india",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/export/nigeria/",
   },

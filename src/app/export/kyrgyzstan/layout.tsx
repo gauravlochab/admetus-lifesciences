@@ -5,6 +5,18 @@ export const metadata: Metadata = {
     "Softgel Capsule Manufacturer India for Kyrgyzstan — Halal Certified",
   description:
     "Halal certified softgel capsule manufacturer in India supplying Kyrgyzstan. Affordable nutraceutical softgels for Central Asia — Vitamin D3, Omega-3, Nigella Sativa, Calcitriol K2. Full export documentation, shipping via Tashkent or Almaty overland corridor, 16-22 day transit.",
+  keywords: [
+    "softgel capsule exporter kyrgyzstan",
+    "nutraceutical exporter kyrgyzstan",
+    "softgel capsule supplier kyrgyzstan",
+    "supplement supplier kyrgyzstan",
+    "who-gmp softgel kyrgyzstan",
+    "halal softgel capsules kyrgyzstan",
+    "import softgel capsules kyrgyzstan",
+    "nutraceutical & ayurvedic softgel kyrgyzstan",
+    "softgel capsule manufacturer india",
+    "bulk softgel capsule supplier india",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/export/kyrgyzstan/",
   },

@@ -70,7 +70,7 @@ function Hero() {
             ADMETUS LIFESCIENCES
           </div>
 
-          <h1 className="sr-only">Admetus Lifesciences - Precision Encapsulated Softgel Capsules</h1>
+          <h1 className="sr-only">Admetus Lifesciences — WHO-GMP Certified Nutraceutical &amp; Ayurvedic Softgel Capsule Manufacturer, Exporter &amp; Third-Party / Private Label Supplier in Jind, Haryana, India</h1>
           <div aria-hidden="true">
             {/* First word replaced with kinetic FlipWords component */}
             <div
@@ -95,7 +95,7 @@ function Hero() {
             className={`mt-3 md:mt-4 body-large text-[var(--text-cream)] max-w-[480px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             style={{ transition: "opacity 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms, transform 500ms cubic-bezier(0.23, 1, 0.32, 1) 700ms" }}
           >
-            Improving the quality of your life through better health. One of India&apos;s advanced manufacturers, exporters and suppliers of Nutraceutical Soft Gelatin Capsules.
+            Improving the quality of your life through better health. One of India&apos;s advanced WHO-GMP certified manufacturers, exporters and suppliers of Nutraceutical &amp; Ayurvedic Soft Gelatin (Softgel) Capsules — contract manufacturing, third-party &amp; private label.
           </p>
 
           <div

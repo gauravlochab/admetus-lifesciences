@@ -4,6 +4,16 @@ export const metadata: Metadata = {
   title: "Private Label Softgel Capsule Manufacturer in India",
   description:
     "Launch your softgel brand in India — private label softgel capsule manufacturing with 10+ formulations, custom packaging, MOQ flexibility, and full export documentation. WHO-GMP, FSSAI, Halal certified.",
+  keywords: [
+    "private label softgel manufacturer",
+    "white label softgel manufacturer",
+    "oem softgel manufacturer",
+    "private label supplements india",
+    "custom softgel formulation",
+    "launch your own supplement brand",
+    "private branding softgel",
+    "contract manufacturing softgel capsules",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/private-label-softgel-manufacturer-india/",
   },

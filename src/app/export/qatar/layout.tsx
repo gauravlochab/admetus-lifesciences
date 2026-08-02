@@ -5,6 +5,18 @@ export const metadata: Metadata = {
     "Softgel Capsule Manufacturer India for Qatar — Halal, WHO-GMP",
   description:
     "Halal and WHO-GMP certified softgel capsule manufacturer in India for Qatar. MOPH registration support, highest GDP per capita globally, growing wellness and supplement market. Large Indian expat community. Nigella Sativa, Vitamin D3 60K IU, Omega-3. JNPT to Hamad Port (Doha) in 5-7 days.",
+  keywords: [
+    "softgel capsule exporter qatar",
+    "nutraceutical exporter qatar",
+    "softgel capsule supplier qatar",
+    "supplement supplier qatar",
+    "who-gmp softgel qatar",
+    "halal softgel capsules qatar",
+    "import softgel capsules qatar",
+    "nutraceutical & ayurvedic softgel qatar",
+    "softgel capsule manufacturer india",
+    "bulk softgel capsule supplier india",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/export/qatar/",
   },

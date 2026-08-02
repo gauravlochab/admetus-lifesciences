@@ -33,7 +33,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.admetuslifesciences.com"),
   title: {
-    default: "Admetus Lifesciences | Precision Softgel Capsule Manufacturer",
+    default: "Admetus Lifesciences | Nutraceutical & Ayurvedic Softgel Capsule Manufacturer & Exporter India",
     template: "%s | Admetus Lifesciences",
   },
   description:

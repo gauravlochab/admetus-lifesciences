@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: "Vitamin D3 Softgel Contract Manufacturer in India",
   description:
     "Cholecalciferol 60,000 IU and Calcitriol K2-7 softgel contract manufacturing in India. WHO-GMP certified facility, MOQ flexibility, full export documentation. Private label & bulk supply.",
+  keywords: [
+    "vitamin d3 60000 iu softgel",
+    "cholecalciferol 60000 iu softgel",
+    "vitamin d3 softgel manufacturer",
+    "calcium vitamin d3 softgel",
+    "contract manufacturing softgel capsules",
+    "vitamin d3 contract manufacturing india",
+    "who-gmp certified softgel manufacturer",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/contract-manufacturing-vitamin-d3-softgel/",
   },

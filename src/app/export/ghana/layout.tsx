@@ -5,6 +5,18 @@ export const metadata: Metadata = {
     "Softgel Capsule Manufacturer India for Ghana — FDA Ghana Ready, WHO-GMP Certified",
   description:
     "WHO-GMP certified softgel capsule manufacturer in India for Ghanaian importers. Ghana imports $220M pharma from India (+22.6% YoY) — fastest-growing African market. FDA Ghana registration support, Free Sale Certificate, full export documentation. JNPT to Tema port shipping.",
+  keywords: [
+    "softgel capsule exporter ghana",
+    "nutraceutical exporter ghana",
+    "softgel capsule supplier ghana",
+    "supplement supplier ghana",
+    "who-gmp softgel ghana",
+    "halal softgel capsules ghana",
+    "import softgel capsules ghana",
+    "nutraceutical & ayurvedic softgel ghana",
+    "softgel capsule manufacturer india",
+    "bulk softgel capsule supplier india",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/export/ghana/",
   },

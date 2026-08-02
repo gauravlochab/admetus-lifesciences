@@ -4,6 +4,16 @@ export const metadata: Metadata = {
   title: "Nutraceutical Manufacturer in India — Softgel Capsules & Supplements",
   description:
     "Leading nutraceutical manufacturer in India specializing in softgel capsule formulations — Vitamin D3, Omega-3, Calcitriol K2-7, Glutathione, Krill Oil & 80+ products. WHO-GMP, FSSAI, Halal certified. Contract manufacturing, private label, third party manufacturing & export.",
+  keywords: [
+    "nutraceutical manufacturer india",
+    "nutraceutical contract manufacturer",
+    "nutraceutical & ayurvedic softgel capsules",
+    "ayurvedic softgel capsule manufacturer",
+    "dietary supplement manufacturer india",
+    "health supplement manufacturer",
+    "herbal softgel manufacturer india",
+    "food supplement manufacturer india",
+  ],
   alternates: {
     canonical: "https://www.admetuslifesciences.com/nutraceutical-manufacturer-india/",
   },
