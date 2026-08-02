@@ -173,9 +173,9 @@ export default function HalalSoftgelPage() {
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            Halal certified nutraceutical softgel capsule manufacturer in Jind, Haryana —
+            Halal certified nutraceutical &amp; Ayurvedic softgel capsule manufacturer in Jind, Haryana —
             export-ready production for GCC, Middle East, Africa, and Southeast Asia
-            with complete Halal documentation for import&nbsp;compliance.
+            with complete Halal &amp; Kosher documentation for import&nbsp;compliance.
           </p>
         </div>
       </section>

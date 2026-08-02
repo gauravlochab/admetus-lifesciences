@@ -207,14 +207,14 @@ export default function NutraceuticalManufacturerIndiaPage() {
             <ArrowLeft size={13} />
             Home
           </Link>
-          <span className="label-text text-[var(--gold)]">Nutraceutical Manufacturing  ·  India</span>
+          <span className="label-text text-[var(--gold)]">Nutraceutical &amp; Ayurvedic Manufacturing  ·  India</span>
           <h1 className="mt-3 display-section text-[var(--hero-text)]">
-            NUTRACEUTICAL MANUFACTURER<br />IN&nbsp;INDIA
+            NUTRACEUTICAL &amp; AYURVEDIC<br />MANUFACTURER IN&nbsp;INDIA
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            WHO-GMP certified nutraceutical softgel capsule manufacturer — 80+
-            formulations, contract manufacturing, private label, and export-ready
+            WHO-GMP certified nutraceutical &amp; Ayurvedic softgel capsule manufacturer — 80+
+            formulations, contract manufacturing, third-party &amp; private label, and export-ready
             production for health supplement brands, distributors, and
             importers&nbsp;worldwide.
           </p>

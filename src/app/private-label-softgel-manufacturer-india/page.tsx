@@ -164,8 +164,8 @@ export default function PrivateLabelPage() {
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            Launch your softgel brand from a WHO-GMP certified Indian facility —
-            10+ formulations, custom packaging, flexible MOQs, and full export
+            Launch your own softgel brand from a WHO-GMP certified Indian facility —
+            white label &amp; OEM nutraceutical and Ayurvedic softgels, custom packaging, flexible MOQs, and full export
             documentation under your brand&nbsp;name.
           </p>
         </div>

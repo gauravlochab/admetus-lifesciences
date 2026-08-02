@@ -204,7 +204,7 @@ export default function ExporterIndiaPage() {
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            WHO-GMP certified nutraceutical softgel capsule exporter — serving
+            WHO-GMP certified nutraceutical &amp; Ayurvedic softgel capsule exporter and bulk supplier — serving
             distributors and importers across Africa, Middle East, Southeast Asia,
             Latin America, and CIS countries with full export&nbsp;documentation.
           </p>

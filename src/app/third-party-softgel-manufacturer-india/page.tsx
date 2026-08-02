@@ -123,8 +123,8 @@ export default function ThirdPartyManufacturerPage() {
           </h1>
           <div className="gold-rule w-16 mt-4 mb-4" />
           <p className="body-large text-[var(--text-cream)] max-w-[58ch]">
-            WHO-GMP certified third party softgel capsule manufacturing from our
-            Haryana facility — 80+ formulations, flexible MOQ, complete
+            WHO-GMP certified third party softgel capsule manufacturing (PCD &amp; contract) from our
+            Haryana facility — 80+ nutraceutical &amp; Ayurvedic formulations, flexible MOQ, complete
             documentation, and export-ready production for pharma and
             nutraceutical&nbsp;brands.
           </p>
