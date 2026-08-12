@@ -288,6 +288,49 @@ export const buyerLongTailKeywords = [
   "men's wellness softgel",
 ];
 
+/**
+ * Gap keywords from top-10 competitor analysis — dosage-form expansion,
+ * vegan/non-gelatin, CDMO/business-model, extra certifications, and
+ * Ayurvedic-ingredient crossover terms rivals rank for but Admetus under-covers.
+ */
+export const gapExpansionKeywords = [
+  // Dosage-form expansion (page-type opportunities)
+  "gummies manufacturer india",
+  "multivitamin gummies manufacturer",
+  "effervescent tablet manufacturer",
+  "nutraceutical powder manufacturer",
+  "sachet manufacturer india",
+  "tablet manufacturer india",
+  // Vegan / non-gelatin (fast-growing, thin competitor coverage)
+  "vegan softgel capsules",
+  "vegetarian softgel manufacturer",
+  "plant-based softgel",
+  "non-gelatin softgel",
+  "hpmc softgel capsule",
+  "sugar-free supplement manufacturer",
+  // Business model / CDMO
+  "nutraceutical cdmo india",
+  "softgel cdmo",
+  "contract development and manufacturing",
+  "turnkey nutraceutical manufacturing",
+  "formulation development services",
+  "low moq softgel manufacturer",
+  // Extra certifications / trust
+  "cgmp certified manufacturer",
+  "iso 22000 certified manufacturer",
+  "iso 9001:2015 certified manufacturer",
+  "usfda compliant manufacturer",
+  // Category / audience
+  "dietary supplements manufacturer india",
+  "sports nutrition manufacturer india",
+  "immunity supplement manufacturer",
+  "vitamin manufacturer india",
+  // Ayurvedic-ingredient crossover (white space)
+  "ashwagandha softgel manufacturer",
+  "curcumin softgel manufacturer",
+  "garlic oil softgel manufacturer",
+];
+
 /** Flattened, de-duplicated master list of every keyword above. */
 export const allKeywords: string[] = Array.from(
   new Set([
@@ -306,5 +349,6 @@ export const allKeywords: string[] = Array.from(
     ...tradeDocumentationKeywords,
     ...distributorIntentKeywords,
     ...buyerLongTailKeywords,
+    ...gapExpansionKeywords,
   ]),
 );

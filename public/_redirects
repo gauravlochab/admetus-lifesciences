@@ -1,0 +1,2 @@
+# Canonicalize apex -> www (canonical tags point to www)
+https://admetuslifesciences.com/* https://www.admetuslifesciences.com/:splat 301!

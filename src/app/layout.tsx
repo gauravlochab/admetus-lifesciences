@@ -33,11 +33,11 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.admetuslifesciences.com"),
   title: {
-    default: "Admetus Lifesciences | Nutraceutical & Ayurvedic Softgel Capsule Manufacturer & Exporter India",
+    default: "Softgel Capsule Manufacturer & Exporter India | Admetus",
     template: "%s | Admetus Lifesciences",
   },
   description:
-    "Leading softgel capsule manufacturer & exporter in India. Contract manufacturing, third party manufacturing, private label, and export-ready nutraceutical soft gelatin capsules. WHO-GMP, FSSAI, GMP, HACCP, Halal certified. Bulk supplier for Africa, Middle East, Southeast Asia.",
+    "WHO-GMP certified softgel capsule manufacturer & exporter in India — nutraceutical & Ayurvedic, contract, third-party & private label. FSSAI & Halal certified.",
   keywords: [
     // Core manufacturing
     "softgel capsule manufacturer india",
@@ -90,6 +90,17 @@ export const metadata: Metadata = {
     // Buyer intent
     "best softgel manufacturer in india",
     "top nutraceutical manufacturers in india",
+    // Competitor-gap opportunities
+    "nutraceutical cdmo india",
+    "vegan softgel capsules",
+    "vegetarian softgel manufacturer",
+    "gummies manufacturer india",
+    "cgmp certified manufacturer",
+    "ashwagandha softgel manufacturer",
+    "curcumin softgel manufacturer",
+    "low moq softgel manufacturer",
+    "custom formulation softgel india",
+    "sports nutrition manufacturer india",
   ],
   authors: [{ name: "Admetus Lifesciences" }],
   openGraph: {
@@ -97,23 +108,23 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.admetuslifesciences.com",
     siteName: "Admetus Lifesciences",
-    title: "Admetus Lifesciences | Precision Softgel Capsule Manufacturer",
+    title: "Softgel Capsule Manufacturer & Exporter India | Admetus",
     description:
-      "Precision-engineered softgel capsules from India. Contract manufacturing, private label solutions, and export-ready nutraceuticals.",
+      "WHO-GMP certified nutraceutical & Ayurvedic softgel capsule manufacturer & exporter in India — contract, third-party & private label.",
     images: [
       {
         url: "/seo/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Admetus Lifesciences — Precision Softgel Capsule Manufacturer in Haryana, India",
+        alt: "Admetus Lifesciences — Nutraceutical & Ayurvedic Softgel Capsule Manufacturer & Exporter in India",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Admetus Lifesciences | Precision Softgel Capsule Manufacturer",
+    title: "Softgel Capsule Manufacturer & Exporter India | Admetus",
     description:
-      "Precision-engineered softgel capsules from India. Contract manufacturing, private label solutions, and export-ready nutraceuticals.",
+      "WHO-GMP certified nutraceutical & Ayurvedic softgel capsule manufacturer & exporter in India — contract, third-party & private label.",
     images: ["/seo/og-image.png"],
   },
   robots: {
