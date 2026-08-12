@@ -13,7 +13,7 @@ const processSteps = [
     icon: Mail,
     summary: "Share your requirements — we respond within 24 hours",
     details:
-      "Begin by reaching out via email (team@admetuslifesciences.com), WhatsApp (+91-7497841608), or the contact form on our website. The more detail you provide upfront, the faster we can move to a formal quotation. At minimum, include: your product interest (e.g. Vitamin D3, Omega-3, custom formulation), estimated volume per order and annual volume, target market (domestic India, Africa, Middle East, Southeast Asia, etc.), packaging preference (blister packs, bottles, bulk drums), and whether you require private-label branding or plain packaging. Our business development team reviews every inquiry within one business day. If your requirement falls within our manufacturing capability, you will receive a preliminary response confirming feasibility and outlining next steps. If your requirement involves a novel formulation we have not manufactured before, we will discuss custom development timelines and any additional R&D costs before proceeding.",
+      "Begin by reaching out via email (team@admetuslifesciences.com), WhatsApp (+91-9729977795), or the contact form on our website. The more detail you provide upfront, the faster we can move to a formal quotation. At minimum, include: your product interest (e.g. Vitamin D3, Omega-3, custom formulation), estimated volume per order and annual volume, target market (domestic India, Africa, Middle East, Southeast Asia, etc.), packaging preference (blister packs, bottles, bulk drums), and whether you require private-label branding or plain packaging. Our business development team reviews every inquiry within one business day. If your requirement falls within our manufacturing capability, you will receive a preliminary response confirming feasibility and outlining next steps. If your requirement involves a novel formulation we have not manufactured before, we will discuss custom development timelines and any additional R&D costs before proceeding.",
   },
   {
     step: "02",
@@ -591,7 +591,7 @@ export default function PartnershipProcessPage() {
                 <ArrowRight size={14} />
               </Link>
               <a
-                href="https://wa.me/917497841608?text=Hi%2C%20I%20am%20interested%20in%20partnering%20with%20Admetus%20Lifesciences%20for%20softgel%20manufacturing.%20Please%20share%20details."
+                href="https://wa.me/919729977795?text=Hi%2C%20I%20am%20interested%20in%20partnering%20with%20Admetus%20Lifesciences%20for%20softgel%20manufacturing.%20Please%20share%20details."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--gold)] border border-[var(--gold)]/40 hover:border-[var(--gold)] hover:bg-[var(--gold)]/5 transition-colors duration-200"

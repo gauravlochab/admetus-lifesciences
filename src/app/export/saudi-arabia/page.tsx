@@ -714,13 +714,13 @@ export default function SaudiArabiaExportPage() {
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <a
-                href="https://wa.me/917497841608?text=I%20am%20interested%20in%20importing%20softgel%20capsules%20to%20Saudi%20Arabia"
+                href="https://wa.me/919729977795?text=I%20am%20interested%20in%20importing%20softgel%20capsules%20to%20Saudi%20Arabia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-7 py-3 active:scale-[0.98] active:opacity-90 text-[0.6875rem] font-bold tracking-[0.14em] uppercase text-[var(--bg-black)] bg-[#25D366] hover:bg-[#20bd5a] transition-colors duration-200"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                WhatsApp +91-7497841608
+                WhatsApp +91-9729977795
                 <ArrowRight size={14} />
               </a>
               <Link

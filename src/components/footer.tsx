@@ -115,13 +115,6 @@ export function Footer() {
               <div>
                 <span className="label-text !text-[0.5625rem] text-[var(--text-muted)] block mb-0.5">Phone</span>
                 <a
-                  href="tel:+917497841608"
-                  className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem] block"
-                  style={{ transition: 'color 200ms cubic-bezier(0.23, 1, 0.32, 1)' }}
-                >
-                  +91-7497841608
-                </a>
-                <a
                   href="tel:+919729977795"
                   className="footer-link body-text text-[var(--text-cream)] !text-[0.75rem] block"
                   style={{ transition: 'color 200ms cubic-bezier(0.23, 1, 0.32, 1)' }}

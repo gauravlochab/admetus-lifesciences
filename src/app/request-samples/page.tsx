@@ -374,7 +374,7 @@ export default function RequestSamplesPage() {
                   requirements.
                 </p>
                 <a
-                  href="https://wa.me/917497841608?text=Hello%2C%20I%20would%20like%20to%20request%20evaluation%20samples%20of%20your%20softgel%20capsules.%20Please%20share%20details%20on%20availability%20and%20shipping."
+                  href="https://wa.me/919729977795?text=Hello%2C%20I%20would%20like%20to%20request%20evaluation%20samples%20of%20your%20softgel%20capsules.%20Please%20share%20details%20on%20availability%20and%20shipping."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-3 px-5 py-3 hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(200,169,81,0.15)] active:translate-y-[1px] active:shadow-none bg-[#25D366]/[0.08] border border-[#25D366]/15 hover:bg-[#25D366]/[0.12] transition-all duration-200"

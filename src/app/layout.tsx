@@ -179,10 +179,10 @@ export default function RootLayout({
                   foundingDate: "2020",
                   founder: { "@type": "Person", name: "Anudeep Deswal" },
                   email: "team@admetuslifesciences.com",
-                  telephone: "+91-7497841608",
+                  telephone: "+91-9729977795",
                   contactPoint: {
                     "@type": "ContactPoint",
-                    telephone: "+91-7497841608",
+                    telephone: "+91-9729977795",
                     contactType: "sales",
                     availableLanguage: ["English", "Hindi"],
                   },

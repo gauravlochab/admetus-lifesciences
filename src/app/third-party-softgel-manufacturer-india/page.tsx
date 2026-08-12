@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "What is the MOQ for third party softgel capsule orders?",
-    a: "MOQs are flexible and depend on the specific formulation, fill weight, and packaging configuration. We accommodate pilot batches for new brands testing the market as well as large commercial runs for established distributors. There is no single fixed MOQ — we confirm the exact minimum quantity within 48 hours of receiving your formulation brief at team@admetuslifesciences.com or +91-7497841608.",
+    a: "MOQs are flexible and depend on the specific formulation, fill weight, and packaging configuration. We accommodate pilot batches for new brands testing the market as well as large commercial runs for established distributors. There is no single fixed MOQ — we confirm the exact minimum quantity within 48 hours of receiving your formulation brief at team@admetuslifesciences.com or +91-9729977795.",
   },
   {
     q: "What softgel formulations are available for third party manufacturing?",
@@ -379,9 +379,7 @@ export default function ThirdPartyManufacturerPage() {
             <p className="mt-3 body-text text-[var(--text-muted)] max-w-[58ch]">
               Email: <a href="mailto:team@admetuslifesciences.com" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">team@admetuslifesciences.com</a>
               {" "}&nbsp;|&nbsp;{" "}
-              Phone: <a href="tel:+917497841608" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">+91-7497841608</a>
-              {" "}/{" "}
-              <a href="tel:+919729977795" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">+91-9729977795</a>
+              Phone: <a href="tel:+919729977795" className="text-[var(--gold)] hover:text-[var(--gold-light)] underline-offset-2 hover:underline">+91-9729977795</a>
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
