@@ -9,7 +9,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const navLinks = [
   { href: "/about/", label: "About" },
   { href: "/products/", label: "Products" },
-  { href: "/catalog/", label: "Catalog" },
+  { href: "/softgel-manufacturer/", label: "By Ingredient" },
   { href: "/manufacturing/", label: "Facility" },
   { href: "/quality/", label: "Quality" },
   { href: "/contract-manufacturing/", label: "Contract Mfg" },

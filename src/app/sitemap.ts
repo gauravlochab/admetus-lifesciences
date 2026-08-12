@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 import { blogPosts } from "@/data/blog-posts";
+import { ingredientPages } from "@/data/ingredients";
 
 export const dynamic = "force-static";
 
@@ -97,6 +98,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const ingredientRoutes: MetadataRoute.Sitemap = [
+    { url: `${BASE}/softgel-manufacturer/`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...ingredientPages.map((p) => ({
+      url: `${BASE}/softgel-manufacturer/${p.slug}/`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
+
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE}/blog/${p.slug}/`,
     lastModified: now,
@@ -104,5 +115,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...productRoutes, ...blogRoutes];
+  return [...staticRoutes, ...ingredientRoutes, ...productRoutes, ...blogRoutes];
 }
